@@ -6,29 +6,51 @@
       "main": [
         [
           {
-            "node": "AI Agent Debug",
+            "node": "AI Agent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model": {
+    "DeepSeek Chat Model": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent Debug",
+            "node": "AI Agent",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Tool Debug": {
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent Debug",
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many messages in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
             "type": "ai_tool",
             "index": 0
           }
@@ -36,87 +58,107 @@
       ]
     }
   },
-  "createdAt": "2025-11-26T19:12:55.518Z",
-  "id": "or7mIEbaFSVOCRXI",
-  "isArchived": true,
-  "meta": null,
-  "name": "[TEST] Debug Tool Format",
+  "createdAt": "2025-06-25T21:26:32.540Z",
+  "id": "q3t5oIfJ05yvhLCw",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "DeepSeek Agent",
   "nodes": [
     {
       "parameters": {
         "options": {}
       },
-      "id": "chat-trigger",
-      "name": "When chat message received",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.4,
+      "typeVersion": 1.1,
       "position": [
         0,
         0
       ],
-      "webhookId": "f91bbd25-463d-44f7-8b67-0f8637726e5c"
+      "id": "0612e06c-6c82-4036-90df-75cec8aa2e94",
+      "name": "When chat message received",
+      "webhookId": "f7b1a909-986c-43dc-bb7d-2411bd4e1198"
     },
     {
       "parameters": {
-        "options": {
-          "systemMessage": "Tu es un assistant de test. Quand on te demande de tester, appelle l'outil avec title='Test Debug' et content='Contenu test'."
-        }
-      },
-      "id": "agent",
-      "name": "AI Agent Debug",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 3,
-      "position": [
-        208,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "model": {
-          "mode": "list",
-          "value": "claude-sonnet-4-5-20250929"
-        },
         "options": {}
       },
-      "id": "claude",
-      "name": "Anthropic Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
       "position": [
-        192,
-        224
+        224,
+        0
       ],
+      "id": "739bfcfa-b8aa-4d7d-8356-cb1c9bdba9c1",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        32,
+        320
+      ],
+      "id": "77b09974-c7c2-4281-95ba-9c52c7f9da3c",
+      "name": "DeepSeek Chat Model",
       "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
+        "deepSeekApi": {
+          "id": "KKXbY2xB3CfKS6pV",
+          "name": "DeepSeek account 2"
         }
       }
     },
     {
       "parameters": {
-        "description": "Outil de test. Appelle-le avec title et content.",
-        "workflowId": {
-          "mode": "id",
-          "value": "ZIwM6qhuyBQqkj7l"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "title": "={{ $fromAI('title', 'Le titre', 'string') }}",
-            "content": "={{ $fromAI('content', 'Le contenu', 'string') }}"
-          }
+        "contextWindowLength": 25
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        320
+      ],
+      "id": "1b027006-e289-49ee-a5a2-0dfef0000766",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        304,
+        320
+      ],
+      "id": "fc651496-a287-4e79-a190-c1a10c93268b",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": "={{ $fromAI('Return_All', ``, 'boolean') }}",
+        "filters": {
+          "labelIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Label_Names_or_IDs', ``, 'string') }}"
         }
       },
-      "id": "tool",
-      "name": "Tool Debug",
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.2,
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
       "position": [
-        352,
-        240
-      ]
+        752,
+        352
+      ],
+      "id": "ed2e0c98-b537-40d9-be47-f401bec88ed9",
+      "name": "Get many messages in Gmail",
+      "webhookId": "355a910c-8c75-4245-872d-3d8af46dce25",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "oGi6eYlZ16NVBxZx",
+          "name": "Gmail account 2"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -124,20 +166,14 @@
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
-    "saveExecutionProgress": true,
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   },
   "shared": [
     {
-      "updatedAt": "2025-11-26T19:12:55.520Z",
-      "createdAt": "2025-11-26T19:12:55.520Z",
+      "updatedAt": "2025-06-25T21:26:32.543Z",
+      "createdAt": "2025-06-25T21:26:32.543Z",
       "role": "workflow:owner",
-      "workflowId": "or7mIEbaFSVOCRXI",
+      "workflowId": "q3t5oIfJ05yvhLCw",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
@@ -150,13 +186,19 @@
       "name": "A voir"
     },
     {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    },
+    {
       "updatedAt": "2025-12-28T23:46:03.817Z",
       "createdAt": "2025-12-28T18:02:49.797Z",
       "id": "vNliFiYFZSU0TQDM",
       "name": "Ok"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-12-28T23:41:18.000Z",
-  "versionId": "249b0b7e-892a-4cac-9f3f-c9e350b7f0ac"
+  "triggerCount": 0,
+  "updatedAt": "2025-12-28T18:40:15.000Z",
+  "versionId": "f24de45f-5008-4110-a07e-7d57ce1acaf4"
 }
