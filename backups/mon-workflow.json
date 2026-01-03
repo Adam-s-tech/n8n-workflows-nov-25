@@ -2,95 +2,202 @@
   "": "",
   "active": false,
   "connections": {
-    "If": {
+    "Run workflow": {
       "main": [
         [
           {
-            "node": "Send a photo message",
+            "node": "Loop over queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop over URLs": {
+      "main": [
+        [
+          {
+            "node": "Loop over pages",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Wait 15 Secs Again",
+            "node": "Request web page for URL",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get a file": {
+    "Loop over pages": {
       "main": [
         [
           {
-            "node": "Upload file",
+            "node": "Aggregate arrays of emails",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Scrape emails from page",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Upload file": {
+    "Loop over queries": {
       "main": [
+        [],
         [
           {
-            "node": "Nano Banana POST Request",
+            "node": "Execute scraper for query",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait 15 Secs": {
+    "Remove Duplicate URLs": {
       "main": [
         [
           {
-            "node": "GET Result from Nano Banana Node",
+            "node": "Loop over URLs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Telegram Trigger": {
+    "Filter irrelevant URLs": {
       "main": [
         [
           {
-            "node": "Get a file",
+            "node": "Remove Duplicate URLs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait 15 Secs Again": {
+    "Remove duplicate emails": {
       "main": [
         [
           {
-            "node": "GET Result from Nano Banana Node",
+            "node": "Filter irrelevant emails",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Nano Banana POST Request": {
+    "Scrape emails from page": {
       "main": [
         [
           {
-            "node": "Wait 15 Secs",
+            "node": "Loop over pages",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "GET Result from Nano Banana Node": {
+    "Starts scraper workflow": {
       "main": [
         [
           {
-            "node": "If",
+            "node": "Search Google Maps with query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait between executions": {
+      "main": [
+        [
+          {
+            "node": "Loop over queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter irrelevant emails": {
+      "main": [
+        [
+          {
+            "node": "Save emails to Google Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request web page for URL": {
+      "main": [
+        [
+          {
+            "node": "Loop over URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape URLs from results": {
+      "main": [
+        [
+          {
+            "node": "Filter irrelevant URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute scraper for query": {
+      "main": [
+        [
+          {
+            "node": "Wait between executions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate arrays of emails": {
+      "main": [
+        [
+          {
+            "node": "Split out into default data structure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Google Maps with query": {
+      "main": [
+        [
+          {
+            "node": "Scrape URLs from results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out into default data structure": {
+      "main": [
+        [
+          {
+            "node": "Remove duplicate emails",
             "type": "main",
             "index": 0
           }
@@ -98,81 +205,66 @@
       ]
     }
   },
-  "createdAt": "2025-12-29T23:37:34.722Z",
-  "id": "PObTTk94wdtQXXZm",
+  "createdAt": "2025-05-19T17:48:26.713Z",
+  "id": "SMjaGqxDO2ZcVxlZ",
   "isArchived": false,
   "meta": null,
-  "name": "Améliorez les photos immobilières avec Google Nano Banana AI via le bot Telegram",
+  "name": "Récupérez des e-mails professionnels à partir de Google Maps sans utiliser d’API tierces",
   "nodes": [
     {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.wavespeed.ai/api/v3/google/nano-banana/edit",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"enable_base64_output\": false,\n  \"enable_sync_mode\": false,\n  \"images\": [\n    \"{{ $json.webContentLink }}\"\n  ],\n  \"output_format\": \"jpeg\",\n  \"prompt\": \"Enhance this apartment photo to make it appealing for real-estate listing. Brighten the overall lighting and create a warm, inviting atmosphere. Improve color balance, contrast, and sharpness to highlight the space. Tidy up and declutter visible items (e.g., remove small messes, smooth out wrinkles on furniture, clear counters). Add natural daylight tones through the windows and enhance shadows for depth. Do not alter permanent fixtures such as flooring, walls, windows, doors, or built-in cabinetry. Keep the original layout intact but ensure the space looks clean, modern, and move-in ready.\"\n}",
-        "options": {
-          "redirect": {
-            "redirect": {}
-          }
-        }
-      },
-      "id": "5061e742-6592-47d8-9ca0-d1ffdd881c68",
-      "name": "Nano Banana POST Request",
-      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {},
+      "id": "d5151161-7649-4f2e-817b-c20061dad857",
+      "name": "Remove Duplicate URLs",
+      "type": "n8n-nodes-base.removeDuplicates",
       "position": [
-        1456,
-        176
+        1168,
+        544
       ],
-      "typeVersion": 4.2,
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "Ii00jerJRlDsfgAZ",
-          "name": "Temp FireCrawl2"
-        }
-      }
+      "typeVersion": 1.1
     },
     {
       "parameters": {
-        "amount": 15
+        "options": {}
       },
-      "id": "65dd45ba-73ff-4774-98f5-2189bbbd2cb6",
-      "name": "Wait 15 Secs",
-      "type": "n8n-nodes-base.wait",
+      "id": "26da876a-e1f5-4028-91f1-d54c8c630cce",
+      "name": "Loop over queries",
+      "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        1728,
-        160
+        864,
+        64
       ],
-      "typeVersion": 1.1,
-      "webhookId": "a8917d08-7123-465e-91f5-7df6ac24f0d8"
+      "typeVersion": 3
     },
     {
       "parameters": {
-        "url": "=https://api.wavespeed.ai/api/v3/predictions/{{ $json.data.id }}/result",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
+        "url": "=https://www.google.com/maps/search/{{ $json.query }}",
         "options": {
-          "redirect": {
-            "redirect": {}
-          }
+          "allowUnauthorizedCerts": false
         }
       },
-      "id": "4ceeff92-199f-47d8-a22a-f9a0786df44d",
-      "name": "GET Result from Nano Banana Node",
+      "id": "6429c1a6-085d-4189-b422-e450a5f90f9c",
+      "name": "Search Google Maps with query",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1984,
-        160
+        560,
+        544
       ],
+      "executeOnce": false,
       "typeVersion": 4.2,
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "Ii00jerJRlDsfgAZ",
-          "name": "Temp FireCrawl2"
-        }
-      }
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json.data\n\nconst regex = /https?:\\/\\/[^\\/]+/g\n\nconst urls = data.match(regex)\n\nreturn urls.map(url => ({json: {url: url}}))"
+      },
+      "id": "a9b3d065-5895-4c48-a04b-942126ca530c",
+      "name": "Scrape URLs from results",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        768,
+        544
+      ],
+      "typeVersion": 2
     },
     {
       "parameters": {
@@ -186,215 +278,461 @@
           "combinator": "and",
           "conditions": [
             {
-              "id": "b84517df-a71f-4e28-b744-35bb1e55b85f",
+              "id": "041797f2-2fe2-41dc-902a-d34050b9b304",
+              "operator": {
+                "type": "string",
+                "operation": "notRegex"
+              },
+              "leftValue": "={{ $json.url }}",
+              "rightValue": "=(google|gstatic|ggpht|schema\\.org|example\\.com|sentry-next\\.wixpress\\.com|imli\\.com|sentry\\.wixpress\\.com|ingest\\.sentry\\.io)"
+            },
+            {
+              "id": "eb499a7e-17bc-453c-be08-a47286f726dd",
               "operator": {
                 "name": "filter.operator.equals",
                 "type": "string",
                 "operation": "equals"
               },
-              "leftValue": "={{ $json.data.status }}",
-              "rightValue": "completed"
+              "leftValue": "",
+              "rightValue": ""
             }
           ]
         },
         "options": {}
       },
-      "id": "76d74068-e416-4e8e-9ec7-0ac71a3abc18",
-      "name": "If",
-      "type": "n8n-nodes-base.if",
+      "id": "c00190d1-10ab-40ec-a542-785e98503a21",
+      "name": "Filter irrelevant URLs",
+      "type": "n8n-nodes-base.filter",
       "position": [
-        2192,
-        160
+        960,
+        544
       ],
       "typeVersion": 2.2
     },
     {
       "parameters": {
-        "amount": 15
+        "url": "={{ $json.url }}",
+        "options": {}
       },
-      "id": "240601da-39a3-4804-a98b-6ebe32384d7d",
-      "name": "Wait 15 Secs Again",
-      "type": "n8n-nodes-base.wait",
+      "id": "4ddc8baf-9f72-4d36-9b7b-36bcd145de44",
+      "name": "Request web page for URL",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2256,
-        336
+        1568,
+        624
       ],
-      "typeVersion": 1.1,
-      "webhookId": "2bb354f6-d5b6-4618-89ee-b713d14a4d63"
+      "typeVersion": 4.2,
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
-        "content": "Get Image and Upload",
-        "height": 800,
-        "width": 304,
-        "color": 3
+        "options": {
+          "reset": false
+        }
       },
-      "id": "f8dedc9a-d133-4421-923e-73f0f17fc52c",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "a671a7e8-6588-4ce7-bee4-36afdc5d0a1b",
+      "name": "Loop over URLs",
+      "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        2480,
-        -128
+        1360,
+        544
       ],
-      "typeVersion": 1
+      "typeVersion": 3,
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "content": "Get Results from Nano Banana",
-        "height": 800,
-        "width": 784,
-        "color": 4
+        "options": {}
       },
-      "id": "0af9a813-e567-4a61-a15f-9c86a7f2ed8f",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "0227aa4d-8f7b-4d93-9db3-80f185b1b75c",
+      "name": "Loop over pages",
+      "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        1680,
-        -128
+        1584,
+        288
       ],
-      "typeVersion": 1
+      "typeVersion": 3,
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "content": "Telegram Trigger",
-        "height": 800,
-        "color": 5
+        "mode": "runOnceForEachItem",
+        "jsCode": "const data = $json.data\n\nconst emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?!png|jpg|gif|jpeg)[a-zA-Z]{2,}/g\n\nconst emails = data.match(emailRegex)\n\nreturn {json: {emails: emails}}"
       },
-      "id": "8b0b7768-bfd9-4d98-929b-bf84333089e8",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "2f6b7548-d7dd-4403-953f-cf52046e0ae3",
+      "name": "Scrape emails from page",
+      "type": "n8n-nodes-base.code",
       "position": [
-        672,
-        -128
+        1744,
+        384
       ],
-      "typeVersion": 1
+      "typeVersion": 2,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
-        "content": "Download from Telegram",
-        "height": 800,
-        "width": 384
-      },
-      "id": "3106fd53-667e-4160-90f1-3fe7fc94703f",
-      "name": "Sticky Note3",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        928,
-        -128
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "updates": [
-          "message"
-        ],
-        "additionalFields": {}
-      },
-      "id": "1d875b2d-ff09-4ff8-ae7d-2bb391aef95f",
-      "name": "Telegram Trigger",
-      "type": "n8n-nodes-base.telegramTrigger",
-      "position": [
-        752,
-        176
-      ],
-      "typeVersion": 1.2,
-      "webhookId": "c7ee53c0-ea4a-4956-9599-cfe8a6a2557b"
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "fileId": "={{ $json.message.photo[3].file_id }}",
-        "additionalFields": {}
-      },
-      "id": "4111222e-7f16-41b1-98c1-719882718fa5",
-      "name": "Get a file",
-      "type": "n8n-nodes-base.telegram",
-      "position": [
-        992,
-        176
-      ],
-      "typeVersion": 1.2,
-      "webhookId": "8d6d0fb0-7b97-484c-ae37-5454b0a8d070"
-    },
-    {
-      "parameters": {
-        "name": "Image",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "emails"
+            }
+          ]
         },
-        "folderId": {
-          "__rl": true,
-          "mode": "list"
+        "options": {
+          "mergeLists": true
+        }
+      },
+      "id": "59806265-acb8-46de-aa7f-8acf2858179f",
+      "name": "Aggregate arrays of emails",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        1904,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "emails",
+        "options": {}
+      },
+      "id": "7b2b27d8-6be1-4b27-ae65-6afd3e71d69e",
+      "name": "Split out into default data structure",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        2128,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "emails",
+        "options": {}
+      },
+      "id": "54075939-25ec-46d3-bb38-2acc572549c0",
+      "name": "Remove duplicate emails",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "position": [
+        2352,
+        272
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "041797f2-2fe2-41dc-902a-d34050b9b304",
+              "operator": {
+                "type": "string",
+                "operation": "notRegex"
+              },
+              "leftValue": "={{ $json.emails }}",
+              "rightValue": "=(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.io|sentry\\.io|imli\\.com)"
+            }
+          ]
         },
         "options": {}
       },
-      "id": "88bf1c38-d3e0-4c9d-ba16-80c4318e11df",
-      "name": "Upload file",
-      "type": "n8n-nodes-base.googleDrive",
+      "id": "27bb346f-df76-4615-ae03-c2b1d155e22c",
+      "name": "Filter irrelevant emails",
+      "type": "n8n-nodes-base.filter",
       "position": [
-        1200,
-        176
+        2544,
+        272
       ],
-      "typeVersion": 3,
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "UqDPB5IG1vSb2j4D",
-          "name": "Google Drive Dorian"
-        }
-      }
+      "typeVersion": 2.2
     },
     {
       "parameters": {
-        "content": "POST Request to Nano Banana",
-        "height": 800,
-        "width": 336
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
       },
-      "id": "a723c2cf-bc30-4e8a-817a-c0f17e5117b7",
-      "name": "Sticky Note4",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "0119937c-8a77-4b6f-bd33-470d82cbb372",
+      "name": "Save emails to Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
       "position": [
-        1328,
-        -128
+        2752,
+        272
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {},
+      "id": "4c70f9a8-024a-415f-ad87-959d35dd21a8",
+      "name": "Starts scraper workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        352,
+        544
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "a27c5370-1baa-4c93-971b-24869b09885a",
+      "name": "Run workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        624,
+        64
       ],
       "typeVersion": 1
     },
     {
       "parameters": {
-        "operation": "sendPhoto",
-        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
-        "file": "={{ $json.data.outputs[0] }}",
-        "additionalFields": {}
+        "amount": 2
       },
-      "id": "380c5d6d-aa5e-485f-ba3c-95bdf352643a",
-      "name": "Send a photo message",
-      "type": "n8n-nodes-base.telegram",
+      "id": "6db1fd75-0302-4663-b577-3f69e150705f",
+      "name": "Wait between executions",
+      "type": "n8n-nodes-base.wait",
       "position": [
-        2544,
-        144
+        1248,
+        160
       ],
-      "typeVersion": 1.2,
-      "webhookId": "ca01240b-6a38-4759-b6bb-93a276570e1b"
+      "webhookId": "40eb11a9-0f7d-4932-993e-0052b69dbf9b",
+      "typeVersion": 1.1
     },
     {
       "parameters": {
-        "content": "🤖 Telegram Image Editor with Nano Banana\n\nSend an image to your Telegram bot, and this workflow will automatically enhance it with Google’s Nano Banana (via Wavespeed API), then return the polished version back to the same chat—seamlessly.\n\n👉 Watch step-by-step video tutorials of workflows like these on www.youtube.com/@automatewithmarc\n\nWhat it does\n\nListens on Telegram for incoming photo messages\n\nDownloads the file sent by the user\n\nUploads it to Google Drive (temporary storage for processing)\n\nSends the image to Nano Banana API with a real-estate style cleanup + enhancement prompt\n\nPolls until the job is complete (handles async processing)\n\nReturns the edited image back to the same Telegram chat\n\nPerfect for\n\nReal-estate agents previewing polished property photos instantly\n\nSocial media managers editing on-the-fly from Telegram\n\nAnyone who wants “send → cleaned → returned” image flow without manual edits\n\nApps & Services\n\nTelegram Bot API (Trigger + Send/Receive files)\n\nGoogle Drive (Temporary file storage)\n\nWavespeed / Google Nano Banana (AI-powered image editing)\n\nSetup\n\nConnect your Telegram Bot API token in n8n.\n\nAdd your Wavespeed API key for Nano Banana.\n\nLink your Google Drive account (temporary storage).\n\nDeploy the workflow and send a test photo to your Telegram bot.\n\nCustomization\n\nAdjust the Nano Banana prompt for different styles (e.g., ecommerce cleanup, portrait retouching, color correction).\n\nReplace Google Drive with another storage service if preferred.\n\nAdd logging to Google Sheets or Airtable to track edits.",
-        "height": 1072,
-        "width": 720
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $workflow.id }}"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
       },
-      "id": "41d20fe9-698c-4b88-81f4-1d15a65f4536",
+      "id": "aa6e117c-7f0d-4d2a-b497-b528eaa64fc4",
+      "name": "Execute scraper for query",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        1072,
+        160
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "content": "## 🛠 Setup\n1. Setup your list of queries in the \"Run workflow\" manual trigger node. Watch  this [video](https://youtu.be/HaiO-UeiKBA) on how to generate the queries with ChatGPT.\n3. Choose a sheet to populate with data in the **Google Sheets node**\n4. Run the workflow and start getting leads into your Google Sheets document",
+        "height": 180,
+        "width": 740,
+        "color": 5
+      },
+      "id": "2519cde8-9bab-40f9-afd8-20d6d0cb69c0",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -336,
+        32
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Optional** 👇\nSet wait time between each query workflow execution. Default is 2 seconds.",
+        "height": 100,
+        "color": 6
+      },
+      "id": "e94c1877-175d-4003-af2e-8ce492f2032f",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1248,
+        48
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Scraper 👇\nThis workflow will be executed in the background for each query. Click the **All executions** tab in the left sidebar to see the executions running.",
+        "height": 100,
+        "width": 480
+      },
+      "id": "62a35ed9-7ba0-4195-b1e0-4b64a128c6d5",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        352,
+        432
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "👆 \n1. Setup your **credentials**. Here's a [video tutorial](https://youtu.be/O5RnWDM27M8) on how to do that.\n\n2. Choose which document and sheet to save the scraped emails to. ",
+        "height": 180,
+        "color": 4
+      },
+      "id": "527bacb0-e0ea-49d7-8e83-094795b02245",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2768,
+        464
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": " ## ⚠️ Note\n\nA [video tutorial](https://youtu.be/HaiO-UeiKBA) for this workflow guide is available on my [Youtube channel](https://www.youtube.com/channel/UCn8xmUBunez1SsDVRfZDUGA)",
+        "color": 3
+      },
+      "id": "bd59f532-7e09-4b0d-a18c-580cabae6023",
       "name": "Sticky Note5",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -128,
-        -144
+        192,
+        -208
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Google Maps Automatic Email Scraper\n\nThis workflow automatically scrapes emails from businesses on Google Maps based on a list of queries that you provide.",
+        "height": 140,
+        "width": 480,
+        "color": 7
+      },
+      "id": "1172b1a8-4159-4f5b-aba2-f757b9cfdca7",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -336,
+        -208
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Optional** 👆\nAdd or change the regex for filtering irrelevant URLs.",
+        "height": 100,
+        "width": 160,
+        "color": 6
+      },
+      "id": "b28020f7-6f61-4d83-a1ce-46bf1dc2dfca",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        704
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Optional** 👆\nAdd or change the regex for filtering irrelevant/incorrect email addresses.",
+        "height": 100,
+        "width": 200,
+        "color": 6
+      },
+      "id": "161816c0-f4bf-46d5-8cdd-695c0e966be2",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2528,
+        432
       ],
       "typeVersion": 1
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Run workflow": [
+      {
+        "json": {
+          "query": "hollywood+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "downtown+los+angeles+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "santa+monica+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "westwood+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "west+l.a.+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "the+valley+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "echo+park+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "culver+city+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "pasadena+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "silver+lake+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "mid-wilshire+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "beverly+hills+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "north+hills+dentist"
+        }
+      },
+      {
+        "json": {
+          "query": "south+los+angeles+dentist"
+        }
+      }
+    ]
+  },
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
@@ -403,16 +741,35 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T23:37:34.725Z",
-      "createdAt": "2025-12-29T23:37:34.725Z",
+      "updatedAt": "2025-05-19T17:48:26.716Z",
+      "createdAt": "2025-05-19T17:48:26.716Z",
       "role": "workflow:owner",
-      "workflowId": "PObTTk94wdtQXXZm",
+      "workflowId": "SMjaGqxDO2ZcVxlZ",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    },
+    {
+      "updatedAt": "2025-12-28T23:46:03.817Z",
+      "createdAt": "2025-12-28T18:02:49.797Z",
+      "id": "vNliFiYFZSU0TQDM",
+      "name": "Ok"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T23:38:20.000Z",
-  "versionId": "81b070c7-79a7-4faf-b16f-1e97dd1b2169"
+  "updatedAt": "2025-12-28T18:37:01.000Z",
+  "versionId": "bb27d234-16f2-4ecf-8984-08aad0558197"
 }
