@@ -2,513 +2,998 @@
   "": "",
   "active": false,
   "connections": {
-    "When Executed by Another Workflow": {
+    "Append or update row in sheet": {
       "main": [
         [
           {
-            "node": "Création de Scénario Vidéo",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Générateur de Prompts Sonores": {
+    "Loop Over Items": {
       "main": [
         [
           {
-            "node": "Envoi de Texte pour Génération Sonore",
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Analyze video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Envoi de Texte pour Génération Sonore": {
+    "Analyze video": {
       "main": [
         [
           {
-            "node": "Sauvegarde sur Google Drive",
+            "node": "AI Agent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Sauvegarde sur Google Drive": {
-      "main": [
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
         [
           {
-            "node": "Partage de Fichier Google Drive",
-            "type": "main",
+            "node": "AI Agent",
+            "type": "ai_languageModel",
             "index": 0
           },
           {
-            "node": "Fusion des Données",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Fusion des Données": {
-      "main": [
-        [
-          {
-            "node": "Exécution de Code Personnalisé",
-            "type": "main",
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Demande de Rendu Vidéo": {
-      "main": [
-        [
-          {
-            "node": "Attente de 60 Secondes",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Attente de 60 Secondes": {
-      "main": [
-        [
-          {
-            "node": "Téléchargement de Vidéo",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Téléchargement de Vidéo": {
-      "main": [
-        [
-          {
-            "node": "Envoi de Vidéo sur Telegram",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Exécution de Code Personnalisé": {
-      "main": [
-        [
-          {
-            "node": "Demande de Rendu Vidéo",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Partage de Fichier Google Drive": {
-      "main": [
-        [
-          {
-            "node": "Fusion des Données",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "Analyseur de Sortie Structurée": {
+    "Structured Output Parser": {
       "ai_outputParser": [
         [
           {
-            "node": "Création de Scénario Vidéo",
+            "node": "AI Agent",
             "type": "ai_outputParser",
             "index": 0
           }
         ]
       ]
     },
-    "Création de Scénario Vidéo": {
+    "AI Agent": {
       "main": [
         [
           {
-            "node": "Séparation des Sorties",
+            "node": "Append or update row in sheet1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Séparation des Sorties": {
+    "Append or update row in sheet1": {
       "main": [
         [
           {
-            "node": "Génération d'Image avec Flux",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Envoi de Vidéo sur Telegram": {
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
       "main": [
         [
           {
-            "node": "Génération de Titre Vidéo",
+            "node": "AI Agent1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Génération de Titre Vidéo": {
-      "main": [
-        [
-          {
-            "node": "Enregistrement dans Airtable",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Interaction avec Modèle OpenAI": {
+    "OpenRouter Chat Model1": {
       "ai_languageModel": [
         [
           {
-            "node": "Générateur de Prompts Sonores",
+            "node": "AI Agent1",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Génération d'Image avec Flux": {
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Idea Generator",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Idea Generator",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Idea Generator",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Idea Generator": {
       "main": [
         [
           {
-            "node": "Exécution de Flux de Travail Secondaire",
+            "node": "Message a model",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Exécution de Flux de Travail Secondaire": {
+    "Create a document": {
       "main": [
         [
           {
-            "node": "Génération de Vidéo avec Kling",
+            "node": "Update a document",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Génération de Vidéo avec Kling": {
+    "Message a model": {
       "main": [
         [
           {
-            "node": "Exécution de Flux de Travail pour Vidéo",
+            "node": "Create a document",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Exécution de Flux de Travail pour Vidéo": {
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Transcribes Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet2": {
       "main": [
         [
           {
-            "node": "Générateur de Prompts Sonores",
+            "node": "Loop Over Items1",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Hashtag": {
+      "main": [
+        [
+          {
+            "node": "Run Scraper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Results from Scraper": {
+      "main": [
+        [
+          {
+            "node": "Is Views over 100k",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Views over 100k": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribes Videos": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Idea Generator",
+            "type": "ai_languageModel",
             "index": 0
           },
           {
-            "node": "Fusion des Données",
-            "type": "main",
+            "node": "Structured Output Parser1",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model": {
+    "GPT": {
       "ai_languageModel": [
         [
           {
-            "node": "Création de Scénario Vidéo",
+            "node": "Idea Generator",
             "type": "ai_languageModel",
-            "index": 0
+            "index": 1
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-09-17T17:44:11.063Z",
-  "id": "DJSjWGEtbeIMLKJj",
+  "createdAt": "2025-12-29T01:41:09.297Z",
+  "id": "DRB9sl8QKYXQlqwN",
   "isArchived": false,
   "meta": null,
-  "name": "Video Content Generator - Audio/Visual AI Pipeline",
+  "name": "ShortForm Beast Mode (Inspirations Tik tok)",
   "nodes": [
     {
-      "parameters": {
-        "workflowInputs": {
-          "values": [
-            {
-              "name": "videoTopic"
-            },
-            {
-              "name": "chatID"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        992,
-        48
-      ],
-      "id": "0d4fbf0c-30e1-4a15-b0b4-815ed4363898",
-      "name": "When Executed by Another Workflow"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Scène : {{ $('Séparation des Sorties').item.json.output }}",
-        "options": {
-          "systemMessage": "=# Contexte\nTu es un Maître Générateur de Prompts Sonores.\nTa mission est de créer des prompts sonores immersifs et évocateurs à partir d’une scène donnée. Ces prompts seront utilisés pour générer un fond sonore correspondant à l’ambiance et au décor de la scène.\n\n## Instructions\n* Génère un prompt d’une à deux phrases capturant l’ambiance, le ton et les éléments sonores clés\n* Utilise un langage riche et sensoriel pour décrire l’atmosphère de fond, en mettant l’accent sur des sons spécifiques (ex. : pas sur des pavés, conversations lointaines, vent dans les feuilles, musique en sourdine, bourdonnement industriel)\n* Concentre-toi uniquement sur l’audio de fond — pas de dialogue, de narration ni d’effets sonores au premier plan\n* Adapte-toi à l’émotion et au cadre de la scène : calme, chaotique, inquiétant, festif, serein, etc.\n* Évite les descriptions vagues ; sois précis et immersif\n* N’inclus jamais de guillemets (\"\") ni de sauts de ligne (\\n)\n\n## Sortie\nAffiche uniquement le prompt sonore final, prêt à être utilisé par un modèle de génération audio.\n"
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.7,
-      "position": [
-        992,
-        1104
-      ],
-      "id": "4b4cf841-c609-49ee-b383-6bd40e8ec2e7",
-      "name": "Générateur de Prompts Sonores"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.elevenlabs.io/v1/sound-generation",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "text",
-              "value": "={{ $json.output.replace(/\"/g, '') }}"
-            },
-            {
-              "name": "duration_seconds",
-              "value": "5"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1392,
-        1104
-      ],
-      "id": "9db5f135-3ff3-4298-8a5f-fe88ed008a01",
-      "name": "Envoi de Texte pour Génération Sonore"
-    },
-    {
-      "parameters": {
-        "name": "={{ $('Exécution de Flux de Travail pour Vidéo').item.json.fields['ID Requette'] }}.mp3",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "value": "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW",
-          "mode": "list",
-          "cachedResultName": "Medias",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        1600,
-        1104
-      ],
-      "id": "60d5259b-edf8-46d9-97ff-ce0512ff560a",
-      "name": "Sauvegarde sur Google Drive"
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combineBy": "combineByPosition",
-        "numberInputs": 3,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
-      "position": [
-        2112,
-        1088
-      ],
-      "id": "ce1a7fa5-ec13-44be-a863-373df996f49b",
-      "name": "Fusion des Données"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.creatomate.com/v1/renders",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"template_id\": \"b671d213-c388-4390-8180-a4dd31b7aa9b\",\n  \"modifications\": {\n    \"Video-1.source\": \"{{ $json.groupedLinks[0].link }}\",\n    \"Video-2.source\": \"{{ $json.groupedLinks[1].link }}\",\n    \"Video-3.source\": \"{{ $json.groupedLinks[2].link }}\",\n    \"Video-4.source\": \"{{ $json.groupedLinks[3].link }}\",\n    \"Audio-1.source\": \"{{ $json.groupedLinks[0].weblink }}\",\n    \"Audio-2.source\": \"{{ $json.groupedLinks[1].weblink }}\",\n    \"Audio-3.source\": \"{{ $json.groupedLinks[2].weblink }}\",\n    \"Audio-4.source\": \"{{ $json.groupedLinks[3].weblink }}\"\n  }\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2560,
-        1104
-      ],
-      "id": "478aafd5-b404-49f3-b44d-149245225662",
-      "name": "Demande de Rendu Vidéo"
-    },
-    {
-      "parameters": {
-        "amount": 90
-      },
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        2784,
-        1104
-      ],
-      "id": "6f38bf9d-ac85-451a-a278-482699e17b99",
-      "name": "Attente de 60 Secondes",
-      "webhookId": "d5cd29e8-d3f7-491c-a6b6-2d705aa47931"
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.url }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        3008,
-        1104
-      ],
-      "id": "23a4ca40-1d32-4676-a4a5-8d565b8f83ac",
-      "name": "Téléchargement de Vidéo"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Get all input items\nconst inputItems = $input.all();\n\n// Build the array of objects\nconst groupedArray = inputItems.map(item => {\n  return {\n    link: item.json.fields?.Lien || null,\n    weblink: item.json.webViewLink || null,\n  };\n});\n\n// Return a single item with the array\nreturn [{\n  json: {\n    groupedLinks: groupedArray\n  }\n}];\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2320,
-        1104
-      ],
-      "id": "1bd5759a-16ce-49d4-a22b-119aeef0e519",
-      "name": "Exécution de Code Personnalisé"
-    },
-    {
-      "parameters": {
-        "operation": "share",
-        "fileId": {
-          "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id"
-        },
-        "permissionsUi": {
-          "permissionsValues": {
-            "role": "reader",
-            "type": "anyone",
-            "allowFileDiscovery": true
-          }
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        1552,
-        1664
-      ],
-      "id": "32d17379-26c8-4d90-9f3d-f882f62c9b30",
-      "name": "Partage de Fichier Google Drive"
-    },
-    {
-      "parameters": {
-        "jsonSchemaExample": "{\n  \"Part 1\": \"Prompt for part 1\",\n  \"Part 2\": \"Prompt for part 2\",\n  \"Part 3\": \"Prompt for part 3\",\n  \"Part 4\": \"Prompt for part 4\"\n}\n"
-      },
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "typeVersion": 1.2,
-      "position": [
-        1408,
-        288
-      ],
-      "id": "16dcc851-d32b-4e7a-9e9b-94f87397118a",
-      "name": "Analyseur de Sortie Structurée"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Sujet de la vidéo : {{ $json.videoTopic }}",
-        "hasOutputParser": true,
-        "options": {
-          "systemMessage": "=# Contexte\nTu es un Maître Agent de Structuration Visuelle Narrative.\nTa mission est de prendre un sujet de courte vidéo et de le diviser en quatre parties formant ensemble une histoire visuelle cohérente et vivante, optimisée pour la génération d’images à partir de texte.\n\n## Instructions\n* Crée exactement quatre parties : Partie 1, Partie 2, Partie 3, et Partie 4\n* Décris le sujet principal de l’histoire de manière strictement identique dans chaque partie (même apparence, style, nom si donné, etc.)\n* Chaque partie doit s’appuyer sur la précédente pour construire un récit visuel complet\n* Chaque partie doit être rédigée comme un prompt d’image détaillé, de qualité professionnelle, compatible avec des modèles comme Flux\n* Sois très précis : décris les personnages, décors, vêtements, objets, expressions, actions, arrière-plans, etc.\n* Utilise un langage riche et imaginatif, visuellement dense\n* Évite les termes génériques — sois toujours spécifique et coloré\n* Aucune guillemet (\"\") ni saut de ligne (\\n)\n* L’ensemble doit être fluide et directement exploitable par un modèle de génération d’images\n\n## Éléments clés à inclure dans chaque partie\n* Description claire des sujets principaux (apparence, tenues, expressions, postures)\n* Accessoires ou objets qui enrichissent la scène\n* Un décor détaillé cohérent avec le thème\n* Progression logique et visuelle d’une partie à l’autre\n\n## Format de sortie\n* Partie 1 : [Prompt d’image détaillé pour la Partie 1]\n* Partie 2 : [Prompt d’image détaillé pour la Partie 2]\n* Partie 3 : [Prompt d’image détaillé pour la Partie 3]\n* Partie 4 : [Prompt d’image détaillé pour la Partie 4]\n\nAffiche uniquement ces quatre champs.\nL’histoire visuelle complète doit paraître cinématographique, immersive et cohérente visuellement."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.9,
-      "position": [
-        1200,
-        48
-      ],
-      "id": "3c5453e4-5147-49b8-9204-7c0a5e88cf5e",
-      "name": "Création de Scénario Vidéo"
-    },
-    {
-      "parameters": {
-        "fieldToSplitOut": "output",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.splitOut",
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1568,
-        48
+        -912,
+        576
       ],
-      "id": "eae97f5c-eca5-493f-a6f5-a3ce54a87afb",
-      "name": "Séparation des Sorties"
+      "id": "bced24c9-1d71-48ec-b7ea-9456d31f8696",
+      "name": "When clicking ‘Execute workflow’"
     },
     {
       "parameters": {
-        "operation": "sendVideo",
-        "chatId": "={{ $('When Executed by Another Workflow').first().json.chatID }}",
-        "binaryData": true,
-        "additionalFields": {}
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU",
+          "mode": "list",
+          "cachedResultName": "Copy of ShortForm Beast Mode",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19l-shnUR6gBxdYxNgZ8ZG9veQ8Pnv-9oy30gNRJ7ggY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "={{ $json.webVideoUrl }}",
+            "Post Date": "={{ $json.createTimeISO }}",
+            "Video Length": "={{ $json.videoMeta.duration }}",
+            "Views": "={{ $json.playCount }}",
+            "Likes": "={{ $json.diggCount }}",
+            "Comments": "={{ $json.commentCount }}",
+            "Shares": "={{ $json.shareCount }}",
+            "Hashtags": "={{ $json.hashtags.map(h => h.name).join(\", \") }}",
+            "CTA": "={{ $json.authorMeta.bioLink }}",
+            "Music": "={{ $json.musicMeta.musicName }}",
+            "Engagement Rate": "=",
+            "Media Url": "={{ $json.mediaUrls.join(\", \") }}"
+          },
+          "matchingColumns": [
+            "Video URL"
+          ],
+          "schema": [
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Media Url",
+              "displayName": "Media Url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Post Date",
+              "displayName": "Post Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video Length",
+              "displayName": "Video Length",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Views",
+              "displayName": "Views",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Likes",
+              "displayName": "Likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Comments",
+              "displayName": "Comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Shares",
+              "displayName": "Shares",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Engagement Rate",
+              "displayName": "Engagement Rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Main Theme",
+              "displayName": "Main Theme",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Music",
+              "displayName": "Music",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hashtags",
+              "displayName": "Hashtags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CTA",
+              "displayName": "CTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
       "position": [
-        3232,
-        1104
+        -272,
+        576
       ],
-      "id": "7d31e5cf-e4c3-4b11-94d3-2a817f32cab9",
-      "name": "Envoi de Vidéo sur Telegram",
-      "webhookId": "cdeb2987-d275-480b-8532-f69bbed64999"
+      "id": "e782dd41-889e-4d21-8c33-6b85af6a14aa",
+      "name": "Append or update row in sheet"
+    },
+    {
+      "parameters": {
+        "batchSize": 3,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        0,
+        576
+      ],
+      "id": "119a87a3-c3f8-498a-a533-d42acaf1fba4",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash-lite",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash-lite"
+        },
+        "text": "You are an expert content analyst specializing in short-form videos.  \nAnalyze the following video and extract ONLY these three elements:  \n\n1. **Hook** – Write exactly what happens or is said in the first 3–5 seconds that captures attention. If they talk extract the words.  \n2. **Main Theme** – Summarize the central idea, topic, or message of the video.  \n3. **Format** – Identify the style of the video (e.g., tutorial, storytelling, POV, reaction, meme, trend-based, skit, voiceover with clips, etc.).  \n\nProvide the output in **JSON format** like this:\n{\n  \"hook\": \"...\",\n  \"main_theme\": \"...\",\n  \"format\": \"...\"\n}\n\nIf the video doesn’t clearly show one of these, infer the closest reasonable answer.",
+        "videoUrls": "={{ $json[\"Media Url\"] }}",
+        "options": {
+          "maxOutputTokens": 512
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f7ddd201-96b1-499e-874f-c8d72753b61c",
+      "name": "Analyze video",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=turn the text provided into proper json format\n\n{{ $json.content.parts[0].text }}\n\n\nalso figure out the engagment rate using:\n\nviews: {{ $('Loop Over Items').item.json.Views }}\nshares: {{ $('Loop Over Items').item.json.Shares }}\n\noutput engatment rate as a precent make sure the precent has max 2 decimals points for example 0.23\n\nmake sure to always give an output if you cannot find information put \"null\"",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        176,
+        0
+      ],
+      "id": "de61ac1a-1163-48c8-9e2f-2480becf64fb",
+      "name": "AI Agent",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        0,
+        224
+      ],
+      "id": "011d65be-9ea4-4d33-a965-918bf9330b37",
+      "name": "OpenRouter Chat Model"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"hook\": \"\",\n\t\"main_theme\": \"\",\n    \"format\": \"\",\n    \"engagment_rate\" : 1.2\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        128,
+        208
+      ],
+      "id": "b30e0d65-dc1b-483a-a352-7a415a6e48fc",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU",
+          "mode": "list",
+          "cachedResultName": "Copy of ShortForm Beast Mode",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19l-shnUR6gBxdYxNgZ8ZG9veQ8Pnv-9oy30gNRJ7ggY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "={{ $('Loop Over Items').item.json[\"Video URL\"] }}",
+            "Media Url": "={{ $('Loop Over Items').item.json[\"Media Url\"] }}",
+            "Post Date": "={{ $('Loop Over Items').item.json[\"Post Date\"] }}",
+            "Video Length": "={{ $('Loop Over Items').item.json[\"Video Length\"] }}",
+            "Views": "={{ $('Loop Over Items').item.json.Views }}",
+            "Likes": "={{ $('Loop Over Items').item.json.Likes }}",
+            "Comments": "={{ $('Loop Over Items').item.json.Comments }}",
+            "Shares": "={{ $('Loop Over Items').item.json.Shares }}",
+            "Hashtags": "={{ $('Loop Over Items').item.json.Hashtags }}",
+            "CTA": "={{ $('Loop Over Items').item.json.CTA }}",
+            "Music": "={{ $('Loop Over Items').item.json.Music }}",
+            "Hook": "={{ $json.output.hook }}",
+            "Engagement Rate": "=%{{ $json.output.engagment_rate }}",
+            "Main Theme": "={{ $json.output.main_theme }}",
+            "Format": "={{ $json.output.format }}"
+          },
+          "matchingColumns": [
+            "Video URL"
+          ],
+          "schema": [
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Media Url",
+              "displayName": "Media Url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Post Date",
+              "displayName": "Post Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video Length",
+              "displayName": "Video Length",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Views",
+              "displayName": "Views",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Likes",
+              "displayName": "Likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Comments",
+              "displayName": "Comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Shares",
+              "displayName": "Shares",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Engagement Rate",
+              "displayName": "Engagement Rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Main Theme",
+              "displayName": "Main Theme",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Music",
+              "displayName": "Music",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hashtags",
+              "displayName": "Hashtags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CTA",
+              "displayName": "CTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        0,
+        368
+      ],
+      "id": "07f9f0f3-f9c5-4b6f-8e32-e15f7419efd7",
+      "name": "Append or update row in sheet1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        400,
+        192
+      ],
+      "id": "987fa61c-30ed-4608-a3f0-c508482dd13e",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        128
+      ],
+      "id": "ead831fc-6175-4577-a467-42db8d7f5012",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        128
+      ],
+      "id": "f59fd1f7-5c3d-44b3-bd4e-4342af272bfe",
+      "name": "When chat message received",
+      "webhookId": "cfe268a6-6ace-456c-af9a-8b1c5bab197d"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        832,
+        320
+      ],
+      "id": "2c3b6d3e-fb86-455d-a094-0c0928cc1953",
+      "name": "OpenRouter Chat Model1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        992,
+        336
+      ],
+      "id": "0ba7cde7-8867-4bec-9217-5bbf25cb4492",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU",
+          "mode": "list",
+          "cachedResultName": "Copy of ShortForm Beast Mode",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "dropshipping",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        1152,
+        320
+      ],
+      "id": "3f802f84-6df8-4ea9-afa1-9c561df58fa5",
+      "name": "Get row(s) in sheet in Google Sheets"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU",
+          "mode": "list",
+          "cachedResultName": "Copy of ShortForm Beast Mode",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "dropshipping",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        848,
+        928
+      ],
+      "id": "d358ac3c-cf7c-424f-ac27-57c8490ce73f",
+      "name": "Get row(s) in sheet in Google Sheets1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        848
+      ],
+      "id": "ef9a29a8-681b-4c6d-a7e0-d96cedb2e705",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"ideas\": [\n    {\n      \"hook\": \"string, 1–2 sentences\",\n      \"script\": \"string, 15–30 seconds spoken\",\n      \"songs\": [\n        {\n          \"title\": \"string\",\n          \"artist\": \"string\"\n        }\n      ],\n      \"hashtags\": [\n        \"string1\",\n        \"string2\"\n      ]\n    }\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        736
+      ],
+      "id": "dd0a1d3a-6fbc-4fdf-b6ac-90c98a0fd70e",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Using the data from the provided sheet about viral content trends, please create 5 unique talking head video ideas. Each idea should include:\n\nA strong, attention-grabbing viral-style hook similar to those in the sheet data.\nA concise script that lasts between 15 to 30 seconds when spoken.\nActual song recommendations of popular or trending TikTok sounds or music that suit the mood and message of the video. Suggest specific song titles and artists.\nRelevant hashtags to enhance virality and reach.\nThe video ideas should be simple to film and focus on content consistent with the sheet's content trends.\nUse the transcripts in the sheet to get an idea of what a viral script looks like and use it to create the script.\n\nPlease format the output clearly, listing each video idea with the hook, full script, song recommendation, and hashtags.\"\n\nOUTPUT RULES:\n- Return a single JSON object only. No prose, no markdown, no code fences.\n- Schema:\n  {\n    \"ideas\": [\n      {\n        \"hook\": \"string, 1–2 sentences\",\n        \"script\": \"string, 15–30 seconds spoken\",\n        \"songs\": [{\"title\":\"string\",\"artist\":\"string\"}],\n        \"hashtags\": [\"string\", \"string\", ...]\n      }\n    ]\n  }",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        640,
+        544
+      ],
+      "id": "e62f9f3e-7db3-4d76-92ac-0c8d17940723",
+      "name": "Idea Generator"
+    },
+    {
+      "parameters": {
+        "folderId": "default",
+        "title": "VideosIdea"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        544
+      ],
+      "id": "bb439e79-bf3c-4826-aa99-e29c463331b4",
+      "name": "Create a document"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('Message a model').item.json.message.content.output }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1696,
+        544
+      ],
+      "id": "2d92ffcc-28f2-495e-a821-1f8149630fd3",
+      "name": "Update a document"
     },
     {
       "parameters": {
@@ -521,423 +1006,224 @@
         "messages": {
           "values": [
             {
-              "content": "=Video: {{ $('When Executed by Another Workflow').first().json.videoTopic }}"
+              "content": "={{ JSON.stringify($json.output) }}"
             },
             {
-              "content": "Crée un titre de 3 à 4 mots pour la vidéo donnée.",
+              "content": "out put this data under one variable:\n\n{\"output\": \"\"}\n\nmake sure its proper json\n\nalso turn the data into text that i will send to google docs so make sure the formatting is good",
               "role": "system"
             }
           ]
         },
+        "jsonOutput": true,
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        3440,
-        1104
+        1040,
+        544
       ],
-      "id": "06423bd4-1795-47b9-92b7-31e2fa0608b9",
-      "name": "Génération de Titre Vidéo"
+      "id": "221aab79-75df-485d-80f0-74b2f0e3d99f",
+      "name": "Message a model"
     },
     {
       "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "gpt-4.1-mini"
-        },
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
       "position": [
-        1088,
-        1328
+        256,
+        560
       ],
-      "id": "8c2d60cb-6851-4e67-a3a5-5bf91efaee82",
-      "name": "Interaction avec Modèle OpenAI"
+      "id": "2011a146-c4ae-456e-8a66-41b6c38c2c9d",
+      "name": "Loop Over Items1"
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.wavespeed.ai/api/v3/wavespeed-ai/flux-dev",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "enable_base64_output",
-              "value": "false"
-            },
-            {
-              "name": "enable_safety_checker",
-              "value": "true"
-            },
-            {
-              "name": "enable_sync_mode",
-              "value": "false"
-            },
-            {
-              "name": "guidance_scale",
-              "value": "3.5"
-            },
-            {
-              "name": "num_images",
-              "value": "1"
-            },
-            {
-              "name": "num_inference_steps",
-              "value": "28"
-            },
-            {
-              "name": "output_format",
-              "value": "jpeg"
-            },
-            {
-              "name": "prompt",
-              "value": "={{ $json.output }}"
-            },
-            {
-              "name": "seed",
-              "value": "-1"
-            },
-            {
-              "name": "size",
-              "value": "864*1536"
-            },
-            {
-              "name": "strength",
-              "value": "0.8"
-            }
-          ]
-        },
-        "options": {
-          "redirect": {
-            "redirect": {}
-          }
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        992,
-        480
-      ],
-      "id": "6ec8acf8-649a-4232-94fe-aa699f4191f2",
-      "name": "Génération d'Image avec Flux"
-    },
-    {
-      "parameters": {
-        "workflowId": {
+        "operation": "appendOrUpdate",
+        "documentId": {
           "__rl": true,
-          "value": "usYkBA2Qc6ZOBkCj",
+          "value": "1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU",
           "mode": "list",
-          "cachedResultName": "0.1 - Attente Workflow"
+          "cachedResultName": "Copy of ShortForm Beast Mode",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-Q5uwU5R_QoYVaq9fU1mYYdP1cOpK918aZzv93AwTwU/edit?usp=drivesdk"
         },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "id_request": "={{ $json.data.id }}",
-            "request": "={{ $json.data.urls.get }}",
-            "type": "raw_image"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "id_request",
-              "displayName": "id_request",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "request",
-              "displayName": "request",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "type",
-              "displayName": "type",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "mode": "each",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.2,
-      "position": [
-        1200,
-        480
-      ],
-      "id": "1b0d7522-e626-4fc4-ae74-892fcc196451",
-      "name": "Exécution de Flux de Travail Secondaire",
-      "executeOnce": false
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.wavespeed.ai/api/v3/kwaivgi/kling-v1.6-i2v-standard",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "duration",
-              "value": "5"
-            },
-            {
-              "name": "guidance_scale",
-              "value": "0.5"
-            },
-            {
-              "name": "prompt",
-              "value": "={{ $('Séparation des Sorties').item.json.output }}"
-            },
-            {
-              "name": "image",
-              "value": "={{ $json.fields.Lien }}"
-            }
-          ]
-        },
-        "options": {
-          "redirect": {
-            "redirect": {}
-          }
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        992,
-        800
-      ],
-      "id": "caf6bde0-49f5-4221-9f60-ac7a8dc50873",
-      "name": "Génération de Vidéo avec Kling"
-    },
-    {
-      "parameters": {
-        "workflowId": {
+        "sheetName": {
           "__rl": true,
-          "value": "usYkBA2Qc6ZOBkCj",
+          "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "0.1 - Attente Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "id_request": "={{ $json.data.id }}",
-            "request": "={{ $json.data.urls.get }}",
-            "type": "raw_video"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "id_request",
-              "displayName": "id_request",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "request",
-              "displayName": "request",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "type",
-              "displayName": "type",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "mode": "each",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.2,
-      "position": [
-        1200,
-        800
-      ],
-      "id": "c6369368-9e54-4cb2-9034-39c41bac9fc1",
-      "name": "Exécution de Flux de Travail pour Vidéo",
-      "executeOnce": false
-    },
-    {
-      "parameters": {
-        "operation": "create",
-        "base": {
-          "__rl": true,
-          "value": "apprrk8BzFraLVbsx",
-          "mode": "list",
-          "cachedResultName": "Marketing Team",
-          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tbl4mN27ieDO845l2",
-          "mode": "list",
-          "cachedResultName": "DashBoard",
-          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
+          "cachedResultName": "selfimprovement",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19l-shnUR6gBxdYxNgZ8ZG9veQ8Pnv-9oy30gNRJ7ggY/edit#gid=0"
         },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "Titre": "={{ $json.message.content }}",
-            "Type": "Vidéo",
-            "Requette": "={{ $('When Executed by Another Workflow').first().json.videoTopic }}",
-            "Status": "Terminé",
-            "Lien": "={{ $('Téléchargement de Vidéo').item.json.url }}"
+            "Video URL": "={{ $('Loop Over Items1').item.json[\"Video URL\"] }}",
+            "Media Url": "={{ $('Loop Over Items1').item.json[\"Media Url\"] }}",
+            "Post Date": "={{ $('Loop Over Items1').item.json[\"Post Date\"] }}",
+            "Video Length": "={{ $('Loop Over Items1').item.json[\"Video Length\"] }}",
+            "Views": "={{ $('Loop Over Items1').item.json.Views }}",
+            "Likes": "={{ $('Loop Over Items1').item.json.Likes }}",
+            "Comments": "={{ $('Loop Over Items1').item.json.Comments }}",
+            "Shares": "={{ $('Loop Over Items1').item.json.Shares }}",
+            "Engagement Rate": "={{ $('Loop Over Items1').item.json[\"Engagement Rate\"] }}",
+            "Hook": "={{ $('Loop Over Items1').item.json.Hook }}",
+            "Main Theme": "={{ $('Loop Over Items1').item.json[\"Main Theme\"] }}",
+            "Format": "={{ $('Loop Over Items1').item.json.Format }}",
+            "Music": "={{ $('Loop Over Items1').item.json.Music }}",
+            "Hashtags": "={{ $('Loop Over Items1').item.json.Hashtags }}",
+            "CTA": "={{ $('Loop Over Items1').item.json.CTA }}",
+            "Transcript": "={{ $json.transcript }}"
           },
-          "matchingColumns": [],
+          "matchingColumns": [
+            "Video URL"
+          ],
           "schema": [
             {
-              "id": "ID",
-              "displayName": "ID",
+              "id": "Video URL",
+              "displayName": "Video URL",
               "required": false,
               "defaultMatch": false,
-              "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": true,
-              "removed": true
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
-              "id": "Titre",
-              "displayName": "Titre",
+              "id": "Media Url",
+              "displayName": "Media Url",
               "required": false,
               "defaultMatch": false,
-              "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": false,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
-              "id": "Type",
-              "displayName": "Type",
+              "id": "Post Date",
+              "displayName": "Post Date",
               "required": false,
               "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "raw_image",
-                  "value": "raw_image"
-                },
-                {
-                  "name": "raw_audio",
-                  "value": "raw_audio"
-                },
-                {
-                  "name": "raw_video",
-                  "value": "raw_video"
-                },
-                {
-                  "name": "Vidéo",
-                  "value": "Vidéo"
-                },
-                {
-                  "name": "Post",
-                  "value": "Post"
-                },
-                {
-                  "name": "Image",
-                  "value": "Image"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Status",
-              "displayName": "Status",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "Erreur",
-                  "value": "Erreur"
-                },
-                {
-                  "name": "En cours",
-                  "value": "En cours"
-                },
-                {
-                  "name": "Terminé",
-                  "value": "Terminé"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Requette",
-              "displayName": "Requette",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": false,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
-              "id": "ID Requette",
-              "displayName": "ID Requette",
+              "id": "Video Length",
+              "displayName": "Video Length",
               "required": false,
               "defaultMatch": false,
-              "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": false,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
-              "id": "Lien",
-              "displayName": "Lien",
+              "id": "Views",
+              "displayName": "Views",
               "required": false,
               "defaultMatch": false,
-              "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": false,
-              "removed": false
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Likes",
+              "displayName": "Likes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Comments",
+              "displayName": "Comments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Shares",
+              "displayName": "Shares",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Engagement Rate",
+              "displayName": "Engagement Rate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Main Theme",
+              "displayName": "Main Theme",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Music",
+              "displayName": "Music",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hashtags",
+              "displayName": "Hashtags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CTA",
+              "displayName": "CTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Transcript",
+              "displayName": "Transcript",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             }
           ],
           "attemptToConvertTypes": false,
@@ -945,1592 +1231,156 @@
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
       "position": [
-        3840,
-        1104
+        256,
+        704
       ],
-      "id": "78cf1ecb-23f6-4209-b3fa-dafa7eddf385",
-      "name": "Enregistrement dans Airtable"
+      "id": "cee509fe-7937-450f-bede-cad5234ac7d5",
+      "name": "Append or update row in sheet2"
     },
     {
       "parameters": {
-        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé a pour objectif de créer des prompts sonores et visuels à partir de sujets vidéo, de générer des contenus multimédias correspondants, puis de les stocker et partager efficacement. Il utilise plusieurs services externes pour le traitement de texte, la génération d'images et de sons, et le stockage de fichiers.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe processus commence par un déclencheur qui active le workflow lorsqu'un sujet vidéo est reçu. Ce sujet est ensuite structuré en plusieurs parties pour créer un scénario visuel cohérent.\n\n### 🔍 Section Traitement et Analyse\nDans cette section, le sujet vidéo est analysé et transformé en prompts détaillés pour la génération d'images et de sons. Les prompts sonores sont générés pour capturer l'ambiance et les éléments sonores clés de la scène. Simultanément, des prompts visuels sont créés pour décrire chaque partie du scénario vidéo.\n\n### 🎨 Section Génération de Contenus\nLes prompts générés sont utilisés pour créer des contenus multimédias. Les prompts sonores sont envoyés à un service de génération sonore pour produire des fichiers audio. Les prompts visuels sont traités pour générer des images et des vidéos qui illustrent le scénario.\n\n### ⚡ Section Actions et Sorties\nLes fichiers multimédias générés sont ensuite sauvegardés sur Google Drive et partagés via des liens accessibles. Les vidéos sont également envoyées sur Telegram pour une distribution rapide. Enfin, les détails des contenus générés sont enregistrés dans Airtable pour un suivi et une gestion efficaces.\n\n## 🔗 Liens Utiles\n- [Airtable](https://airtable.com)\n- [Wavespeed](https://wavespeed.ai/?utm_source=Thomas_Berton)\n- [Google Drive](https://drive.google.com)\n- [Telegram](https://telegram.org)\n- [Eleven Labs](https://elevenlabs.io)\n- [Creatomate](https://creatomate.com)",
-        "height": 916,
-        "width": 800,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        528
-      ],
-      "typeVersion": 1,
-      "id": "a9fea560-65cb-498e-9f2f-bee343a3a748",
-      "name": "Workflow Overview"
-    },
-    {
-      "parameters": {
-        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
-        "height": 400,
-        "width": 800,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        0
-      ],
-      "typeVersion": 1,
-      "id": "3b76bd9a-30a3-4a94-a16f-2250c41d4079",
-      "name": "Signature"
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "claude-sonnet-4-20250514",
-          "cachedResultName": "Claude 4 Sonnet"
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f95baad4-a887-425e-9892-393ca9e828d2",
+              "name": "hashtag",
+              "value": "mechanic",
+              "type": "string"
+            }
+          ]
         },
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        1200,
-        288
+        -704,
+        304
       ],
-      "id": "f508a47e-fd40-46c1-8cb5-b8900a80752b",
-      "name": "Anthropic Chat Model"
+      "id": "e97abbac-b220-45ce-9a5e-a004c0828f18",
+      "name": "Set Hashtag"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/clockworks~tiktok-hashtag-scraper/runs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"hashtags\": [\n        \"{{ $json.hashtag }}\"\n    ],\n    \"resultsPerPage\": 200,\n    \"shouldDownloadCovers\": true,\n    \"shouldDownloadSlideshowImages\": true,\n    \"shouldDownloadSubtitles\": true,\n    \"shouldDownloadVideos\": true\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -400,
+        304
+      ],
+      "id": "a5298e1d-b9c9-421d-826f-b51172186d1c",
+      "name": "Run Scraper"
+    },
+    {
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/clockworks~tiktok-hashtag-scraper/runs/last/dataset/items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -704,
+        576
+      ],
+      "id": "318ef59c-dae9-422b-bada-548213aef79a",
+      "name": "Get Results from Scraper"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "536f24ff-b3ba-438a-a19f-fbc9f33a6b08",
+              "leftValue": "={{ $json.playCount }}",
+              "rightValue": 100000,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -496,
+        576
+      ],
+      "id": "67fc95a1-4b87-439c-b5b5-e1eb7cbb0a9d",
+      "name": "Is Views over 100k"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/tictechid~anoxvanzi-transcriber/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"start_urls\": \"{{ $json[\"Video URL\"] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        256,
+        864
+      ],
+      "id": "28a160df-f35a-49d2-9c9c-ed49e45a1dc8",
+      "name": "Transcribes Videos"
+    },
+    {
+      "parameters": {
+        "model": "anthropic/claude-3.5-sonnet",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        496,
+        800
+      ],
+      "id": "cd5791e2-912e-4bf7-bafa-4bffbb050ae9",
+      "name": "Anthropic"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        608,
+        896
+      ],
+      "id": "421a3b6f-cd3c-4b0c-b98f-dab5d56454bb",
+      "name": "GPT"
     }
   ],
-  "pinData": {
-    "When Executed by Another Workflow": [
-      {
-        "json": {
-          "videoTopic": "point-of-view de moi-même en train de travailler sur mon ordinateur dans un café à Paris, travaillant sur des lignes de code en tant que développeur informatique",
-          "chatID": 7952797797
-        }
-      }
-    ],
-    "Générateur de Prompts Sonores": [
-      {
-        "json": {
-          "output": "Ambiance matinale chaleureuse d’un café parisien, avec le cliquetis rythmé des touches rétroéclairées, le murmure lointain des conversations feutrées, le léger soufflé du café chaud bientôt siroté, le grésillement discret d’une machine à espresso en fond, et la douce lumière dorée filtrant à travers les grandes fenêtres, caressant les surfaces boisées et l’écran brillant du MacBook."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance sonore d’un café parisien calme avec un léger murmure feutré de conversations en arrière-plan, le cliquetis rythmé et doux des touches d’un clavier MacBook Pro se mêlant aux tintements distants de tasses et aux pas discrets d’un serveur en tablier noir, le tout baigné par la clarté et la fraîcheur d’une matinée lumineuse."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance feutrée d’un café parisien avec sons doux de conversations distantes, cliquetis subtil des touches de clavier, tintement léger de tasse vide déplacée sur la table, le bourdonnement intermittent des machines à café et des pas sur le parquet se mêlant au léger froissement des pages du carnet feuilleté."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance feutrée d’un café parisien baigné de lumière dorée d’après-midi, avec le doux murmure des claviers d’ordinateurs, le murmure discret des conversations techniques et créatives, le léger cliquetis de tasses à café fraîchement servies et le bruissement lointain de pages tournées dans un carnet posé sur une table voisine."
-        }
-      }
-    ],
-    "Envoi de Texte pour Génération Sonore": [
-      {
-        "json": {
-          "output": "Ambiance matinale chaleureuse d’un café parisien, avec le cliquetis rythmé des touches rétroéclairées, le murmure lointain des conversations feutrées, le léger soufflé du café chaud bientôt siroté, le grésillement discret d’une machine à espresso en fond, et la douce lumière dorée filtrant à travers les grandes fenêtres, caressant les surfaces boisées et l’écran brillant du MacBook."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance sonore d’un café parisien calme avec un léger murmure feutré de conversations en arrière-plan, le cliquetis rythmé et doux des touches d’un clavier MacBook Pro se mêlant aux tintements distants de tasses et aux pas discrets d’un serveur en tablier noir, le tout baigné par la clarté et la fraîcheur d’une matinée lumineuse."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance feutrée d’un café parisien avec sons doux de conversations distantes, cliquetis subtil des touches de clavier, tintement léger de tasse vide déplacée sur la table, le bourdonnement intermittent des machines à café et des pas sur le parquet se mêlant au léger froissement des pages du carnet feuilleté."
-        }
-      },
-      {
-        "json": {
-          "output": "Ambiance feutrée d’un café parisien baigné de lumière dorée d’après-midi, avec le doux murmure des claviers d’ordinateurs, le murmure discret des conversations techniques et créatives, le léger cliquetis de tasses à café fraîchement servies et le bruissement lointain de pages tournées dans un carnet posé sur une table voisine."
-        }
-      }
-    ],
-    "Sauvegarde sur Google Drive": [
-      {
-        "json": {
-          "kind": "drive#file",
-          "id": "1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0",
-          "name": "83f2e6f50fe046feaca9d5aeb9ea3c45.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "createdTime": "2025-09-02T09:07:02.896Z",
-          "modifiedTime": "2025-09-02T09:07:03.719Z",
-          "modifiedByMeTime": "2025-09-02T09:07:03.719Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "28b79d8dc628932600bbe11b94c893ef",
-          "sha1Checksum": "09369affbfaa6add8552d5ffdb5dcfbc156a0f73",
-          "sha256Checksum": "ae7370ef45e8cff1ada1445cc0ccb8fd840649029a1d899b84be53c1f8f4417d",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqQU5kaWJDYWFaNXduY1lCaVo5SllZQ2p1RFQ4PQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#file",
-          "id": "1O8kdga7qQqVRTTwRLTaicQJIjOP_curT",
-          "name": "22307ef71eb04525a7ee3b5b352bfe72.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1O8kdga7qQqVRTTwRLTaicQJIjOP_curT&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "createdTime": "2025-09-02T09:07:04.996Z",
-          "modifiedTime": "2025-09-02T09:07:05.506Z",
-          "modifiedByMeTime": "2025-09-02T09:07:05.506Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "866c6117d2b4ad6c1549f41fbc14a815",
-          "sha1Checksum": "4abfe99e4f232994c12efc3970a3b43c85847db0",
-          "sha256Checksum": "8e5d9a1d0a57849741e905f35a74bcb67e903c5598534764d7586fefe83eeef8",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqMjk3RityQmhDTks4TjBnc0FiRjNHZzFwRzVBPQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#file",
-          "id": "12cINjQLX8QodjAjeYvL536-8W0HBw2u1",
-          "name": "7dc382158c77491c9017796a484dd3ce.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=12cINjQLX8QodjAjeYvL536-8W0HBw2u1&export=download",
-          "webViewLink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "createdTime": "2025-09-02T09:07:06.752Z",
-          "modifiedTime": "2025-09-02T09:07:07.417Z",
-          "modifiedByMeTime": "2025-09-02T09:07:07.417Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "6b5d7268cdddff88b3131f09d9538490",
-          "sha1Checksum": "e42b2a517e6377bbb81d790433a41751a6082b64",
-          "sha256Checksum": "4ab12e32ac0a96bec86478538b667aa18d6542e780758f64b20379415b3198da",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqUjdOa2ZUdkw4N3h4ZlR1dTdxWjhUbkRwSzdJPQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#file",
-          "id": "1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf",
-          "name": "3753db19d532413dad2c6249c43276f6.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "createdTime": "2025-09-02T09:07:08.772Z",
-          "modifiedTime": "2025-09-02T09:07:09.317Z",
-          "modifiedByMeTime": "2025-09-02T09:07:09.317Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "70495bbecedbcc145fe93acb85103929",
-          "sha1Checksum": "d679ebc3c50f93aa08596936a510fe73449719e7",
-          "sha256Checksum": "ecb297fb46da1dab8e23875caa5be432d927a8d8428db708192b3d39e2364cdd",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqZ255T0IzUldCU2RlWEowcUZuWkljUEJmZHM0PQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false
-        }
-      }
-    ],
-    "Fusion des Données": [
-      {
-        "json": {
-          "id": "anyone",
-          "createdTime": "2025-09-02T09:07:02.896Z",
-          "fields": {
-            "ID": 75,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
-            "ID Requette": "83f2e6f50fe046feaca9d5aeb9ea3c45"
-          },
-          "kind": "drive#permission",
-          "name": "83f2e6f50fe046feaca9d5aeb9ea3c45.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "modifiedTime": "2025-09-02T09:07:03.719Z",
-          "modifiedByMeTime": "2025-09-02T09:07:03.719Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "28b79d8dc628932600bbe11b94c893ef",
-          "sha1Checksum": "09369affbfaa6add8552d5ffdb5dcfbc156a0f73",
-          "sha256Checksum": "ae7370ef45e8cff1ada1445cc0ccb8fd840649029a1d899b84be53c1f8f4417d",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqQU5kaWJDYWFaNXduY1lCaVo5SllZQ2p1RFQ4PQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false,
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "id": "anyone",
-          "createdTime": "2025-09-02T09:07:04.996Z",
-          "fields": {
-            "ID": 76,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
-            "ID Requette": "22307ef71eb04525a7ee3b5b352bfe72"
-          },
-          "kind": "drive#permission",
-          "name": "22307ef71eb04525a7ee3b5b352bfe72.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1O8kdga7qQqVRTTwRLTaicQJIjOP_curT&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "modifiedTime": "2025-09-02T09:07:05.506Z",
-          "modifiedByMeTime": "2025-09-02T09:07:05.506Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "866c6117d2b4ad6c1549f41fbc14a815",
-          "sha1Checksum": "4abfe99e4f232994c12efc3970a3b43c85847db0",
-          "sha256Checksum": "8e5d9a1d0a57849741e905f35a74bcb67e903c5598534764d7586fefe83eeef8",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqMjk3RityQmhDTks4TjBnc0FiRjNHZzFwRzVBPQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false,
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "id": "anyone",
-          "createdTime": "2025-09-02T09:07:06.752Z",
-          "fields": {
-            "ID": 77,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
-            "ID Requette": "7dc382158c77491c9017796a484dd3ce"
-          },
-          "kind": "drive#permission",
-          "name": "7dc382158c77491c9017796a484dd3ce.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=12cINjQLX8QodjAjeYvL536-8W0HBw2u1&export=download",
-          "webViewLink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "modifiedTime": "2025-09-02T09:07:07.417Z",
-          "modifiedByMeTime": "2025-09-02T09:07:07.417Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "6b5d7268cdddff88b3131f09d9538490",
-          "sha1Checksum": "e42b2a517e6377bbb81d790433a41751a6082b64",
-          "sha256Checksum": "4ab12e32ac0a96bec86478538b667aa18d6542e780758f64b20379415b3198da",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqUjdOa2ZUdkw4N3h4ZlR1dTdxWjhUbkRwSzdJPQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false,
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "id": "anyone",
-          "createdTime": "2025-09-02T09:07:08.772Z",
-          "fields": {
-            "ID": 78,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
-            "ID Requette": "3753db19d532413dad2c6249c43276f6"
-          },
-          "kind": "drive#permission",
-          "name": "3753db19d532413dad2c6249c43276f6.mp3",
-          "mimeType": "audio/mpeg",
-          "starred": false,
-          "trashed": false,
-          "explicitlyTrashed": false,
-          "parents": [
-            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-          ],
-          "spaces": [
-            "drive"
-          ],
-          "version": "2",
-          "webContentLink": "https://drive.google.com/uc?id=1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf&export=download",
-          "webViewLink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk",
-          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
-          "hasThumbnail": false,
-          "thumbnailVersion": "0",
-          "viewedByMe": false,
-          "modifiedTime": "2025-09-02T09:07:09.317Z",
-          "modifiedByMeTime": "2025-09-02T09:07:09.317Z",
-          "modifiedByMe": true,
-          "owners": [
-            {
-              "kind": "drive#user",
-              "displayName": "Azuro Admin",
-              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
-              "me": true,
-              "permissionId": "16339092664818976978",
-              "emailAddress": "admin@azuro-ai.com"
-            }
-          ],
-          "lastModifyingUser": {
-            "kind": "drive#user",
-            "displayName": "Azuro Admin",
-            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
-            "me": true,
-            "permissionId": "16339092664818976978",
-            "emailAddress": "admin@azuro-ai.com"
-          },
-          "shared": false,
-          "ownedByMe": true,
-          "downloadRestrictions": {
-            "itemDownloadRestriction": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            },
-            "effectiveDownloadRestrictionWithContext": {
-              "restrictedForReaders": false,
-              "restrictedForWriters": false
-            }
-          },
-          "capabilities": {
-            "canAcceptOwnership": false,
-            "canAddChildren": false,
-            "canAddMyDriveParent": false,
-            "canChangeCopyRequiresWriterPermission": true,
-            "canChangeItemDownloadRestriction": true,
-            "canChangeSecurityUpdateEnabled": false,
-            "canChangeViewersCanCopyContent": true,
-            "canComment": true,
-            "canCopy": true,
-            "canDelete": true,
-            "canDisableInheritedPermissions": false,
-            "canDownload": true,
-            "canEdit": true,
-            "canEnableInheritedPermissions": true,
-            "canListChildren": false,
-            "canModifyContent": true,
-            "canModifyContentRestriction": true,
-            "canModifyEditorContentRestriction": true,
-            "canModifyOwnerContentRestriction": true,
-            "canModifyLabels": false,
-            "canMoveChildrenWithinDrive": false,
-            "canMoveItemIntoTeamDrive": true,
-            "canMoveItemOutOfDrive": true,
-            "canMoveItemWithinDrive": true,
-            "canReadLabels": false,
-            "canReadRevisions": true,
-            "canRemoveChildren": false,
-            "canRemoveContentRestriction": false,
-            "canRemoveMyDriveParent": true,
-            "canRename": true,
-            "canShare": true,
-            "canTrash": true,
-            "canUntrash": true
-          },
-          "viewersCanCopyContent": true,
-          "copyRequiresWriterPermission": false,
-          "writersCanShare": true,
-          "permissions": [
-            {
-              "kind": "drive#permission",
-              "id": "16339092664818976978",
-              "type": "user",
-              "emailAddress": "admin@azuro-ai.com",
-              "role": "owner",
-              "displayName": "admin",
-              "deleted": false,
-              "pendingOwner": false
-            }
-          ],
-          "permissionIds": [
-            "16339092664818976978"
-          ],
-          "originalFilename": "Untitled",
-          "fullFileExtension": "mp3",
-          "fileExtension": "mp3",
-          "md5Checksum": "70495bbecedbcc145fe93acb85103929",
-          "sha1Checksum": "d679ebc3c50f93aa08596936a510fe73449719e7",
-          "sha256Checksum": "ecb297fb46da1dab8e23875caa5be432d927a8d8428db708192b3d39e2364cdd",
-          "size": "80711",
-          "quotaBytesUsed": "80711",
-          "headRevisionId": "0B7BrHJKXmkVqZ255T0IzUldCU2RlWEowcUZuWkljUEJmZHM0PQ",
-          "isAppAuthorized": true,
-          "linkShareMetadata": {
-            "securityUpdateEligible": false,
-            "securityUpdateEnabled": true
-          },
-          "inheritedPermissionsDisabled": false,
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      }
-    ],
-    "Demande de Rendu Vidéo": [
-      {
-        "json": {
-          "id": "e5b51b4f-5592-4276-bc59-fe3a2f5cb6fe",
-          "status": "planned",
-          "url": "https://f002.backblazeb2.com/file/creatomate-c8xg3hsxdu/e5b51b4f-5592-4276-bc59-fe3a2f5cb6fe.mp4",
-          "template_id": "b671d213-c388-4390-8180-a4dd31b7aa9b",
-          "template_name": "AGENT IA MARKETING ",
-          "template_tags": [],
-          "output_format": "mp4",
-          "modifications": {
-            "Video-1.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
-            "Video-2.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
-            "Video-3.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
-            "Video-4.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
-            "Audio-1.source": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
-            "Audio-2.source": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
-            "Audio-3.source": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
-            "Audio-4.source": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk"
-          }
-        }
-      }
-    ],
-    "Exécution de Code Personnalisé": [
-      {
-        "json": {
-          "groupedLinks": [
-            {
-              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
-              "weblink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk"
-            },
-            {
-              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
-              "weblink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk"
-            },
-            {
-              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
-              "weblink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk"
-            },
-            {
-              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
-              "weblink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk"
-            }
-          ]
-        }
-      }
-    ],
-    "Partage de Fichier Google Drive": [
-      {
-        "json": {
-          "kind": "drive#permission",
-          "id": "anyone",
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#permission",
-          "id": "anyone",
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#permission",
-          "id": "anyone",
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      },
-      {
-        "json": {
-          "kind": "drive#permission",
-          "id": "anyone",
-          "type": "anyone",
-          "role": "reader",
-          "allowFileDiscovery": true
-        }
-      }
-    ],
-    "Création de Scénario Vidéo": [
-      {
-        "json": {
-          "output": {
-            "Part 1": "Vue subjective depuis vos yeux, regardant vers un MacBook Pro argenté ouvert sur une table en bois patiné d'un café parisien authentique, vos mains aux ongles soignés tapant sur le clavier rétroéclairé, écran affichant un éditeur de code sombre avec des lignes de JavaScript colorées en syntaxe verte et bleue, une tasse de café au lait fumante à côté avec motif en forme de cœur dans la mousse, lumière dorée du matin filtrant à travers de grandes fenêtres françaises, reflets subtils sur l'écran, atmosphère chaleureuse et concentrée",
-            "Part 2": "Même perspective subjective, vos mains continuent de coder sur le MacBook Pro argenté, l'écran montre maintenant plusieurs onglets ouverts avec du code complexe, fonctions et variables défilant, votre tasse de café maintenant à moitié vide, quelques miettes de croissant sur une petite assiette blanche à côté, serveur parisien en tablier noir passant flou en arrière-plan, sons feutrés du café, concentration intense visible par la proximité de vos mains du clavier, lumière naturelle plus vive indiquant la progression matinale",
-            "Part 3": "Point de vue inchangé, vos mains expertes naviguent entre le trackpad et le clavier du MacBook Pro, écran divisé entre terminal noir avec lignes de commande vertes défilantes et navigateur web testant une application, votre café terminé, tasse vide repoussée légèrement, carnet de notes ouvert à côté avec gribouillis et schémas techniques au stylo bleu, autres clients parisiens travaillant en arrière-plan flou, bruit ambiant du café, moment de debugging intense et méticuleux",
-            "Part 4": "Vue subjective finale, vos mains se détendent légèrement au-dessus du MacBook Pro argenté, écran affichant une application web fonctionnelle avec interface utilisateur colorée et réactive, sensation de satisfaction du travail accompli, nouvelle tasse de café fraîchement servie fumant à côté, carnet fermé, stylo rangé, lumière d'après-midi dorée créant une ambiance apaisée dans le café parisien typique, autres développeurs et créatifs autour, atmosphère productive et inspirante de la scène tech parisienne"
-          }
-        }
-      }
-    ],
-    "Séparation des Sorties": [
-      {
-        "json": {
-          "output": "Vue subjective depuis vos yeux, regardant vers un MacBook Pro argenté ouvert sur une table en bois patiné d'un café parisien authentique, vos mains aux ongles soignés tapant sur le clavier rétroéclairé, écran affichant un éditeur de code sombre avec des lignes de JavaScript colorées en syntaxe verte et bleue, une tasse de café au lait fumante à côté avec motif en forme de cœur dans la mousse, lumière dorée du matin filtrant à travers de grandes fenêtres françaises, reflets subtils sur l'écran, atmosphère chaleureuse et concentrée"
-        }
-      },
-      {
-        "json": {
-          "output": "Même perspective subjective, vos mains continuent de coder sur le MacBook Pro argenté, l'écran montre maintenant plusieurs onglets ouverts avec du code complexe, fonctions et variables défilant, votre tasse de café maintenant à moitié vide, quelques miettes de croissant sur une petite assiette blanche à côté, serveur parisien en tablier noir passant flou en arrière-plan, sons feutrés du café, concentration intense visible par la proximité de vos mains du clavier, lumière naturelle plus vive indiquant la progression matinale"
-        }
-      },
-      {
-        "json": {
-          "output": "Point de vue inchangé, vos mains expertes naviguent entre le trackpad et le clavier du MacBook Pro, écran divisé entre terminal noir avec lignes de commande vertes défilantes et navigateur web testant une application, votre café terminé, tasse vide repoussée légèrement, carnet de notes ouvert à côté avec gribouillis et schémas techniques au stylo bleu, autres clients parisiens travaillant en arrière-plan flou, bruit ambiant du café, moment de debugging intense et méticuleux"
-        }
-      },
-      {
-        "json": {
-          "output": "Vue subjective finale, vos mains se détendent légèrement au-dessus du MacBook Pro argenté, écran affichant une application web fonctionnelle avec interface utilisateur colorée et réactive, sensation de satisfaction du travail accompli, nouvelle tasse de café fraîchement servie fumant à côté, carnet fermé, stylo rangé, lumière d'après-midi dorée créant une ambiance apaisée dans le café parisien typique, autres développeurs et créatifs autour, atmosphère productive et inspirante de la scène tech parisienne"
-        }
-      }
-    ],
-    "Génération d'Image avec Flux": [
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "16602d3ff00e45349faaf635599232f4",
-            "model": "wavespeed-ai/flux-dev",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/16602d3ff00e45349faaf635599232f4/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:01:47.48Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "d1ec63c18b2340e49072c9509bab3856",
-            "model": "wavespeed-ai/flux-dev",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/d1ec63c18b2340e49072c9509bab3856/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:01:47.481Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "f4dac447a49e41a0aca4a40629fc2b1c",
-            "model": "wavespeed-ai/flux-dev",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/f4dac447a49e41a0aca4a40629fc2b1c/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:01:47.485Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "7cbf03a1dc154138b25b1bec3e426611",
-            "model": "wavespeed-ai/flux-dev",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/7cbf03a1dc154138b25b1bec3e426611/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:01:47.494Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      }
-    ],
-    "Exécution de Flux de Travail Secondaire": [
-      {
-        "json": {
-          "id": "rechLGiVo7kDljFMR",
-          "createdTime": "2025-09-02T09:01:48.000Z",
-          "fields": {
-            "ID": 71,
-            "Type": "raw_image",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/16602d3ff00e45349faaf635599232f4/result",
-            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/52a3f46e-16cf-4e43-b7af-0f1d35e58dff-u1_9dff1920-a22b-481d-b996-0aaf40567936.jpeg",
-            "ID Requette": "16602d3ff00e45349faaf635599232f4"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "recRsVD5l9AtiACSX",
-          "createdTime": "2025-09-02T09:02:12.000Z",
-          "fields": {
-            "ID": 72,
-            "Type": "raw_image",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/d1ec63c18b2340e49072c9509bab3856/result",
-            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/39e6c52d-3a9b-4f01-bb2f-dc3cee0b3bef-u2_b4f052f9-e6f2-4840-ac70-c789d46a2828.jpeg",
-            "ID Requette": "d1ec63c18b2340e49072c9509bab3856"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "recoJ4CbWXGhun7PM",
-          "createdTime": "2025-09-02T09:02:33.000Z",
-          "fields": {
-            "ID": 73,
-            "Type": "raw_image",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/f4dac447a49e41a0aca4a40629fc2b1c/result",
-            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/67c6335b-c35b-4ac6-bd16-a56d645a8376-u2_590e1bd0-d2a7-4b30-8324-dbcd831ed72f.jpeg",
-            "ID Requette": "f4dac447a49e41a0aca4a40629fc2b1c"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "recE9jJIfScIBMfhx",
-          "createdTime": "2025-09-02T09:03:16.000Z",
-          "fields": {
-            "ID": 74,
-            "Type": "raw_image",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7cbf03a1dc154138b25b1bec3e426611/result",
-            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/f2e8c59e-f4fa-4cf4-8324-a3e24c57c6ab-u2_0e71880d-cced-4bfc-9e63-72a4edea072e.jpeg",
-            "ID Requette": "7cbf03a1dc154138b25b1bec3e426611"
-          }
-        }
-      }
-    ],
-    "Génération de Vidéo avec Kling": [
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "83f2e6f50fe046feaca9d5aeb9ea3c45",
-            "model": "kwaivgi/kling-v1.6-i2v-standard",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:03:37.761Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "22307ef71eb04525a7ee3b5b352bfe72",
-            "model": "kwaivgi/kling-v1.6-i2v-standard",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:03:37.764Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "7dc382158c77491c9017796a484dd3ce",
-            "model": "kwaivgi/kling-v1.6-i2v-standard",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:03:37.777Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      },
-      {
-        "json": {
-          "code": 200,
-          "message": "success",
-          "data": {
-            "id": "3753db19d532413dad2c6249c43276f6",
-            "model": "kwaivgi/kling-v1.6-i2v-standard",
-            "outputs": [],
-            "urls": {
-              "get": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result"
-            },
-            "has_nsfw_contents": [],
-            "status": "created",
-            "created_at": "2025-09-02T09:03:37.776Z",
-            "error": "",
-            "executionTime": 0,
-            "timings": {
-              "inference": 0
-            }
-          }
-        }
-      }
-    ],
-    "Exécution de Flux de Travail pour Vidéo": [
-      {
-        "json": {
-          "id": "recpEOvTgX3PBVZKF",
-          "createdTime": "2025-09-02T09:03:38.000Z",
-          "fields": {
-            "ID": 75,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
-            "ID Requette": "83f2e6f50fe046feaca9d5aeb9ea3c45"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "recLTKsDq6R16yhk4",
-          "createdTime": "2025-09-02T09:05:44.000Z",
-          "fields": {
-            "ID": 76,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
-            "ID Requette": "22307ef71eb04525a7ee3b5b352bfe72"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "reckImobZpxxHjUiZ",
-          "createdTime": "2025-09-02T09:06:05.000Z",
-          "fields": {
-            "ID": 77,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
-            "ID Requette": "7dc382158c77491c9017796a484dd3ce"
-          }
-        }
-      },
-      {
-        "json": {
-          "id": "recmzZD36ZmHSOBK6",
-          "createdTime": "2025-09-02T09:06:27.000Z",
-          "fields": {
-            "ID": 78,
-            "Type": "raw_video",
-            "Status": "Terminé",
-            "Requette": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result",
-            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
-            "ID Requette": "3753db19d532413dad2c6249c43276f6"
-          }
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
@@ -2539,16 +1389,16 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-09-17T17:44:11.065Z",
-      "createdAt": "2025-09-17T17:44:11.065Z",
+      "updatedAt": "2025-12-29T01:41:09.299Z",
+      "createdAt": "2025-12-29T01:41:09.299Z",
       "role": "workflow:owner",
-      "workflowId": "DJSjWGEtbeIMLKJj",
-      "projectId": "TyqTPn3TpvdJIZ7p"
+      "workflowId": "DRB9sl8QKYXQlqwN",
+      "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T00:09:57.000Z",
-  "versionId": "bc385961-adec-42ae-bc8d-875f1c7fdbc7"
+  "updatedAt": "2025-12-29T01:49:23.000Z",
+  "versionId": "7af9b4fb-1a94-49ff-87cd-7900be3a324b"
 }
