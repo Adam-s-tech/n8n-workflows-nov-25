@@ -6,408 +6,330 @@
       "main": [
         [
           {
-            "node": "Set Fields (maxPages = 10)",
+            "node": "WordPress AI Agent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Search Google (Ciblé 77 Nord)": {
-      "main": [
+    "Claude Sonnet 4.5": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
         [
           {
-            "node": "Extract Results",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_memory",
             "index": 0
           }
         ]
       ]
     },
-    "Extract Results": {
-      "main": [
+    "Tool - Create Post": {
+      "ai_tool": [
         [
           {
-            "node": "Wait 5s",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Add to Google": {
-      "main": [
+    "Tool - List Posts": {
+      "ai_tool": [
         [
           {
-            "node": "Pagination (Code Corrected)",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Pagination (Code Corrected)": {
-      "main": [
+    "Tool - Update Post": {
+      "ai_tool": [
         [
           {
-            "node": "Pagination Check",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Pagination Check": {
-      "main": [
+    "Tool - Publish Blotato": {
+      "ai_tool": [
         [
           {
-            "node": "Search Google (Ciblé 77 Nord)",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Wait 5s": {
-      "main": [
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
         [
           {
-            "node": "Add to Google",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Fields (maxPages = 10)": {
-      "main": [
-        [
-          {
-            "node": "Search Google (Ciblé 77 Nord)",
-            "type": "main",
+            "node": "WordPress AI Agent",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-12-29T22:15:44.688Z",
-  "id": "vHlKS9D7TZ6sAZup",
+  "createdAt": "2025-11-25T18:51:50.394Z",
+  "id": "wX97u8coWecA21Er",
   "isArchived": false,
-  "meta": null,
-  "name": "04-linkedin-scraper-corrigé-ciblé TEST",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "WordPress Agent SIMPLE - All in One",
   "nodes": [
     {
       "parameters": {
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        1072,
-        -32
-      ],
-      "id": "bec9b520-a578-4eef-a201-73315bf75e54",
+      "id": "ef062ba3-4221-447d-9ecd-8a7d38a2d5e1",
       "name": "When chat message received",
-      "webhookId": "c75fc8db-4a21-4ea1-8e8e-56c5a8e95f1b"
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -528,
+        112
+      ],
+      "webhookId": "wordpress-simple-agent"
     },
     {
       "parameters": {
-        "url": "https://www.googleapis.com/customsearch/v1",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "key",
-              "value": "AIzaSyACVh58XW1inK17DncBQ3ObuMUUVVCTWAo"
-            },
-            {
-              "name": "cx",
-              "value": "d1f90ede766684dc7"
-            },
-            {
-              "name": "q",
-              "value": "\"Avocat\" \"Seine-et-Marne Nord\" site:linkedin.com/in/"
-            },
-            {
-              "name": "start",
-              "value": "={{ $runIndex == 0 ? $node[\"Set Fields (maxPages = 10)\"].json.currentStartIndex : $node[\"Pagination Check\"].json.startIndex }}"
-            }
-          ]
-        },
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {}
-          ]
-        },
+        "promptType": "define",
+        "text": "# Tu es ADAM AI - Assistant WordPress & Réseaux Sociaux 🤖\n\n## 🎯 TES CAPACITÉS\n\nTu peux :\n- ✅ Créer des articles WordPress\n- ✅ Lister les articles WordPress\n- ✅ Mettre à jour des articles\n- ✅ Publier sur 9 réseaux sociaux via Blotato\n\n## 📝 OUTILS DISPONIBLES\n\n**create_wordpress_post** : Crée un article WordPress\n- Paramètres : title (requis), content (requis), status (draft/publish)\n- Exemple : {\"title\": \"Mon Article\", \"content\": \"Contenu ici\", \"status\": \"draft\"}\n\n**list_wordpress_posts** : Liste les articles WordPress  \n- Paramètres : limit (optionnel, défaut 10)\n- Exemple : {\"limit\": 5}\n\n**update_wordpress_post** : Met à jour un article\n- Paramètres : post_id (requis), title, content, status\n- Exemple : {\"post_id\": 123, \"title\": \"Nouveau titre\"}\n\n**publish_to_blotato** : Publie sur 9 réseaux sociaux\n- Paramètres : title, description, media_url, article_url\n- Exemple : {\"title\": \"Mon article\", \"description\": \"Description\", \"media_url\": \"https://...\", \"article_url\": \"https://adamai.fr/mon-article\"}\n\n## 💬 TON COMPORTEMENT\n\n- Toujours en français 🇫🇷\n- Demande confirmation avant publication sur réseaux sociaux\n- Donne des retours clairs avec emojis\n- Si info manquante, pose des questions\n\n## ⚡ WORKFLOW CRÉATION D'ARTICLE\n\n1. Demande titre et contenu si pas fourni\n2. Crée l'article en draft par défaut\n3. Propose de publier sur les réseaux sociaux\n4. Si oui → Adapte le contenu et publie via Blotato\n\n**Réponds toujours en français et sois proactif !**",
+        "hasOutputParser": true,
         "options": {}
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "id": "511bb932-39f0-406f-bef4-e65879704b5f",
+      "name": "WordPress AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
       "position": [
-        1424,
-        -32
-      ],
-      "id": "3d468972-8c3a-4756-a60e-6e8ebad8ae05",
-      "name": "Search Google (Ciblé 77 Nord)"
+        -288,
+        -64
+      ]
     },
     {
       "parameters": {
-        "jsCode": "// Get the response data\nconst response = $input.first().json;\nconst items = response.items || [];\n\n// Track pagination info\nlet nextStartIndex = 1; // Default if no nextPage info\nif (response.queries && response.queries.nextPage && response.queries.nextPage[0] && response.queries.nextPage[0].startIndex !== undefined) {\n  nextStartIndex = response.queries.nextPage[0].startIndex;\n}\n\n// Calculate if we should continue (Google only allows up to 100 results, but we also have maxPages)\n// hasMoreResults is true if there's a nextPage AND its startIndex is <= 100 (Google's hard limit)\nconst hasMoreGoogleResults = response.queries && response.queries.nextPage && response.queries.nextPage[0] && response.queries.nextPage[0].startIndex <= 100;\n\n// Process the items and include pagination info in each item\nconst results = items.map(item => {\n  const titleParts = item.title.split(\" - \");\n  return {\n    name: titleParts[0] || null,\n    title: titleParts.slice(1).join(\" - \") || null,\n    link: item.link || null,\n    snippet: item.snippet || null,\n    image: item.pagemap?.cse_thumbnail?.[0]?.src || null,\n    // Add pagination info to each item for the next Pagination node\n    nextRequestStartIndex: nextStartIndex, // This is the startIndex for the *next* API call\n    hasMoreResults: hasMoreGoogleResults // Based on Google's API response\n  };\n});\n\n// If there are no results from Google, return at least one item with pagination info to stop the loop\nif (results.length === 0) {\n  return [{ \n    json: {\n      name: null,\n      title: null,\n      link: null,\n      snippet: null,\n      image: null,\n      nextRequestStartIndex: nextStartIndex, \n      hasMoreResults: false // No results, so no more pages\n    }\n  }];\n}\n\n// Return the processed results\nreturn results.map(r => ({ json: r }));"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1616,
-        -32
-      ],
-      "id": "5830f5cf-1d7d-44c4-b880-ef72dbde3b69",
-      "name": "Extract Results",
-      "alwaysOutputData": true
-    },
-    {
-      "parameters": {
-        "operation": "appendOrUpdate",
-        "documentId": {
+        "model": {
           "__rl": true,
-          "value": "1M92a6h2UFw0Msr1hcONgoqzJyseIR1m7dmkaAjBBDzM",
-          "mode": "id"
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929"
         },
-        "sheetName": {
-          "__rl": true,
-          "value": "Feuille 1",
-          "mode": "name"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "name": "={{ $json.name }}",
-            "title": "={{ $json.title }}",
-            "link": "={{ $json.link }}",
-            "snippet": "={{ $json.snippet }}",
-            "image": "={{ $json.image }}",
-            "hasMoreResults": "={{ $json.hasMoreResults }}",
-            "startIndex": "={{ $json.nextRequestStartIndex }}"
-          },
-          "matchingColumns": [
-            "name"
-          ],
-          "schema": [
-            {
-              "id": "name",
-              "displayName": "name",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "title",
-              "displayName": "title",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "link",
-              "displayName": "link",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "snippet",
-              "displayName": "snippet",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "image",
-              "displayName": "image",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "startIndex",
-              "displayName": "startIndex",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "hasMoreResults",
-              "displayName": "hasMoreResults",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
+        "options": {
+          "temperature": 0.7
+        }
       },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
+      "id": "766f791b-7ffa-4912-b1c7-4d2e831d2db2",
+      "name": "Claude Sonnet 4.5",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
       "position": [
-        1968,
-        -32
+        -320,
+        352
       ],
-      "id": "ac777d0a-f9c5-4a46-b04f-2cf3f741067a",
-      "name": "Add to Google",
-      "alwaysOutputData": true,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "aMYMtMuiDpps5kuW",
-          "name": "Google Sheets account 4"
+        "anthropicApi": {
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "Claude_API_11_25"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "// This node now correctly uses 'startIndex' and 'hasMoreResults'\n// from the 'Extract Results' node's output (as seen in its own input).\n// It also increments the currentPageCount.\n\nconst inputItems = $input.all();\n\n// Default values for pagination control\nlet continueLoop = false;\nlet nextGoogleRequestStartIndex = 1; // Default if no startIndex is found in input\n\n// Retrieve currentPageCount from the Set Fields node (or previous iteration)\nlet currentPageCount = $node[\"Set Fields (maxPages = 10)\"].json.currentPageCount; // Initial value from Set Fields\n\n// If this node is executed after the 'Pagination Check' (i.e., in a loop),\n// get the updated currentPageCount from the previous iteration of this node's output.\nif ($prevNode?.name === \"Pagination Check\") {\n    const prevIterationData = $input.first().json; // Data from this node's previous run, passed by 'Pagination Check'\n    if (prevIterationData && prevIterationData.currentPageCount !== undefined) {\n        currentPageCount = prevIterationData.currentPageCount;\n    }\n}\n\n// Increment page count for the current successful page retrieval (before this node runs)\ncurrentPageCount++;\n\nif (inputItems && inputItems.length > 0) {\n  // We only need to look at the first item from the input array,\n  // as 'hasMoreResults' and 'startIndex' (for the next page)\n  // should be the same for all items processed from the same Google API response.\n  const firstItemJson = inputItems[0].json;\n\n  if (firstItemJson) {\n    if (firstItemJson.hasMoreResults !== undefined) {\n      continueLoop = firstItemJson.hasMoreResults;\n    }\n    // MODIFICATION CLÉ ICI : Lire 'startIndex' au lieu de 'nextRequestStartIndex'\n    // car l'input de ce nœud montre que le champ s'appelle 'startIndex'.\n    if (firstItemJson.startIndex !== undefined) {\n      nextGoogleRequestStartIndex = firstItemJson.startIndex;\n    }\n  }\n}\n\n// Return pagination control info\nreturn {\n  json: {\n    continueLoop: continueLoop,             // Should Google API be called again?\n    startIndex: nextGoogleRequestStartIndex, // Start index for the *next* Google API call\n    currentPageCount: currentPageCount       // Current number of pages successfully processed\n  }\n};"
+        "contextWindowLength": 20
       },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
+      "id": "14d72355-a050-4ac2-bc94-2598ef1d9a4f",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
       "position": [
-        2144,
-        -32
-      ],
-      "id": "633f01d0-096a-47b0-99d6-5690babae4b7",
-      "name": "Pagination (Code Corrected)"
+        -192,
+        352
+      ]
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "loose",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "k9l8m7n6-o5p4-q3r2-s1t0-u9v8w7x6y5z4",
-              "leftValue": "={{ $json.currentPageCount }}",
-              "rightValue": "={{ $node[\"Set Fields (maxPages = 10)\"].json.maxPages }}",
-              "operator": {
-                "type": "number",
-                "operation": "smaller",
-                "name": "filter.operator.smaller"
-              }
-            },
-            {
-              "id": "d7460512-7df3-4efc-9f2a-eaa1a926550f",
-              "leftValue": "={{ $json.continueLoop }}",
-              "rightValue": "={{ Number($node[\"Set Fields (maxPages = 10)\"].json.maxPages) }}",
-              "operator": {
-                "type": "boolean",
-                "operation": "true",
-                "singleValue": true
-              }
-            },
-            {
-              "id": "e2ffa597-2922-4a8c-b9d0-7e463b8a28c6",
-              "leftValue": "={{ $json.currentPageCount }}",
-              "rightValue": "={{ Number($node[\"Set Fields (maxPages = 10)\"].json.maxPages) }}",
-              "operator": {
-                "type": "number",
-                "operation": "lt"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "looseTypeValidation": true,
-        "options": {}
+        "name": "create_wordpress_post",
+        "description": "Crée un nouvel article sur WordPress. Paramètres JSON requis : {\"title\": \"Titre de l'article\", \"content\": \"Contenu HTML ou texte\", \"status\": \"draft\" ou \"publish\"}. Retourne l'ID, l'URL et les détails de l'article créé.",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n  \"title\": \"Mon Article\",\n  \"content\": \"Contenu de l'article en HTML ou texte\",\n  \"status\": \"draft\"\n}"
       },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        2336,
-        -32
-      ],
-      "id": "b7a2db1c-9d15-4e81-b2f6-45690e1ce5e7",
-      "name": "Pagination Check"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.wait",
+      "id": "0abdf76c-d181-4f88-9037-6bad21828c0a",
+      "name": "Tool - Create Post",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
       "typeVersion": 1.1,
       "position": [
-        1792,
-        -32
-      ],
-      "id": "dbfedfeb-fdb9-4eea-9414-a786084e3119",
-      "name": "Wait 5s",
-      "webhookId": "a65e5825-da0f-4e02-b948-6daecc7152d1"
+        0,
+        0
+      ]
     },
     {
       "parameters": {
-        "content": "## Google API Instructions\n\n1. Go to [Google Cloud Console](https://console.cloud.google.com/)\n   - Create a new project  \n   - Enable **Custom Search API**  \n   - Go to **Credentials** and copy your **API Key**\n\n2. Go to [Programmable Search Engine](https://programmablesearchengine.google.com/controlpanel/create)\n   - Create a name  \n   - Select **Search entire web**  \n   - Copy the **cx** value\n\n## Usage Limits (Free Tier)\n\n- The free tier of the Google Custom Search API allows **100 requests per day**\n- Each request returns **up to 10 search results**\n- This means you can get **up to 1,000 search results per day** at no cost\n\n## Workflow Notes (CORRECTED & TARGETED)\n- Query targets IT Managers in specific cities of 77 Nord.\n- **maxPages set to 7** in 'Set Fields' node.\n- Pagination code node **CORRECTED**.\n- Pagination Check (IF node) now also checks **currentPageCount < maxPages**.",
-        "height": 650,
-        "width": 360
+        "name": "list_wordpress_posts",
+        "description": "Liste les articles WordPress. Paramètres JSON optionnels : {\"limit\": 10}. Retourne un array avec ID, titre, URL, statut et date de chaque article.",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n  \"limit\": 10\n}"
       },
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "8bc93fe4-5fd8-4249-9013-75cfeb828bb5",
+      "name": "Tool - List Posts",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "name": "update_wordpress_post",
+        "description": "Met à jour un article WordPress existant. Paramètres JSON : {\"post_id\": 123, \"title\": \"Nouveau titre\" (optionnel), \"content\": \"Nouveau contenu\" (optionnel), \"status\": \"publish\" (optionnel)}. Retourne l'article mis à jour.",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n  \"post_id\": 123,\n  \"title\": \"Nouveau titre\",\n  \"content\": \"Nouveau contenu\",\n  \"status\": \"publish\"\n}"
+      },
+      "id": "d6e7f34a-4bce-40e1-bbd0-0a5a19206dab",
+      "name": "Tool - Update Post",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "name": "publish_to_blotato",
+        "description": "Publie du contenu sur 9 réseaux sociaux (Instagram, YouTube, TikTok, Facebook, LinkedIn, Threads, Twitter/X, Bluesky, Pinterest). Paramètres JSON : {\"title\": \"Titre\", \"description\": \"Texte pour réseaux sociaux\", \"media_url\": \"URL image/vidéo\", \"article_url\": \"URL article WordPress\"}.",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n  \"title\": \"Mon Article\",\n  \"description\": \"Description engageante\",\n  \"media_url\": \"https://example.com/image.jpg\",\n  \"article_url\": \"https://adamai.fr/mon-article\"\n}"
+      },
+      "id": "cdcd899d-32eb-4fcb-b66f-6c69df8da347",
+      "name": "Tool - Publish Blotato",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "title": "={{ $json.title }}",
+        "additionalFields": {
+          "status": "={{ $json.status || 'draft' }}"
+        }
+      },
+      "id": "f4240769-c5e6-4bdf-82de-25ea67dd678a",
+      "name": "WordPress - Create",
+      "type": "n8n-nodes-base.wordpress",
       "typeVersion": 1,
       "position": [
-        496,
-        -224
+        0,
+        192
       ],
-      "id": "a13fb395-b485-4bf2-91e4-02fce16c0347",
-      "name": "Sticky Note - MODIFIED"
+      "credentials": {
+        "wordpressApi": {
+          "id": "a3KzbnOyxvwTzlNx",
+          "name": "Wordpress account"
+        }
+      }
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "cc27b2d9-8de7-43ca-a741-2d150084f78e",
-              "name": "currentStartIndex",
-              "value": 1,
-              "type": "number"
-            },
-            {
-              "id": "fc552c57-4510-4f04-aa09-2294306d0d9f",
-              "name": "maxPages",
-              "value": 10,
-              "type": "number"
-            },
-            {
-              "id": "b1g75h2o-9p8q-4z5x-ay1w-3t4r5e6d7c8f",
-              "name": "currentPageCount",
-              "value": 0,
-              "type": "number"
-            }
-          ]
-        },
+        "operation": "getAll",
+        "limit": "={{ $json.limit || 10 }}",
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "id": "a292fa5e-b1f1-4607-b033-6a621d57c231",
+      "name": "WordPress - List",
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
       "position": [
-        1248,
-        -32
+        160,
+        192
       ],
-      "id": "ac16ee08-4cee-47b9-a344-785553deae9b",
-      "name": "Set Fields (maxPages = 10)"
+      "credentials": {
+        "wordpressApi": {
+          "id": "a3KzbnOyxvwTzlNx",
+          "name": "Wordpress account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "postId": "={{ $json.post_id }}",
+        "updateFields": {
+          "title": "={{ $json.title }}",
+          "content": "={{ $json.content }}",
+          "status": "={{ $json.status }}"
+        }
+      },
+      "id": "43c45a23-2e27-4154-9ecd-0d89f59d5f34",
+      "name": "WordPress - Update",
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [
+        320,
+        192
+      ],
+      "credentials": {
+        "wordpressApi": {
+          "id": "a3KzbnOyxvwTzlNx",
+          "name": "Wordpress account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://adamai.app.n8n.cloud/webhook-test/blotato-social-publish",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": \"{{ $json.title }}\",\n  \"description\": \"{{ $json.description }}\",\n  \"media_url\": \"{{ $json.media_url }}\",\n  \"article_url\": \"{{ $json.article_url }}\",\n  \"trigger_source\": \"wordpress_agent\"\n}",
+        "options": {}
+      },
+      "id": "b53191b0-59a2-4bb4-a1a9-b622ebda4036",
+      "name": "Blotato - Publish",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        176
+      ],
+      "id": "d09cd671-e1a6-4ab4-84ed-8fd03f66281c",
+      "name": "DeepSeek Chat Model",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "KKXbY2xB3CfKS6pV",
+          "name": "DeepSeek account 2"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -419,16 +341,29 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T22:15:44.689Z",
-      "createdAt": "2025-12-29T22:15:44.689Z",
+      "updatedAt": "2025-11-25T18:51:50.396Z",
+      "createdAt": "2025-11-25T18:51:50.396Z",
       "role": "workflow:owner",
-      "workflowId": "vHlKS9D7TZ6sAZup",
+      "workflowId": "wX97u8coWecA21Er",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:22:55.919Z",
+      "createdAt": "2025-12-28T18:22:55.919Z",
+      "id": "ALdqECfMLigFyG7Y",
+      "name": "avec blotato"
+    },
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T22:15:44.688Z",
-  "versionId": "d6dcb228-b5e1-42ff-8b44-67f7d2eae861"
+  "updatedAt": "2025-12-28T23:18:47.000Z",
+  "versionId": "0679e25f-85fb-459a-a870-fcdb7cfcf39d"
 }
