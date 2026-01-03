@@ -2,88 +2,102 @@
   "": "",
   "active": false,
   "connections": {
-    "When chat message received": {
+    "Webhook - WordPress Agent": {
       "main": [
         [
           {
-            "node": "Set Fields (maxPages = 10)",
+            "node": "Route by Trigger Source",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Search Google (Ciblé 77 Nord)": {
+    "Schedule Trigger": {
       "main": [
         [
           {
-            "node": "Extract Results",
+            "node": "Get my video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Extract Results": {
+    "Route by Trigger Source": {
       "main": [
         [
           {
-            "node": "Wait 5s",
+            "node": "Format Webhook Data",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Add to Google": {
+    "Format Webhook Data": {
       "main": [
         [
           {
-            "node": "Pagination (Code Corrected)",
+            "node": "Assign Social Media IDs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Pagination (Code Corrected)": {
+    "Get my video": {
       "main": [
         [
           {
-            "node": "Pagination Check",
+            "node": "Assign Social Media IDs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Pagination Check": {
+    "Assign Social Media IDs": {
       "main": [
         [
           {
-            "node": "Search Google (Ciblé 77 Nord)",
+            "node": "Upload Video to Blotato",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait 5s": {
+    "Upload Video to Blotato": {
       "main": [
         [
           {
-            "node": "Add to Google",
+            "node": "INSTAGRAM",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Fields (maxPages = 10)": {
-      "main": [
-        [
+          },
           {
-            "node": "Search Google (Ciblé 77 Nord)",
+            "node": "TIKTOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "FACEBOOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "THREADS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LINKEDIN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "YOUTUBE",
             "type": "main",
             "index": 0
           }
@@ -91,190 +105,151 @@
       ]
     }
   },
-  "createdAt": "2025-06-01T09:12:32.138Z",
-  "id": "7LWlJT3YUwVzHSnm",
-  "isArchived": false,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "04-linkedin-scraper-corrigé-ciblé",
+  "createdAt": "2025-11-25T18:57:05.598Z",
+  "id": "8AUFlQ6shB0mBHHZ",
+  "isArchived": true,
+  "meta": null,
+  "name": "02-Auto-Post sur les Réseaux Sociaux copy - WITH WEBHOOK",
   "nodes": [
     {
       "parameters": {
+        "httpMethod": "POST",
+        "path": "blotato-social-publish",
+        "responseMode": "lastNode",
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        448,
-        144
-      ],
-      "id": "be16604f-5481-4d78-a5af-60ee5e16ee1c",
-      "name": "When chat message received",
-      "webhookId": "c75fc8db-4a21-4ea1-8e8e-56c5a8e95f1b"
-    },
-    {
-      "parameters": {
-        "url": "https://www.googleapis.com/customsearch/v1",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "key",
-              "value": "AIzaSyACVh58XW1inK17DncBQ3ObuMUUVVCTWAo"
-            },
-            {
-              "name": "cx",
-              "value": "d1f90ede766684dc7"
-            },
-            {
-              "name": "q",
-              "value": "Thérapeutes\" \"Seine-et-Marne Nord\" site:linkedin.com/in/"
-            },
-            {
-              "name": "start",
-              "value": "={{ $runIndex == 0 ? $node[\"Set Fields (maxPages = 10)\"].json.currentStartIndex : $node[\"Pagination Check\"].json.startIndex }}"
-            }
-          ]
-        },
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {}
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        800,
-        144
-      ],
-      "id": "ad9018f6-41a6-4d25-a128-39af4d50f408",
-      "name": "Search Google (Ciblé 77 Nord)"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Get the response data\nconst response = $input.first().json;\nconst items = response.items || [];\n\n// Track pagination info\nlet nextStartIndex = 1; // Default if no nextPage info\nif (response.queries && response.queries.nextPage && response.queries.nextPage[0] && response.queries.nextPage[0].startIndex !== undefined) {\n  nextStartIndex = response.queries.nextPage[0].startIndex;\n}\n\n// Calculate if we should continue (Google only allows up to 100 results, but we also have maxPages)\n// hasMoreResults is true if there's a nextPage AND its startIndex is <= 100 (Google's hard limit)\nconst hasMoreGoogleResults = response.queries && response.queries.nextPage && response.queries.nextPage[0] && response.queries.nextPage[0].startIndex <= 100;\n\n// Process the items and include pagination info in each item\nconst results = items.map(item => {\n  const titleParts = item.title.split(\" - \");\n  return {\n    name: titleParts[0] || null,\n    title: titleParts.slice(1).join(\" - \") || null,\n    link: item.link || null,\n    snippet: item.snippet || null,\n    image: item.pagemap?.cse_thumbnail?.[0]?.src || null,\n    // Add pagination info to each item for the next Pagination node\n    nextRequestStartIndex: nextStartIndex, // This is the startIndex for the *next* API call\n    hasMoreResults: hasMoreGoogleResults // Based on Google's API response\n  };\n});\n\n// If there are no results from Google, return at least one item with pagination info to stop the loop\nif (results.length === 0) {\n  return [{ \n    json: {\n      name: null,\n      title: null,\n      link: null,\n      snippet: null,\n      image: null,\n      nextRequestStartIndex: nextStartIndex, \n      hasMoreResults: false // No results, so no more pages\n    }\n  }];\n}\n\n// Return the processed results\nreturn results.map(r => ({ json: r }));"
-      },
-      "type": "n8n-nodes-base.code",
+      "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        992,
-        144
+        -1792,
+        368
       ],
-      "id": "50a84d99-c7bd-4a52-9134-5fccb41cf751",
-      "name": "Extract Results",
-      "alwaysOutputData": true
+      "id": "b3cc84f9-1087-41e5-945b-5db0ea76eac2",
+      "name": "Webhook - WordPress Agent",
+      "webhookId": "blotato-social-publish"
     },
     {
       "parameters": {
-        "operation": "appendOrUpdate",
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 11
+            },
+            {
+              "triggerAtHour": 16
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1648,
+        544
+      ],
+      "id": "10843f09-80a6-48d7-8cd7-fc69e9fc6664",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "webhook-source-check",
+              "leftValue": "={{ $json.trigger_source }}",
+              "rightValue": "wordpress_agent",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1424,
+        368
+      ],
+      "id": "1b390e11-0d3b-4dcf-9231-79c807fe872d",
+      "name": "Route by Trigger Source"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"URL_Video_Source\": \"{{ $json.media_url }}\",\n  \"Description_Post\": \"{{ $json.description }}\",\n  \"Titre_Post (Optionnel)\": \"{{ $json.title }}\",\n  \"Statut_Publication\": \"PENDING\",\n  \"source\": \"wordpress_agent\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1200,
+        352
+      ],
+      "id": "478ca102-2d98-486c-aa4c-a011de866abd",
+      "name": "Format Webhook Data",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"instagram_id\": \"5947\",\n  \"youtube_id\": \"4669\",\n  \"tiktok_id\": \"7605\",\n  \"facebook_id\": \"5418\",\n  \"facebook_page_id\": \"372471022626315\",\n  \"threads_id\": \"1552\",\n  \"twitter_id\": \"3175\",\n  \"linkedin_id\": \"3046\",\n  \"pinterest_id\": \"1077\",\n  \"pinterest_board_id\": \"101010\",\n  \"bluesky_id\": \"111111\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -976,
+        448
+      ],
+      "id": "5519ad71-5630-4bad-918b-e96babcbe649",
+      "name": "Assign Social Media IDs",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1M92a6h2UFw0Msr1hcONgoqzJyseIR1m7dmkaAjBBDzM",
-          "mode": "id"
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
         },
         "sheetName": {
           "__rl": true,
-          "value": "Feuille 1",
-          "mode": "name"
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
         },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "name": "={{ $json.name }}",
-            "title": "={{ $json.title }}",
-            "link": "={{ $json.link }}",
-            "snippet": "={{ $json.snippet }}",
-            "image": "={{ $json.image }}",
-            "hasMoreResults": "={{ $json.hasMoreResults }}",
-            "startIndex": "={{ $json.nextRequestStartIndex }}"
-          },
-          "matchingColumns": [
-            "name"
-          ],
-          "schema": [
+        "filtersUI": {
+          "values": [
             {
-              "id": "name",
-              "displayName": "name",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "title",
-              "displayName": "title",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "link",
-              "displayName": "link",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "snippet",
-              "displayName": "snippet",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "image",
-              "displayName": "image",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "startIndex",
-              "displayName": "startIndex",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "hasMoreResults",
-              "displayName": "hasMoreResults",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "lookupColumn": "Statut_Publication",
+              "lookupValue": "PENDING"
             }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
+          ]
         },
-        "options": {}
+        "combineFilters": "OR",
+        "options": {
+          "returnFirstMatch": true
+        }
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1344,
-        144
+        -1200,
+        544
       ],
-      "id": "ce4139a1-83d6-4312-98c3-cfbcc21cc6e8",
-      "name": "Add to Google",
-      "alwaysOutputData": true,
+      "id": "8fce6025-a60c-4918-80c3-65b82e8b8c1d",
+      "name": "Get my video",
+      "executeOnce": false,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "aMYMtMuiDpps5kuW",
@@ -284,132 +259,205 @@
     },
     {
       "parameters": {
-        "jsCode": "// This node now correctly uses 'startIndex' and 'hasMoreResults'\n// from the 'Extract Results' node's output (as seen in its own input).\n// It also increments the currentPageCount.\n\nconst inputItems = $input.all();\n\n// Default values for pagination control\nlet continueLoop = false;\nlet nextGoogleRequestStartIndex = 1; // Default if no startIndex is found in input\n\n// Retrieve currentPageCount from the Set Fields node (or previous iteration)\nlet currentPageCount = $node[\"Set Fields (maxPages = 10)\"].json.currentPageCount; // Initial value from Set Fields\n\n// If this node is executed after the 'Pagination Check' (i.e., in a loop),\n// get the updated currentPageCount from the previous iteration of this node's output.\nif ($prevNode?.name === \"Pagination Check\") {\n    const prevIterationData = $input.first().json; // Data from this node's previous run, passed by 'Pagination Check'\n    if (prevIterationData && prevIterationData.currentPageCount !== undefined) {\n        currentPageCount = prevIterationData.currentPageCount;\n    }\n}\n\n// Increment page count for the current successful page retrieval (before this node runs)\ncurrentPageCount++;\n\nif (inputItems && inputItems.length > 0) {\n  // We only need to look at the first item from the input array,\n  // as 'hasMoreResults' and 'startIndex' (for the next page)\n  // should be the same for all items processed from the same Google API response.\n  const firstItemJson = inputItems[0].json;\n\n  if (firstItemJson) {\n    if (firstItemJson.hasMoreResults !== undefined) {\n      continueLoop = firstItemJson.hasMoreResults;\n    }\n    // MODIFICATION CLÉ ICI : Lire 'startIndex' au lieu de 'nextRequestStartIndex'\n    // car l'input de ce nœud montre que le champ s'appelle 'startIndex'.\n    if (firstItemJson.startIndex !== undefined) {\n      nextGoogleRequestStartIndex = firstItemJson.startIndex;\n    }\n  }\n}\n\n// Return pagination control info\nreturn {\n  json: {\n    continueLoop: continueLoop,             // Should Google API be called again?\n    startIndex: nextGoogleRequestStartIndex, // Start index for the *next* Google API call\n    currentPageCount: currentPageCount       // Current number of pages successfully processed\n  }\n};"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1520,
-        144
-      ],
-      "id": "cf8dc6c1-e593-4c1f-81a7-3185f35b7df7",
-      "name": "Pagination (Code Corrected)"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "loose",
-            "version": 2
-          },
-          "conditions": [
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "id": "k9l8m7n6-o5p4-q3r2-s1t0-u9v8w7x6y5z4",
-              "leftValue": "={{ $json.currentPageCount }}",
-              "rightValue": "={{ $node[\"Set Fields (maxPages = 10)\"].json.maxPages }}",
-              "operator": {
-                "type": "number",
-                "operation": "smaller",
-                "name": "filter.operator.smaller"
-              }
-            },
-            {
-              "id": "d7460512-7df3-4efc-9f2a-eaa1a926550f",
-              "leftValue": "={{ $json.continueLoop }}",
-              "rightValue": "={{ Number($node[\"Set Fields (maxPages = 10)\"].json.maxPages) }}",
-              "operator": {
-                "type": "boolean",
-                "operation": "true",
-                "singleValue": true
-              }
-            },
-            {
-              "id": "e2ffa597-2922-4a8c-b9d0-7e463b8a28c6",
-              "leftValue": "={{ $json.currentPageCount }}",
-              "rightValue": "={{ Number($node[\"Set Fields (maxPages = 10)\"].json.maxPages) }}",
-              "operator": {
-                "type": "number",
-                "operation": "lt"
-              }
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
             }
-          ],
-          "combinator": "and"
+          ]
         },
-        "looseTypeValidation": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1712,
-        144
-      ],
-      "id": "2bbf6b42-e7f9-4845-aecb-48ed84e1e321",
-      "name": "Pagination Check"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        1168,
-        144
-      ],
-      "id": "a017a5ef-d6c2-4ee5-b9ba-ad2741506278",
-      "name": "Wait 5s",
-      "webhookId": "a65e5825-da0f-4e02-b948-6daecc7152d1"
-    },
-    {
-      "parameters": {
-        "content": "## Google API Instructions\n\n1. Go to [Google Cloud Console](https://console.cloud.google.com/)\n   - Create a new project  \n   - Enable **Custom Search API**  \n   - Go to **Credentials** and copy your **API Key**\n\n2. Go to [Programmable Search Engine](https://programmablesearchengine.google.com/controlpanel/create)\n   - Create a name  \n   - Select **Search entire web**  \n   - Copy the **cx** value\n\n## Usage Limits (Free Tier)\n\n- The free tier of the Google Custom Search API allows **100 requests per day**\n- Each request returns **up to 10 search results**\n- This means you can get **up to 1,000 search results per day** at no cost\n\n## Workflow Notes (CORRECTED & TARGETED)\n- Query targets IT Managers in specific cities of 77 Nord.\n- **maxPages set to 7** in 'Set Fields' node.\n- Pagination code node **CORRECTED**.\n- Pagination Check (IF node) now also checks **currentPageCount < maxPages**.",
-        "height": 650,
-        "width": 360
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -128,
-        -48
-      ],
-      "id": "bee04421-0368-4865-9b1b-a89f4b378d92",
-      "name": "Sticky Note - MODIFIED"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
             {
-              "id": "cc27b2d9-8de7-43ca-a741-2d150084f78e",
-              "name": "currentStartIndex",
-              "value": 1,
-              "type": "number"
-            },
-            {
-              "id": "fc552c57-4510-4f04-aa09-2294306d0d9f",
-              "name": "maxPages",
-              "value": 10,
-              "type": "number"
-            },
-            {
-              "id": "b1g75h2o-9p8q-4z5x-ay1w-3t4r5e6d7c8f",
-              "name": "currentPageCount",
-              "value": 0,
-              "type": "number"
+              "name": "url",
+              "value": "={{ $json.URL_Video_Source }}"
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        624,
-        144
+        -752,
+        448
       ],
-      "id": "98b9f297-dc19-44db-9a62-1014fcfe677f",
-      "name": "Set Fields (maxPages = 10)"
+      "id": "a5e6627e-f147-49a5-b70a-b9c6c9482796",
+      "name": "Upload Video to Blotato",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.instagram_id }}\",\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "47e10b27-e3ab-4c74-a544-84ba7010de61",
+      "name": "INSTAGRAM",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.youtube_id }}\",\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $json['Titre_Post (Optionnel)'] }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\": \"false\"\n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        176
+      ],
+      "id": "3f4e5af3-4174-4ecb-9be2-395e7c68643b",
+      "name": "YOUTUBE",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.tiktok_id }}\",\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": \"false\", \n      \"disabledDuet\": \"false\",\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": \"true\",\n      \"disabledStitch\": \"false\",\n      \"disabledComments\": \"false\",\n      \"isBrandedContent\": \"false\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        352
+      ],
+      "id": "5a3a4f78-9bb3-41d7-826b-66832ead0555",
+      "name": "TIKTOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"5418\",\n    \"target\": {\n      \"targetType\": \"facebook\",\n      \"pageId\": \"372471022626315\"\n   \n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"facebook\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        512
+      ],
+      "id": "44811a85-a3ef-46d3-8792-e3264cbfd057",
+      "name": "FACEBOOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"1877\",\n    \"target\": {\n      \"targetType\": \"threads\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"threads\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        672
+      ],
+      "id": "4c12c952-dc75-48ee-a025-d4b6dbba0485",
+      "name": "THREADS",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.linkedin_id }}\",\n    \"target\": {\n      \"targetType\": \"linkedin\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $json.Description_Post }}\",\n      \"platform\": \"linkedin\",\n      \"mediaUrls\": [\n        \"{{ $('Upload Video to Blotato').item.json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        1056
+      ],
+      "id": "f2784d88-51b4-4747-afb4-f50e1e1f611c",
+      "name": "LINKEDIN",
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -417,33 +465,33 @@
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
-      "updatedAt": "2025-06-01T09:12:32.143Z",
-      "createdAt": "2025-06-01T09:12:32.143Z",
+      "updatedAt": "2025-11-25T18:57:05.600Z",
+      "createdAt": "2025-11-25T18:57:05.600Z",
       "role": "workflow:owner",
-      "workflowId": "7LWlJT3YUwVzHSnm",
+      "workflowId": "8AUFlQ6shB0mBHHZ",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [
     {
-      "updatedAt": "2025-12-28T18:11:09.101Z",
-      "createdAt": "2025-12-28T18:11:09.101Z",
-      "id": "sVpkY0lvvpHVkXIe",
-      "name": "ok"
-    },
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:34:04.000Z",
-  "versionId": "78dd1c99-3e7b-4b8c-bddd-dadd4e293294"
+  "triggerCount": 2,
+  "updatedAt": "2025-12-29T00:32:11.000Z",
+  "versionId": "269f57bc-d83a-4e00-8a25-f390da8d89c0"
 }
