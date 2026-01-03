@@ -1,52 +1,118 @@
 {
   "": "",
-  "active": true,
+  "active": false,
   "connections": {
-    "Schedule Trigger": {
+    "Wait": {
       "main": [
         [
           {
-            "node": "Retrieve All Workflows",
+            "node": "Download Image",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Retrieve All Workflows": {
+    "Schedule Trigger1": {
       "main": [
         [
           {
-            "node": "Get Existing File SHA",
+            "node": "GNews",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get Existing File SHA": {
+    "Loop Over Items1": {
       "main": [
         [
           {
-            "node": "Check File Exists",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check File Exists": {
-      "main": [
-        [
-          {
-            "node": "Upload to GitHub",
+            "node": "AI Agent1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Create New File",
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "capitalize the title",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Post on instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create image on creatomate template": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "capitalize the title": {
+      "main": [
+        [
+          {
+            "node": "create image on creatomate template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extract": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GNews": {
+      "main": [
+        [
+          {
+            "node": "extract",
             "type": "main",
             "index": 0
           }
@@ -54,189 +120,245 @@
       ]
     }
   },
-  "createdAt": "2025-12-29T22:10:17.880Z",
-  "id": "s5pCoaRJK98u9vVQ",
+  "createdAt": "2025-12-09T20:49:32.669Z",
+  "id": "sr0TFWWrrMJaq0gY",
   "isArchived": false,
-  "meta": null,
-  "name": "GitHub Backup - Simple & Fonctionnel",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "L'IA surveille 1000 sites et crée des publications virales sur Instagram",
   "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -640,
+        384
+      ],
+      "id": "3ffe51d2-5d64-4e8d-b322-e7f9026cf469",
+      "name": "Wait",
+      "webhookId": "678e9484-ffbc-4d26-80f9-b12211972e12"
+    },
     {
       "parameters": {
         "rule": {
           "interval": [
-            {
-              "triggerAtHour": 5
-            },
-            {
-              "triggerAtHour": 17
-            }
+            {}
           ]
         }
       },
-      "id": "schedule-trigger",
-      "name": "Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
+        -880,
+        16
+      ],
+      "id": "68ac3627-485f-474a-9e00-b57afcaa2640",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -272,
+        16
+      ],
+      "id": "03c21dfd-a5c1-48b8-88f9-230ebb500f3b",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.url }}",
+        "options": {
+          "systemMessage": "create a headline for the single post on instagram for the link i have provided to you. It needs to be attention grabbing and short.Donot use #,,emojis, or \"\" like that,just plain text"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
         0,
         0
-      ]
+      ],
+      "id": "10c49e10-1724-4d97-abaa-657716199397",
+      "name": "AI Agent1"
     },
     {
       "parameters": {
-        "filters": {},
-        "requestOptions": {}
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
       },
-      "id": "retrieve-workflows",
-      "name": "Retrieve All Workflows",
-      "type": "n8n-nodes-base.n8n",
-      "typeVersion": 1,
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
       "position": [
-        208,
-        0
+        0,
+        160
       ],
+      "id": "c1f04fee-22cb-4bd4-b7c2-81de32465037",
+      "name": "OpenAI Chat Model1",
       "credentials": {
-        "n8nApi": {
-          "id": "KMOQv6yJi4nvCqcx",
-          "name": "n8n V2"
+        "openAiApi": {
+          "id": "LqiRrbM0XOaFZ6gQ",
+          "name": "OpenAi 07_12_25"
         }
       }
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "Adam-s-tech"
+        "method": "POST",
+        "url": "https://api.upload-post.com/api/upload",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Apikey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkYW1haW5leHQwQGdtYWlsLmNvbSIsImV4cCI6NDkxODkxNzQ2MSwianRpIjoiZjg4MjA3NTEtNTMzMS00YjFkLThhZTYtOTQ5M2M3ZGI2MjQ3In0.RVCMPZjyuiGmQIcihqvDL6AVvd73r3EITJE_rdBQstE"
+            }
+          ]
         },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "n8n-workflows-backup"
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "={{ $('Loop Over Items1').item.json.description }}"
+            },
+            {
+              "name": "user",
+              "value": "AdamAI"
+            },
+            {
+              "name": "platform[]",
+              "value": "instagram"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "video",
+              "inputDataFieldName": "data"
+            }
+          ]
         },
-        "filePath": "={{ $json.name.replace(/\\s+/g, '-').toLowerCase() }}-{{ $json.id }}.json",
-        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
-        "commitMessage": "=Backup workflow: {{ $json.name }}",
-        "additionalParameters": {
-          "sha": "={{ $('Get Existing File SHA').item.json.sha }}"
-        }
+        "options": {}
       },
-      "id": "github-upload",
-      "name": "Upload to GitHub",
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
       "position": [
-        600,
-        -100
+        -208,
+        384
       ],
-      "webhookId": "e4b51326-d778-4f0d-8e54-b08c9a6ad4f0",
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      },
-      "onError": "continueErrorOutput"
+      "id": "9b05056b-60f2-4d1b-b494-f09fae0a6fa9",
+      "name": "Post on instagram"
     },
     {
-      "id": "get-file-sha",
-      "name": "Get Existing File SHA",
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1,
-      "position": [
-        300,
-        0
-      ],
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "Adam-s-tech"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "n8n-workflows-backup"
-        },
-        "filePath": "={{ $json.name.replace(/\\s+/g, '-').toLowerCase() }}-{{ $json.id }}.json"
+        "url": "={{ $json.url }}",
+        "options": {}
       },
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      },
-      "continueOnFail": false,
-      "alwaysOutputData": true,
-      "onError": "continueRegularOutput"
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -448,
+        384
+      ],
+      "id": "3ba389fd-11bd-4a50-95fc-355dd271f947",
+      "name": "Download Image"
     },
     {
-      "id": "check-file-exists",
-      "name": "Check File Exists",
-      "type": "n8n-nodes-base.if",
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v2/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer "
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"template_id\": \"72f377e3-c136-43d0-b3f2-cbc43bd9cf85\",\n  \"modifications\": {\n    \"Image-NQT.source\": \"https://creatomate.com/files/assets/c611659c-299d-413b-b654-cb72943c749d\",\n    \"Text-XM5.text\": \"PRATIKSHA RAI CHALLENGES\\n US TO CHANGE, NOT AI\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -816,
+        384
+      ],
+      "id": "d85b6157-ec41-4563-8ad1-a19138eaf022",
+      "name": "create image on creatomate template"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst capitalizedOutput = items.map((item) => {\n  item.json.output = item.json.output.toUpperCase();\n  return item;\n});\nreturn capitalizedOutput;\n"
+      },
+      "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        400,
+        336,
         0
       ],
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "leftValue": "={{ $('Get Existing File SHA').item.json.sha }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notEmpty"
-              }
-            }
-          ],
-          "combinator": "and"
-        }
-      }
+      "id": "e408c961-aa96-49e9-92cf-6e2940b5c71e",
+      "name": "capitalize the title"
     },
     {
-      "id": "create-new-file",
-      "name": "Create New File",
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1,
-      "position": [
-        600,
-        100
-      ],
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "Adam-s-tech"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "n8n-workflows-backup"
-        },
-        "filePath": "={{ $('Retrieve All Workflows').item.json.name.replace(/\\s+/g, '-').toLowerCase() }}-{{ $('Retrieve All Workflows').item.json.id }}.json",
-        "fileContent": "={{ JSON.stringify($('Retrieve All Workflows').item.json, null, 2) }}",
-        "commitMessage": "=Create backup: {{ $('Retrieve All Workflows').item.json.name }}"
+        "jsCode": "const items = $input.all();\nlet output = [];\n\nfor (const item of items) {\n  for (const article of item.json.articles) {\n    output.push({\n      json: {\n        title: article.title,\n        url:article.url,\n        image: article.image,\n        description : article.description\n      }\n    });\n  }\n}\n\nreturn output;\n"
       },
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      }
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -464,
+        16
+      ],
+      "id": "9a722a28-a16d-4357-aee8-e942b59f37cb",
+      "name": "extract"
+    },
+    {
+      "parameters": {
+        "url": "https://gnews.io/api/v4/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "artificial intelligence"
+            },
+            {
+              "name": "lang",
+              "value": "en"
+            },
+            {
+              "name": "token",
+              "value": "ae88222ffe5a63bc76d55f4879511452"
+            },
+            {
+              "name": "max",
+              "value": "4"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -688,
+        16
+      ],
+      "id": "0b2c8259-2df2-42af-8d3f-22e7fdb44798",
+      "name": "GNews"
     }
   ],
   "pinData": {},
@@ -245,29 +367,38 @@
   "repo_path": "backups/",
   "settings": {
     "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
-    "saveExecutionProgress": true,
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": false
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T22:10:17.882Z",
-      "createdAt": "2025-12-29T22:10:17.882Z",
+      "updatedAt": "2025-12-09T20:49:32.675Z",
+      "createdAt": "2025-12-09T20:49:32.675Z",
       "role": "workflow:owner",
-      "workflowId": "s5pCoaRJK98u9vVQ",
+      "workflowId": "sr0TFWWrrMJaq0gY",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": {
-    "node:Schedule Trigger": {
+    "node:Schedule Trigger1": {
       "recurrenceRules": []
     }
   },
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    }
+  ],
   "triggerCount": 1,
-  "updatedAt": "2025-12-30T10:30:58.282Z",
-  "versionId": "8132e015-90cc-4d0a-b4c4-e2d322a51fe1"
+  "updatedAt": "2025-12-28T23:03:36.000Z",
+  "versionId": "fe0602d8-fb32-40cd-a6b6-97a29125aa7f"
 }
