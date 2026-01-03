@@ -2,389 +2,175 @@
   "": "",
   "active": false,
   "connections": {
-    "When clicking ‘Test workflow’": {
+    "If": {
       "main": [
         [
           {
-            "node": "\"Search\" request sur FireCrawl",
+            "node": "Send a photo message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 15 Secs Again",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Split Out": {
+    "Get a file": {
       "main": [
         [
           {
-            "node": "Ajout des URL sur Google Sheet",
+            "node": "Upload file",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Structured Output Parser": {
-      "ai_outputParser": [
-        [
-          {
-            "node": "URL analyzer",
-            "type": "ai_outputParser",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ajout des URL sur Google Sheet": {
+    "Upload file": {
       "main": [
         [
           {
-            "node": "Limite à 15 URL pour tester",
+            "node": "Nano Banana POST Request",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Limite à 15 URL pour tester": {
+    "Wait 15 Secs": {
       "main": [
         [
           {
-            "node": "URL analyzer",
+            "node": "GET Result from Nano Banana Node",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "URL analyzer": {
+    "Telegram Trigger": {
       "main": [
         [
           {
-            "node": "Mapping des site web",
+            "node": "Get a file",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Mapping des site web": {
+    "Wait 15 Secs Again": {
       "main": [
         [
           {
-            "node": "Filtre sur les sites officiel",
+            "node": "GET Result from Nano Banana Node",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filtre sur les sites officiel": {
+    "Nano Banana POST Request": {
       "main": [
         [
           {
-            "node": "Scrapping site web (POST)",
+            "node": "Wait 15 Secs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "GET du scrapping": {
+    "GET Result from Nano Banana Node": {
       "main": [
         [
           {
-            "node": "Ajout de l'email à la base de donnée",
+            "node": "If",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Scrapping site web (POST)": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ajout de l'email à la base de donnée": {
-      "main": [
-        [
-          {
-            "node": "Gmail",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "\"Search\" request sur FireCrawl": {
-      "main": [
-        [
-          {
-            "node": "Split Out",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "GET du scrapping",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "DeepSeek Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "URL analyzer",
-            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-05-22T17:09:18.698Z",
-  "id": "EwSIotCAGT2K3bwo",
+  "createdAt": "2025-12-29T23:37:34.722Z",
+  "id": "PObTTk94wdtQXXZm",
   "isArchived": false,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "01-Cold Lead Generator",
+  "meta": null,
+  "name": "Améliorez les photos immobilières avec Google Nano Banana AI via le bot Telegram",
   "nodes": [
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -160,
-        112
-      ],
-      "id": "80b811ae-5f7b-42ac-805a-0c7c13779052",
-      "name": "When clicking ‘Test workflow’"
-    },
-    {
       "parameters": {
-        "fieldToSplitOut": "data",
-        "options": {}
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/google/nano-banana/edit",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"enable_base64_output\": false,\n  \"enable_sync_mode\": false,\n  \"images\": [\n    \"{{ $json.webContentLink }}\"\n  ],\n  \"output_format\": \"jpeg\",\n  \"prompt\": \"Enhance this apartment photo to make it appealing for real-estate listing. Brighten the overall lighting and create a warm, inviting atmosphere. Improve color balance, contrast, and sharpness to highlight the space. Tidy up and declutter visible items (e.g., remove small messes, smooth out wrinkles on furniture, clear counters). Add natural daylight tones through the windows and enhance shadows for depth. Do not alter permanent fixtures such as flooring, walls, windows, doors, or built-in cabinetry. Keep the original layout intact but ensure the space looks clean, modern, and move-in ready.\"\n}",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
       },
-      "type": "n8n-nodes-base.splitOut",
-      "typeVersion": 1,
+      "id": "5061e742-6592-47d8-9ca0-d1ffdd881c68",
+      "name": "Nano Banana POST Request",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        320,
-        112
+        1456,
+        176
       ],
-      "id": "0b1ba5dc-40d8-4f0e-80b2-404d49ed15ac",
-      "name": "Split Out"
-    },
-    {
-      "parameters": {
-        "schemaType": "manual",
-        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"url\": { \"type\": \"string\" },\n    \"categorie\": { \n      \"type\": \"string\",\n      \"enum\": [\"Comparateur\", \"Site officiel\", \"Invalide\"]\n    }\n  },\n  \"required\": [\"url\", \"categorie\"]\n}\n"
-      },
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "typeVersion": 1.2,
-      "position": [
-        1232,
-        320
-      ],
-      "id": "ec1a4fdf-88a2-402a-908b-a844482a194a",
-      "name": "Structured Output Parser"
-    },
-    {
-      "parameters": {
-        "operation": "appendOrUpdate",
-        "documentId": {
-          "__rl": true,
-          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
-          "mode": "list",
-          "cachedResultName": "Cold Prospects",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1456465057,
-          "mode": "list",
-          "cachedResultName": "Feuille 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "url": "={{ $json.url }}"
-          },
-          "matchingColumns": [
-            "url"
-          ],
-          "schema": [
-            {
-              "id": "url",
-              "displayName": "url",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "title",
-              "displayName": "title",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "description",
-              "displayName": "description",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        544,
-        112
-      ],
-      "id": "c312b65e-d276-4b5e-88d8-dc315c2db4af",
-      "name": "Ajout des URL sur Google Sheet",
+      "typeVersion": 4.2,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "ZQGcJJquvGiwuSUh",
-          "name": "Dorian B- 6"
+        "httpHeaderAuth": {
+          "id": "Ii00jerJRlDsfgAZ",
+          "name": "Temp FireCrawl2"
         }
       }
     },
     {
       "parameters": {
-        "maxItems": 15
+        "amount": 15
       },
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
+      "id": "65dd45ba-73ff-4774-98f5-2189bbbd2cb6",
+      "name": "Wait 15 Secs",
+      "type": "n8n-nodes-base.wait",
       "position": [
-        768,
-        112
+        1728,
+        160
       ],
-      "id": "a7d6715a-1727-4253-89c0-7c79b7e9b978",
-      "name": "Limite à 15 URL pour tester"
+      "typeVersion": 1.1,
+      "webhookId": "a8917d08-7123-465e-91f5-7df6ac24f0d8"
     },
     {
       "parameters": {
-        "promptType": "define",
-        "text": "=voici les URL : {{ $json.url }}{{ $json.title }}",
-        "hasOutputParser": true,
+        "url": "=https://api.wavespeed.ai/api/v3/predictions/{{ $json.data.id }}/result",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "options": {
-          "systemMessage": "=Tu es un expert en analyse d'URLs pour les restaurants.\n\nTa tâche est d'analyser chaque URL qui t'est donnée et de déterminer si elle appartient :\n- soit à un site comparateur de restaurants (exemples : TheFork, Tripadvisor, Yelp, UberEats, Deliveroo, etc.)\n- soit au site officiel du restaurant lui-même.\n\nPour chaque URL, tu dois répondre uniquement avec un objet JSON ayant exactement deux clés :\n- \"url\" : l'URL analysée (string)\n- \"categorie\" : \"Comparateur\" ou \"Site officiel\" ou \"Invalide\" (string)\n\nLa valeur de \"categorie\" doit être strictement l'une de ces trois options : \"Comparateur\", \"Site officiel\" ou \"Invalide\".\n\nN'inclus aucun autre texte, explication, commentaire ou format. Ne donne qu'un seul objet JSON, sans phrase supplémentaire.\n\nExemple de réponse attendue :\n{\n  \"url\": \"https://www.thefork.com/restaurant/mamamia\",\n  \"categorie\": \"Comparateur\"\n}\n\nRéponds uniquement avec un objet JSON strictement valide, sans aucun texte avant ou après, ni sauts de ligne supplémentaires."
+          "redirect": {
+            "redirect": {}
+          }
         }
       },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.7,
+      "id": "4ceeff92-199f-47d8-a22a-f9a0786df44d",
+      "name": "GET Result from Nano Banana Node",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1008,
-        112
+        1984,
+        160
       ],
-      "id": "763dbde7-78bb-46ea-b883-4ddad33eca86",
-      "name": "URL analyzer"
-    },
-    {
-      "parameters": {
-        "operation": "appendOrUpdate",
-        "documentId": {
-          "__rl": true,
-          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
-          "mode": "list",
-          "cachedResultName": "Cold Prospects",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1456465057,
-          "mode": "list",
-          "cachedResultName": "Feuille 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "url": "={{ $json.output.url }}",
-            "title": "={{ $json.output.categorie }}"
-          },
-          "matchingColumns": [
-            "url"
-          ],
-          "schema": [
-            {
-              "id": "url",
-              "displayName": "url",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "title",
-              "displayName": "title",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "description",
-              "displayName": "description",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        1360,
-        112
-      ],
-      "id": "ab48775c-56f7-4029-ad96-466b940f5739",
-      "name": "Mapping des site web",
+      "typeVersion": 4.2,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "ZQGcJJquvGiwuSUh",
-          "name": "Dorian B- 6"
+        "httpHeaderAuth": {
+          "id": "Ii00jerJRlDsfgAZ",
+          "name": "Temp FireCrawl2"
         }
       }
     },
@@ -392,244 +178,220 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": true,
+            "version": 2,
             "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
+            "caseSensitive": true,
+            "typeValidation": "strict"
           },
+          "combinator": "and",
           "conditions": [
             {
-              "id": "5a832b55-a691-41cd-9d19-75b7d3ef4087",
-              "leftValue": "={{ $json.title }}",
-              "rightValue": "Comparateur",
+              "id": "b84517df-a71f-4e28-b744-35bb1e55b85f",
               "operator": {
+                "name": "filter.operator.equals",
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "completed"
             }
-          ],
-          "combinator": "and"
+          ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2.2,
+      "id": "76d74068-e416-4e8e-9ec7-0ac71a3abc18",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
       "position": [
-        1584,
-        112
+        2192,
+        160
       ],
-      "id": "105c9318-6c5c-47a3-9914-4cc3667aa31d",
-      "name": "Filtre sur les sites officiel"
+      "typeVersion": 2.2
     },
     {
       "parameters": {
-        "url": "=https://api.firecrawl.dev/v1/extract/{{ $json.id }}",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "options": {}
+        "amount": 15
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2224,
-        112
-      ],
-      "id": "5c226a1c-8f7a-4089-936e-8e9b793bc8a9",
-      "name": "GET du scrapping",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "eMUAoQsvaTAWQ02X",
-          "name": "Dorian 1"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.firecrawl.dev/v1/extract",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"blockAds\": true\n  },\n  \"urls\": [\n    \"{{ $json.url }}\"\n  ],\n  \"schema\": {\n  \"type\": \"object\",\n  \"properties\": {\n    \"email\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"email\"\n  ]\n}\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1808,
-        112
-      ],
-      "id": "f68c0c90-2f1f-4d61-a42c-14a29c072c71",
-      "name": "Scrapping site web (POST)",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "eMUAoQsvaTAWQ02X",
-          "name": "Dorian 1"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "appendOrUpdate",
-        "documentId": {
-          "__rl": true,
-          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
-          "mode": "list",
-          "cachedResultName": "Cold Prospects",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1456465057,
-          "mode": "list",
-          "cachedResultName": "Feuille 1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "url": "={{ $('Filtre sur les sites officiel').item.json.url }}",
-            "description": "={{ $json.data.email }}"
-          },
-          "matchingColumns": [
-            "url"
-          ],
-          "schema": [
-            {
-              "id": "url",
-              "displayName": "url",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "title",
-              "displayName": "title",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "description",
-              "displayName": "description",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        2464,
-        112
-      ],
-      "id": "e0795eda-5fa8-415c-b319-807e320aa206",
-      "name": "Ajout de l'email à la base de donnée",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "ZQGcJJquvGiwuSUh",
-          "name": "Dorian B- 6"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "draft",
-        "subject": "Et si vos clients pouvaient réserver ou poser des questions 24h/24 ?",
-        "emailType": "html",
-        "message": "=<html>\n  <body style=\"font-family: Arial, sans-serif; background-color: #f6f6f6; margin: 0; padding: 0;\">\n    <div style=\"max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);\">\n      \n      <h2 style=\"color: #333333;\">Bonjour,</h2>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Et si votre restaurant pouvait répondre automatiquement aux demandes de vos clients — même à <strong>2h du matin</strong> ?\n      </p>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Je propose l'intégration de <strong>chatbots intelligents</strong> disponibles 24h/24 via <strong>WhatsApp, Messenger</strong> ou directement sur votre site internet. Ces assistants permettent à vos clients de :\n      </p>\n\n      <ul style=\"color: #555555; line-height: 1.6; padding-left: 20px;\">\n        <li>Consulter votre menu facilement,</li>\n        <li>Obtenir des réponses instantanées (horaires, localisation, allergènes, etc.),</li>\n        <li>Réserver une table sans attendre.</li>\n      </ul>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Une solution simple à mettre en place, pensée pour vous faire gagner du temps et améliorer l’expérience client.\n      </p>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Je serais ravi d’échanger avec vous quelques minutes pour voir si cela pourrait convenir à votre établissement.\n      </p>\n\n      <p style=\"margin-top: 20px; font-weight: bold; color: #333333;\">👉 Quand seriez-vous disponible pour en discuter ?</p>\n\n      <p style=\"color: #999999; font-size: 14px; margin-top: 30px;\">\n        PS : Si vous n’êtes pas la personne en charge de ce type de décision, n’hésitez pas à en toucher un mot à votre responsable. Merci beaucoup !\n      </p>\n\n      <div style=\"margin-top: 30px; font-size: 14px; color: #777777;\">\n        <p>Bien à vous,</p>\n        <p><strong>### TON NOM ###</strong><br>\n        ##### LE NOM DE TON ENTREPRISE #####</p>\n      </div>\n    </div>\n  </body>\n</html>\n",
-        "options": {
-          "sendTo": "={{ $json.Email }}"
-        }
-      },
-      "type": "n8n-nodes-base.gmail",
-      "typeVersion": 2.1,
-      "position": [
-        2704,
-        112
-      ],
-      "id": "1231c4e0-bc3a-494e-9bc0-af548ecf8067",
-      "name": "Gmail",
-      "webhookId": "08878dc0-4d8f-40de-984e-7488b582f0b9",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "oGi6eYlZ16NVBxZx",
-          "name": "Gmail account 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.firecrawl.dev/v1/search",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"limit\": 50,\n  \"lang\": \"fr\",\n  \"country\": \"fr\",\n  \"timeout\": 60000,\n  \"scrapeOptions\": {\n    \"formats\": []\n  },\n  \"query\": \"Thérapeutes\",\n  \"location\": \"Marne la vallée\"\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        80,
-        112
-      ],
-      "id": "24b0f029-484a-4835-8b34-43eb67ab6a08",
-      "name": "\"Search\" request sur FireCrawl",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "eMUAoQsvaTAWQ02X",
-          "name": "Dorian 1"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "amount": 10
-      },
+      "id": "240601da-39a3-4804-a98b-6ebe32384d7d",
+      "name": "Wait 15 Secs Again",
       "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
       "position": [
-        2032,
-        112
+        2256,
+        336
       ],
-      "id": "a5d6b938-9f14-43e3-a5cc-81e8b0610926",
-      "name": "Wait",
-      "webhookId": "17a9ce7d-4355-4a7f-9466-189c15d58222"
+      "typeVersion": 1.1,
+      "webhookId": "2bb354f6-d5b6-4618-89ee-b713d14a4d63"
     },
     {
       "parameters": {
-        "options": {}
+        "content": "Get Image and Upload",
+        "height": 800,
+        "width": 304,
+        "color": 3
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
-      "typeVersion": 1,
+      "id": "f8dedc9a-d133-4421-923e-73f0f17fc52c",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2480,
+        -128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Get Results from Nano Banana",
+        "height": 800,
+        "width": 784,
+        "color": 4
+      },
+      "id": "0af9a813-e567-4a61-a15f-9c86a7f2ed8f",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1680,
+        -128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Telegram Trigger",
+        "height": 800,
+        "color": 5
+      },
+      "id": "8b0b7768-bfd9-4d98-929b-bf84333089e8",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        672,
+        -128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Download from Telegram",
+        "height": 800,
+        "width": 384
+      },
+      "id": "3106fd53-667e-4160-90f1-3fe7fc94703f",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        928,
+        -128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "1d875b2d-ff09-4ff8-ae7d-2bb391aef95f",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        752,
+        176
+      ],
+      "typeVersion": 1.2,
+      "webhookId": "c7ee53c0-ea4a-4956-9599-cfe8a6a2557b"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.photo[3].file_id }}",
+        "additionalFields": {}
+      },
+      "id": "4111222e-7f16-41b1-98c1-719882718fa5",
+      "name": "Get a file",
+      "type": "n8n-nodes-base.telegram",
       "position": [
         992,
-        320
+        176
       ],
-      "id": "89255e37-ad81-4d62-b443-cd03681fe7fb",
-      "name": "DeepSeek Chat Model",
+      "typeVersion": 1.2,
+      "webhookId": "8d6d0fb0-7b97-484c-ae37-5454b0a8d070"
+    },
+    {
+      "parameters": {
+        "name": "Image",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list"
+        },
+        "options": {}
+      },
+      "id": "88bf1c38-d3e0-4c9d-ba16-80c4318e11df",
+      "name": "Upload file",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        1200,
+        176
+      ],
+      "typeVersion": 3,
       "credentials": {
-        "deepSeekApi": {
-          "id": "KKXbY2xB3CfKS6pV",
-          "name": "DeepSeek account 2"
+        "googleDriveOAuth2Api": {
+          "id": "UqDPB5IG1vSb2j4D",
+          "name": "Google Drive Dorian"
         }
       }
+    },
+    {
+      "parameters": {
+        "content": "POST Request to Nano Banana",
+        "height": 800,
+        "width": 336
+      },
+      "id": "a723c2cf-bc30-4e8a-817a-c0f17e5117b7",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1328,
+        -128
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "file": "={{ $json.data.outputs[0] }}",
+        "additionalFields": {}
+      },
+      "id": "380c5d6d-aa5e-485f-ba3c-95bdf352643a",
+      "name": "Send a photo message",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2544,
+        144
+      ],
+      "typeVersion": 1.2,
+      "webhookId": "ca01240b-6a38-4759-b6bb-93a276570e1b"
+    },
+    {
+      "parameters": {
+        "content": "🤖 Telegram Image Editor with Nano Banana\n\nSend an image to your Telegram bot, and this workflow will automatically enhance it with Google’s Nano Banana (via Wavespeed API), then return the polished version back to the same chat—seamlessly.\n\n👉 Watch step-by-step video tutorials of workflows like these on www.youtube.com/@automatewithmarc\n\nWhat it does\n\nListens on Telegram for incoming photo messages\n\nDownloads the file sent by the user\n\nUploads it to Google Drive (temporary storage for processing)\n\nSends the image to Nano Banana API with a real-estate style cleanup + enhancement prompt\n\nPolls until the job is complete (handles async processing)\n\nReturns the edited image back to the same Telegram chat\n\nPerfect for\n\nReal-estate agents previewing polished property photos instantly\n\nSocial media managers editing on-the-fly from Telegram\n\nAnyone who wants “send → cleaned → returned” image flow without manual edits\n\nApps & Services\n\nTelegram Bot API (Trigger + Send/Receive files)\n\nGoogle Drive (Temporary file storage)\n\nWavespeed / Google Nano Banana (AI-powered image editing)\n\nSetup\n\nConnect your Telegram Bot API token in n8n.\n\nAdd your Wavespeed API key for Nano Banana.\n\nLink your Google Drive account (temporary storage).\n\nDeploy the workflow and send a test photo to your Telegram bot.\n\nCustomization\n\nAdjust the Nano Banana prompt for different styles (e.g., ecommerce cleanup, portrait retouching, color correction).\n\nReplace Google Drive with another storage service if preferred.\n\nAdd logging to Google Sheets or Airtable to track edits.",
+        "height": 1072,
+        "width": 720
+      },
+      "id": "41d20fe9-698c-4b88-81f4-1d15a65f4536",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        -144
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -641,35 +403,16 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-05-22T17:09:18.705Z",
-      "createdAt": "2025-05-22T17:09:18.705Z",
+      "updatedAt": "2025-12-29T23:37:34.725Z",
+      "createdAt": "2025-12-29T23:37:34.725Z",
       "role": "workflow:owner",
-      "workflowId": "EwSIotCAGT2K3bwo",
+      "workflowId": "PObTTk94wdtQXXZm",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [
-    {
-      "updatedAt": "2025-12-28T18:03:24.856Z",
-      "createdAt": "2025-12-28T18:03:24.856Z",
-      "id": "GTdKgw52KYtP73bB",
-      "name": "A voir"
-    },
-    {
-      "updatedAt": "2025-12-28T18:11:09.101Z",
-      "createdAt": "2025-12-28T18:11:09.101Z",
-      "id": "sVpkY0lvvpHVkXIe",
-      "name": "ok"
-    },
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
-    }
-  ],
+  "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:41:47.000Z",
-  "versionId": "29c027e6-d7e6-456b-95d4-fa9b95a3dc44"
+  "updatedAt": "2025-12-29T23:38:20.000Z",
+  "versionId": "81b070c7-79a7-4faf-b16f-1e97dd1b2169"
 }
