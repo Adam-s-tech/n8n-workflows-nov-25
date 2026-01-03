@@ -2,334 +2,353 @@
   "": "",
   "active": false,
   "connections": {
-    "When chat message received": {
+    "Webhook": {
       "main": [
         [
           {
-            "node": "WordPress AI Agent",
+            "node": "WordPress - List Posts",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Claude Sonnet 4.5": {
-      "ai_languageModel": [
-        []
-      ]
-    },
-    "Conversation Memory": {
-      "ai_memory": [
+    "WordPress - List Posts": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_memory",
+            "node": "Format Results",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Tool - Create Post": {
-      "ai_tool": [
+    "Format Results": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_tool",
+            "node": "Respond to Webhook",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Tool - List Posts": {
-      "ai_tool": [
+    "WordPress - Create Post": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_tool",
+            "node": "Format Response",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Tool - Update Post": {
-      "ai_tool": [
+    "Format Response": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_tool",
+            "node": "Respond to Webhook1",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Tool - Publish Blotato": {
-      "ai_tool": [
+    "Webhook1": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_tool",
+            "node": "WordPress - Create Post",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "DeepSeek Chat Model": {
-      "ai_languageModel": [
+    "Prepare Blotato Data": {
+      "main": [
         [
           {
-            "node": "WordPress AI Agent",
-            "type": "ai_languageModel",
+            "node": "Blotato API - Publish",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Blotato API - Publish": {
+      "main": [
+        [
+          {
+            "node": "Format Response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Prepare Blotato Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-11-25T18:51:50.394Z",
-  "id": "wX97u8coWecA21Er",
-  "isArchived": false,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "WordPress Agent SIMPLE - All in One",
+  "createdAt": "2025-11-25T21:51:58.054Z",
+  "id": "z9Elm8qeyuosShdB",
+  "isArchived": true,
+  "meta": null,
+  "name": "TEST SUB_Blotato_Publish",
   "nodes": [
     {
       "parameters": {
+        "httpMethod": "POST",
+        "path": "wp-list-posts",
+        "responseMode": "responseNode",
         "options": {}
       },
-      "id": "ef062ba3-4221-447d-9ecd-8a7d38a2d5e1",
-      "name": "When chat message received",
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.4,
+      "id": "096e7c0e-54dc-4a48-ae82-7d94161cb6f9",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
       "position": [
-        -528,
-        112
+        176,
+        -80
       ],
-      "webhookId": "wordpress-simple-agent"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "# Tu es ADAM AI - Assistant WordPress & Réseaux Sociaux 🤖\n\n## 🎯 TES CAPACITÉS\n\nTu peux :\n- ✅ Créer des articles WordPress\n- ✅ Lister les articles WordPress\n- ✅ Mettre à jour des articles\n- ✅ Publier sur 9 réseaux sociaux via Blotato\n\n## 📝 OUTILS DISPONIBLES\n\n**create_wordpress_post** : Crée un article WordPress\n- Paramètres : title (requis), content (requis), status (draft/publish)\n- Exemple : {\"title\": \"Mon Article\", \"content\": \"Contenu ici\", \"status\": \"draft\"}\n\n**list_wordpress_posts** : Liste les articles WordPress  \n- Paramètres : limit (optionnel, défaut 10)\n- Exemple : {\"limit\": 5}\n\n**update_wordpress_post** : Met à jour un article\n- Paramètres : post_id (requis), title, content, status\n- Exemple : {\"post_id\": 123, \"title\": \"Nouveau titre\"}\n\n**publish_to_blotato** : Publie sur 9 réseaux sociaux\n- Paramètres : title, description, media_url, article_url\n- Exemple : {\"title\": \"Mon article\", \"description\": \"Description\", \"media_url\": \"https://...\", \"article_url\": \"https://adamai.fr/mon-article\"}\n\n## 💬 TON COMPORTEMENT\n\n- Toujours en français 🇫🇷\n- Demande confirmation avant publication sur réseaux sociaux\n- Donne des retours clairs avec emojis\n- Si info manquante, pose des questions\n\n## ⚡ WORKFLOW CRÉATION D'ARTICLE\n\n1. Demande titre et contenu si pas fourni\n2. Crée l'article en draft par défaut\n3. Propose de publier sur les réseaux sociaux\n4. Si oui → Adapte le contenu et publie via Blotato\n\n**Réponds toujours en français et sois proactif !**",
-        "hasOutputParser": true,
-        "options": {}
-      },
-      "id": "511bb932-39f0-406f-bef4-e65879704b5f",
-      "name": "WordPress AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.7,
-      "position": [
-        -288,
-        -64
-      ]
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "claude-sonnet-4-5-20250929"
-        },
-        "options": {
-          "temperature": 0.7
-        }
-      },
-      "id": "766f791b-7ffa-4912-b1c7-4d2e831d2db2",
-      "name": "Claude Sonnet 4.5",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
-      "position": [
-        -320,
-        352
-      ],
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "contextWindowLength": 20
-      },
-      "id": "14d72355-a050-4ac2-bc94-2598ef1d9a4f",
-      "name": "Conversation Memory",
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        -192,
-        352
-      ]
-    },
-    {
-      "parameters": {
-        "name": "create_wordpress_post",
-        "description": "Crée un nouvel article sur WordPress. Paramètres JSON requis : {\"title\": \"Titre de l'article\", \"content\": \"Contenu HTML ou texte\", \"status\": \"draft\" ou \"publish\"}. Retourne l'ID, l'URL et les détails de l'article créé.",
-        "specifyInputSchema": true,
-        "jsonSchemaExample": "{\n  \"title\": \"Mon Article\",\n  \"content\": \"Contenu de l'article en HTML ou texte\",\n  \"status\": \"draft\"\n}"
-      },
-      "id": "0abdf76c-d181-4f88-9037-6bad21828c0a",
-      "name": "Tool - Create Post",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "name": "list_wordpress_posts",
-        "description": "Liste les articles WordPress. Paramètres JSON optionnels : {\"limit\": 10}. Retourne un array avec ID, titre, URL, statut et date de chaque article.",
-        "specifyInputSchema": true,
-        "jsonSchemaExample": "{\n  \"limit\": 10\n}"
-      },
-      "id": "8bc93fe4-5fd8-4249-9013-75cfeb828bb5",
-      "name": "Tool - List Posts",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        160,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "name": "update_wordpress_post",
-        "description": "Met à jour un article WordPress existant. Paramètres JSON : {\"post_id\": 123, \"title\": \"Nouveau titre\" (optionnel), \"content\": \"Nouveau contenu\" (optionnel), \"status\": \"publish\" (optionnel)}. Retourne l'article mis à jour.",
-        "specifyInputSchema": true,
-        "jsonSchemaExample": "{\n  \"post_id\": 123,\n  \"title\": \"Nouveau titre\",\n  \"content\": \"Nouveau contenu\",\n  \"status\": \"publish\"\n}"
-      },
-      "id": "d6e7f34a-4bce-40e1-bbd0-0a5a19206dab",
-      "name": "Tool - Update Post",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        320,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "name": "publish_to_blotato",
-        "description": "Publie du contenu sur 9 réseaux sociaux (Instagram, YouTube, TikTok, Facebook, LinkedIn, Threads, Twitter/X, Bluesky, Pinterest). Paramètres JSON : {\"title\": \"Titre\", \"description\": \"Texte pour réseaux sociaux\", \"media_url\": \"URL image/vidéo\", \"article_url\": \"URL article WordPress\"}.",
-        "specifyInputSchema": true,
-        "jsonSchemaExample": "{\n  \"title\": \"Mon Article\",\n  \"description\": \"Description engageante\",\n  \"media_url\": \"https://example.com/image.jpg\",\n  \"article_url\": \"https://adamai.fr/mon-article\"\n}"
-      },
-      "id": "cdcd899d-32eb-4fcb-b66f-6c69df8da347",
-      "name": "Tool - Publish Blotato",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        480,
-        0
-      ]
-    },
-    {
-      "parameters": {
-        "title": "={{ $json.title }}",
-        "additionalFields": {
-          "status": "={{ $json.status || 'draft' }}"
-        }
-      },
-      "id": "f4240769-c5e6-4bdf-82de-25ea67dd678a",
-      "name": "WordPress - Create",
-      "type": "n8n-nodes-base.wordpress",
-      "typeVersion": 1,
-      "position": [
-        0,
-        192
-      ],
-      "credentials": {
-        "wordpressApi": {
-          "id": "a3KzbnOyxvwTzlNx",
-          "name": "Wordpress account"
-        }
-      }
+      "webhookId": "wp-list-posts"
     },
     {
       "parameters": {
         "operation": "getAll",
-        "limit": "={{ $json.limit || 10 }}",
-        "options": {}
+        "limit": "={{ $json.body.limit || 10 }}",
+        "options": {
+          "status": "={{ $json.body.status || 'publish' }}"
+        }
       },
-      "id": "a292fa5e-b1f1-4607-b033-6a621d57c231",
-      "name": "WordPress - List",
+      "id": "3fc55a7d-e734-426f-ab37-6dc712501c52",
+      "name": "WordPress - List Posts",
       "type": "n8n-nodes-base.wordpress",
       "typeVersion": 1,
       "position": [
-        160,
-        192
+        400,
+        -80
       ],
       "credentials": {
         "wordpressApi": {
-          "id": "a3KzbnOyxvwTzlNx",
-          "name": "Wordpress account"
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "WordPress API"
         }
       }
     },
     {
       "parameters": {
-        "operation": "update",
-        "postId": "={{ $json.post_id }}",
-        "updateFields": {
-          "title": "={{ $json.title }}",
-          "content": "={{ $json.content }}",
-          "status": "={{ $json.status }}"
-        }
+        "jsCode": "const posts = $input.all();\n\nconst formatted = posts.map(item => ({\n  id: item.json.id,\n  title: item.json.title?.rendered || 'Sans titre',\n  status: item.json.status,\n  date: item.json.date,\n  link: item.json.link\n}));\n\nreturn {\n  json: {\n    success: true,\n    count: formatted.length,\n    posts: formatted\n  }\n};"
       },
-      "id": "43c45a23-2e27-4154-9ecd-0d89f59d5f34",
-      "name": "WordPress - Update",
-      "type": "n8n-nodes-base.wordpress",
-      "typeVersion": 1,
+      "id": "7a3dc3d1-135f-43ae-935a-009b0f6ab994",
+      "name": "Format Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
-        320,
-        192
-      ],
-      "credentials": {
-        "wordpressApi": {
-          "id": "a3KzbnOyxvwTzlNx",
-          "name": "Wordpress account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://adamai.app.n8n.cloud/webhook-test/blotato-social-publish",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"{{ $json.title }}\",\n  \"description\": \"{{ $json.description }}\",\n  \"media_url\": \"{{ $json.media_url }}\",\n  \"article_url\": \"{{ $json.article_url }}\",\n  \"trigger_source\": \"wordpress_agent\"\n}",
-        "options": {}
-      },
-      "id": "b53191b0-59a2-4bb4-a1a9-b622ebda4036",
-      "name": "Blotato - Publish",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        480,
-        192
+        624,
+        -80
       ]
     },
     {
       "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "id": "b8be5246-0afa-42d5-ab29-1e2f5966dcac",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1,
       "position": [
-        -288,
-        176
+        848,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "title": "={{ $json.body.title }}",
+        "additionalFields": {
+          "status": "={{ $json.body.status || 'draft' }}"
+        }
+      },
+      "id": "f38b562d-3795-4715-abbb-916d73f13cb4",
+      "name": "WordPress - Create Post",
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [
+        416,
+        144
       ],
-      "id": "d09cd671-e1a6-4ab4-84ed-8fd03f66281c",
-      "name": "DeepSeek Chat Model",
       "credentials": {
-        "deepSeekApi": {
-          "id": "KKXbY2xB3CfKS6pV",
-          "name": "DeepSeek account 2"
+        "wordpressApi": {
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "WordPress API"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "const post = $input.first().json;\n\nreturn {\n  json: {\n    success: true,\n    message: `✅ Article créé avec succès`,\n    post_id: post.id,\n    title: post.title?.rendered || 'Sans titre',\n    status: post.status,\n    link: post.link,\n    edit_link: `https://adamai.fr/wp-admin/post.php?post=${post.id}&action=edit`\n  }\n};"
+      },
+      "id": "214d1d4e-0bed-4d33-a495-376228383477",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "wp-create-post",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "18ba24aa-ce9c-4413-8f22-955ab3acaa88",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        192,
+        144
+      ],
+      "webhookId": "wp-create-post"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "8c6b28f2-ff6b-4e6a-b759-387bab7e0c2d",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        864,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Récupère les données du webhook\nconst input = $input.first().json.body;\n\n// Prépare le payload Blotato\nreturn {\n  json: {\n    url: input.url,\n    title: input.title,\n    description: input.description || '',\n    platforms: input.platforms || ['instagram', 'facebook', 'linkedin', 'twitter', 'threads', 'bluesky', 'pinterest', 'youtube', 'tiktok']\n  }\n};"
+      },
+      "id": "c53a6623-6310-4955-8806-0bee4bcdffba",
+      "name": "Prepare Blotato Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        432,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.blotato.com/v1/posts",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "blotalApi",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.url }}"
+            },
+            {
+              "name": "title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "description",
+              "value": "={{ $json.description }}"
+            },
+            {
+              "name": "platforms",
+              "value": "={{ $json.platforms }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "106c1c09-885d-43bf-99de-40b50b282e43",
+      "name": "Blotato API - Publish",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        656,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "blotato-publish",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "fbdd77e5-f2fa-415b-a83b-eb6ca95df6ff",
+      "name": "Webhook2",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        208,
+        368
+      ],
+      "webhookId": "blotato-publish"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\n\nreturn {\n  json: {\n    success: true,\n    message: `✅ Publication programmée sur ${response.platforms?.length || 9} réseaux sociaux`,\n    post_id: response.id,\n    scheduled_at: response.scheduled_at,\n    platforms: response.platforms,\n    blotato_url: `https://app.blotato.com/posts/${response.id}`\n  }\n};"
+      },
+      "id": "b4266079-27ca-43e3-b709-944e6ffeb9a5",
+      "name": "Format Response1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "5fae2344-e20f-40f5-a7c9-e0956e5b9546",
+      "name": "Respond to Webhook2",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        368
+      ]
     }
   ],
   "pinData": {},
@@ -341,21 +360,15 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-25T18:51:50.396Z",
-      "createdAt": "2025-11-25T18:51:50.396Z",
+      "updatedAt": "2025-11-25T21:51:58.056Z",
+      "createdAt": "2025-11-25T21:51:58.056Z",
       "role": "workflow:owner",
-      "workflowId": "wX97u8coWecA21Er",
+      "workflowId": "z9Elm8qeyuosShdB",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [
-    {
-      "updatedAt": "2025-12-28T18:22:55.919Z",
-      "createdAt": "2025-12-28T18:22:55.919Z",
-      "id": "ALdqECfMLigFyG7Y",
-      "name": "avec blotato"
-    },
     {
       "updatedAt": "2025-12-28T18:03:24.856Z",
       "createdAt": "2025-12-28T18:03:24.856Z",
@@ -364,6 +377,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T23:18:47.000Z",
-  "versionId": "0679e25f-85fb-459a-a870-fcdb7cfcf39d"
+  "updatedAt": "2025-12-29T00:05:39.000Z",
+  "versionId": "003064e6-55a3-4c1e-a686-599caa0629f3"
 }
