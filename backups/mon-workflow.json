@@ -2,373 +2,978 @@
   "": "",
   "active": false,
   "connections": {
-    "When chat message received": {
+    "Schedule Trigger": {
       "main": [
         [
           {
-            "node": "NOVA AI Agent",
+            "node": "Get my video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "NOVA AI Agent": {
+    "Get my video": {
       "main": [
         [
           {
-            "node": "Format Output",
+            "node": "Assign Social Media IDs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Claude Sonnet 4.5": {
-      "ai_languageModel": [
+    "Assign Social Media IDs": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_languageModel",
+            "node": "Upload Video to Blotato",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Simple Memory": {
-      "ai_memory": [
+    "Upload Video to Blotato": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_memory",
+            "node": "INSTAGRAM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TIKTOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "FACEBOOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "THREADS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TWITTER",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LINKEDIN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BLUESKY",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "PINTEREST",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "YOUTUBE",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Search Nodes Tool": {
-      "ai_tool": [
+    "INSTAGRAM": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_tool",
+            "node": "Merge",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Create Workflow Tool": {
-      "ai_tool": [
+    "YOUTUBE": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_tool",
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "TIKTOK": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "FACEBOOK": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "THREADS": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "LINKEDIN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "TWITTER": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Explain Node Tool": {
-      "ai_tool": [
+    "Code": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_tool",
+            "node": "If",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Research AI Agent": {
-      "ai_tool": [
+    "If": {
+      "main": [
         [
           {
-            "node": "NOVA AI Agent",
-            "type": "ai_tool",
+            "node": "DONE",
+            "type": "main",
             "index": 0
           }
-        ]
-      ]
-    },
-    "OpenRouter Chat Model": {
-      "ai_languageModel": [
+        ],
         [
           {
-            "node": "Research AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Research Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "Research AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Perplexity Search": {
-      "ai_tool": [
-        [
-          {
-            "node": "Research AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub": {
-      "ai_tool": [
-        [
-          {
-            "node": "NOVA AI Agent",
-            "type": "ai_tool",
+            "node": "ERROR",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-11-23T23:28:03.523Z",
-  "id": "bEAsc6Fy90WUMZqR",
-  "isArchived": true,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "NOVA 2.0 - Super Claude Agent (FIXED)",
+  "createdAt": "2025-12-29T22:18:35.119Z",
+  "id": "baxqgkwkuacFBJAh",
+  "isArchived": false,
+  "meta": null,
+  "name": "02-Auto-Post sur les Réseaux Sociaux copy",
   "nodes": [
     {
       "parameters": {
-        "options": {}
-      },
-      "id": "7fe94fc5-99b6-492d-925b-c9cc44e511bf",
-      "name": "When chat message received",
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.4,
-      "position": [
-        -48,
-        -80
-      ],
-      "webhookId": "nova-chat-trigger"
-    },
-    {
-      "parameters": {
-        "hasOutputParser": true,
-        "options": {}
-      },
-      "id": "774ac4e4-b003-4467-8292-b79f9e4165e6",
-      "name": "NOVA AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.7,
-      "position": [
-        240,
-        -80
-      ]
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "claude-sonnet-4-5-20250929"
-        },
-        "options": {
-          "temperature": 0.7
-        }
-      },
-      "id": "e56d9213-2cc1-4d45-8c85-1b801d17f20e",
-      "name": "Claude Sonnet 4.5",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
-      "position": [
-        80,
-        160
-      ],
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "contextWindowLength": 15
-      },
-      "id": "1dbbec78-032a-4bd6-a198-95c11c5fd5b3",
-      "name": "Simple Memory",
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        304,
-        176
-      ]
-    },
-    {
-      "parameters": {
-        "name": "search_n8n_nodes",
-        "description": "Recherche des nodes n8n par mots-clés. Utilise cet outil quand l'utilisateur demande : 'cherche les nodes Slack', 'trouve un node pour HTTP', 'nodes disponibles pour email', etc. Retourne les nodes les plus pertinents avec leurs descriptions."
-      },
-      "id": "e8012521-8b87-457a-a570-49ef4702d403",
-      "name": "Search Nodes Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        720,
-        16
-      ]
-    },
-    {
-      "parameters": {
-        "name": "create_simple_workflow",
-        "description": "Génère une structure de workflow n8n basique. Utilise cet outil quand l'utilisateur demande : 'crée un workflow', 'génère un workflow simple', 'montre-moi un exemple de workflow'. Retourne un JSON de workflow prêt à l'emploi."
-      },
-      "id": "d3deed98-5fb2-4a69-b997-645668a51b47",
-      "name": "Create Workflow Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        608,
-        176
-      ]
-    },
-    {
-      "parameters": {
-        "name": "explain_node",
-        "description": "Explique comment utiliser un node n8n spécifique. Utilise cet outil quand l'utilisateur demande : 'comment utiliser le node Slack', 'explique-moi HTTP Request', 'aide sur le node Gmail'. Retourne une explication détaillée avec exemples."
-      },
-      "id": "be08177d-84ad-4adc-93d0-d499f4aabe62",
-      "name": "Explain Node Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolCode",
-      "typeVersion": 1.1,
-      "position": [
-        752,
-        144
-      ]
-    },
-    {
-      "parameters": {
-        "text": "={{ $json.chatInput }}",
-        "options": {}
-      },
-      "id": "c5b438ca-318f-4873-a82a-8ab325a2d108",
-      "name": "Research AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agentTool",
-      "typeVersion": 2.2,
-      "position": [
-        96,
-        288
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "a2070c77-1bac-4776-a1e2-2e6de55f6e96",
-      "name": "OpenRouter Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
-      "typeVersion": 1,
-      "position": [
-        64,
-        432
-      ],
-      "credentials": {
-        "openRouterApi": {
-          "id": "SRY5WlhxIrOlx4HV",
-          "name": "OpenRouter account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "contextWindowLength": 25
-      },
-      "id": "b3401716-3843-47d0-a551-70f4d925bd07",
-      "name": "Research Memory",
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        192,
-        448
-      ]
-    },
-    {
-      "parameters": {
-        "messages": {
-          "message": [
+        "rule": {
+          "interval": [
             {
-              "content": "Tu es un agent spécialisé dans les réponses à l'utilisation de n8n et de ses problématiques le cas échéant : node, workflow, serveur, API, MCP et cetera.\nRéponds de façon synthétique et actionnable."
+              "triggerAtHour": 11
+            },
+            {
+              "triggerAtHour": 16
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -448,
+        1248
+      ],
+      "id": "03b2f03b-18df-4076-b1cd-cc133d2d914a",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"instagram_id\": \"5947\",\n  \"youtube_id\": \"4669\",\n  \"tiktok_id\": \"7605\",\n  \"facebook_id\": \"5418\",\n  \"facebook_page_id\": \"372471022626315\",\n  \"threads_id\": \"1552\",\n  \"twitter_id\": \"3175\",\n  \"linkedin_id\": \"3046\",\n  \"pinterest_id\": \"1077\",\n  \"pinterest_board_id\": \"101010\",\n  \"bluesky_id\": \"111111\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1248
+      ],
+      "id": "c6515bda-ed24-494c-9023-49e8cfdb7cfc",
+      "name": "Assign Social Media IDs",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Statut_Publication",
+              "lookupValue": "PENDING"
             }
           ]
         },
-        "options": {},
-        "requestOptions": {}
+        "combineFilters": "OR",
+        "options": {
+          "returnFirstMatch": true
+        }
       },
-      "id": "3a1d5b9a-6255-49c4-bb57-d810f9dfe665",
-      "name": "Perplexity Search",
-      "type": "n8n-nodes-base.perplexityTool",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        352,
-        432
+        -224,
+        1248
       ],
+      "id": "1ad14bde-109a-451d-9e73-b1ed3621577d",
+      "name": "Get my video",
+      "executeOnce": false,
       "credentials": {
-        "perplexityApi": {
-          "id": "sSEwWFKyAez5phcF",
-          "name": "Perplexity account"
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "// 🔧 CODE DE NETTOYAGE DES ÉCHAPPEMENTS JSON\n// Corrige les \\n, \\t, \\\" et autres échappements\n\n// Fonction pour nettoyer le texte\nfunction cleanText(text) {\n  if (typeof text !== 'string') return text;\n  \n  return text\n    .replace(/\\\\n/g, '\\n')      // Sauts de ligne\n    .replace(/\\\\r/g, '\\r')      // Retour chariot\n    .replace(/\\\\t/g, '\\t')      // Tabulations\n    .replace(/\\\\\"/g, '\"')      // Guillemets\n    .replace(/\\\\'/g, \"'\")      // Apostrophes\n    .replace(/\\\\\\\\/g, '\\\\');   // Backslashes\n}\n\n// Traite tous les items\nconst items = $input.all();\n\nfor (let item of items) {\n  // Nettoie tous les champs texte possibles\n  if (item.json.output) {\n    item.json.output = cleanText(item.json.output);\n  }\n  if (item.json.response) {\n    item.json.response = cleanText(item.json.response);\n  }\n  if (item.json.text) {\n    item.json.text = cleanText(item.json.text);\n  }\n  if (item.json.content) {\n    item.json.content = cleanText(item.json.content);\n  }\n  \n  // Ajoute un timestamp si pas présent\n  if (!item.json.timestamp) {\n    item.json.timestamp = new Date().toISOString();\n  }\n  \n  // Ajoute des métadonnées\n  item.json.agent = \"NOVA 2.0\";\n  item.json.success = true;\n}\n\nreturn items;"
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('Get my video').item.json.URL_Video_Source }}"
+            }
+          ]
+        },
+        "options": {}
       },
-      "id": "f053e52b-b427-46d8-bfc9-254e9fb2ff4e",
-      "name": "Format Output",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        224,
+        1248
+      ],
+      "id": "e3c5bcf1-bd0f-4039-bc33-7c4ccd858069",
+      "name": "Upload Video to Blotato",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.instagram_id }}\",\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        704
+      ],
+      "id": "f3073479-8cde-49e4-b15e-14cf67974cee",
+      "name": "INSTAGRAM",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.youtube_id }}\",\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Get my video').item.json['Titre_Post (Optionnel)'] }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\": \"false\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        880
+      ],
+      "id": "ebedbd68-3e15-4313-a663-bd038073f105",
+      "name": "YOUTUBE",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.tiktok_id }}\",\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": \"false\", \n      \"disabledDuet\": \"false\",\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": \"true\",\n      \"disabledStitch\": \"false\",\n      \"disabledComments\": \"false\",\n      \"isBrandedContent\": \"false\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1056
+      ],
+      "id": "9ea94e0b-37ee-4f24-937f-94d10cb71b58",
+      "name": "TIKTOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"5418\",\n    \"target\": {\n      \"targetType\": \"facebook\",\n      \"pageId\": \"372471022626315\"\n   \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"facebook\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1216
+      ],
+      "id": "4b26c95d-82e8-4383-8df3-3eb9556deac0",
+      "name": "FACEBOOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"1877\",\n    \"target\": {\n      \"targetType\": \"threads\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"threads\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1376
+      ],
+      "id": "6dfde5cf-bde2-4a47-9c46-4edd711cf719",
+      "name": "THREADS",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.linkedin_id }}\",\n    \"target\": {\n      \"targetType\": \"linkedin\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"linkedin\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1760
+      ],
+      "id": "ca7ce39e-5161-4a42-ac2b-85cadc969524",
+      "name": "LINKEDIN",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "= {\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.bluesky_id }}\",\n    \"target\": {\n      \"targetType\": \"bluesky\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"bluesky\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1936
+      ],
+      "id": "f7ad7a58-04aa-4709-aa58-c0564d4ef48d",
+      "name": "BLUESKY",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_id }}\",\n    \"target\": {\n      \"targetType\": \"pinterest\",\n      \"boardId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_board_id }}\"      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"pinterest\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        2160
+      ],
+      "id": "30dff13d-5e87-465f-81d0-b98bcfc563a2",
+      "name": "PINTEREST",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $('Get my video').item.json.ID_Video }}",
+            "Statut_Publication": "GO"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1200,
+        528
+      ],
+      "id": "db9f8dc5-31d1-47fd-9cb1-4fd076c08cfc",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.twitter_id }}\",\n    \"target\": {\n      \"targetType\": \"twitter\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"twitter\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1568
+      ],
+      "id": "90b89fc2-3972-4a18-b7e0-5aee5b21f0e4",
+      "name": "TWITTER",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $json.row_number }}",
+            "Statut_Publication": "ERROR"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2480,
+        1408
+      ],
+      "id": "885f900d-5304-40f5-823e-955c65f63a6a",
+      "name": "ERROR",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $json.row_number }}",
+            "Statut_Publication": "DONE"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2464,
+        1088
+      ],
+      "id": "54fbc954-9cb3-4d86-b653-faf9da24d1d0",
+      "name": "DONE",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 7
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1792,
+        1168
+      ],
+      "id": "2534f5aa-e44c-4e33-a0b6-7f55f78492ac",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n  const enabledPlatforms = ['INSTAGRAM','YOUTUBE','TIKTOK','FACEBOOK','THREADS','LINKEDIN','TWITTER']; // List of enabled platforms\nlet successfulPosts = 0;\n\n// Count successful posts\nfor (const item of items) {\n  if (item.json.postSubmissionId) {\n    successfulPosts++;\n  }\n}\n\n// Get row_number from Get my video node\nconst ID_Video = $('Get my video').first().json.ID_Video;\n\n// Return allPosted and row_number to preserve pairing\nreturn [{ json: { allPosted: successfulPosts === enabledPlatforms.length, row_number: ID_Video } }];"
+      },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        576,
-        -80
-      ]
+        2032,
+        1248
+      ],
+      "id": "1ed8cd97-dc63-439c-867a-37a008da11e8",
+      "name": "Code"
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "repository",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "value": "Adam-s-tech",
-          "mode": "name"
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ab94129c-5418-4321-96a4-c4c77e961e88",
+              "leftValue": "={{ $json.allPosted }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
         },
-        "repository": {
-          "__rl": true,
-          "value": "n8n-workflows-nov-25",
-          "mode": "name"
-        }
+        "looseTypeValidation": true,
+        "options": {}
       },
-      "type": "n8n-nodes-base.githubTool",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
       "position": [
-        512,
+        2240,
+        1248
+      ],
+      "id": "ed50fabf-496a-4fa5-9349-d7bb67745cbc",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "# Auto-Publish to 9 Social Platforms\n## Automates distribution using Blotato’s API.\n## The video is auto-published to Instagram, YouTube, TikTok, Facebook, \n## LinkedIn, Threads, Twitter (X), Bluesky, and Pinterest \n## — all in one go, with no manual work required.\n### ** Documentation : ** [Guide](https://automatisation.notion.site/Workflow-n8n-d-Auto-Post-sur-les-r-seaux-sociaux-1d33d6550fd980b7b43ac417e9a06a9b?pvs=4)",
+        "height": 300,
+        "width": 880,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -512,
         160
       ],
-      "id": "67f06639-5b13-4283-b952-5c76e661f7a8",
-      "name": "GitHub",
-      "webhookId": "30f63a67-3d8e-4a93-b812-efb58ea127f6",
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "Lmc0dxaM2GtWkcxw",
-          "name": "GitHub account"
-        }
-      }
+      "id": "97668b4e-6aae-4336-8c56-24e5c031626d",
+      "name": "Sticky Note3"
     }
   ],
   "pinData": {},
@@ -380,29 +985,16 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-11-23T23:28:03.533Z",
-      "createdAt": "2025-11-23T23:28:03.533Z",
+      "updatedAt": "2025-12-29T22:18:35.121Z",
+      "createdAt": "2025-12-29T22:18:35.121Z",
       "role": "workflow:owner",
-      "workflowId": "bEAsc6Fy90WUMZqR",
+      "workflowId": "baxqgkwkuacFBJAh",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [
-    {
-      "updatedAt": "2025-11-23T23:26:35.520Z",
-      "createdAt": "2025-11-23T23:26:35.520Z",
-      "id": "WYIExLn7k54SGXmx",
-      "name": "NOVA Agent"
-    },
-    {
-      "updatedAt": "2025-12-28T18:11:09.101Z",
-      "createdAt": "2025-12-28T18:11:09.101Z",
-      "id": "sVpkY0lvvpHVkXIe",
-      "name": "ok"
-    }
-  ],
+  "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T00:24:59.000Z",
-  "versionId": "65e59b43-5df8-4174-a315-f2752824e5fb"
+  "updatedAt": "2025-12-29T22:18:35.119Z",
+  "versionId": "7f309a71-8ca5-43df-b92a-ed5db3a4d9af"
 }
