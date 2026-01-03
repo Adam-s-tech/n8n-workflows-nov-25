@@ -2,1775 +2,637 @@
   "": "",
   "active": false,
   "connections": {
-    "n8n": {
+    "When clicking ‘Test workflow’": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "\"Search\" request sur FireCrawl",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Config": {
+    "Split Out": {
       "main": [
         [
           {
-            "node": "Get file data",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge Items",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Get File": {
-      "main": [
-        [
-          {
-            "node": "Merge Items",
+            "node": "Ajout des URL sur Google Sheet",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "File is new": {
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "URL analyzer",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajout des URL sur Google Sheet": {
       "main": [
         [
           {
-            "node": "Create new file",
+            "node": "Limite à 15 URL pour tester",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Merge Items": {
+    "Limite à 15 URL pour tester": {
       "main": [
         [
           {
-            "node": "isDiffOrNew",
+            "node": "URL analyzer",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "isDiffOrNew": {
+    "URL analyzer": {
       "main": [
         [
           {
-            "node": "Create sub path",
+            "node": "Mapping des site web",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check Status": {
+    "Mapping des site web": {
       "main": [
         [
           {
-            "node": "Same file - Do nothing",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "File is different",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "File is new",
+            "node": "Filtre sur les sites officiel",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Failed Flows": {
+    "Filtre sur les sites officiel": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Scrapping site web (POST)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get file data": {
+    "GET du scrapping": {
       "main": [
         [
           {
-            "node": "If file too large",
+            "node": "Ajout de l'email à la base de donnée",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Create new file": {
+    "Scrapping site web (POST)": {
       "main": [
         [
           {
-            "node": "Return",
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Create sub path": {
+    "Ajout de l'email à la base de donnée": {
       "main": [
         [
           {
-            "node": "Check Status",
+            "node": "Gmail",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop Over Items": {
+    "\"Search\" request sur FireCrawl": {
       "main": [
         [
           {
-            "node": "Completed Notification",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Execute Workflow",
+            "node": "Split Out",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Execute Workflow": {
+    "Wait": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Failed Flows",
+            "node": "GET du scrapping",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
         [
           {
-            "node": "Starting Message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Starting Message": {
-      "main": [
-        [
-          {
-            "node": "n8n",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "File is different": {
-      "main": [
-        [
-          {
-            "node": "Edit existing file",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If file too large": {
-      "main": [
-        [
-          {
-            "node": "Get File",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Merge Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit existing file": {
-      "main": [
-        [
-          {
-            "node": "Return",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On clicking 'execute'": {
-      "main": [
-        [
-          {
-            "node": "Starting Message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Same file - Do nothing": {
-      "main": [
-        [
-          {
-            "node": "Return",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Execute Workflow Trigger": {
-      "main": [
-        [
-          {
-            "node": "Config",
-            "type": "main",
+            "node": "URL analyzer",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2026-01-03T14:03:45.454Z",
-  "id": "Et3PXHJecODC9TuP",
+  "createdAt": "2025-05-22T17:09:18.698Z",
+  "id": "EwSIotCAGT2K3bwo",
   "isArchived": false,
-  "meta": null,
-  "name": "V2 Sauvegardez vos flux de travail n8n sur Github copy",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "01-Cold Lead Generator",
   "nodes": [
     {
       "parameters": {},
-      "id": "65f73bea-933b-4c33-a501-b6a02bfedee2",
-      "name": "On clicking 'execute'",
       "type": "n8n-nodes-base.manualTrigger",
-      "position": [
-        304,
-        16
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Subworkflow",
-        "height": 731.7039821513649,
-        "width": 1910.7813046051347,
-        "color": 6
-      },
-      "id": "5fff9c77-79d8-4293-8d34-90db8cccc096",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -176,
-        400
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "5491c78e-e6c9-44ad-a693-8e754ec4faea",
-      "name": "Execute Workflow Trigger",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "position": [
-        -112,
-        784
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "filters": {},
-        "requestOptions": {}
-      },
-      "id": "44d00ca0-6f23-49a8-b746-682a5a7d18f2",
-      "name": "n8n",
-      "type": "n8n-nodes-base.n8n",
-      "position": [
-        704,
-        128
-      ],
       "typeVersion": 1,
+      "position": [
+        -160,
+        112
+      ],
+      "id": "80b811ae-5f7b-42ac-805a-0c7c13779052",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        320,
+        112
+      ],
+      "id": "0b1ba5dc-40d8-4f0e-80b2-404d49ed15ac",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"url\": { \"type\": \"string\" },\n    \"categorie\": { \n      \"type\": \"string\",\n      \"enum\": [\"Comparateur\", \"Site officiel\", \"Invalide\"]\n    }\n  },\n  \"required\": [\"url\", \"categorie\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1232,
+        320
+      ],
+      "id": "ec1a4fdf-88a2-402a-908b-a844482a194a",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
+          "mode": "list",
+          "cachedResultName": "Cold Prospects",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1456465057,
+          "mode": "list",
+          "cachedResultName": "Feuille 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "url": "={{ $json.url }}"
+          },
+          "matchingColumns": [
+            "url"
+          ],
+          "schema": [
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        544,
+        112
+      ],
+      "id": "c312b65e-d276-4b5e-88d8-dc315c2db4af",
+      "name": "Ajout des URL sur Google Sheet",
       "credentials": {
-        "n8nApi": {
-          "id": "KMOQv6yJi4nvCqcx",
-          "name": "n8n V2"
+        "googleSheetsOAuth2Api": {
+          "id": "ZQGcJJquvGiwuSUh",
+          "name": "Dorian B- 6"
         }
       }
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "8d513345-6484-431f-afb7-7cf045c90f4f",
-              "name": "Done",
-              "type": "boolean",
-              "value": true
-            }
-          ]
-        },
-        "options": {}
+        "maxItems": 15
       },
-      "id": "512eccf7-d7f6-4981-af99-a6b5b214de7c",
-      "name": "Return",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
       "position": [
-        1552,
-        608
+        768,
+        112
       ],
-      "typeVersion": 3.3
+      "id": "a7d6715a-1727-4253-89c0-7c79b7e9b978",
+      "name": "Limite à 15 URL pour tester"
     },
     {
       "parameters": {
-        "url": "={{ $json.download_url }}",
+        "promptType": "define",
+        "text": "=voici les URL : {{ $json.url }}{{ $json.title }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Tu es un expert en analyse d'URLs pour les restaurants.\n\nTa tâche est d'analyser chaque URL qui t'est donnée et de déterminer si elle appartient :\n- soit à un site comparateur de restaurants (exemples : TheFork, Tripadvisor, Yelp, UberEats, Deliveroo, etc.)\n- soit au site officiel du restaurant lui-même.\n\nPour chaque URL, tu dois répondre uniquement avec un objet JSON ayant exactement deux clés :\n- \"url\" : l'URL analysée (string)\n- \"categorie\" : \"Comparateur\" ou \"Site officiel\" ou \"Invalide\" (string)\n\nLa valeur de \"categorie\" doit être strictement l'une de ces trois options : \"Comparateur\", \"Site officiel\" ou \"Invalide\".\n\nN'inclus aucun autre texte, explication, commentaire ou format. Ne donne qu'un seul objet JSON, sans phrase supplémentaire.\n\nExemple de réponse attendue :\n{\n  \"url\": \"https://www.thefork.com/restaurant/mamamia\",\n  \"categorie\": \"Comparateur\"\n}\n\nRéponds uniquement avec un objet JSON strictement valide, sans aucun texte avant ou après, ni sauts de ligne supplémentaires."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1008,
+        112
+      ],
+      "id": "763dbde7-78bb-46ea-b883-4ddad33eca86",
+      "name": "URL analyzer"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
+          "mode": "list",
+          "cachedResultName": "Cold Prospects",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1456465057,
+          "mode": "list",
+          "cachedResultName": "Feuille 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "url": "={{ $json.output.url }}",
+            "title": "={{ $json.output.categorie }}"
+          },
+          "matchingColumns": [
+            "url"
+          ],
+          "schema": [
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
         "options": {}
       },
-      "id": "e73939d9-53a2-4532-a661-4028a9bad9f4",
-      "name": "Get File",
-      "type": "n8n-nodes-base.httpRequest",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        512,
-        480
+        1360,
+        112
       ],
-      "typeVersion": 4.2
+      "id": "ab48775c-56f7-4029-ad96-466b940f5739",
+      "name": "Mapping des site web",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZQGcJJquvGiwuSUh",
+          "name": "Dorian B- 6"
+        }
+      }
     },
     {
       "parameters": {
         "conditions": {
           "options": {
-            "leftValue": "",
             "caseSensitive": true,
-            "typeValidation": "strict"
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
-          "combinator": "and",
           "conditions": [
             {
-              "id": "45ce825e-9fa6-430c-8931-9aaf22c42585",
+              "id": "5a832b55-a691-41cd-9d19-75b7d3ef4087",
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "Comparateur",
               "operator": {
                 "type": "string",
-                "operation": "empty",
-                "singleValue": true
-              },
-              "leftValue": "={{ $json.content }}",
-              "rightValue": ""
-            },
-            {
-              "id": "9619a55f-7fb1-4f24-b1a7-7aeb82365806",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              },
-              "leftValue": "={{ $json.error }}",
-              "rightValue": ""
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             }
-          ]
+          ],
+          "combinator": "and"
         },
         "options": {}
       },
-      "id": "fc839db1-776c-479e-b935-548c75b2d69c",
-      "name": "If file too large",
-      "type": "n8n-nodes-base.if",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
       "position": [
-        272,
-        496
+        1584,
+        112
       ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {},
-      "id": "7044a3c8-8ad6-4b3b-85ed-d24e1d1b9ad6",
-      "name": "Merge Items",
-      "type": "n8n-nodes-base.merge",
-      "position": [
-        272,
-        768
-      ],
-      "typeVersion": 2
+      "id": "105c9318-6c5c-47a3-9914-4cc3667aa31d",
+      "name": "Filtre sur les sites officiel"
     },
     {
       "parameters": {
-        "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();\n"
+        "url": "=https://api.firecrawl.dev/v1/extract/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
       },
-      "id": "839b3070-7d50-4e17-bf76-634aa129c102",
-      "name": "isDiffOrNew",
-      "type": "n8n-nodes-base.code",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        464,
-        768
+        2224,
+        112
       ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "dataType": "string",
-        "value1": "={{$json.github_status}}",
-        "rules": {
-          "rules": [
-            {
-              "value2": "same"
-            },
-            {
-              "value2": "different",
-              "output": 1
-            },
-            {
-              "value2": "new",
-              "output": 2
-            }
-          ]
-        }
-      },
-      "id": "4b6d9317-c810-4631-900b-2d27baf05f33",
-      "name": "Check Status",
-      "type": "n8n-nodes-base.switch",
-      "position": [
-        864,
-        768
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "82545f17-5556-4dbe-9c3e-546228b03be2",
-      "name": "Same file - Do nothing",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        608
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "868a4124-f2d5-4d2f-9bd0-fa98bf5e733b",
-      "name": "File is different",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        768
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "558b1f9b-4198-4746-843b-a328184dba8a",
-      "name": "File is new",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        960
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "edit",
-        "owner": {
-          "__rl": true,
-          "value": "=Adam-s-tech",
-          "mode": ""
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/mon-workflow.json",
-        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
-      },
-      "id": "c312c845-66f4-48d0-a398-61feccdab8f4",
-      "name": "Create new file",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        1312,
-        960
-      ],
-      "typeVersion": 1,
-      "webhookId": "a8fe6e79-82b4-44cb-9ea1-26c801ee90dc",
+      "id": "5c226a1c-8f7a-4089-936e-8e9b793bc8a9",
+      "name": "GET du scrapping",
       "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
+        "httpHeaderAuth": {
+          "id": "eMUAoQsvaTAWQ02X",
+          "name": "Dorian 1"
         }
       }
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "edit",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "=Adam-s-tech"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/mon-workflow.json",
-        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/extract",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"blockAds\": true\n  },\n  \"urls\": [\n    \"{{ $json.url }}\"\n  ],\n  \"schema\": {\n  \"type\": \"object\",\n  \"properties\": {\n    \"email\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"email\"\n  ]\n}\n}",
+        "options": {}
       },
-      "id": "0f8f49d6-e027-4365-9bc2-5b549ce22e83",
-      "name": "Edit existing file",
-      "type": "n8n-nodes-base.github",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        1312,
-        768
+        1808,
+        112
       ],
-      "typeVersion": 1,
-      "webhookId": "f3b16477-ffff-4996-aab9-c3aad0c75635",
+      "id": "f68c0c90-2f1f-4d61-a42c-14a29c072c71",
+      "name": "Scrapping site web (POST)",
       "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
+        "httpHeaderAuth": {
+          "id": "eMUAoQsvaTAWQ02X",
+          "name": "Dorian 1"
         }
       }
     },
     {
       "parameters": {
-        "options": {}
-      },
-      "id": "0864a656-2c7a-4d94-8e91-703f15318c20",
-      "name": "Loop Over Items",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        912,
-        128
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84",
+          "mode": "list",
+          "cachedResultName": "Cold Prospects",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1456465057,
+          "mode": "list",
+          "cachedResultName": "Feuille 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ryePWk1MAiyOgyLUo-4SBprhlVtfFAVEAYGvdTTNp84/edit#gid=1456465057"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "url": "={{ $('Filtre sur les sites officiel').item.json.url }}",
+            "description": "={{ $json.data.email }}"
+          },
+          "matchingColumns": [
+            "url"
+          ],
+          "schema": [
             {
-              "triggerAtHour": 1,
-              "triggerAtMinute": 33
-            }
-          ]
-        }
-      },
-      "id": "0c033a3a-99ab-48f3-a0e1-5e7971072c3d",
-      "name": "Schedule Trigger",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "position": [
-        304,
-        224
-      ],
-      "typeVersion": 1.2
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "dae43d3b-56e5-4098-b602-862ebf5cd073",
-              "name": "subPath",
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
               "type": "string",
-              "value": "={{ $('Execute Workflow Trigger').first().json.createdAt.split('-')[0] }}/{{ $('Execute Workflow Trigger').first().json.createdAt.split('-')[1] }}/"
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
-        "includeOtherFields": true,
         "options": {}
       },
-      "id": "9e8222f2-c0c2-458d-a5ca-7db10c172c03",
-      "name": "Create sub path",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        672,
-        768
+        2464,
+        112
       ],
-      "typeVersion": 3.3
-    },
-    {
-      "parameters": {
-        "content": "## Backup to GitHub \nThis workflow will backup all instance workflows to GitHub every 24 hours.\n\nThe files are saved into folders using `YYYY/MM/` for the directory path and `ID.json` for the filename.\n\nThe Repo Owner, Repo Name and Main folder are set using the **Variables** feature but can be replaced with the `Config` node in the subworkflow. \n\nThe workflow runs calls itself to help reduce memory usage, Once the workflow has completed it will send an optional notification to Slack.\n\n### Time to Run\nTested with 1423 workflows on `1.44.1` it took under 30 minutes for the first run and under 12 minutes once the initial run is complete.",
-        "height": 417,
-        "width": 385,
-        "color": 4
-      },
-      "id": "a66717a4-abc5-460d-9554-ee1f9711ccc3",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -176,
-        -64
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Main workflow loop",
-        "height": 416.1856906618075,
-        "width": 1272.6408145680155,
-        "color": 7
-      },
-      "id": "2b5fb31e-93ee-4e1c-bdbe-137296515b6a",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        272,
-        -64
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=:information_source:  Starting Workflow Backup [{{ $execution.id }}]",
-        "otherOptions": {
-          "includeLinkToWorkflow": false
-        }
-      },
-      "id": "e47dc44f-758d-4e05-be4b-7841029d58e2",
-      "name": "Starting Message",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        544,
-        128
-      ],
-      "webhookId": "10ae6d9b-5ff8-4883-a61f-fbe44a31a023",
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "workflowId": "={{ $workflow.id }}",
-        "mode": "each",
-        "options": {}
-      },
-      "id": "9153fbcc-169c-4a6e-93ee-941bca57a0c6",
-      "name": "Execute Workflow",
-      "type": "n8n-nodes-base.executeWorkflow",
-      "position": [
-        1136,
-        144
-      ],
-      "typeVersion": 1,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=✅ Backup has completed - {{ $('n8n').all().length }} workflows have been processed.",
-        "otherOptions": {}
-      },
-      "id": "16e9b3a8-076f-41a4-9cba-005dca2d221a",
-      "name": "Completed Notification",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        1136,
-        -48
-      ],
-      "webhookId": "d817f5d0-93e1-49cb-ae37-c36e8307919d",
-      "executeOnce": true,
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=:x: Failed to backup {{ $('Loop Over Items').item.json.id }}",
-        "otherOptions": {
-          "includeLinkToWorkflow": false
-        }
-      },
-      "id": "d1444fab-7702-4d5f-bdb1-a5ab6237407a",
-      "name": "Failed Flows",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        1328,
-        160
-      ],
-      "webhookId": "c793d866-325f-485d-88be-8e5378bc155b",
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "value": "=Adam-s-tech",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/",
-        "additionalParameters": {}
-      },
-      "id": "07e99bf5-ba4b-4894-a64d-c1665f93c9f2",
-      "name": "Get file data",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        64,
-        496
-      ],
-      "typeVersion": 1,
-      "alwaysOutputData": true,
-      "webhookId": "93bd84b7-f48a-4e5d-863c-c5ac5de47c71",
+      "id": "e0795eda-5fa8-415c-b319-807e320aa206",
+      "name": "Ajout de l'email à la base de donnée",
       "credentials": {
-        "githubOAuth2Api": {
-          "id": "Lmc0dxaM2GtWkcxw",
-          "name": "GitHub account"
+        "googleSheetsOAuth2Api": {
+          "id": "ZQGcJJquvGiwuSUh",
+          "name": "Dorian B- 6"
         }
-      },
-      "continueOnFail": true
+      }
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "8f6d1741-772f-462a-811f-4c334185e4f0",
-              "name": "repo_owner",
-              "type": "string",
-              "value": "=Adam-s-tech"
-            },
-            {
-              "id": "8cac215c-4fd7-422f-9fd2-6b2d1e5e0383",
-              "name": "repo_name",
-              "type": "string",
-              "value": "=n8n-workflows-nov-25"
-            },
-            {
-              "id": "eee305e9-4164-462a-86bd-80f0d58a31ae",
-              "name": "repo_path",
-              "type": "string",
-              "value": "=backups/mon-workflow.json"
-            },
-            {
-              "id": "c3e1c78f-7278-4a81-a761-4e202ce7cffe",
-              "name": "",
-              "value": "",
-              "type": "string"
-            }
-          ]
-        },
-        "includeOtherFields": true,
+        "resource": "draft",
+        "subject": "Et si vos clients pouvaient réserver ou poser des questions 24h/24 ?",
+        "emailType": "html",
+        "message": "=<html>\n  <body style=\"font-family: Arial, sans-serif; background-color: #f6f6f6; margin: 0; padding: 0;\">\n    <div style=\"max-width: 600px; margin: auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);\">\n      \n      <h2 style=\"color: #333333;\">Bonjour,</h2>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Et si votre restaurant pouvait répondre automatiquement aux demandes de vos clients — même à <strong>2h du matin</strong> ?\n      </p>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Je propose l'intégration de <strong>chatbots intelligents</strong> disponibles 24h/24 via <strong>WhatsApp, Messenger</strong> ou directement sur votre site internet. Ces assistants permettent à vos clients de :\n      </p>\n\n      <ul style=\"color: #555555; line-height: 1.6; padding-left: 20px;\">\n        <li>Consulter votre menu facilement,</li>\n        <li>Obtenir des réponses instantanées (horaires, localisation, allergènes, etc.),</li>\n        <li>Réserver une table sans attendre.</li>\n      </ul>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Une solution simple à mettre en place, pensée pour vous faire gagner du temps et améliorer l’expérience client.\n      </p>\n\n      <p style=\"color: #555555; line-height: 1.6;\">\n        Je serais ravi d’échanger avec vous quelques minutes pour voir si cela pourrait convenir à votre établissement.\n      </p>\n\n      <p style=\"margin-top: 20px; font-weight: bold; color: #333333;\">👉 Quand seriez-vous disponible pour en discuter ?</p>\n\n      <p style=\"color: #999999; font-size: 14px; margin-top: 30px;\">\n        PS : Si vous n’êtes pas la personne en charge de ce type de décision, n’hésitez pas à en toucher un mot à votre responsable. Merci beaucoup !\n      </p>\n\n      <div style=\"margin-top: 30px; font-size: 14px; color: #777777;\">\n        <p>Bien à vous,</p>\n        <p><strong>### TON NOM ###</strong><br>\n        ##### LE NOM DE TON ENTREPRISE #####</p>\n      </div>\n    </div>\n  </body>\n</html>\n",
+        "options": {
+          "sendTo": "={{ $json.Email }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2704,
+        112
+      ],
+      "id": "1231c4e0-bc3a-494e-9bc0-af548ecf8067",
+      "name": "Gmail",
+      "webhookId": "08878dc0-4d8f-40de-984e-7488b582f0b9",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "oGi6eYlZ16NVBxZx",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"limit\": 50,\n  \"lang\": \"fr\",\n  \"country\": \"fr\",\n  \"timeout\": 60000,\n  \"scrapeOptions\": {\n    \"formats\": []\n  },\n  \"query\": \"Thérapeutes\",\n  \"location\": \"Marne la vallée\"\n}",
         "options": {}
       },
-      "id": "099d2c8f-5845-48ae-9955-432bbd3d9e3b",
-      "name": "Config",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        64,
-        784
+        80,
+        112
       ],
-      "typeVersion": 3.4
+      "id": "24b0f029-484a-4835-8b34-43eb67ab6a08",
+      "name": "\"Search\" request sur FireCrawl",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "eMUAoQsvaTAWQ02X",
+          "name": "Dorian 1"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2032,
+        112
+      ],
+      "id": "a5d6b938-9f14-43e3-a5cc-81e8b0610926",
+      "name": "Wait",
+      "webhookId": "17a9ce7d-4355-4a7f-9466-189c15d58222"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        992,
+        320
+      ],
+      "id": "89255e37-ad81-4d62-b443-cd03681fe7fb",
+      "name": "DeepSeek Chat Model",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "KKXbY2xB3CfKS6pV",
+          "name": "DeepSeek account 2"
+        }
+      }
     }
   ],
-  "pinData": {
-    "Execute Workflow Trigger": [
-      {
-        "json": {
-          "updatedAt": "2025-12-28T23:44:26.000Z",
-          "createdAt": "2025-12-17T13:56:49.992Z",
-          "id": "4AcsRDfcgQJYeonW",
-          "name": "Générer automatiquement des noms de nœuds descriptifs avec l’IA pour la lisibilité des flux de travail",
-          "active": false,
-          "isArchived": false,
-          "nodes": [
-            {
-              "parameters": {
-                "operation": "update",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "id",
-                  "value": "={{ $('Set Target Workflow Id').item.json.workflow_id }}"
-                },
-                "workflowObject": "={{ $json.new_workflow.toJsonString() }}",
-                "requestOptions": {}
-              },
-              "id": "7bc0fc3b-ad07-488a-9851-1726d239ffb2",
-              "name": "Save Renamed Workflow Version",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                2032,
-                560
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "ba5c59f1-4de6-460d-9685-037d791962cc",
-                      "name": "old_workflow",
-                      "type": "object",
-                      "value": "={{ $(\"Extract Workflow Nodes Connections\").item.json.old_workflow }}"
-                    },
-                    {
-                      "id": "7a6c8968-70db-4c1b-8592-1a98cfcef4fc",
-                      "name": "nodes_name",
-                      "type": "array",
-                      "value": "={{ $('Extract Workflow Nodes Connections').item.json.nodes.map(node => node.name) }}"
-                    },
-                    {
-                      "id": "9ee4702e-533f-4999-b9ea-fb6bdaf4e1f7",
-                      "name": "connections_nodes_name_reference",
-                      "type": "array",
-                      "value": "={{\n  (() => {\n    const names = [];\n    \n    // Get source nodes (keys)\n    names.push(...Object.keys($('Extract Workflow Nodes Connections').item.json.connections));\n    \n    // Get target nodes\n    for (const conn of Object.values($('Extract Workflow Nodes Connections').item.json.connections)) {\n      for (const type of Object.values(conn)) {          // main, error, etc.\n        for (const outputArray of type) {                // [[...]]\n          for (const target of outputArray) {            // [{node: \"...\"}]\n            if (target.node) names.push(target.node);\n          }\n        }\n      }\n    }\n    \n    return names;\n  })()\n}}"
-                    },
-                    {
-                      "id": "caf69cb1-6d78-4aec-8180-d3bad85529bf",
-                      "name": "parameters_names",
-                      "type": "array",
-                      "value": "={{\n  (() => {\n    const allNodeNames = $('Extract Workflow Nodes Connections').item.json.nodes.map(node => node.name);\n    const nodesString = JSON.stringify($('Extract Workflow Nodes Connections').item.json.nodes);\n    const foundPatterns = [];\n    \n    allNodeNames.forEach(nodeName => {\n      const patterns = [\n        `$('${nodeName}')`,\n        `$(\"${nodeName}\")`\n      ];\n      \n      patterns.forEach(pattern => {\n        if (nodesString.includes(pattern)) {\n          foundPatterns.push(pattern);\n        }\n      });\n    });\n    \n    return foundPatterns;\n  })()\n}}"
-                    },
-                    {
-                      "id": "b2ab8b7a-ffd0-413e-9a68-27d5466fe181",
-                      "name": "AI_output",
-                      "type": "array",
-                      "value": "={{ $json.output }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "23a00411-c1e2-4cf8-baae-d10269d7dc7e",
-              "name": "Prepare LLM Validation Data",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1152,
-                576
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "promptType": "define",
-                "text": "=<system>\nYou are renaming nodes in an n8n workflow to make their purpose immediately clear.\n</system>\n\n<instructions>\n1. Extract ALL node names from the workflow's `nodes` array\n2. For each node, create a descriptive name based on:\n   - Its `type` (what kind of node it is)\n   - Its `parameters` (what it's configured to do)\n   - Its connections/position in the workflow flow (input from where, output to where)\n3. Return a mapping for EVERY SINGLE NODE\n\nRules:\n- Maximum 5 words per name\n- Use Title Case\n- Each name must be unique\n- Keep technical accuracy while being human-readable\n- If a name is already good, you can keep it (but still include it in output)\n</instructions>\n\n<critical>\nYour output array MUST have exactly the same number of items as the input workflow has nodes.\n\nBefore responding:\n- Count nodes in input: ___\n- Count items in your output: ___\n- If these don't match, you've made an error\n\nThe `old_name` must match the exact node name character-for-character (including spaces, capitals, etc.)\n</critical>\n\n<workflow>\n```json\n{{ JSON.stringify($json.old_workflow) }}\n```\n</workflow>",
-                "hasOutputParser": true,
-                "batching": {}
-              },
-              "id": "9fa410fd-5ef3-40d7-98da-53ca74f25f9a",
-              "name": "Generate Node Rename Mapping",
-              "type": "@n8n/n8n-nodes-langchain.chainLlm",
-              "position": [
-                848,
-                576
-              ],
-              "typeVersion": 1.7
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "de87c369-7ca7-4242-8278-effec174c191",
-                      "name": "new_nodes",
-                      "type": "array",
-                      "value": "={{ $json.old_workflow.nodes.map(node => {\n  // Find mapping for the node name\n  const mapping = $json.AI_output.find(item => item.old_name === node.name);\n  \n  // Update parameters by replacing all node name references\n  let updatedParameters = JSON.stringify(node.parameters);\n  $json.AI_output.forEach(aiMapping => {\n    const pattern = new RegExp(aiMapping.old_name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'), 'g');\n    updatedParameters = updatedParameters.replace(pattern, aiMapping.new_name);\n  });\n  \n  return {\n    ...node,\n    name: mapping ? mapping.new_name : node.name,\n    parameters: JSON.parse(updatedParameters)\n  };\n}) }}"
-                    },
-                    {
-                      "id": "90f8a9c1-e9a1-46ae-8af9-2130993a51f3",
-                      "name": "new_connections",
-                      "type": "object",
-                      "value": "={{\n  (() => {\n    const newConnections = {};\n    \n    for (const [sourceNode, connections] of Object.entries($json.old_workflow.connections)) {\n      // Find mapping for the source node (key)\n      const sourceMapping = $json.AI_output.find(item => item.old_name === sourceNode);\n      const newSourceNode = sourceMapping ? sourceMapping.new_name : sourceNode;\n      \n      // Deep copy and update target nodes\n      const updatedConnections = {};\n      for (const [connectionType, connectionArrays] of Object.entries(connections)) {\n        updatedConnections[connectionType] = connectionArrays.map(connArray => \n          connArray.map(conn => {\n            const targetMapping = $json.AI_output.find(item => item.old_name === conn.node);\n            return {\n              ...conn,\n              node: targetMapping ? targetMapping.new_name : conn.node\n            };\n          })\n        );\n      }\n      \n      newConnections[newSourceNode] = updatedConnections;\n    }\n    \n    return newConnections;\n  })()\n}}"
-                    },
-                    {
-                      "id": "3bf1958f-17e9-4719-824c-2282f807e4a6",
-                      "name": "new_workflow_without",
-                      "type": "object",
-                      "value": "={{\n  $json.old_workflow\n    .removeField('nodes')\n    .removeField('connections')\n}}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "9efc7a05-1b8c-42f5-9489-9d719ce4f408",
-              "name": "Apply Renamed Nodes Connections",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1584,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "schemaType": "manual",
-                "inputSchema": "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"old_name\": {\n        \"type\": \"string\",\n        \"description\": \"The exact match original node name\"\n      },\n      \"new_name\": {\n        \"type\": \"string\",\n        \"description\": \"The new node name\"\n      }\n    },\n    \"required\": [\n      \"old_name\",\n      \"new_name\"\n    ]\n  }\n}"
-              },
-              "id": "32807688-c857-43be-84b7-3b7c48a6d292",
-              "name": "Parse LLM Mapping ToJson",
-              "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-              "position": [
-                1008,
-                752
-              ],
-              "typeVersion": 1.3
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "77460441-6e86-4940-ac7c-76dd99cb0de4",
-                      "name": "old_workflow",
-                      "type": "object",
-                      "value": "={{\n  $json\n    .removeField('pinData')\n    .removeField('shared')\n}}"
-                    },
-                    {
-                      "id": "88723b17-bb0e-437d-8ed3-8d412c4491b1",
-                      "name": "nodes",
-                      "type": "array",
-                      "value": "={{ $json.nodes }}"
-                    },
-                    {
-                      "id": "7464b93e-e357-4ed3-a933-6aab1f1d606a",
-                      "name": "connections",
-                      "type": "object",
-                      "value": "={{ $json.connections }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "adf4c302-5da9-46aa-99de-57af49094002",
-              "name": "Extract Workflow Nodes Connections",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2432,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "bb6e8c56-60dd-42ad-9e13-695478a6891a",
-                      "name": "new_workflow",
-                      "type": "object",
-                      "value": "={{\n  Object.assign($json.new_workflow_without, {\n    nodes: $json.new_nodes,\n    connections: $json.new_connections,\n  })\n}}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "fb238e8d-5a92-4b82-85c0-852657a6609b",
-              "name": "Assemble New Workflow Object",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1808,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "conditions": {
-                  "options": {
-                    "version": 2,
-                    "leftValue": "",
-                    "caseSensitive": true,
-                    "typeValidation": "strict"
-                  },
-                  "combinator": "and",
-                  "conditions": [
-                    {
-                      "id": "79e8a51f-63f7-4624-bf8b-6c529f0363db",
-                      "operator": {
-                        "type": "string",
-                        "operation": "equals"
-                      },
-                      "leftValue": "={{ [...$json.nodes_name].sort().toJsonString() }}",
-                      "rightValue": "={{ [...$json.AI_output.map(item => item.old_name)].sort().toJsonString() }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "a05e355a-7296-4ce6-81c3-ea823ec0016c",
-              "name": "Validate All Nodes Renamed",
-              "type": "n8n-nodes-base.if",
-              "position": [
-                1376,
-                576
-              ],
-              "typeVersion": 2.2
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "b9ddd66c-a4b6-4738-8cd1-4f1bb398e955",
-                      "name": "Link_to_new_version",
-                      "type": "string",
-                      "value": "={{ $execution.resumeUrl.split('/').slice(0, 3).join('/') + \"/workflow\" + \"/\" + $('Set Target Workflow Id').item.json.workflow_id + \"/history/\" + $json.versionId }}"
-                    },
-                    {
-                      "id": "969e8ea8-7dbd-4ddc-9ddf-d0c44284463f",
-                      "name": "Link_to_previous_version",
-                      "type": "string",
-                      "value": "={{ $execution.resumeUrl.split('/').slice(0, 3).join('/') + \"/workflow\" + \"/\" + $('Set Target Workflow Id').item.json.workflow_id + \"/history/\" + $('Assemble New Workflow Object').item.json.new_workflow.versionId }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "4f1af0bf-0cc6-46ed-8dc2-e614570ea5c6",
-              "name": "Build Workflow Version Links",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2240,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "2e17c48e-c158-42b7-a8ff-6fce97ff1003",
-                      "name": "id",
-                      "type": "string",
-                      "value": "={{ $json[\"Select a Workflow:\"].match(/\\(#([^)]+)\\)/)[1] }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "a878f7e5-12de-4747-9a3d-5d8bc1737689",
-              "name": "Parse Selected Workflow Id",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1760,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "conditions": {
-                  "options": {
-                    "version": 2,
-                    "leftValue": "",
-                    "caseSensitive": true,
-                    "typeValidation": "strict"
-                  },
-                  "combinator": "and",
-                  "conditions": [
-                    {
-                      "id": "3ad65d54-64d5-4f62-a435-09b931e8d066",
-                      "operator": {
-                        "type": "boolean",
-                        "operation": "true",
-                        "singleValue": true
-                      },
-                      "leftValue": "={{ $('Form Trigger').isExecuted }}",
-                      "rightValue": ""
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "0f5d90f5-86fe-4ff1-91ec-b041619c8b9c",
-              "name": "Check Trigger Source Type",
-              "type": "n8n-nodes-base.if",
-              "position": [
-                2432,
-                560
-              ],
-              "typeVersion": 2.2
-            },
-            {
-              "parameters": {
-                "operation": "completion",
-                "completionTitle": "Terminate Workflow Execution!",
-                "completionMessage": "=<a href='{{ $json.Link_to_new_version }}'>Go to new version</a>\n<br>\n<a href='{{ $json.Link_to_previous_version }}'>Go to previous version</a>",
-                "options": {}
-              },
-              "id": "0d9640ef-f4e3-4d82-ab30-717a62073ce1",
-              "name": "Display Workflow Version Links",
-              "type": "n8n-nodes-base.form",
-              "position": [
-                2656,
-                464
-              ],
-              "webhookId": "06daa9d2-2ab2-4f9a-9f8d-eda32f42b2bb",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "c6058f80-386c-4f10-aa27-a71c43124a64",
-                      "name": "workflow_id",
-                      "type": "string",
-                      "value": "={{ $json.id }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "b8017744-5382-47d4-bb52-7c99c909f06f",
-              "name": "Set Target Workflow Id",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1984,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "content": "## Get & Prepare Workflow\nGet target workflow JSON, extract nodes and connections, prepare clean structure for processing.",
-                "height": 304,
-                "width": 944,
-                "color": 7
-              },
-              "id": "1f18c49c-3728-43fc-b829-b116731db1aa",
-              "name": "LLM Flow Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1904,
-                96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## AI Rename Generation\nSend workflow to the AI, generate rename mapping for every node, parse structured JSON output.",
-                "height": 480,
-                "width": 528,
-                "color": 7
-              },
-              "id": "b5cab425-08e7-456a-b0e8-8579d0d78e53",
-              "name": "Post Processing Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "operation": "get",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "list",
-                  "value": "MImEVkDXF7TQkggJ",
-                  "cachedResultName": "Auto Rename n8n Workflow Nodes with AI (#MImEVkDXF7TQkggJ)"
-                },
-                "requestOptions": {}
-              },
-              "id": "ab7174e7-36cd-4e6f-928e-aa76a3d34b7d",
-              "name": "Select a Workflow",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                1728,
-                -96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Form Trigger\nLaunch a form where you can select from a dropdown of all available workflows.",
-                "height": 304,
-                "width": 1088,
-                "color": 7
-              },
-              "id": "f3b76921-07f5-4c9d-bb04-533f8b0afc6a",
-              "name": "Triggers Section Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Validate & Apply Renames\nVerify all nodes are covered, update node names in nodes array, connections object, and parameter references.",
-                "height": 480,
-                "width": 624,
-                "color": 7
-              },
-              "id": "95a550a6-0781-48b6-8f83-6fd165233551",
-              "name": "Post Processing Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1344,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Save & Display Results\nPublish updated workflow version, generate history links, show completion form or end execution.",
-                "height": 480,
-                "width": 864,
-                "color": 7
-              },
-              "id": "48e57602-c155-45ed-922a-47626c338b69",
-              "name": "Post Processing Sticky Note2",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1984,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Mohamed Anan\n![Anan](https://1.gravatar.com/avatar/2c212891367a29a481ce306de2a3c936abab9dd120e11aae24782b47f5d856bd?size=64)\nA curious EnGiNeEr who enjoys `SoLviNg` PrObLeMs..\n___\n- [x] [Top Supporter](https://community.n8n.io/u/mohamed3nan/badges) in the [n8n community](https://community.n8n.io/u/mohamed3nan/summary) with **200+ hours** of contribution and **+200 solutions** provided, ranked **12th** on the [all-time leaderboard](https://community.n8n.io/leaderboard/1#:~:text=12-,mohamed3nan,-4%2C078).\n\n___\n⚡[n8n Workflows](https://n8n.io/creators/mohamed3nan/)\n💼[LinkedIn](https://link.anan.dev/Linkedin)",
-                "height": 288,
-                "width": 656,
-                "color": 4
-              },
-              "id": "051fb161-2f59-41ed-baed-3c60a09bc047",
-              "name": "Triggers Section Sticky Note2",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                2192,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Manual Trigger\nSelect workflow directly from the n8n node, then execute manually for quick testing.",
-                "height": 288,
-                "width": 1376,
-                "color": 7
-              },
-              "id": "42612ccd-5a86-4fd3-a36d-399180530b08",
-              "name": "Triggers Section Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "### Select a workflow",
-                "height": 208,
-                "width": 192,
-                "color": 3
-              },
-              "id": "2946ff1f-3a42-42c5-a309-d01aad471387",
-              "name": "Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1680,
-                -144
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "### Stop workflow\nYou can modify the error handling to retry or loop back to the AI node.",
-                "height": 112,
-                "width": 192,
-                "color": 3
-              },
-              "id": "e159f160-8f11-47de-bc48-ff2d52103939",
-              "name": "Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1696,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## ⚡Auto Rename n8n Workflow Nodes with AI✨\nThis workflow uses AI to automatically generate clear and descriptive names for every node in your n8n workflows.\nIt analyzes each node's type, parameters, and connections to create meaningful names, making your workflows instantly readable.\n\n### Who is it for?\nThis workflow is for n8n users who manage complex workflows with dozens of nodes. If you've ever:\n- Built workflows full of generic names like `HTTP Request 2` or `Edit Fields 1`\n- Struggled to understand your own work after a few weeks\n- Copied workflows from others with unclear node names\n- Spent hours manually renaming nodes one by one\n\n...then this workflow will save you significant time and effort.\n\n### Requirements\n- **n8n API Credentials**: Must be configured to allow listing and updating workflows\n- **AI Provider Credentials**: An API key for your preferred AI provider (OpenRouter is used currently)\n\n### How it works\n1. **Trigger**: Launch via form (select from dropdown) or manual trigger (quick testing with pre-selected workflow)\n2. **Fetch**: Retrieve the target workflow's JSON and extract nodes and connections\n3. **Generate**: Send the workflow JSON to the AI, which creates a unique, descriptive name for every node\n4. **Validate**: Verify the AI mapping covers all original node names\n5. **Apply**: If valid, update all node names, parameter references, and connections throughout the workflow\n6. **Save**: Save/Update the workflow with renamed nodes and provide links to both new and previous versions\n\n\nIf validation fails (e.g., AI missed nodes), the workflow stops with an error. You can modify the error handling to retry or loop back to the AI node.\n\n###  Setup\n1. **Connect n8n API credentials**\n   - Open any n8n node in the workflow and make sure your n8n API credentials is connected\n\n2. **Configure AI provider credentials**\n   - Open the \"OpenRouter\" node (or replace with your preferred AI)\n   - Add your API credentials\n   - Adjust the model if needed (current: `openai/gpt-5.1-codex-mini`)\n\n3. **Test the workflow**\n   - Use Manual Trigger for quick testing with a pre-selected workflow\n   - Use Form Trigger for a user-friendly interface with workflow selection\n\n###  Important notice\n**If you're renaming a currently opened workflow**, you must **reload the page** after execution to see the latest version, n8n doesn't automatically refresh the canvas when workflow versions are updated via API.",
-                "height": 1104,
-                "width": 832
-              },
-              "id": "9bfa845b-9482-401d-9aee-92b0df18d101",
-              "name": "Post Processing Sticky Note4",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                -48,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "errorMessage": "Validation Error"
-              },
-              "id": "a515f45c-42ef-4abd-b09a-1ac74993d52c",
-              "name": "Stop",
-              "type": "n8n-nodes-base.stopAndError",
-              "position": [
-                1584,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "operation": "get",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "id",
-                  "value": "={{ $json.workflow_id }}"
-                },
-                "requestOptions": {}
-              },
-              "id": "e169fa0f-3aae-4d2a-a1de-2f6762a72b07",
-              "name": "Fetch Target Workflow JSON",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                2208,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "aggregate": "aggregateAllItemData",
-                "destinationFieldName": "workflows",
-                "include": "specifiedFields",
-                "fieldsToInclude": "id,name",
-                "options": {}
-              },
-              "id": "67e8e9c8-5811-416e-92f6-c6b89e668300",
-              "name": "Aggregate Workflow List",
-              "type": "n8n-nodes-base.aggregate",
-              "position": [
-                1312,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "defineForm": "json",
-                "jsonOutput": "={{\n  [\n    {\n      \"fieldLabel\": \"Select a Workflow:\",\n      \"fieldType\": \"dropdown\",\n      \"fieldOptions\": {\n        \"values\": $json.workflows.map(option => ({ option: `${option.name} (#${option.id})` })),\n      },\n      \"requiredField\": true\n    }\n  ]\n}}",
-                "limitWaitTime": true,
-                "options": {}
-              },
-              "id": "19fa4b7a-d9a1-4a60-9ce5-4102c32caad2",
-              "name": "Form Dynamic Workflow List",
-              "type": "n8n-nodes-base.form",
-              "position": [
-                1536,
-                224
-              ],
-              "webhookId": "25a9189a-15a0-4b51-b0cf-af2565b923c3",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {
-                "model": "openai/gpt-5.1-codex-mini",
-                "options": {}
-              },
-              "id": "6645bf04-cd5e-462b-a078-b17521f0841c",
-              "name": "OpenRouter Chat Model",
-              "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
-              "position": [
-                832,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "filters": {},
-                "requestOptions": {}
-              },
-              "id": "a1d88b34-9c96-4843-8f7e-9eaf85f830d2",
-              "name": "Fetch All Workflows",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                1088,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "formTitle": "⚡Auto Rename n8n Workflow Nodes with AI✨",
-                "formDescription": "This workflow uses AI to automatically generate clear and descriptive names for every node in your n8n workflows.\nIt analyzes each node's type, parameters, and connections to create meaningful names, making your workflows instantly readable.",
-                "options": {
-                  "buttonLabel": "Select a Workflow"
-                }
-              },
-              "id": "b68793c9-a6e7-4f5b-93b5-2089a747b563",
-              "name": "Form Trigger",
-              "type": "n8n-nodes-base.formTrigger",
-              "position": [
-                864,
-                224
-              ],
-              "webhookId": "6ca8e522-1245-442c-b744-f155c135fbf8",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {},
-              "id": "c026db94-7e30-46f3-833e-805def320d58",
-              "name": "Manual Trigger",
-              "type": "n8n-nodes-base.manualTrigger",
-              "position": [
-                864,
-                -96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "includeOtherFields": true,
-                "options": {}
-              },
-              "id": "75b7af6d-a801-4dae-b574-39ab7c116e7d",
-              "name": "Done",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2656,
-                688
-              ],
-              "typeVersion": 3.4
-            }
-          ],
-          "connections": {
-            "Form Trigger": {
-              "main": [
-                [
-                  {
-                    "node": "Fetch All Workflows",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Manual Trigger": {
-              "main": [
-                [
-                  {
-                    "node": "Select a Workflow",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Select a Workflow": {
-              "main": [
-                [
-                  {
-                    "node": "Set Target Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Fetch All Workflows": {
-              "main": [
-                [
-                  {
-                    "node": "Aggregate Workflow List",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "OpenRouter Chat Model": {
-              "ai_languageModel": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "ai_languageModel",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Set Target Workflow Id": {
-              "main": [
-                [
-                  {
-                    "node": "Fetch Target Workflow JSON",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Aggregate Workflow List": {
-              "main": [
-                [
-                  {
-                    "node": "Form Dynamic Workflow List",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Parse LLM Mapping ToJson": {
-              "ai_outputParser": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "ai_outputParser",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Check Trigger Source Type": {
-              "main": [
-                [
-                  {
-                    "node": "Display Workflow Version Links",
-                    "type": "main",
-                    "index": 0
-                  }
-                ],
-                [
-                  {
-                    "node": "Done",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Fetch Target Workflow JSON": {
-              "main": [
-                [
-                  {
-                    "node": "Extract Workflow Nodes Connections",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Form Dynamic Workflow List": {
-              "main": [
-                [
-                  {
-                    "node": "Parse Selected Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Parse Selected Workflow Id": {
-              "main": [
-                [
-                  {
-                    "node": "Set Target Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Validate All Nodes Renamed": {
-              "main": [
-                [
-                  {
-                    "node": "Apply Renamed Nodes Connections",
-                    "type": "main",
-                    "index": 0
-                  }
-                ],
-                [
-                  {
-                    "node": "Stop",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Prepare LLM Validation Data": {
-              "main": [
-                [
-                  {
-                    "node": "Validate All Nodes Renamed",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Assemble New Workflow Object": {
-              "main": [
-                [
-                  {
-                    "node": "Save Renamed Workflow Version",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Build Workflow Version Links": {
-              "main": [
-                [
-                  {
-                    "node": "Check Trigger Source Type",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Generate Node Rename Mapping": {
-              "main": [
-                [
-                  {
-                    "node": "Prepare LLM Validation Data",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Save Renamed Workflow Version": {
-              "main": [
-                [
-                  {
-                    "node": "Build Workflow Version Links",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Apply Renamed Nodes Connections": {
-              "main": [
-                [
-                  {
-                    "node": "Assemble New Workflow Object",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Extract Workflow Nodes Connections": {
-              "main": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            }
-          },
-          "settings": {
-            "executionOrder": "v1"
-          },
-          "staticData": null,
-          "meta": null,
-          "pinData": {},
-          "versionId": "2ce08e48-4402-47dd-b86d-2164ac14d7c5",
-          "triggerCount": 1,
-          "shared": [
-            {
-              "updatedAt": "2025-12-17T13:56:50.003Z",
-              "createdAt": "2025-12-17T13:56:50.003Z",
-              "role": "workflow:owner",
-              "workflowId": "4AcsRDfcgQJYeonW",
-              "projectId": "oXQkWGdjmWkcvoUC"
-            }
-          ],
-          "tags": [
-            {
-              "updatedAt": "2025-12-28T18:03:24.856Z",
-              "createdAt": "2025-12-28T18:03:24.856Z",
-              "id": "GTdKgw52KYtP73bB",
-              "name": "A voir"
-            }
-          ]
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
@@ -1779,16 +641,35 @@
   },
   "shared": [
     {
-      "updatedAt": "2026-01-03T14:03:45.455Z",
-      "createdAt": "2026-01-03T14:03:45.455Z",
+      "updatedAt": "2025-05-22T17:09:18.705Z",
+      "createdAt": "2025-05-22T17:09:18.705Z",
       "role": "workflow:owner",
-      "workflowId": "Et3PXHJecODC9TuP",
+      "workflowId": "EwSIotCAGT2K3bwo",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    },
+    {
+      "updatedAt": "2025-12-28T23:46:03.817Z",
+      "createdAt": "2025-12-28T18:02:49.797Z",
+      "id": "vNliFiYFZSU0TQDM",
+      "name": "Ok"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2026-01-03T14:25:00.000Z",
-  "versionId": "6bc6284d-34fc-4594-8f4e-6cbeb583a43c"
+  "updatedAt": "2025-12-28T18:41:47.000Z",
+  "versionId": "29c027e6-d7e6-456b-95d4-fa9b95a3dc44"
 }
