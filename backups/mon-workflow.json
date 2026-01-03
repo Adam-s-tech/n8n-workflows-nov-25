@@ -2,602 +2,966 @@
   "": "",
   "active": false,
   "connections": {
-    "Type": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Click": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Query": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Slack": {
+    "Wordpress1": {
       "main": [
         [
           {
-            "node": "Return IDs",
+            "node": "Message a model1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Output": {
-      "main": [
-        [
-          {
-            "node": "Slack1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Window": {
-      "main": [
-        [
-          {
-            "node": "Slack",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Session": {
-      "main": [
-        [
-          {
-            "node": "Window",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Output",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Load URL": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "End session": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Start browser": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Claude 3.5 Haiku": {
+    "OpenAI Chat Model1": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent",
+            "node": "Create Title, Slug, Meta1",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "On form submission": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Structured Output Parser": {
+    "Structured Output Parser1": {
       "ai_outputParser": [
         [
           {
-            "node": "AI Agent",
+            "node": "Create Title, Slug, Meta1",
             "type": "ai_outputParser",
             "index": 0
           }
         ]
       ]
     },
-    "When Executed by Another Workflow": {
+    "Create Title, Slug, Meta1": {
       "main": [
         [
           {
-            "node": "Session",
+            "node": "Merge1",
             "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Create HTML1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Combine Blog Details1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Image to Wordpress1": {
+      "main": [
+        [
+          {
+            "node": "Set Image on Wordpress Post1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Copywriter AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Create Title, Slug, Meta1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Create HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cleanup HTML 1": {
+      "main": [
+        [
+          {
+            "node": "Wordpress1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gpt-4o-mini1": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Combine Blog Details1": {
+      "main": [
+        [
+          {
+            "node": "Cleanup HTML 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Pexels Image1": {
+      "main": [
+        [
+          {
+            "node": "Upload Image to Wordpress1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "Search Pexels Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort by Date (Newest First)": {
+      "main": [
+        [
+          {
+            "node": "Limit to Top 10 Articles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit to Top 10 Articles": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Sort by Date (Newest First)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TechCrunch AI1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "The Verge AI1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Hacker News1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Reddit AI1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Google News AI Tools & CRMs1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Format Articles List": {
+      "main": [
+        [
+          {
+            "node": "Copywriter AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Pexels Image1": {
+      "main": [
+        [
+          {
+            "node": "Download Pexels Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger - Mon & Thu 9AM": {
+      "main": [
+        [
+          {
+            "node": "TechCrunch AI1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "The Verge AI1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Hacker News1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Reddit AI1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google News AI Tools & CRMs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Image on Wordpress Post1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Format Articles List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Copywriter AI Agent1",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-06-10T11:23:57.671Z",
-  "id": "YnOkgoMV1gVqeJGs",
+  "createdAt": "2025-12-07T12:59:42.435Z",
+  "id": "ZJ2RJUsyqdVINDLP",
   "isArchived": false,
-  "meta": null,
-  "name": "Automatisez les interactions Web avec Claude 3.5 Haiku et Airtop Browser Agent",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Automation RSS to WordPress",
   "nodes": [
     {
       "parameters": {
-        "promptType": "define",
-        "text": "={{ $json.Prompt }}",
-        "hasOutputParser": true,
-        "options": {
-          "systemMessage": "=# Agent goal\nYou are a smart, advanced web agent connected with tools that allow you to manage a remote web browser. Your goal is to fulfill the human's request.\n\n## Start the browser\nYou should always start by using the `Start browser` tool to get the `sessionId` and `windowId` required by other tools.\n\n## Use the `Query` tool\nYou don't have access to the browser screen but you can call the `Query` tool to get knowladge and hints of the current browser window. This tool accepts queries in natural language and can output information in plain text, markdown or JSON.\n\n## Use the `Click` tool\nUse the `Click` tool to click on an element on the web page. Describe the element in details in the \"Element Description\" field, Be specific and refer to elements that are on the page. \n\n## Use the `Type` tool\nUse the `Type` tool to type in text boxes. Describe the text box in \"Element Description\" field and the text to type in the \"Text\" field. The 'Type' tool is clicking Enter after typing the text so don't send [ENTER] commandes.\n\n### Examples for how to use the `Query` tool\n- Ask something about the current page:\n  \"Is the user logged in? Answer with Yes or No\"\n- Retrieve information:\n  \"Extract all the posts in the page, include the title and copy, output in JSON format\"\n- Get hints on the UI:\n  \"Is there a link to the contact form? If yes, describe the element in detail\"\n\n\n## Important\n- Start by calling `Start browser` to begin using the browser and provide the initial URL\n- The human ONLY sees your last message\n- Make sure to include all the important information requested by the human in your LAST message\n- Call `End session` with the `sessionId` once you have finished using the browser\n\n",
-          "maxIterations": 20,
-          "returnIntermediateSteps": false,
-          "passthroughBinaryImages": true
-        }
+        "content": "## Write SEO Optimized Blog Post\n\n\n",
+        "height": 440,
+        "width": 420,
+        "color": 3
       },
-      "id": "e05b18ac-1356-4de0-ba03-ef7ae2c89d90",
-      "name": "AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
+      "id": "3033047e-fe87-469b-a120-fed65c978d09",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -256,
-        64
+        -560,
+        192
       ],
-      "retryOnFail": true,
-      "typeVersion": 1.8,
-      "waitBetweenTries": 5000
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Click on any element in the window",
-        "resource": "interaction",
-        "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}",
-        "windowId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Window_ID', \"The `windowId` returned by the `Open window` tool\", 'string') }}",
-        "elementDescription": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Element_Description', `Describe in detail the element to click on, e.g. The menu item \"about us\" at the top of the page`, 'string') }}",
+        "title": "={{ $('Combine Blog Details1').item.json.data[2].output.title }}",
         "additionalFields": {
-          "waitForNavigation": "load"
+          "authorId": 1,
+          "content": "={{ $json.content }}",
+          "slug": "={{ $('Combine Blog Details1').item.json.data[2].output.slug }}",
+          "status": "publish",
+          "commentStatus": "closed",
+          "sticky": false,
+          "postTemplate": {
+            "values": {
+              "elementor": false
+            }
+          }
         }
       },
-      "id": "f3229ce1-894d-490d-8e1f-b5658607b751",
-      "name": "Click",
-      "type": "n8n-nodes-base.airtopTool",
-      "position": [
-        -480,
-        288
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Query the page, ask and extract information",
-        "resource": "extraction",
-        "operation": "query",
-        "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}",
-        "windowId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Window_ID', \"The `windowId` returned by the `Open window` tool\", 'string') }}",
-        "prompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt', `Ask anything and request to extract information from the current page, e.g. \"Is there any sign-up form? yes or no\"`, 'string') }}",
-        "additionalFields": {}
-      },
-      "id": "128d2489-53d5-41bd-b939-0854e9dc8826",
-      "name": "Query",
-      "type": "n8n-nodes-base.airtopTool",
-      "position": [
-        -368,
-        288
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Load a URL into the browser window",
-        "resource": "window",
-        "operation": "load",
-        "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}",
-        "windowId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Window_ID', \"The `windowId` returned by the `Open window` tool\", 'string') }}",
-        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
-        "additionalFields": {}
-      },
-      "id": "efe16028-0001-420e-9104-49e4cab52877",
-      "name": "Load URL",
-      "type": "n8n-nodes-base.airtopTool",
-      "position": [
-        -240,
-        288
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "operation": "terminate",
-        "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}"
-      },
-      "id": "0a5a33c1-24ca-4109-893d-1610471300a1",
-      "name": "End session",
-      "type": "n8n-nodes-base.airtopTool",
+      "id": "8d528a2d-9414-44b9-a692-3881137a9a6f",
+      "name": "Wordpress1",
+      "type": "n8n-nodes-base.wordpress",
       "position": [
         -128,
-        288
+        912
       ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "descriptionType": "manual",
-        "toolDescription": "Type text into the page's element described",
-        "resource": "interaction",
-        "operation": "type",
-        "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}",
-        "windowId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Window_ID', \"The `windowId` returned by the `Open window` tool\", 'string') }}",
-        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Text', ``, 'string') }}",
-        "pressEnterKey": true,
-        "elementDescription": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Element_Description', `Describe in detail the element to type into, e.g. The search box at the top of the page`, 'string') }}",
-        "additionalFields": {}
-      },
-      "id": "9c8e2130-64aa-4069-8628-0542adddecb8",
-      "name": "Type",
-      "type": "n8n-nodes-base.airtopTool",
-      "position": [
-        0,
-        288
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "name": "Start_Browser",
-        "description": "Start a new browser session and window",
-        "workflowId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "TS1wT16JCcy1Dt9Q",
-          "cachedResultName": "Airtop Web Agent"
-        },
-        "workflowInputs": {
-          "value": {
-            "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('url', `URL to load in the browser window`, 'string') }}",
-            "profile_name": "={{ $json['Airtop Profile Name (for sites that require authentication)'] }}"
-          },
-          "schema": [
-            {
-              "id": "url",
-              "type": "string",
-              "display": true,
-              "removed": false,
-              "required": false,
-              "displayName": "url",
-              "defaultMatch": false,
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "profile_name",
-              "type": "string",
-              "display": true,
-              "removed": false,
-              "required": false,
-              "displayName": "profile_name",
-              "defaultMatch": false,
-              "canBeUsedToMatch": true
-            }
-          ],
-          "mappingMode": "defineBelow",
-          "matchingColumns": [
-            "url"
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
+      "typeVersion": 1,
+      "credentials": {
+        "wordpressApi": {
+          "id": "cHTKTOdZunGgG2DG",
+          "name": "Wordpress 2"
         }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Post on Wordpress\n\n\n",
+        "height": 280,
+        "width": 300,
+        "color": 4
       },
-      "id": "2c1c2a5d-bef9-4062-9b74-996fc9d20ca5",
-      "name": "Start browser",
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "id": "ae7d5cdc-740d-4e0d-b933-3aeebbb6e1df",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        128,
-        288
+        -288,
+        800
       ],
-      "typeVersion": 2.1
+      "typeVersion": 1
     },
     {
       "parameters": {
         "model": {
           "__rl": true,
           "mode": "list",
-          "value": "claude-3-5-haiku-20241022",
-          "cachedResultName": "Claude 3.5 Haiku"
+          "value": "gpt-4o-mini"
         },
         "options": {}
       },
-      "id": "b6b5ec3f-41b3-4bfc-b864-07136aba8ead",
-      "name": "Claude 3.5 Haiku",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "position": [
-        -608,
-        288
-      ],
-      "typeVersion": 1.3
-    },
-    {
-      "parameters": {
-        "formTitle": "Instruction for the Web AI Agent",
-        "formDescription": "Provide detailed instructions to the web AI agent. Use an [Airtop Profile](https://docs.airtop.ai/guides/how-to/saving-a-profile) for websites that need login.",
-        "formFields": {
-          "values": [
-            {
-              "fieldLabel": "Prompt",
-              "fieldType": "textarea",
-              "placeholder": "e.g. Find the top 10 products in producthunt.com",
-              "requiredField": true
-            },
-            {
-              "fieldLabel": "Airtop Profile Name (for sites that require authentication)",
-              "placeholder": "e.g. my-airtop-profile"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "028f6e3e-8b55-4677-b0de-38c8da3bbb40",
-      "name": "On form submission",
-      "type": "n8n-nodes-base.formTrigger",
-      "position": [
-        -816,
-        160
-      ],
-      "webhookId": "dbbb8b5a-a81c-4cde-9f46-f4808d7f0dc4",
-      "typeVersion": 2.2
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "C08E83RDJN9",
-          "cachedResultName": "n8n-debug"
-        },
-        "text": "={{ $json.data.liveViewUrl }}",
-        "otherOptions": {}
-      },
-      "id": "9c23e5ee-beed-4481-bd1f-4ac2c520a880",
-      "name": "Slack",
-      "type": "n8n-nodes-base.slack",
+      "id": "a16573ef-747f-47ad-aa3f-c03458412974",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
         48,
-        2112
+        624
       ],
-      "webhookId": "72d47d9c-6860-4248-8e83-7790264fdaf2",
-      "typeVersion": 2.3
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "iXEt0rSYOIKMFzlT",
+          "name": "OpenAi account"
+        }
+      }
     },
     {
       "parameters": {
-        "content": "## Note\nThis sub-workflow simplifies the session management for the agent",
-        "height": 300,
-        "width": 220,
-        "color": 5
+        "jsonSchemaExample": "{\n\"slug\": \"rpo-benefits-recruitment\",\n\"title\": \"7 Key Advantages of RPO for Modern Recruitment\",\n\"meta\": \"Explore how Recruitment Process Outsourcing (RPO) enhances hiring efficiency, reduces costs, and expands talent pools for businesses seeking top candidates.\"\n}"
       },
-      "id": "c8c9fc05-aca8-4f2a-97a4-93286fed9018",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -688,
-        1968
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "schemaType": "manual",
-        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"results\": {\n\t\t\t\"type\": \"string\",\n            \"description\": \"Synthesis of the agent's results. Must include all the relevant information related to the user's request\"\n\t\t}\n\t}\n}"
-      },
-      "id": "2ecb899e-c253-4233-a875-a9d998c2878b",
-      "name": "Structured Output Parser",
+      "id": "e002500f-ab7a-4802-9612-71bdd6f18b2e",
+      "name": "Structured Output Parser1",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "position": [
-        240,
-        288
+        288,
+        624
       ],
       "typeVersion": 1.2
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "e1d6ab7c-2f45-44fd-9457-bb3046fad4c5",
-              "name": "output",
-              "type": "string",
-              "value": "={{ $json.output.results }}"
-            }
-          ]
-        },
+        "promptType": "define",
+        "text": "=**Create a slug, blog post title, and meta description for the following blog post:**\n\n{{ $json.output }}\n\n**Slug Guidelines:**\n- Keep it concise (4-5 words maximum).\n- Include the primary keyword related to recruitment or HR.\n- Use hyphens to separate words.\n- Avoid unnecessary words, articles, or prepositions.\n- Ensure it reflects the main topic of the blog post.\n- Make it readable and relevant for both users and search engines.\n\n**Title Guidelines:**\n- Avoid AI words like \"Transform\" or \"Revolutionize\" and similar overused terms.\n- Avoid using a colon (:) in the title.\n- Never structure it as a primary/secondary title separated by a colon.\n- Include the primary keyword related to recruitment or HR (e.g., 'AI in recruitment' or 'talent acquisition trends').\n- Clearly inform users what they can expect from reading the blog post.\n- Be concise and engaging, ideally 50-60 characters long.\n- Incorporate power words that appeal to HR professionals and recruiters.\n\n**Meta Description Guidelines:**\n- Avoid AI words like \"Transform\" or \"Revolutionize\" and similar overused terms.\n- Be concise: Limit to 150-160 characters to ensure full visibility in search results.\n- Include keywords: Naturally incorporate primary recruitment-related keywords to enhance relevance and visibility.\n- Provide value: Clearly convey the benefits or insights readers will gain from the article.\n- Be engaging: Use action-oriented language or a thought-provoking question to encourage clicks.\n- Align with content: Accurately reflect the blog post's content to meet user expectations and reduce bounce rates.\n- Highlight expertise: Subtly emphasize SocialFind's authority in the recruitment field.\n\nYour output must be a single valid JSON object with these 3 fields:\n-slug: The slug\n-title: The blog post title\n-meta: The meta description  \n\nEach should be presented without any additional text, explanation, quotation marks, or formatting.\n",
+        "hasOutputParser": true,
         "options": {}
       },
-      "id": "aee0c946-1e23-447d-bf11-d5bf5c2a0b48",
-      "name": "Output",
-      "type": "n8n-nodes-base.set",
+      "id": "6e527e6d-9329-49f2-b65f-4a99deebdf6e",
+      "name": "Create Title, Slug, Meta1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        448,
-        160
+        96,
+        448
       ],
-      "typeVersion": 3.4
+      "typeVersion": 1.8
     },
     {
       "parameters": {
-        "profileName": "={{ $json.profile_name }}",
-        "additionalFields": {}
-      },
-      "id": "b348520c-6649-494e-bf5d-03b13e4184e0",
-      "name": "Session",
-      "type": "n8n-nodes-base.airtop",
-      "position": [
-        -400,
-        2112
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "resource": "window",
-        "url": "={{ $('When Executed by Another Workflow').item.json.url }}",
-        "getLiveView": true,
-        "additionalFields": {}
-      },
-      "id": "58abecdf-cadf-43a8-af90-a1cc14dd8165",
-      "name": "Window",
-      "type": "n8n-nodes-base.airtop",
-      "position": [
-        -176,
-        2112
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n### See the agent in action\nEnable this Slack node to receive the URL for the Live View in a message\n\n",
-        "height": 340,
-        "width": 220,
-        "color": 7
-      },
-      "id": "eba82538-eb57-4de5-b02b-758fcc4c8378",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -16,
-        2080
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "0a0680af-39bd-4bc7-b9cd-84c1766c79a1",
-              "name": "sessionId",
-              "type": "string",
-              "value": "={{ $('Session').item.json.sessionId }}"
-            },
-            {
-              "id": "13940ee8-c1d4-4718-a7b4-176c44c097b7",
-              "name": "windowId",
-              "type": "string",
-              "value": "={{ $('Window').item.json.data.windowId }}"
-            },
-            {
-              "id": "a0f2005c-2cd2-4a8d-891b-a4759b72a124",
-              "name": "output",
-              "type": "string",
-              "value": "Session and window created successfully"
-            }
-          ]
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini",
+          "cachedResultName": "GPT-4O-MINI"
         },
-        "options": {}
-      },
-      "id": "6fa1e047-d199-41f4-94c1-4355544a74e8",
-      "name": "Return IDs",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        272,
-        2112
-      ],
-      "typeVersion": 3.4
-    },
-    {
-      "parameters": {
-        "workflowInputs": {
+        "messages": {
           "values": [
             {
-              "name": "url"
-            },
+              "content": "=Only output the HTML content without preamble or further explanation. Generate WordPress-compatible HTML for a blog post based on the provided content.\n\n### CONTENT PROCESSING:\n- Process all content from {{ $json.output }}\n- Preserve all original facts, information, and URLs\n- Format according to the specifications below\n\n### REQUIRED STRUCTURE (IN THIS ORDER):\n1. Title (H2)\n2. Estimated reading time\n3. Key takeaways (3-5 bullet points)\n4. Table of contents (linked to all headings)\n5. Main content (with proper heading hierarchy)\n6. FAQ section\n\n### STYLING REQUIREMENTS:\n- Style Override: Include a style section with !important declarations\n- Links: All hyperlinks, TOC items, and FAQ questions must be #00c2ff (blue)\n- Headings: All headings need a bottom border in #00c2ff with padding\n- Spacing: Add <br><br> between each major section\n\n### ENGAGEMENT FORMATTING:\n- Use bold, italics, bullet points, quotes, and highlighting for emphasis\n- Create proper paragraph structure with appropriate line breaks\n- NO emojis allowed\n- Use whitespace strategically for readability\n\n### HYPERLINK HANDLING (CRITICAL):\n- When URLs appear next to keyphrases (e.g., \"AI tools (https://example.com)\")\n- Convert to: <a href=\"https://example.com\" style=\"color: #00c2ff !important;\">AI tools</a>\n- The KEYPHRASE must be linked, never the URL itself\n\n### WORDPRESS COMPATIBILITY:\n- Use WordPress block classes (wp-block-heading, wp-block-paragraph, etc.)\n- Add heading IDs starting with \"h-\" for better TOC linking\n- Ensure all styles use !important to override theme styles\n\nDO NOT include any explanations, code tags, or comments. Output ONLY the raw HTML.\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8a8caa25-aebd-47fe-99c3-36f82cfbc59d",
+      "name": "Create HTML1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        128,
+        32
+      ],
+      "typeVersion": 1.8,
+      "credentials": {
+        "openAiApi": {
+          "id": "iXEt0rSYOIKMFzlT",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "id": "9ed1b583-9b83-4ef7-9d04-ad79d6567069",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        720,
+        320
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://southpost.free.nf//wp-json/wp/v2/media",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wordpressApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "name": "profile_name"
+              "name": "Content-Disposition",
+              "value": "=attachment; filename=\"cover-image-{{ $('Wordpress1').item.json.id }}.jpeg\""
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "id": "f4c5c795-fe23-4ed2-a2ae-bec9db49fa85",
+      "name": "Upload Image to Wordpress1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        880,
+        896
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "wordpressApi": {
+          "id": "9yNYzR9ealX1BNU5",
+          "name": "Wordpress account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://southpost.free.nf//wp-json/wp/v2/posts/{{ $('Wordpress1').item.json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wordpressApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "featured_media",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "29ed5342-59c7-4c0c-98d4-49ccfdee5d6a",
+      "name": "Set Image on Wordpress Post1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1072,
+        896
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "wordpressApi": {
+          "id": "9yNYzR9ealX1BNU5",
+          "name": "Wordpress account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert AI newsletter writer specializing in creating engaging, informative content about artificial intelligence trends, tools, and industry news. Your goal is to produce compelling newsletters that educate readers about the latest AI developments, practical applications, and emerging technologies while maintaining a professional yet accessible tone.\n\nYou publish newsletters covering the most significant AI developments, breakthrough technologies, tool releases, and industry insights. You are provided with curated articles from top tech publications.\n\n**Your Goal:** Produce engaging, well-researched newsletter content that educates readers about AI developments, showcases practical applications, and positions  as a trusted authority in AI automation and virtual assistant services.\n\nGiven the research findings **Research Article:**\n{{ $json.articlesList }}, write a comprehensive newsletter/blog post that:\n\n- Includes the focus keyword in the blog title, H2 header, and early in the introduction\n- Synthesizes insights from multiple articles into a cohesive narrative\n- Is detailed and informative, explaining AI concepts in accessible language\n- Uses an engaging, professional tone that makes technical content approachable\n- Flows naturally and logically with clear structure\n- Is between 1500 to 2000 words long\n- Is written for business professionals, entrepreneurs, and tech-forward leaders\n- Mentions the focus keyword naturally in the first paragraph\n\n**Additional requirements:**\n- Include practical takeaways that readers can apply to their businesses\n- Highlight how AI automation and consulting services (AI TechScope's specialty) relate to these trends\n- Connect AI developments to business efficiency, digital transformation, and workflow optimization\n- Showcase how AI TechScope's expertise in n8n automation, AI consulting, and website development can help businesses leverage these technologies\n- Include a call-to-action (CTA) encouraging readers to explore AI TechScope's AI automation and consulting services\n\nCreate the entire blog post draft in your first output. Don't stop or cut it short.\n\nYour output must be the blog post and nothing else.\n\n\n**Company Information:** {{ $json.Description }}\n\n**Research Article:**\n{{ $json.articlesList }}",
+        "options": {}
+      },
+      "id": "ba4381b1-cc86-4739-a9b0-6fe1f11dc1a2",
+      "name": "Copywriter AI Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        -416,
+        320
+      ],
+      "typeVersion": 1.8
+    },
+    {
+      "parameters": {
+        "content": "## Create Title, Slug & Meta\n\n\n",
+        "height": 440,
+        "width": 440,
+        "color": 7
+      },
+      "id": "3514d912-a9e3-43e6-9cda-b1d10d74f303",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -32,
+        288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0afb2988-1481-4b04-b16d-fb33c50a16d0",
+              "name": "content",
+              "type": "string",
+              "value": "={{ $json.data[0].message.content.replaceAll('```html', '').replaceAll('```','') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5d6b70a6-f203-4b83-8ed0-82bdbf8a05c6",
+      "name": "Cleanup HTML 1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        928,
+        576
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "## Set Image for Wordpress Post",
+        "height": 280,
+        "width": 1220
+      },
+      "id": "44225034-93bc-407a-b6f8-113c8ecfa022",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        48,
+        784
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-3.5-turbo",
+          "mode": "list",
+          "cachedResultName": "gpt-3.5-turbo"
+        },
+        "options": {}
+      },
+      "id": "d1dba4fa-2ee5-455e-8914-bbf5f15befdf",
+      "name": "gpt-4o-mini1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        -288,
+        624
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "iXEt0rSYOIKMFzlT",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "9e095ee1-3957-42a4-bba7-f8cd3f9f0607",
+      "name": "Combine Blog Details1",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        928,
+        320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Search Pexels Image1').item.json.photos[0].src.large2x }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "09e9b592-6171-471f-b0f4-1ba05153422d",
+      "name": "Download Pexels Image1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        688,
+        896
+      ],
+      "typeVersion": 4.2,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=\n\n\"Generate 1-3 relevant search keywords for finding a professional stock photo related to: {{ $json.title.raw }}. Focus on tangible, visual concepts (e.g., 'technology workspace' instead of abstract terms). Return only the keywords, no explanation.\""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        96,
+        896
+      ],
+      "id": "0d86b1b3-872b-4b76-8b7d-a884b7747725",
+      "name": "Message a model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "iXEt0rSYOIKMFzlT",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "pubDate",
+              "order": "descending"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Sort by Date (Newest First)",
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        -1104,
+        656
+      ],
+      "id": "05ed6663-5635-4212-b57e-bf97cde7e092"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Take only the first 10 items from the sorted array\nconst items = $input.all();\nconst top10 = items.slice(0, 10);\n\nreturn top10;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -912,
+        656
+      ],
+      "id": "d94dbb87-715e-4b27-80d2-04464a16d487",
+      "name": "Limit to Top 10 Articles"
+    },
+    {
+      "parameters": {
+        "url": "https://techcrunch.com/tag/artificial-intelligence/feed/",
+        "options": {}
+      },
+      "name": "TechCrunch AI1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        704
+      ],
+      "id": "cb2b5559-d22c-4e1a-9514-cb1a8e541b9f"
+    },
+    {
+      "parameters": {
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "options": {}
+      },
+      "name": "The Verge AI1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        240
+      ],
+      "id": "5a3e509d-4a6e-4b70-9ad8-7057064bf891"
+    },
+    {
+      "parameters": {
+        "url": "https://news.ycombinator.com/rss",
+        "options": {}
+      },
+      "name": "Hacker News1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        400
+      ],
+      "id": "3afcab58-7167-416c-bb9d-a77f8467f86d"
+    },
+    {
+      "parameters": {
+        "url": "https://www.reddit.com/r/artificial/.rss",
+        "options": {
+          "customFields": ""
+        }
+      },
+      "name": "Reddit AI1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        560
+      ],
+      "id": "2a30c548-8c34-4a77-a8bc-1dab80e6536a"
+    },
+    {
+      "parameters": {
+        "url": "https://news.google.com/rss/search?q=AI+tools+OR+ChatGPT+OR+automation+OR+%22HighLevel%22+OR+%22GoHighLevel%22+OR+%22AI+CRM%22&hl=en-US&gl=US&ceid=US:en",
+        "options": {}
+      },
+      "name": "Google News AI Tools & CRMs1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -1552,
+        880
+      ],
+      "id": "8b28fecd-9be5-40d6-9103-194c403fc98b"
+    },
+    {
+      "parameters": {
+        "numberInputs": 5
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1248,
+        608
+      ],
+      "id": "8f37baf5-77e1-4761-b8b3-1518f9e4bcce",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nlet articlesList = \"\";\n\nitems.forEach((item, index) => {\n  const title = item.json.title || 'No title';\n  const link = item.json.link || item.json.url || 'No link';\n  const pubDate = item.json.pubDate || item.json.isoDate || 'Unknown date';\n  const description = item.json.contentSnippet || item.json.description || 'No description';\n  const source = item.json.creator || item.json.author || 'Unknown source';\n  \n  articlesList += `${index + 1}. **${title}**\\n`;\n  articlesList += `   Source: ${source}\\n`;\n  articlesList += `   Published: ${pubDate}\\n`;\n  articlesList += `   Link: ${link}\\n`;\n  articlesList += `   Summary: ${description}\\n\\n`;\n});\n\nreturn [{\n  json: {\n    articlesList: articlesList,\n    Keyword: \"AI trends and tools\", // Default keyword - can be customized\n    Description: \"AITechScope is a leading provider of virtual assistant services, specializing in AI-powered automation, n8n workflow development, and business process optimization. We help businesses leverage cutting-edge AI tools and technologies to scale operations, reduce costs, and improve efficiency through intelligent delegation and automation solutions.\"\n  }\n}];\n"
+      },
+      "name": "Format Articles List",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -576,
+        320
+      ],
+      "id": "cb93df50-daed-41de-ae16-99b381fae312"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.pexels.com/v1/search?query={{ $json.message.content }}&per_page=1",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "WzF3sDRopBR4XSuMn4gDqwdt1kEjkoKPQ35gmEVgqIEKjEAHHVzmoe5T"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "241ac691-7fa6-4fd5-b3b3-0d47deb3c2f5",
+      "name": "Search Pexels Image1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        480,
+        896
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "content": "## Create HTML\n",
+        "width": 512
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "646484bd-a114-40b0-8cca-2b2af74123d6",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Rss ",
+        "height": 992
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1600,
+        144
+      ],
+      "typeVersion": 1,
+      "id": "bb3b1dc3-2544-4dbb-a0ea-ccd1db5ff3dc",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds"
             }
           ]
         }
       },
-      "id": "d53d125f-6152-4520-9cc2-06828f25e301",
-      "name": "When Executed by Another Workflow",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "name": "Schedule Trigger - Mon & Thu 9AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
       "position": [
-        -624,
-        2112
+        -1776,
+        560
       ],
-      "typeVersion": 1.1
+      "id": "49d6fbc0-ac1a-41c8-a0fb-dd8dc67058d5"
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -704,
+        656
+      ],
+      "id": "1843968f-c853-4473-b349-36fb52e8d987",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "model": {
           "__rl": true,
           "mode": "list",
-          "value": "C08E83RDJN9",
-          "cachedResultName": "n8n-debug"
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
         },
-        "text": "={{ $json.output }}",
-        "otherOptions": {}
+        "options": {}
       },
-      "id": "3fabf879-d84a-427f-a91b-6c2745e5f0a0",
-      "name": "Slack1",
-      "type": "n8n-nodes-base.slack",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
       "position": [
-        704,
-        160
+        -464,
+        624
       ],
-      "webhookId": "72d47d9c-6860-4248-8e83-7790264fdaf2",
-      "typeVersion": 2.3
+      "id": "0d3401d5-4e35-4dfd-8985-cb55824f99eb",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "Claude_API_11_25"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -609,23 +973,23 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-06-10T11:23:57.674Z",
-      "createdAt": "2025-06-10T11:23:57.674Z",
+      "updatedAt": "2025-12-07T12:59:42.437Z",
+      "createdAt": "2025-12-07T12:59:42.437Z",
       "role": "workflow:owner",
-      "workflowId": "YnOkgoMV1gVqeJGs",
+      "workflowId": "ZJ2RJUsyqdVINDLP",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [
     {
-      "updatedAt": "2025-12-28T18:03:24.856Z",
-      "createdAt": "2025-12-28T18:03:24.856Z",
-      "id": "GTdKgw52KYtP73bB",
-      "name": "A voir"
+      "updatedAt": "2025-12-28T18:07:46.360Z",
+      "createdAt": "2025-12-28T18:07:46.360Z",
+      "id": "i5clJW8hbOceL017",
+      "name": "Pb   nœud - Create HTML1"
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:28:23.000Z",
-  "versionId": "276dc217-5047-49f1-9612-8519b9f7e341"
+  "updatedAt": "2025-12-28T18:08:35.000Z",
+  "versionId": "40ff59be-f8a2-4126-b343-8bcee54d2db2"
 }
