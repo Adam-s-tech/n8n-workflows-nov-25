@@ -1,318 +1,70 @@
 {
   "": "",
-  "active": true,
+  "active": false,
   "connections": {
-    "Schedule Trigger - Lun & Jeu 9h": {
+    "When Executed by Another Workflow": {
       "main": [
         [
           {
-            "node": "TechCrunch AI",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "The Verge AI",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Blog du Modérateur",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "n8n Blog",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Siècle Digital",
+            "node": "Créer un Enregistrement Airtable",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "TechCrunch AI": {
+    "Créer un Enregistrement Airtable": {
       "main": [
         [
           {
-            "node": "Merge Sources",
+            "node": "Attendre 20 Secondes",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "The Verge AI": {
+    "Envoyer Requête HTTP": {
       "main": [
         [
           {
-            "node": "Merge Sources",
+            "node": "Vérifier Statut de la Requête",
             "type": "main",
-            "index": 1
+            "index": 0
           }
-        ]
-      ]
-    },
-    "Blog du Modérateur": {
-      "main": [
+        ],
         [
           {
-            "node": "Merge Sources",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "n8n Blog": {
-      "main": [
-        [
-          {
-            "node": "Merge Sources",
-            "type": "main",
-            "index": 3
-          }
-        ]
-      ]
-    },
-    "Siècle Digital": {
-      "main": [
-        [
-          {
-            "node": "Merge Sources",
-            "type": "main",
-            "index": 4
-          }
-        ]
-      ]
-    },
-    "Merge Sources": {
-      "main": [
-        [
-          {
-            "node": "Trier par Date",
+            "node": "Mettre à Jour Statut Erreur Airtable",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Trier par Date": {
+    "Vérifier Statut de la Requête": {
       "main": [
         [
           {
-            "node": "Top 10 Articles",
+            "node": "Attendre 20 Secondes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mettre à Jour Statut Terminé Airtable",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Top 10 Articles": {
+    "Attendre 20 Secondes": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Loop Over Items": {
-      "main": [
-        [],
-        [
-          {
-            "node": "Format Articles List",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Format Articles List": {
-      "main": [
-        [
-          {
-            "node": "Copywriter AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Anthropic Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Copywriter AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Copywriter AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Create Title, Slug, Meta",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 1
-          },
-          {
-            "node": "Create HTML",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model1": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Create Title, Slug, Meta",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Structured Output Parser1": {
-      "ai_outputParser": [
-        [
-          {
-            "node": "Create Title, Slug, Meta",
-            "type": "ai_outputParser",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Title, Slug, Meta": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "Create HTML": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge1": {
-      "main": [
-        [
-          {
-            "node": "Combine Blog Details",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Combine Blog Details": {
-      "main": [
-        [
-          {
-            "node": "Cleanup HTML",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Cleanup HTML": {
-      "main": [
-        [
-          {
-            "node": "WordPress Publish",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "WordPress Publish": {
-      "main": [
-        [
-          {
-            "node": "Generate Image Keywords",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Generate Image Keywords": {
-      "main": [
-        [
-          {
-            "node": "Search Pexels Image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Search Pexels Image": {
-      "main": [
-        [
-          {
-            "node": "Download Pexels Image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download Pexels Image": {
-      "main": [
-        [
-          {
-            "node": "Upload Image to WordPress",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Upload Image to WordPress": {
-      "main": [
-        [
-          {
-            "node": "Set Featured Image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Featured Image": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items",
+            "node": "Envoyer Requête HTTP",
             "type": "main",
             "index": 0
           }
@@ -320,650 +72,652 @@
       ]
     }
   },
-  "createdAt": "2025-12-07T15:09:02.997Z",
-  "id": "jOlXw8HqITbnGQH5",
+  "createdAt": "2025-09-17T17:41:47.917Z",
+  "id": "jfUGlPYDfAGC4c68",
   "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "Adam AI - Blog Automation WordPress",
+  "name": "Airtable - Suivi Requêtes et Prédictions Wavespeed",
   "nodes": [
     {
       "parameters": {
-        "content": "## 📰 Sources RSS - Actualités IA & Tech\n\nSources sélectionnées pour Adam AI :\n- TechCrunch AI\n- The Verge AI\n- Blog du Modérateur\n- n8n Blog\n- Siècle Digital",
-        "height": 992,
-        "width": 300
-      },
-      "id": "984f0b6d-15b4-4ed5-a9ae-4f55f579b215",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -1600,
-        144
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## ✍️ Rédaction Article SEO\n\nAgent Claude Sonnet 4.5\nPersonnalisé pour Adam AI",
-        "height": 440,
-        "width": 420,
-        "color": 3
-      },
-      "id": "88ac1f61-ab12-478b-b99b-888122cdf209",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -592,
-        160
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## 🏷️ Titre, Slug & Meta\n\nGPT-4o-mini pour SEO",
-        "height": 472,
-        "width": 440,
-        "color": 7
-      },
-      "id": "9a8a283e-9944-4744-b651-d77b1ff0c867",
-      "name": "Sticky Note11",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -32,
-        272
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## 🖥️ Conversion HTML WordPress",
-        "width": 512
-      },
-      "id": "008ed175-a6a8-4a08-96bb-dde6410e88f9",
-      "name": "Sticky Note5",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        -16
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## 📤 Publication WordPress\n\nPublie sur adamai.fr",
-        "height": 280,
-        "width": 300,
-        "color": 4
-      },
-      "id": "1995ba14-00c2-4664-b363-e3acc585bec6",
-      "name": "Sticky Note10",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -288,
-        784
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## 🖼️ Image de couverture Pexels",
-        "height": 280,
-        "width": 1220
-      },
-      "id": "b93d6fd2-75e5-4849-ac5f-51ec2efa868a",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        48,
-        784
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
+        "workflowInputs": {
+          "values": [
             {
-              "triggerAtHour": 9
+              "name": "id_request"
+            },
+            {
+              "name": "request"
+            },
+            {
+              "name": "type"
             }
           ]
         }
       },
-      "id": "c1e36110-70f2-44ba-b4df-9d58300a4c10",
-      "name": "Schedule Trigger - Lun & Jeu 9h",
-      "type": "n8n-nodes-base.scheduleTrigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
       "position": [
-        -1776,
-        560
-      ],
-      "typeVersion": 1.2
-    },
-    {
-      "parameters": {
-        "url": "https://techcrunch.com/tag/artificial-intelligence/feed/",
-        "options": {}
-      },
-      "id": "983f6dc5-3410-44f6-97af-8a93561c1c91",
-      "name": "TechCrunch AI",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "position": [
-        -1536,
-        240
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-        "options": {}
-      },
-      "id": "d667aad0-fe8e-4c5d-9d08-f79db4bf3f34",
-      "name": "The Verge AI",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "position": [
-        -1536,
-        400
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "url": "https://www.blogdumoderateur.com/feed/",
-        "options": {}
-      },
-      "id": "8588259c-2eef-4907-acaa-b914da46daed",
-      "name": "Blog du Modérateur",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "position": [
-        -1536,
-        560
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "url": "https://n8n.io/blog/rss",
-        "options": {}
-      },
-      "id": "5592a505-1f28-4015-b9f9-1128bd80b9cd",
-      "name": "n8n Blog",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "position": [
-        -1536,
+        1280,
         720
       ],
-      "typeVersion": 1
+      "id": "282ddbf2-c4d6-479b-987b-07e5ed1abef2",
+      "name": "When Executed by Another Workflow"
     },
     {
       "parameters": {
-        "url": "https://siecledigital.fr/feed/",
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "apprrk8BzFraLVbsx",
+          "mode": "list",
+          "cachedResultName": "Marketing Team",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl4mN27ieDO845l2",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Type": "={{ $json.type }}",
+            "Status": "En cours",
+            "Requette": "={{ $json.request }}",
+            "ID Requette": "={{ $json.id_request }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "raw_image",
+                  "value": "raw_image"
+                },
+                {
+                  "name": "raw_audio",
+                  "value": "raw_audio"
+                },
+                {
+                  "name": "raw_video",
+                  "value": "raw_video"
+                },
+                {
+                  "name": "Vidéo",
+                  "value": "Vidéo"
+                },
+                {
+                  "name": "",
+                  "value": ""
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Erreur",
+                  "value": "Erreur"
+                },
+                {
+                  "name": "En cours",
+                  "value": "En cours"
+                },
+                {
+                  "name": "Terminé",
+                  "value": "Terminé"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requette",
+              "displayName": "Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID Requette",
+              "displayName": "ID Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lien",
+              "displayName": "Lien",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
         "options": {}
       },
-      "id": "cd6b3b1d-0da0-4ae6-8e85-446613a2f68d",
-      "name": "Siècle Digital",
-      "type": "n8n-nodes-base.rssFeedRead",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
       "position": [
-        -1536,
-        880
+        1504,
+        720
       ],
-      "typeVersion": 1
+      "id": "9eb194b7-7383-4b2c-8f3f-b05702ac83b9",
+      "name": "Créer un Enregistrement Airtable"
     },
     {
       "parameters": {
-        "numberInputs": 5
+        "url": "=https://api.wavespeed.ai/api/v3/predictions/{{ $('When Executed by Another Workflow').item.json.id_request }}/result",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
       },
-      "id": "522e5c70-4422-4919-a436-ed59408713e8",
-      "name": "Merge Sources",
-      "type": "n8n-nodes-base.merge",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        -1248,
+        1968,
+        640
+      ],
+      "id": "b65aff2f-64e4-4019-a62b-5cd35442bf6a",
+      "name": "Envoyer Requête HTTP",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8d60bbc3-5845-415b-a789-bf76bad38a2a",
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2192,
+        832
+      ],
+      "id": "94533073-dee1-434d-8bd0-59cca645eca6",
+      "name": "Vérifier Statut de la Requête",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "apprrk8BzFraLVbsx",
+          "mode": "list",
+          "cachedResultName": "Marketing Team",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl4mN27ieDO845l2",
+          "mode": "list",
+          "cachedResultName": "DashBoard",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "Erreur",
+            "id": "={{ $json.id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "raw_image",
+                  "value": "raw_image"
+                },
+                {
+                  "name": "raw_audio",
+                  "value": "raw_audio"
+                },
+                {
+                  "name": "raw_video",
+                  "value": "raw_video"
+                },
+                {
+                  "name": "Vidéo",
+                  "value": "Vidéo"
+                },
+                {
+                  "name": "",
+                  "value": ""
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Erreur",
+                  "value": "Erreur"
+                },
+                {
+                  "name": "En cours",
+                  "value": "En cours"
+                },
+                {
+                  "name": "Terminé",
+                  "value": "Terminé"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requette",
+              "displayName": "Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID Requette",
+              "displayName": "ID Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lien",
+              "displayName": "Lien",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2192,
         608
       ],
-      "typeVersion": 3.2
+      "id": "7d88b1b5-6dd5-4b17-ba14-62e6000f559c",
+      "name": "Mettre à Jour Statut Erreur Airtable"
     },
     {
       "parameters": {
-        "sortFieldsUi": {
-          "sortField": [
-            {
-              "fieldName": "pubDate",
-              "order": "descending"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "8cbb0060-4d38-4de0-9506-0e6215bc4934",
-      "name": "Trier par Date",
-      "type": "n8n-nodes-base.sort",
-      "position": [
-        -1104,
-        656
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "jsCode": "// Garder les 10 articles les plus récents\nconst items = $input.all();\nconst top10 = items.slice(0, 10);\nreturn top10;"
-      },
-      "id": "e4c24e84-a76b-48e8-bcad-f32e9c9a0151",
-      "name": "Top 10 Articles",
-      "type": "n8n-nodes-base.code",
-      "position": [
-        -912,
-        656
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "293e99e1-3047-4d67-9010-649f8959af3a",
-      "name": "Loop Over Items",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        -704,
-        656
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "jsCode": "const items = $input.all();\n\nlet articlesList = \"\";\n\nitems.forEach((item, index) => {\n  const title = item.json.title || 'No title';\n  const link = item.json.link || item.json.url || 'No link';\n  const pubDate = item.json.pubDate || item.json.isoDate || 'Unknown date';\n  const description = item.json.contentSnippet || item.json.description || 'No description';\n  const source = item.json.creator || item.json.author || 'Unknown source';\n  \n  articlesList += `${index + 1}. **${title}**\\n`;\n  articlesList += `   Source: ${source}\\n`;\n  articlesList += `   Published: ${pubDate}\\n`;\n  articlesList += `   Link: ${link}\\n`;\n  articlesList += `   Summary: ${description}\\n\\n`;\n});\n\nreturn [{\n  json: {\n    articlesList: articlesList,\n    Keyword: \"automatisation IA productivité\",\n    Description: \"Adam AI est votre allié IA & Tech au quotidien. Nous accompagnons les managers, dirigeants et entrepreneurs à maîtriser les outils numériques (Microsoft 365, Google Workspace, IA) pour gagner au moins 1 jour par semaine. Nos services incluent : formations express sur les outils IA, automatisation des tâches répétitives avec n8n, conseils personnalisés pour optimiser votre productivité, et accompagnement à la transformation digitale. Notre promesse : des solutions pratiques pour leaders connectés qui veulent simplifier leur quotidien professionnel.\"\n  }\n}];"
-      },
-      "id": "51c2132f-2ba1-42f3-a375-8abfcac15baf",
-      "name": "Format Articles List",
-      "type": "n8n-nodes-base.code",
-      "position": [
-        -576,
-        320
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Tu es un expert en rédaction de newsletters et articles de blog spécialisé dans l'intelligence artificielle, l'automatisation et la productivité. Tu écris pour Adam AI, une entreprise qui aide les managers, dirigeants et entrepreneurs à maîtriser les outils numériques.\n\n**Ta mission :** Produire du contenu engageant qui éduque les lecteurs sur les dernières tendances IA et tech, avec un angle pratique orienté \"comment gagner du temps au quotidien\".\n\n**Ton audience cible :**\n- Managers et dirigeants débordés\n- Entrepreneurs et indépendants\n- Leaders connectés qui veulent optimiser leur temps\n- Professionnels qui découvrent l'IA\n\n**Informations sur Adam AI :**\n{{ $json.Description }}\n\n**Articles sources à synthétiser :**\n{{ $json.articlesList }}\n\n**Instructions de rédaction :**\n\n1. **Structure de l'article (1500-2000 mots) :**\n   - Introduction accrocheuse qui pose le problème (perte de temps, surcharge)\n   - Synthèse des actualités IA pertinentes des sources\n   - Applications pratiques : comment utiliser ces tendances pour gagner du temps\n   - Conseils concrets et actionnables\n   - Conclusion avec call-to-action vers les services Adam AI\n\n2. **Ton et style :**\n   - Professionnel mais accessible (pas de jargon technique non expliqué)\n   - Orienté solutions et bénéfices concrets\n   - Utiliser des exemples du quotidien des managers/entrepreneurs\n   - Éviter les termes IA clichés (\"révolutionnaire\", \"transformer\")\n\n3. **SEO et structure :**\n   - Inclure le mot-clé focus dans le titre H2 et l'introduction\n   - Utiliser des sous-titres H3 pour structurer\n   - Paragraphes courts et aérés\n   - Listes à puces pour les conseils pratiques\n\n4. **Angle Adam AI :**\n   - Montrer comment l'automatisation (n8n) peut simplifier les tâches\n   - Relier les tendances IA aux besoins des managers (emails, réunions, rapports)\n   - Mettre en avant la promesse \"gagner 1 jour par semaine\"\n   - Mentionner subtilement les services de formation et conseil\n\n**Mot-clé focus :** {{ $json.Keyword }}\n\n**IMPORTANT :** Rédige l'article complet en une seule réponse. Ne t'arrête pas en cours de route.\n\nTon output doit être uniquement l'article de blog, sans commentaires ni explications.",
-        "options": {}
-      },
-      "id": "29e6fa70-1db1-4891-a843-0ba5c6686145",
-      "name": "Copywriter AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "position": [
-        -416,
-        320
-      ],
-      "typeVersion": 1.8
-    },
-    {
-      "parameters": {
-        "model": {
+        "operation": "update",
+        "base": {
           "__rl": true,
+          "value": "apprrk8BzFraLVbsx",
           "mode": "list",
-          "value": "claude-sonnet-4-5-20250929",
-          "cachedResultName": "Claude Sonnet 4.5"
+          "cachedResultName": "Marketing Team",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
         },
-        "options": {}
-      },
-      "id": "1efe249c-6ccb-429b-a6c6-a50967fd2588",
-      "name": "Anthropic Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "position": [
-        -464,
-        624
-      ],
-      "typeVersion": 1.3,
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "model": {
+        "table": {
           "__rl": true,
+          "value": "tbl4mN27ieDO845l2",
           "mode": "list",
-          "value": "gpt-4o-mini"
+          "cachedResultName": "DashBoard",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
         },
-        "options": {}
-      },
-      "id": "e18983de-789d-4a81-a671-1b33e978a2e0",
-      "name": "OpenAI Chat Model1",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "position": [
-        48,
-        624
-      ],
-      "typeVersion": 1.2,
-      "credentials": {
-        "openAiApi": {
-          "id": "LqiRrbM0XOaFZ6gQ",
-          "name": "OpenAi 07_12_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsonSchemaExample": "{\n\"slug\": \"automatisation-ia-managers-productivite\",\n\"title\": \"5 façons d'utiliser l'IA pour gagner 1 jour par semaine\",\n\"meta\": \"Découvrez comment les managers utilisent l'automatisation et l'IA pour éliminer les tâches répétitives et se concentrer sur l'essentiel.\"\n}"
-      },
-      "id": "200c0bc4-79cb-4be6-ac7a-b00cd6635e84",
-      "name": "Structured Output Parser1",
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "position": [
-        288,
-        624
-      ],
-      "typeVersion": 1.2
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=**Crée un slug, titre et meta description pour cet article de blog :**\n\n{{ $json.output }}\n\n**Guidelines pour le Slug :**\n- 4-5 mots maximum\n- Inclure un mot-clé lié à l'automatisation, l'IA ou la productivité\n- Utiliser des tirets pour séparer les mots\n- Éviter les mots vides (le, la, de, et...)\n- Exemple : automatisation-ia-managers-productivite\n\n**Guidelines pour le Titre :**\n- Éviter les mots IA clichés (\"Transformer\", \"Révolutionner\", \"Disruptif\")\n- Pas de deux-points (:) dans le titre\n- Inclure un bénéfice concret (gagner du temps, simplifier...)\n- 50-60 caractères idéalement\n- Exemples de formulations :\n  - \"X façons de...\"\n  - \"Comment les managers utilisent l'IA pour...\"\n  - \"Le guide pratique pour...\"\n  - \"Pourquoi l'automatisation change...\"\n\n**Guidelines pour la Meta Description :**\n- 150-160 caractères maximum\n- Inclure le mot-clé principal naturellement\n- Promettre un bénéfice clair (gain de temps, productivité)\n- Utiliser un langage orienté action\n- Cibler managers/dirigeants/entrepreneurs\n\n**Output requis :**\nRetourne un JSON avec exactement 3 champs :\n- slug: le slug de l'article\n- title: le titre de l'article\n- meta: la meta description\n\nPas d'explication, pas de formatage, juste le JSON.",
-        "hasOutputParser": true,
-        "options": {}
-      },
-      "id": "7a9ed825-ea88-4d90-a897-ae1e6ed6c526",
-      "name": "Create Title, Slug, Meta",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "position": [
-        96,
-        448
-      ],
-      "typeVersion": 1.8
-    },
-    {
-      "parameters": {
-        "modelId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "gpt-4o-mini"
-        },
-        "messages": {
-          "values": [
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "Terminé",
+            "id": "={{ $('Créer un Enregistrement Airtable').item.json.id }}",
+            "Lien": "={{ $('Envoyer Requête HTTP').item.json.data.outputs[0] }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
             {
-              "content": "=Génère uniquement le HTML sans préambule ni explication. Crée du HTML compatible WordPress pour cet article de blog.\n\n### CONTENU À TRAITER :\n{{ $json.output }}\n\n### STRUCTURE REQUISE (dans cet ordre) :\n1. Titre (H2)\n2. Temps de lecture estimé\n3. Points clés (3-5 bullet points)\n4. Table des matières (liens vers les titres)\n5. Contenu principal (hiérarchie H2/H3)\n6. Section FAQ\n\n### STYLE ADAM AI :\n- Couleur principale : #00c2ff (bleu)\n- Tous les liens et titres de FAQ en #00c2ff\n- Bordure inférieure #00c2ff sur les titres avec padding\n- Espacement : <br><br> entre les sections majeures\n\n### FORMATTING :\n- Utiliser gras, italique, listes à puces, citations\n- Paragraphes bien structurés avec sauts de ligne\n- PAS d'emojis\n- Espaces blancs stratégiques pour la lisibilité\n\n### GESTION DES LIENS :\n- Si URL à côté d'un mot-clé : transformer en lien cliquable\n- Exemple : \"outils IA (https://example.com)\" → <a href=\"https://example.com\" style=\"color: #00c2ff !important;\">outils IA</a>\n\n### COMPATIBILITÉ WORDPRESS :\n- Classes WordPress block (wp-block-heading, wp-block-paragraph...)\n- IDs sur les titres commençant par \"h-\" pour la table des matières\n- Utiliser !important pour les styles\n\nOUTPUT : Uniquement le HTML brut, pas de balises code, pas de commentaires."
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "931e2b42-14bf-4a3f-be61-28e571d78571",
-      "name": "Create HTML",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "position": [
-        128,
-        32
-      ],
-      "typeVersion": 1.8,
-      "credentials": {
-        "openAiApi": {
-          "id": "LqiRrbM0XOaFZ6gQ",
-          "name": "OpenAi 07_12_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "numberInputs": 3
-      },
-      "id": "7b5ceb40-7d99-42d0-a509-14bd9c35f08d",
-      "name": "Merge1",
-      "type": "n8n-nodes-base.merge",
-      "position": [
-        720,
-        320
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "aggregate": "aggregateAllItemData",
-        "options": {}
-      },
-      "id": "6c4a70d9-df51-4137-8fae-aab6ad7d38e5",
-      "name": "Combine Blog Details",
-      "type": "n8n-nodes-base.aggregate",
-      "position": [
-        928,
-        320
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "0afb2988-1481-4b04-b16d-fb33c50a16d0",
-              "name": "content",
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
               "type": "string",
-              "value": "={{ $json.data[0].message.content.replaceAll('```html', '').replaceAll('```','') }}"
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "raw_image",
+                  "value": "raw_image"
+                },
+                {
+                  "name": "raw_audio",
+                  "value": "raw_audio"
+                },
+                {
+                  "name": "raw_video",
+                  "value": "raw_video"
+                },
+                {
+                  "name": "Vidéo",
+                  "value": "Vidéo"
+                },
+                {
+                  "name": "",
+                  "value": ""
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Erreur",
+                  "value": "Erreur"
+                },
+                {
+                  "name": "En cours",
+                  "value": "En cours"
+                },
+                {
+                  "name": "Terminé",
+                  "value": "Terminé"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requette",
+              "displayName": "Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID Requette",
+              "displayName": "ID Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lien",
+              "displayName": "Lien",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
-      "id": "deaa94df-beb7-41f3-bf96-7e705807abe1",
-      "name": "Cleanup HTML",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
       "position": [
-        928,
-        576
+        2592,
+        832
       ],
-      "typeVersion": 3.4
+      "id": "5b29018a-6afa-4e48-ab16-7d6bae6c9432",
+      "name": "Mettre à Jour Statut Terminé Airtable"
     },
     {
       "parameters": {
-        "title": "={{ $('Combine Blog Details').item.json.data[2].output.title }}",
-        "additionalFields": {
-          "authorId": 1,
-          "content": "={{ $json.content }}",
-          "slug": "={{ $('Combine Blog Details').item.json.data[2].output.slug }}",
-          "status": "publish",
-          "commentStatus": "closed",
-          "sticky": false,
-          "postTemplate": {
-            "values": {
-              "elementor": false
-            }
-          }
-        }
+        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé dans n8n est conçu pour gérer et suivre les requêtes de traitement de données via Airtable et un service externe. Il commence par la création d'un enregistrement dans Airtable, effectue des requêtes HTTP pour obtenir des prédictions, et met à jour le statut des requêtes en fonction des résultats obtenus.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe workflow est déclenché par un ensemble de paramètres d'entrée qui incluent l'identifiant de la requête, la requête elle-même, et le type de données à traiter. Ces informations sont utilisées pour créer un nouvel enregistrement dans Airtable, marquant le début du processus de suivi.\n\n### ⏳ Section Attente et Requête HTTP\nAprès la création de l'enregistrement, le workflow inclut une étape d'attente de 2 secondes pour assurer la synchronisation. Ensuite, une requête HTTP est envoyée à un service externe pour obtenir des prédictions basées sur les données fournies. Cette étape est cruciale pour le traitement des données et l'obtention des résultats nécessaires.\n\n### 🔍 Section Décision et Routage\nUne fois la réponse de la requête HTTP reçue, le workflow évalue le statut de la requête. Si le statut n'est pas \"complété\", le workflow prend une décision pour gérer les cas d'erreur ou de traitement en cours. Cette section assure que seules les requêtes réussies passent à l'étape suivante.\n\n### ⚡ Section Mise à Jour et Sortie\nEn fonction du résultat de la décision précédente, le workflow met à jour le statut de l'enregistrement dans Airtable. Si la requête est complétée avec succès, le statut est mis à jour en \"Terminé\" et un lien vers le résultat est ajouté. En cas d'erreur, le statut est mis à jour en \"Erreur\", permettant un suivi efficace des problèmes.\n\n## 🔗 Liens Utiles\n- [Airtable](https://airtable.com)\n- [Wavespeed](https://wavespeed.ai/?utm_source=Thomas_Berton)",
+        "height": 868,
+        "width": 800,
+        "color": 6
       },
-      "id": "9f34e1a3-9f32-4a1f-a56e-f051a823f68e",
-      "name": "WordPress Publish",
-      "type": "n8n-nodes-base.wordpress",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -128,
-        912
+        304,
+        352
       ],
       "typeVersion": 1,
-      "credentials": {
-        "wordpressApi": {
-          "id": "9yNYzR9ealX1BNU5",
-          "name": "Wordpress account 2"
-        }
-      }
+      "id": "71d94b84-7740-4474-8bec-66af2802a6ab",
+      "name": "Workflow Overview"
     },
     {
       "parameters": {
-        "modelId": {
-          "__rl": true,
-          "value": "gpt-4o-mini",
-          "mode": "list",
-          "cachedResultName": "GPT-4O-MINI"
-        },
-        "messages": {
-          "values": [
-            {
-              "content": "=Génère 1-3 mots-clés pertinents pour trouver une photo stock professionnelle en rapport avec : {{ $json.title.raw }}. \n\nConcentre-toi sur des concepts visuels concrets (ex: 'technology workspace', 'business meeting', 'laptop productivity') plutôt que des termes abstraits.\n\nRetourne uniquement les mots-clés en anglais, sans explication."
-            }
-          ]
-        },
-        "options": {}
+        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
+        "height": 400,
+        "width": 800,
+        "color": 6
       },
-      "id": "0571b2b3-c9dd-46b6-9e56-f1b8ca59bd01",
-      "name": "Generate Image Keywords",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        96,
-        896
+        304,
+        -176
       ],
-      "typeVersion": 1.8,
-      "credentials": {
-        "openAiApi": {
-          "id": "LqiRrbM0XOaFZ6gQ",
-          "name": "OpenAi 07_12_25"
-        }
-      }
+      "typeVersion": 1,
+      "id": "77445ca3-48ea-42dc-9035-b163177a54c4",
+      "name": "Signature"
     },
     {
       "parameters": {
-        "url": "=https://api.pexels.com/v1/search?query={{ $json.message.content }}&per_page=1",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "GyLMTUvDm3VyUKhNUfLwRKN8JmfuDGkzji2usC3CnDPMKKpK7Lg0SVR4"
-            }
-          ]
-        },
-        "options": {}
+        "amount": 20
       },
-      "id": "3a50d9a8-2433-4082-a2c2-db7e95dc375e",
-      "name": "Search Pexels Image",
-      "type": "n8n-nodes-base.httpRequest",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
       "position": [
-        480,
-        896
+        1744,
+        720
       ],
-      "typeVersion": 4.2
-    },
-    {
-      "parameters": {
-        "url": "={{ $('Search Pexels Image').item.json.photos[0].src.large2x }}",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "file"
-            }
-          }
-        }
-      },
-      "id": "2f49d59a-c241-4e13-a315-9ad3edffb98e",
-      "name": "Download Pexels Image",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        688,
-        896
-      ],
-      "typeVersion": 4.2,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://adamai.fr/wp-json/wp/v2/media",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "wordpressApi",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Content-Disposition",
-              "value": "=attachment; filename=\"cover-image-{{ $('WordPress Publish').item.json.id }}.jpeg\""
-            }
-          ]
-        },
-        "sendBody": true,
-        "contentType": "binaryData",
-        "inputDataFieldName": "data",
-        "options": {}
-      },
-      "id": "339d819e-570f-49d5-a446-cfbaa9837255",
-      "name": "Upload Image to WordPress",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        880,
-        896
-      ],
-      "typeVersion": 4.2,
-      "credentials": {
-        "wordpressApi": {
-          "id": "9yNYzR9ealX1BNU5",
-          "name": "Wordpress account 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://adamai.fr/wp-json/wp/v2/posts/{{ $('WordPress Publish').item.json.id }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "wordpressApi",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "featured_media",
-              "value": "={{ $json.id }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5eda426a-7296-406c-ad36-7451dfd91342",
-      "name": "Set Featured Image",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        1072,
-        896
-      ],
-      "typeVersion": 4.2,
-      "credentials": {
-        "wordpressApi": {
-          "id": "9yNYzR9ealX1BNU5",
-          "name": "Wordpress account 2"
-        }
-      }
+      "id": "612c3762-bb14-4d7d-bae4-8307d4da47fe",
+      "name": "Attendre 20 Secondes",
+      "webhookId": "a7bf329e-b1ca-4f59-b954-d57e551210f6"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "id_request": "7d500c2bdf72404aae5b4f2d751019d8",
+          "request": "https://api.wavespeed.ai/api/v3/predictions/7d500c2bdf72404aae5b4f2d751019d8/result",
+          "type": "raw_video"
+        }
+      }
+    ]
+  },
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1",
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   },
   "shared": [
     {
-      "updatedAt": "2025-12-07T15:09:02.999Z",
-      "createdAt": "2025-12-07T15:09:02.999Z",
+      "updatedAt": "2025-09-17T17:41:47.920Z",
+      "createdAt": "2025-09-17T17:41:47.920Z",
       "role": "workflow:owner",
-      "workflowId": "jOlXw8HqITbnGQH5",
-      "projectId": "oXQkWGdjmWkcvoUC"
+      "workflowId": "jfUGlPYDfAGC4c68",
+      "projectId": "TyqTPn3TpvdJIZ7p"
     }
   ],
-  "staticData": {
-    "node:Schedule Trigger - Lun & Jeu 9h": {
-      "recurrenceRules": []
-    }
-  },
-  "tags": [
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
-    }
-  ],
-  "triggerCount": 1,
-  "updatedAt": "2025-12-28T18:02:52.000Z",
-  "versionId": "df8b2b89-d15b-458a-8305-045967586973"
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-29T00:09:07.000Z",
+  "versionId": "d9428d8b-2951-4d00-ab2f-e6631ee3320f"
 }
