@@ -2,202 +2,468 @@
   "": "",
   "active": false,
   "connections": {
-    "When chat message received": {
+    "Génération de Prompt d'Image": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "Génération d'Image avec Google Nano Banana",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model": {
+    "Chat avec Modèle OpenAI": {
       "ai_languageModel": [
         [
           {
-            "node": "AI Agent",
+            "node": "Génération de Prompt d'Image",
             "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Simple Memory": {
-      "ai_memory": [
+    "Sauvegarde sur Google Drive": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_memory",
+            "node": "Enregistrement dans Airtable",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "List Workflows Tool": {
-      "ai_tool": [
+    "When Executed by Another Workflow": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_tool",
+            "node": "Génération de Prompt d'Image",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get Workflow Tool": {
-      "ai_tool": [
+    "Génération d'Image avec Google Nano Banana": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_tool",
+            "node": "DL Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DL Image": {
+      "main": [
+        [
+          {
+            "node": "Envoi de Photo via Telegram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Sauvegarde sur Google Drive",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-11-22T23:27:57.900Z",
-  "id": "svszeW3o81ArMwLl",
-  "isArchived": true,
+  "createdAt": "2025-09-17T17:43:13.231Z",
+  "id": "t6wg9f3vUgiMPYrz",
+  "isArchived": false,
   "meta": null,
-  "name": "New Claude n8n - Fixed",
+  "name": "Génération d'Image avec Télégram et Nano Banana",
   "nodes": [
     {
-      "id": "chat-trigger-1",
-      "name": "When chat message received",
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.4,
-      "position": [
-        460,
-        240
-      ],
       "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.imagePrompt }}",
         "options": {
-          "responseMode": "streaming"
+          "systemMessage": "=# Contexte\nTu es un expert en ingénierie de prompts d’image. Ton rôle est de transformer un sujet ou concept d’image simple en un prompt détaillé prêt à être utilisé dans un modèle de génération d’image à partir de texte.\n\n## Instructions pour le prompt\nTon prompt détaillé doit clairement décrire les éléments suivants :\n\n1. Sujet principal : Quel est le point focal de l’image ?\n2. Arrière-plan / Décor : Que se passe-t-il en arrière-plan ou dans l’environnement ?\n3. Style : Précise le style visuel (ex. : hyper-réaliste, peinture numérique, aquarelle, anime, rendu 3D, etc.)\n4. Ambiance / Lumière : Décris le ton émotionnel et l’éclairage (ex. : coucher de soleil chaud et doux, nuages d’orage dramatiques, lumières néon futuristes)\n5. Détails supplémentaires : Mentionne tout objet, vêtement, couleur, texture ou caractéristique notable spécifique à inclure\n\n## Format de sortie\n* Commence par une description fluide et naturelle, intégrant tous les éléments ci-dessus de manière cohérente\n* La description doit être écrite comme si elle était destinée à une IA pour produire une image professionnelle et de haute qualité\n* Ne répète pas le sujet d’origine mot à mot — reformule-le en scène visuelle vivante\n* Utilise un langage riche, imagé et précis\n\n## Exemple\n* Entrée : « Une ville futuriste »\n* Sortie : « Une ville futuriste tentaculaire de nuit, illuminée par des lumières néon dans des tons de bleu et de violet. Des gratte-ciel imposants aux façades vitrées dominent l’horizon. Des voitures volantes filent entre les bâtiments sous un ciel nuageux chargé d’électricité. Dans les rues, des publicités holographiques brillent pendant que des passants arborent une mode technologique avant-gardiste. Style peinture numérique, très détaillée, perspective cinématographique, ambiance sombre avec reflets néon sur des trottoirs humides. »"
         }
-      }
-    },
-    {
-      "id": "ai-agent-1",
-      "name": "AI Agent",
+      },
       "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 3,
+      "typeVersion": 1.9,
       "position": [
-        680,
-        240
+        1120,
+        288
       ],
-      "parameters": {
-        "options": {
-          "systemMessage": "Tu es un assistant n8n expert qui aide à créer, gérer et automatiser des workflows n8n.\n\nTes capacités:\n- Lister et analyser les workflows existants\n- Récupérer les détails d'un workflow spécifique\n- Créer de nouveaux workflows\n- Valider la structure des workflows\n- Donner des conseils sur les bonnes pratiques n8n\n\nTu communiques en français avec Adama, ton créateur.\nTu es direct, précis et tu évites les explications inutiles.\nQuand tu utilises un outil, tu expliques ce que tu fais."
-        }
-      }
+      "id": "82dad52c-4e84-48de-b0bf-cacb3dee5639",
+      "name": "Génération de Prompt d'Image"
     },
     {
-      "id": "anthropic-model-1",
-      "name": "Anthropic Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('When Executed by Another Workflow').item.json.chatID }}",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
       "position": [
-        480,
-        400
+        1584,
+        688
       ],
+      "id": "eb298baf-94b4-4666-be14-e7e9db0922eb",
+      "name": "Envoi de Photo via Telegram",
+      "webhookId": "8fcbda9c-8396-41f7-8f2d-39e4ae4337c7"
+    },
+    {
       "parameters": {
         "model": {
           "__rl": true,
           "mode": "list",
-          "value": "claude-sonnet-4-5-20250929",
-          "cachedResultName": "Claude Sonnet 4.5"
+          "value": "gpt-4.1-mini"
         },
         "options": {}
       },
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        512
+      ],
+      "id": "70e9802b-b22e-493c-8427-c842760dd187",
+      "name": "Chat avec Modèle OpenAI"
     },
     {
-      "id": "memory-1",
-      "name": "Simple Memory",
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        680,
-        400
-      ],
       "parameters": {
-        "contextWindowLength": 20
-      }
-    },
-    {
-      "id": "tool-list-1",
-      "name": "List Workflows Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        880,
-        320
-      ],
-      "parameters": {
-        "method": "GET",
-        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows",
-        "authentication": "none",
-        "toolDescription": "Liste tous les workflows n8n avec leurs IDs, noms, statut actif, et nombre de nodes.",
-        "options": {}
-      }
-    },
-    {
-      "id": "tool-get-1",
-      "name": "Get Workflow Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        880,
-        460
-      ],
-      "parameters": {
-        "method": "GET",
-        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows/{{ $json.workflowId }}",
-        "authentication": "none",
-        "toolDescription": "Récupère les détails complets d'un workflow spécifique par son ID.",
-        "placeholderDefinitions": {
-          "workflowId": {
-            "type": "string",
-            "description": "L'ID du workflow à récupérer"
-          }
+        "name": "={{ $('When Executed by Another Workflow').item.json.imageTitle }}.png",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW",
+          "mode": "list",
+          "cachedResultName": "Medias",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
         },
         "options": {}
-      }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1584,
+        880
+      ],
+      "id": "1646ec0b-6db1-4c61-b133-6f042a827c54",
+      "name": "Sauvegarde sur Google Drive"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "apprrk8BzFraLVbsx",
+          "mode": "list",
+          "cachedResultName": "Marketing Team",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl4mN27ieDO845l2",
+          "mode": "list",
+          "cachedResultName": "DashBoard",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "Terminé",
+            "Requette": "={{ $('When Executed by Another Workflow').item.json.imagePrompt }}",
+            "ID Requette": "={{ $json.id }}",
+            "Titre": "={{ $('When Executed by Another Workflow').item.json.imageTitle }}",
+            "Type": "Image",
+            "Lien": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "raw_image",
+                  "value": "raw_image"
+                },
+                {
+                  "name": "raw_audio",
+                  "value": "raw_audio"
+                },
+                {
+                  "name": "raw_video",
+                  "value": "raw_video"
+                },
+                {
+                  "name": "Vidéo",
+                  "value": "Vidéo"
+                },
+                {
+                  "name": "Post",
+                  "value": "Post"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Erreur",
+                  "value": "Erreur"
+                },
+                {
+                  "name": "En cours",
+                  "value": "En cours"
+                },
+                {
+                  "name": "Terminé",
+                  "value": "Terminé"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requette",
+              "displayName": "Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID Requette",
+              "displayName": "ID Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lien",
+              "displayName": "Lien",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1808,
+        880
+      ],
+      "id": "57d4b647-3b95-493d-a975-9f1789164b69",
+      "name": "Enregistrement dans Airtable"
+    },
+    {
+      "parameters": {
+        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé est conçu pour générer des images à partir de prompts textuels, en utilisant des services d'intelligence artificielle, et pour distribuer ces images via Telegram et les stocker sur Google Drive. Il enregistre également les détails de chaque requête dans Airtable pour un suivi efficace.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe processus commence par un déclencheur de workflow qui reçoit les données d'entrée nécessaires, telles que le titre de l'image, le prompt de l'image, et l'ID du chat Telegram. Ces informations sont essentielles pour personnaliser la génération de l'image et sa distribution.\n\n### 🔍 Section Traitement et Analyse\nDans cette section, le workflow utilise un modèle d'intelligence artificielle pour transformer le prompt simple en un prompt détaillé et riche en descriptions. Ce prompt est ensuite envoyé à une API de génération d'images pour créer une image visuelle basée sur les spécifications fournies. Le modèle d'OpenAI est également utilisé pour affiner le prompt et garantir une qualité optimale de l'image générée.\n\n### ⚡ Section Actions et Sorties\nUne fois l'image générée, elle est convertie en fichier binaire pour être facilement manipulée. L'image est ensuite envoyée via Telegram au chat spécifié, offrant une distribution rapide et directe. Parallèlement, l'image est sauvegardée sur Google Drive pour un stockage sécurisé et accessible. Enfin, les détails de la requête, y compris le titre, le prompt, et le lien de l'image, sont enregistrés dans Airtable pour un suivi et une gestion ultérieurs.\n\n## 🔗 Liens Utiles\n- [OpenAI](https://openai.com)\n- [Telegram](https://telegram.org)\n- [Google Drive](https://drive.google.com)\n- [Airtable](https://airtable.com)\n- [Wavespeed](https://wavespeed.ai/?utm_source=Thomas_Berton)",
+        "height": 836,
+        "width": 800,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "e00d587a-495b-435a-b451-14b0408a48bd",
+      "name": "Workflow Overview"
+    },
+    {
+      "parameters": {
+        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
+        "height": 400,
+        "width": 800,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "84864447-7157-4765-9a81-7285cf61673d",
+      "name": "Signature"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "imageTitle"
+            },
+            {
+              "name": "imagePrompt"
+            },
+            {
+              "name": "chatID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        288
+      ],
+      "id": "32ecaf3a-6045-43d5-8df9-7c59d294c204",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/google/nano-banana/text-to-image",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "enable_sync_mode",
+              "value": "true"
+            },
+            {
+              "name": "output_format",
+              "value": "jpeg"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.output }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1072,
+        688
+      ],
+      "id": "15a2c781-0f3f-42ed-8615-d437ff695d33",
+      "name": "Génération d'Image avec Google Nano Banana"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.outputs[0] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        688
+      ],
+      "id": "eeb34d9e-0763-49cc-ac07-5ed12b0b8fc4",
+      "name": "DL Image"
     }
   ],
-  "pinData": null,
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "imageTitle": "Lamborghini 2078",
+          "imagePrompt": "Une Lamborghini ultra futuriste de l'année 2078, design avant-gardiste et aérodynamique, couleur noire, avec des lumières LED bleues, style cyberpunk, volant holographique, dans un environnement urbain futuriste la nuit.",
+          "chatID": 7952797797
+        }
+      }
+    ]
+  },
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
-    "saveExecutionProgress": true,
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   },
   "shared": [
     {
-      "updatedAt": "2025-11-22T23:27:57.902Z",
-      "createdAt": "2025-11-22T23:27:57.902Z",
+      "updatedAt": "2025-09-17T17:43:13.233Z",
+      "createdAt": "2025-09-17T17:43:13.233Z",
       "role": "workflow:owner",
-      "workflowId": "svszeW3o81ArMwLl",
-      "projectId": "oXQkWGdjmWkcvoUC"
+      "workflowId": "t6wg9f3vUgiMPYrz",
+      "projectId": "TyqTPn3TpvdJIZ7p"
     }
   ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T00:25:51.000Z",
-  "versionId": "1ea72543-fa38-42fc-bc19-6a96ed0f209e"
+  "updatedAt": "2025-12-28T23:56:42.000Z",
+  "versionId": "391bd9b5-c891-45da-b2fc-37e5e55ef425"
 }
