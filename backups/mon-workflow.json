@@ -2,202 +2,221 @@
   "": "",
   "active": false,
   "connections": {
-    "Run workflow": {
+    "Get my video": {
       "main": [
         [
           {
-            "node": "Loop over queries",
+            "node": "Assign Social Media IDs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop over URLs": {
+    "Assign Social Media IDs": {
       "main": [
         [
           {
-            "node": "Loop over pages",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Request web page for URL",
+            "node": "Upload Video to Blotato",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop over pages": {
+    "Tool: Inject Creativity": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent: Generate Video Concept",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video to Blotato": {
       "main": [
         [
           {
-            "node": "Aggregate arrays of emails",
+            "node": "INSTAGRAM",
             "type": "main",
             "index": 0
-          }
-        ],
-        [
+          },
           {
-            "node": "Scrape emails from page",
+            "node": "YOUTUBE",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TIKTOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "FACEBOOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "THREADS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TWETTER",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LINKEDIN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BLUESKY",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "PINTEREST",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop over queries": {
-      "main": [
-        [],
+    "Tool: Build Prompt Structure": {
+      "ai_tool": [
         [
           {
-            "node": "Execute scraper for query",
+            "node": "AI Agent: Create Veo3-Compatible Prompt",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser: Extract JSON from Idea": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent: Generate Video Concept",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Veo3 API to Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Wait for Veo3 Processing (5 mins)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Remove Duplicate URLs": {
+    "Google Sheets: Save Script Idea": {
       "main": [
         [
           {
-            "node": "Loop over URLs",
+            "node": "AI Agent: Create Veo3-Compatible Prompt",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filter irrelevant URLs": {
+    "AI Agent: Generate Video Concept": {
       "main": [
         [
           {
-            "node": "Remove Duplicate URLs",
+            "node": "Google Sheets: Save Script Idea",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Remove duplicate emails": {
+    "Wait for Veo3 Processing (5 mins)": {
       "main": [
         [
           {
-            "node": "Filter irrelevant emails",
+            "node": "Retrieve Final Video URL from Veo3",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Scrape emails from page": {
+    "Retrieve Final Video URL from Veo3": {
       "main": [
         [
           {
-            "node": "Loop over pages",
+            "node": "Google Sheets: Log Final Video Output",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Starts scraper workflow": {
+    "Trigger: Run Daily Script Generator": {
       "main": [
         [
           {
-            "node": "Search Google Maps with query",
+            "node": "AI Agent: Generate Video Concept",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait between executions": {
+    "Google Sheets: Log Final Video Output": {
       "main": [
         [
           {
-            "node": "Loop over queries",
+            "node": "Get my video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filter irrelevant emails": {
-      "main": [
+    "LLM: Format Prompt for Veo3 (GPT-4.1)": {
+      "ai_languageModel": [
         [
           {
-            "node": "Save emails to Google Sheet",
-            "type": "main",
+            "node": "AI Agent: Create Veo3-Compatible Prompt",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Request web page for URL": {
-      "main": [
+    "LLM: Generate Idea & Caption (GPT-4.1)": {
+      "ai_languageModel": [
         [
           {
-            "node": "Loop over URLs",
-            "type": "main",
+            "node": "AI Agent: Generate Video Concept",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     },
-    "Scrape URLs from results": {
+    "AI Agent: Create Veo3-Compatible Prompt": {
       "main": [
         [
           {
-            "node": "Filter irrelevant URLs",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Execute scraper for query": {
-      "main": [
-        [
-          {
-            "node": "Wait between executions",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate arrays of emails": {
-      "main": [
-        [
-          {
-            "node": "Split out into default data structure",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Search Google Maps with query": {
-      "main": [
-        [
-          {
-            "node": "Scrape URLs from results",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Split out into default data structure": {
-      "main": [
-        [
-          {
-            "node": "Remove duplicate emails",
+            "node": "Call Veo3 API to Generate Video",
             "type": "main",
             "index": 0
           }
@@ -205,534 +224,859 @@
       ]
     }
   },
-  "createdAt": "2025-05-19T17:48:26.713Z",
-  "id": "SMjaGqxDO2ZcVxlZ",
+  "createdAt": "2025-06-24T16:07:38.203Z",
+  "id": "SuBZCwK0VuXuAKv5",
   "isArchived": false,
   "meta": null,
-  "name": "Récupérez des e-mails professionnels à partir de Google Maps sans utiliser d’API tierces",
+  "name": "Générez et publiez automatiquement des vidéos IA sur les réseaux sociaux avec Veo3 et Blotato",
   "nodes": [
     {
-      "parameters": {},
-      "id": "d5151161-7649-4f2e-817b-c20061dad857",
-      "name": "Remove Duplicate URLs",
-      "type": "n8n-nodes-base.removeDuplicates",
+      "parameters": {
+        "content": "# ✅ STEP 1 — Generate Script & Prompt with AI",
+        "height": 500,
+        "width": 1200
+      },
+      "id": "b0d454ea-2d53-4bb3-bd2a-5ef7b462570f",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1168,
-        544
+        -64,
+        -48
       ],
-      "typeVersion": 1.1
+      "typeVersion": 1
     },
     {
       "parameters": {
+        "content": "# ✅ STEP 2 — Create Video Using Veo3\n\n",
+        "height": 280,
+        "width": 1200,
+        "color": 3
+      },
+      "id": "da73c807-d9d7-4172-9df2-b1521d79fc08",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        512
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"instagram_id\": \"1111\",\n  \"youtube_id\": \"1111\",\n  \"threads_id\": \"1111\",\n  \"tiktok_id\": \"1111\",\n  \"facebook_id\": \"1111\",\n  \"facebook_page_id\": \"1111\",\n  \"twitter_id\": \"1111\",\n  \"linkedin_id\": \"1111\",\n  \"pinterest_id\": \"1111\",\n  \"pinterest_board_id\": \"1111\",\n  \"bluesky_id\": \"1111\"\n}\n",
         "options": {}
       },
-      "id": "26da876a-e1f5-4028-91f1-d54c8c630cce",
-      "name": "Loop over queries",
-      "type": "n8n-nodes-base.splitInBatches",
+      "id": "4c4722fb-26bb-4a74-9ca1-2b18d9302d93",
+      "name": "Assign Social Media IDs",
+      "type": "n8n-nodes-base.set",
       "position": [
-        864,
-        64
+        32,
+        1168
       ],
-      "typeVersion": 3
+      "typeVersion": 3.4
     },
     {
       "parameters": {
-        "url": "=https://www.google.com/maps/search/{{ $json.query }}",
-        "options": {
-          "allowUnauthorizedCerts": false
-        }
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "options": {}
       },
-      "id": "6429c1a6-085d-4189-b422-e450a5f90f9c",
-      "name": "Search Google Maps with query",
+      "id": "dd00ed85-3c55-4df6-b84f-f510bf554436",
+      "name": "Get my video",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        128,
+        928
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('Get my video').item.json['final_output'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2a34eb1c-6718-4138-a22a-031b1337169a",
+      "name": "Upload Video to Blotato",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        560,
-        544
+        240,
+        1168
       ],
-      "executeOnce": false,
-      "typeVersion": 4.2,
-      "alwaysOutputData": false
+      "typeVersion": 4.2
     },
     {
       "parameters": {
-        "jsCode": "const data = $input.first().json.data\n\nconst regex = /https?:\\/\\/[^\\/]+/g\n\nconst urls = data.match(regex)\n\nreturn urls.map(url => ({json: {url: url}}))"
-      },
-      "id": "a9b3d065-5895-4c48-a04b-942126ca530c",
-      "name": "Scrape URLs from results",
-      "type": "n8n-nodes-base.code",
-      "position": [
-        768,
-        544
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "version": 2,
-            "leftValue": "",
-            "caseSensitive": true,
-            "typeValidation": "strict"
-          },
-          "combinator": "and",
-          "conditions": [
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "id": "041797f2-2fe2-41dc-902a-d34050b9b304",
-              "operator": {
-                "type": "string",
-                "operation": "notRegex"
-              },
-              "leftValue": "={{ $json.url }}",
-              "rightValue": "=(google|gstatic|ggpht|schema\\.org|example\\.com|sentry-next\\.wixpress\\.com|imli\\.com|sentry\\.wixpress\\.com|ingest\\.sentry\\.io)"
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.instagram_id }}\",\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "id": "2464ec5d-234e-43da-818d-7e759a58c982",
+      "name": "INSTAGRAM",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        528,
+        928
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.youtube_id }}\",\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Get my video').item.json.Titre }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\": \"false\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "6305e550-1f70-4146-bb78-a157f17aef17",
+      "name": "YOUTUBE",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        752,
+        928
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "=YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.tiktok_id }}\",\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": \"false\", \n      \"disabledDuet\": \"false\",\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": \"true\",\n      \"disabledStitch\": \"false\",\n      \"disabledComments\": \"false\",\n      \"isBrandedContent\": \"false\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "bde10c3a-e46e-4398-bb49-cb909b7726e4",
+      "name": "TIKTOK",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        944,
+        928
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "=YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.facebook_id }}\",\n    \"target\": {\n      \"targetType\": \"facebook\",\n      \"pageId\": \"{{ $('Assign Social Media IDs').item.json.facebook_page_id }}\"\n\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"facebook\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}",
+        "options": {}
+      },
+      "id": "e74c1ab6-3786-437d-8dfb-f3cfe36cfa6b",
+      "name": "FACEBOOK",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        528,
+        1168
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.threads_id }}\",\n    \"target\": {\n      \"targetType\": \"threads\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"threads\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "f1a37aaa-79b4-44db-a56e-74e2ae04809b",
+      "name": "THREADS",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        752,
+        1168
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.twitter_id }}\",\n    \"target\": {\n      \"targetType\": \"twitter\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"twitter\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "94eade19-0007-4ee8-9526-3b264b3d5704",
+      "name": "TWETTER",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        944,
+        1168
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.linkedin_id }}\",\n    \"target\": {\n      \"targetType\": \"linkedin\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"linkedin\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "24372405-ba9e-418b-8b5b-ecb3b4610cc6",
+      "name": "LINKEDIN",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        528,
+        1408
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "= {\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.bluesky_id }}\",\n    \"target\": {\n      \"targetType\": \"bluesky\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"bluesky\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "3d96265f-85db-49e4-b3db-cde816a3fe0e",
+      "name": "BLUESKY",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        752,
+        1408
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "YOUR_API_HERE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_id }}\",\n    \"target\": {\n      \"targetType\": \"pinterest\",\n      \"boardId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_board_id }}\"      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"pinterest\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "id": "0ba1f5c8-e82d-48de-aafa-04a7bca1c334",
+      "name": "PINTEREST",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        944,
+        1408
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "STATUS": "Publish",
+            "row_number": "={{ $('Get my video').item.json.row_number }}"
+          },
+          "schema": [
+            {
+              "id": "PROMPT",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "PROMPT",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
             },
             {
-              "id": "eb499a7e-17bc-453c-be08-a47286f726dd",
-              "operator": {
-                "name": "filter.operator.equals",
-                "type": "string",
-                "operation": "equals"
-              },
-              "leftValue": "",
-              "rightValue": ""
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c00190d1-10ab-40ec-a542-785e98503a21",
-      "name": "Filter irrelevant URLs",
-      "type": "n8n-nodes-base.filter",
-      "position": [
-        960,
-        544
-      ],
-      "typeVersion": 2.2
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.url }}",
-        "options": {}
-      },
-      "id": "4ddc8baf-9f72-4d36-9b7b-36bcd145de44",
-      "name": "Request web page for URL",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        1568,
-        624
-      ],
-      "typeVersion": 4.2,
-      "alwaysOutputData": false,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "options": {
-          "reset": false
-        }
-      },
-      "id": "a671a7e8-6588-4ce7-bee4-36afdc5d0a1b",
-      "name": "Loop over URLs",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        1360,
-        544
-      ],
-      "typeVersion": 3,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "0227aa4d-8f7b-4d93-9db3-80f185b1b75c",
-      "name": "Loop over pages",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        1584,
-        288
-      ],
-      "typeVersion": 3,
-      "alwaysOutputData": false,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "const data = $json.data\n\nconst emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?!png|jpg|gif|jpeg)[a-zA-Z]{2,}/g\n\nconst emails = data.match(emailRegex)\n\nreturn {json: {emails: emails}}"
-      },
-      "id": "2f6b7548-d7dd-4403-953f-cf52046e0ae3",
-      "name": "Scrape emails from page",
-      "type": "n8n-nodes-base.code",
-      "position": [
-        1744,
-        384
-      ],
-      "typeVersion": 2,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
+              "id": "DESCRIPTION",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "DESCRIPTION",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
             {
-              "fieldToAggregate": "emails"
+              "id": "URL VIDEO",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "URL VIDEO",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Titre",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Titre",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "STATUS",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "STATUS",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "readOnly": true,
+              "required": false,
+              "displayName": "row_number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "row_number"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
-        "options": {
-          "mergeLists": true
-        }
+        "options": {}
       },
-      "id": "59806265-acb8-46de-aa7f-8acf2858179f",
-      "name": "Aggregate arrays of emails",
-      "type": "n8n-nodes-base.aggregate",
+      "id": "1dc8b84e-8dee-4913-9747-72ff8fb03f93",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
       "position": [
-        1904,
-        272
+        240,
+        1408
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {
+        "content": "# ✅ STEP 3 — Publish Video to Social Media\n",
+        "height": 760,
+        "width": 1200,
+        "color": 4
+      },
+      "id": "31ec62fc-7dcb-4b0a-b0c7-e17b4e6e1d92",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        832
       ],
       "typeVersion": 1
     },
     {
       "parameters": {
-        "fieldToSplitOut": "emails",
-        "options": {}
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
       },
-      "id": "7b2b27d8-6be1-4b27-ae65-6afd3e71d69e",
-      "name": "Split out into default data structure",
-      "type": "n8n-nodes-base.splitOut",
+      "id": "e1a02922-1555-4b59-9490-343bc4194912",
+      "name": "Trigger: Run Daily Script Generator",
+      "type": "n8n-nodes-base.scheduleTrigger",
       "position": [
-        2128,
-        272
+        112,
+        48
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Give me an idea about [a Yeti speaking to a camera and doing a Vlog through his selfie stick]. ",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an AI designed to generate 1 immersive, realistic idea based on a user-provided topic. Your output must be formatted as a JSON array (single line) and follow all the rules below exactly.\n\nRULES:\n\nOnly return 1 idea at a time.\n\nThe user will provide a key topic (e.g. “urban farming,” “arctic survival,” “street food in Vietnam”).\n\nThe Idea must:\n\nBe under 13 words.\n\nDescribe an interesting and viral-worthy moment, action, or event related to the provided topic.\n\nCan be as surreal as you can get, doesn't have to be real-world!\n\nInvolves a character.\n\nThe Caption must be:\n\nShort, punchy, and viral-friendly.\n\nInclude one relevant emoji.\n\nInclude exactly 12 hashtags in this order:\n** 4 topic-relevant hashtags\n** 4 all-time most popular hashtags\n** 4 currently trending hashtags (based on live research)\n\nAll hashtags must be lowercase.\n\nSet Status to \"for production\" (always).\n\nThe Environment must:\n\nBe under 20 words.\n\nMatch the action in the Idea exactly.\n\nClearly describe:\n\nWhere the event is happening (e.g. rooftop, jungle trail, city alley, frozen lake)\n\nKey visuals or background details (e.g. smoke rising, neon lights, fog, birds overhead)\n\nMain participants (e.g. farmer, cook, mechanic, rescue team, animal)\n\nStyle of scene (e.g. cinematic realism, handheld docu-style, aerial tracking shot, macro close-up)\n\nOk with fictional settings\n\nOUTPUT FORMAT (single-line JSON array):\n\n\n[\n  {\n    \"Caption\": \"Short viral title with emoji #4_topic_hashtags #4_all_time_popular_hashtags #4_trending_hashtags\",\n    \"Idea\": \"Short idea under 13 words\",\n    \"Environment\": \"Brief vivid setting under 20 words matching the action\",\n    \"Status\": \"for production\"\n  }\n]\n"
+        }
+      },
+      "id": "b2134f5b-d6ce-4cf3-bbf2-6eb5d5ddba03",
+      "name": "AI Agent: Generate Video Concept",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        272,
+        48
+      ],
+      "typeVersion": 1.9
+    },
+    {
+      "parameters": {},
+      "id": "239c430c-7dbd-482d-b87b-f0b58a7403d2",
+      "name": "Tool: Inject Creativity",
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "position": [
+        352,
+        304
       ],
       "typeVersion": 1
     },
     {
       "parameters": {
-        "compare": "selectedFields",
-        "fieldsToCompare": "emails",
-        "options": {}
-      },
-      "id": "54075939-25ec-46d3-bb38-2acc572549c0",
-      "name": "Remove duplicate emails",
-      "type": "n8n-nodes-base.removeDuplicates",
-      "position": [
-        2352,
-        272
-      ],
-      "typeVersion": 1.1
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "version": 2,
-            "leftValue": "",
-            "caseSensitive": true,
-            "typeValidation": "strict"
-          },
-          "combinator": "and",
-          "conditions": [
-            {
-              "id": "041797f2-2fe2-41dc-902a-d34050b9b304",
-              "operator": {
-                "type": "string",
-                "operation": "notRegex"
-              },
-              "leftValue": "={{ $json.emails }}",
-              "rightValue": "=(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.io|sentry\\.io|imli\\.com)"
-            }
-          ]
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1",
+          "cachedResultName": "gpt-4.1"
         },
         "options": {}
       },
-      "id": "27bb346f-df76-4615-ae03-c2b1d155e22c",
-      "name": "Filter irrelevant emails",
-      "type": "n8n-nodes-base.filter",
+      "id": "92dd4dbf-68de-4aec-8600-bcb140f57a37",
+      "name": "LLM: Generate Idea & Caption (GPT-4.1)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        2544,
-        272
+        192,
+        304
       ],
-      "typeVersion": 2.2
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "[\n  {\n    \"Caption\": \"Diver Removes Nets Off Whale 🐋 #whalerescue #marinelife #oceanrescue #seahelpers #love #nature #instagood #explore #viral #savenature #oceanguardians #cleanoceans\",\n    \"Idea\": \"Diver carefully cuts tangled net from distressed whale in open sea\",\n    \"Environment\": \"Open ocean, sunlight beams through water, diver and whale, cinematic realism\",\n    \"Status\": \"for production\"\n  }\n]\n"
+      },
+      "id": "c8d100e7-e4de-4a35-8e66-4d5f7e7057f1",
+      "name": "Parser: Extract JSON from Idea",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        512,
+        304
+      ],
+      "typeVersion": 1.2
     },
     {
       "parameters": {
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "mode": "list",
-          "value": ""
+          "mode": "id",
+          "value": "="
         },
         "sheetName": {
           "__rl": true,
-          "mode": "list",
-          "value": ""
-        }
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "id": "==ROW()-1",
+            "idea": "={{ $json.output[0].Idea }}",
+            "caption": "={{ $json.output[0].Caption }}",
+            "production": "={{ $json.output[0].Status }}",
+            "environment_prompt": "={{ $json.output[0].Environment }}"
+          },
+          "schema": [
+            {
+              "id": "id",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "id",
+              "defaultMatch": true,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "idea",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "idea",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "caption",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "production",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "production",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "environment_prompt",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "environment_prompt",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "final_output",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "final_output",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
-      "id": "0119937c-8a77-4b6f-bd33-470d82cbb372",
-      "name": "Save emails to Google Sheet",
+      "id": "9f7858b8-211b-44ef-859b-0be3ce7f09c7",
+      "name": "Google Sheets: Save Script Idea",
       "type": "n8n-nodes-base.googleSheets",
       "position": [
-        2752,
-        272
+        624,
+        48
       ],
       "typeVersion": 4.5
     },
     {
-      "parameters": {},
-      "id": "4c70f9a8-024a-415f-ad87-959d35dd21a8",
-      "name": "Starts scraper workflow",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "position": [
-        352,
-        544
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "a27c5370-1baa-4c93-971b-24869b09885a",
-      "name": "Run workflow",
-      "type": "n8n-nodes-base.manualTrigger",
-      "position": [
-        624,
-        64
-      ],
-      "typeVersion": 1
-    },
-    {
       "parameters": {
-        "amount": 2
-      },
-      "id": "6db1fd75-0302-4663-b577-3f69e150705f",
-      "name": "Wait between executions",
-      "type": "n8n-nodes-base.wait",
-      "position": [
-        1248,
-        160
-      ],
-      "webhookId": "40eb11a9-0f7d-4932-993e-0052b69dbf9b",
-      "typeVersion": 1.1
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "={{ $workflow.id }}"
-        },
-        "mode": "each",
+        "promptType": "define",
+        "text": "=Give me a Veo3 prompt for this idea:\n{{ $json.idea }}\n\nThis is the environment:\n{{ $json.environment_prompt }}\n\n",
+        "hasOutputParser": true,
         "options": {
-          "waitForSubWorkflow": false
+          "systemMessage": "=SYSTEM PROMPT FOR GOOGLE VEO3 PROMPT AGENT\n\nYou are an AI agent that writes hyper-realistic, cinematic video prompts for Google VEO3. Each prompt should describe a short, vivid selfie-style video clip featuring one unnamed character speaking or acting in a specific moment. The final video should look like found footage or documentary-style film — grounded, realistic, and immersive.\n\nREQUIRED STRUCTURE (FILL IN THE BRACKETS BELOW):\n\n[Scene paragraph prompt here]\n\nMain character: [description of character]\nThey say: [insert one line of dialogue, fits the scene and mood].\nThey [describe a physical action or subtle camera movement, e.g. pans the camera, shifts position, glances around].\nTime of Day: [day / night / dusk / etc.]\nLens: [describe lens]\nAudio: (implied) [ambient sounds, e.g. lion growls, wind, distant traffic, birdsong]\nBackground: [brief restatement of what is visible behind them]\n\nRULES FOR PROMPT GENERATION\n\nSingle paragraph only, 750–1500 characters. No line breaks or headings.\n\nOnly one human character. Never give them a name.\n\nInclude one spoken line of dialogue and describe how it’s delivered.\n\nCharacter must do something physical, even if subtle (e.g. glance, smirk, pan camera).\n\nUse selfie-style framing. Always describe the lens, stock, and camera behavior.\n\nScene must feel real and cinematic — like a short clip someone might record on a stylized camera.\n\nAlways include the five key technical elements: Time of Day, Lens, Film Stock, Audio, and Background.\n\nDO NOT DO THIS:\n\nDon’t name the character.\n\nDon’t include more than one character.\n\nDon’t describe subtitles or on-screen text.\n\nDon’t break the paragraph or use formatting.\n\nDon’t write vague or abstract scenes — always keep them grounded in physical detail."
         }
       },
-      "id": "aa6e117c-7f0d-4d2a-b497-b528eaa64fc4",
-      "name": "Execute scraper for query",
-      "type": "n8n-nodes-base.executeWorkflow",
+      "id": "0e5c8f73-b30b-415d-b6fe-135a7bb094bc",
+      "name": "AI Agent: Create Veo3-Compatible Prompt",
+      "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        1072,
-        160
-      ],
-      "typeVersion": 1.1
-    },
-    {
-      "parameters": {
-        "content": "## 🛠 Setup\n1. Setup your list of queries in the \"Run workflow\" manual trigger node. Watch  this [video](https://youtu.be/HaiO-UeiKBA) on how to generate the queries with ChatGPT.\n3. Choose a sheet to populate with data in the **Google Sheets node**\n4. Run the workflow and start getting leads into your Google Sheets document",
-        "height": 180,
-        "width": 740,
-        "color": 5
-      },
-      "id": "2519cde8-9bab-40f9-afd8-20d6d0cb69c0",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -336,
-        32
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "**Optional** 👇\nSet wait time between each query workflow execution. Default is 2 seconds.",
-        "height": 100,
-        "color": 6
-      },
-      "id": "e94c1877-175d-4003-af2e-8ce492f2032f",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        1248,
+        784,
         48
       ],
-      "typeVersion": 1
+      "typeVersion": 1.9
     },
     {
-      "parameters": {
-        "content": "### Scraper 👇\nThis workflow will be executed in the background for each query. Click the **All executions** tab in the left sidebar to see the executions running.",
-        "height": 100,
-        "width": 480
-      },
-      "id": "62a35ed9-7ba0-4195-b1e0-4b64a128c6d5",
-      "name": "Sticky Note3",
-      "type": "n8n-nodes-base.stickyNote",
+      "parameters": {},
+      "id": "9e3b1a1d-f500-4e28-8710-007e961f44fb",
+      "name": "Tool: Build Prompt Structure",
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
       "position": [
-        352,
-        432
+        992,
+        304
       ],
       "typeVersion": 1
     },
     {
       "parameters": {
-        "content": "👆 \n1. Setup your **credentials**. Here's a [video tutorial](https://youtu.be/O5RnWDM27M8) on how to do that.\n\n2. Choose which document and sheet to save the scraped emails to. ",
-        "height": 180,
-        "color": 4
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
       },
-      "id": "527bacb0-e0ea-49d7-8e83-094795b02245",
-      "name": "Sticky Note4",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "3cb57910-620f-48ab-b6a3-867ddef9c1a7",
+      "name": "LLM: Format Prompt for Veo3 (GPT-4.1)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        2768,
-        464
+        800,
+        304
       ],
-      "typeVersion": 1
+      "typeVersion": 1.2
     },
     {
       "parameters": {
-        "content": " ## ⚠️ Note\n\nA [video tutorial](https://youtu.be/HaiO-UeiKBA) for this workflow guide is available on my [Youtube channel](https://www.youtube.com/channel/UCn8xmUBunez1SsDVRfZDUGA)",
-        "color": 3
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/veo3",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={ \"prompt\": \"{{ $json.output }}\" }\n",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 2000
+            }
+          }
+        }
       },
-      "id": "bd59f532-7e09-4b0d-a18c-580cabae6023",
-      "name": "Sticky Note5",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "38389c3f-de09-461e-9c29-64341ae5e55e",
+      "name": "Call Veo3 API to Generate Video",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        192,
-        -208
+        128,
+        592
       ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Google Maps Automatic Email Scraper\n\nThis workflow automatically scrapes emails from businesses on Google Maps based on a list of queries that you provide.",
-        "height": 140,
-        "width": 480,
-        "color": 7
-      },
-      "id": "1172b1a8-4159-4f5b-aba2-f757b9cfdca7",
-      "name": "Sticky Note6",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -336,
-        -208
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "**Optional** 👆\nAdd or change the regex for filtering irrelevant URLs.",
-        "height": 100,
-        "width": 160,
-        "color": 6
-      },
-      "id": "b28020f7-6f61-4d83-a1ce-46bf1dc2dfca",
-      "name": "Sticky Note7",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        944,
-        704
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "**Optional** 👆\nAdd or change the regex for filtering irrelevant/incorrect email addresses.",
-        "height": 100,
-        "width": 200,
-        "color": 6
-      },
-      "id": "161816c0-f4bf-46d5-8cdd-695c0e966be2",
-      "name": "Sticky Note8",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        2528,
-        432
-      ],
-      "typeVersion": 1
-    }
-  ],
-  "pinData": {
-    "Run workflow": [
-      {
-        "json": {
-          "query": "hollywood+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "downtown+los+angeles+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "santa+monica+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "westwood+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "west+l.a.+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "the+valley+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "echo+park+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "culver+city+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "pasadena+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "silver+lake+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "mid-wilshire+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "beverly+hills+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "north+hills+dentist"
-        }
-      },
-      {
-        "json": {
-          "query": "south+los+angeles+dentist"
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "Ii00jerJRlDsfgAZ",
+          "name": "Temp FireCrawl2"
         }
       }
-    ]
-  },
+    },
+    {
+      "parameters": {},
+      "id": "c8e66adb-4d05-4f5b-9ed5-9f24be8eeed8",
+      "name": "Wait for Veo3 Processing (5 mins)",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        352,
+        592
+      ],
+      "webhookId": "861e2761-369b-407b-9e88-1b176e617cd8",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/veo3/requests/{{ $json.request_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "a8684247-7eea-4f5b-a75b-a295308abf1f",
+      "name": "Retrieve Final Video URL from Veo3",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        624,
+        592
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "="
+        },
+        "columns": {
+          "value": {
+            "idea": "={{ $('Google Sheets: Save Script Idea').first().json.idea }}",
+            "production": "done",
+            "final_output": "={{ $json.video.url }}"
+          },
+          "schema": [
+            {
+              "id": "id",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "id",
+              "defaultMatch": true,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "idea",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "idea",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "caption",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "production",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "production",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "environment_prompt",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "environment_prompt",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "final_output",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "final_output",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "type": "string",
+              "display": true,
+              "removed": true,
+              "readOnly": true,
+              "required": false,
+              "displayName": "row_number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "idea"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "849337e5-c8a0-473f-82a4-edf618442b50",
+      "name": "Google Sheets: Log Final Video Output",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        944,
+        592
+      ],
+      "typeVersion": 4.5
+    }
+  ],
+  "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
@@ -741,15 +1085,21 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-05-19T17:48:26.716Z",
-      "createdAt": "2025-05-19T17:48:26.716Z",
+      "updatedAt": "2025-06-24T16:07:38.207Z",
+      "createdAt": "2025-06-24T16:07:38.207Z",
       "role": "workflow:owner",
-      "workflowId": "SMjaGqxDO2ZcVxlZ",
+      "workflowId": "SuBZCwK0VuXuAKv5",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [
+    {
+      "updatedAt": "2025-12-28T18:22:55.919Z",
+      "createdAt": "2025-12-28T18:22:55.919Z",
+      "id": "ALdqECfMLigFyG7Y",
+      "name": "avec blotato"
+    },
     {
       "updatedAt": "2025-12-28T18:03:24.856Z",
       "createdAt": "2025-12-28T18:03:24.856Z",
@@ -761,15 +1111,9 @@
       "createdAt": "2025-12-28T18:11:09.101Z",
       "id": "sVpkY0lvvpHVkXIe",
       "name": "ok"
-    },
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:37:01.000Z",
-  "versionId": "bb27d234-16f2-4ecf-8984-08aad0558197"
+  "updatedAt": "2025-12-28T19:05:57.000Z",
+  "versionId": "a80944fb-6ae0-4d66-abd0-8b305257f6d5"
 }
