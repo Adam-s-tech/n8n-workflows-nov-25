@@ -2,106 +2,216 @@
   "": "",
   "active": false,
   "connections": {
-    "n8n": {
+    "Schedule Trigger": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Get my video",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Filter": {
+    "Get my video": {
       "main": [
         [
           {
-            "node": "delete folder",
+            "node": "Assign Social Media IDs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get folders": {
+    "Assign Social Media IDs": {
       "main": [
         [
           {
-            "node": "Filter",
+            "node": "Upload Video to Blotato",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Google Drive": {
+    "Upload Video to Blotato": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "INSTAGRAM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TIKTOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "FACEBOOK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "THREADS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TWITTER",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "LINKEDIN",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "BLUESKY",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "PINTEREST",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "YOUTUBE",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Convert to File": {
+    "INSTAGRAM": {
       "main": [
         [
           {
-            "node": "Google Drive",
+            "node": "Merge",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop Over Items": {
+    "YOUTUBE": {
       "main": [
         [
           {
-            "node": "Get folders",
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "TIKTOK": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "FACEBOOK": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "THREADS": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "LINKEDIN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "TWITTER": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        []
+      ]
+    },
+    "DONE": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "DONE",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Convert to File",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "create new folder",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "create new folder": {
-      "main": [
-        [
-          {
-            "node": "n8n",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On clicking 'execute'": {
-      "main": [
-        [
-          {
-            "node": "create new folder",
+            "node": "ERROR",
             "type": "main",
             "index": 0
           }
@@ -109,247 +219,773 @@
       ]
     }
   },
-  "createdAt": "2026-01-02T20:32:28.810Z",
-  "id": "q88BMNDoNz4LOXoA",
-  "isArchived": false,
+  "createdAt": "2025-11-23T23:35:27.204Z",
+  "id": "qVN9uRRIYsCswWxD",
+  "isArchived": true,
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "Sauvegardez tous les flux de travail n8n sur Google Drive toutes les 4 heures",
+  "name": "02-Auto-Post sur les Réseaux Sociaux copy",
   "nodes": [
-    {
-      "parameters": {},
-      "id": "0724626c-4bf5-4e9c-b53e-69c4a481670c",
-      "name": "On clicking 'execute'",
-      "type": "n8n-nodes-base.manualTrigger",
-      "position": [
-        -336,
-        -32
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "filters": {},
-        "requestOptions": {}
-      },
-      "id": "22c08d75-8abf-4257-ac3c-94b214857d77",
-      "name": "n8n",
-      "type": "n8n-nodes-base.n8n",
-      "position": [
-        32,
-        96
-      ],
-      "retryOnFail": true,
-      "typeVersion": 1,
-      "alwaysOutputData": true,
-      "credentials": {
-        "n8nApi": {
-          "id": "KMOQv6yJi4nvCqcx",
-          "name": "n8n V2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "64d6c384-1ff3-4ba9-9c3b-afd67b2ac90a",
-      "name": "Loop Over Items",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        224,
-        96
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "authentication": "serviceAccount",
-        "resource": "folder",
-        "name": "=Workflow Backups {{ $now.format('cccc t dd-MM-yyyy') }}",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "replaceme",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/replaceme",
-          "cachedResultName": "Workflow Backups"
-        },
-        "options": {}
-      },
-      "id": "1c584b9e-957f-44d2-a43e-af3b8f11a368",
-      "name": "create new folder",
-      "type": "n8n-nodes-base.googleDrive",
-      "position": [
-        -160,
-        96
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "operation": "toJson",
-        "options": {
-          "format": true,
-          "fileName": "={{ $json.name + \".json\" }} "
-        }
-      },
-      "id": "0b512697-e967-4aab-9c3f-e77c81b5e754",
-      "name": "Convert to File",
-      "type": "n8n-nodes-base.convertToFile",
-      "position": [
-        448,
-        192
-      ],
-      "typeVersion": 1.1
-    },
-    {
-      "parameters": {
-        "name": "={{ $('Loop Over Items').item.json.name + \".json\" }}",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "={{ $('create new folder').item.json.id }}"
-        },
-        "options": {}
-      },
-      "id": "7888fb1b-2e54-48ca-9e66-451bf6817bb5",
-      "name": "Google Drive",
-      "type": "n8n-nodes-base.googleDrive",
-      "position": [
-        624,
-        192
-      ],
-      "typeVersion": 3,
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "UqDPB5IG1vSb2j4D",
-          "name": "Google Drive Dorian"
-        }
-      }
-    },
     {
       "parameters": {
         "rule": {
           "interval": [
             {
-              "field": "hours",
-              "hoursInterval": 4
+              "triggerAtHour": 11
+            },
+            {
+              "triggerAtHour": 16
             }
           ]
         }
       },
-      "id": "78d9a586-6e9a-4315-a691-10229fa03d7c",
-      "name": "Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
       "position": [
-        -336,
-        240
+        0,
+        1072
       ],
-      "typeVersion": 1.2
+      "id": "b808a813-d79a-48bb-80e8-73cb44eb3d8b",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"instagram_id\": \"5947\",\n  \"youtube_id\": \"4669\",\n  \"tiktok_id\": \"7605\",\n  \"facebook_id\": \"5418\",\n  \"facebook_page_id\": \"372471022626315\",\n  \"threads_id\": \"1552\",\n  \"twitter_id\": \"3175\",\n  \"linkedin_id\": \"3046\",\n  \"pinterest_id\": \"1077\",\n  \"pinterest_board_id\": \"101010\",\n  \"bluesky_id\": \"111111\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        1072
+      ],
+      "id": "22b8286c-85b8-499d-a0c2-9aeb48dcd3b4",
+      "name": "Assign Social Media IDs",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Statut_Publication",
+              "lookupValue": "PENDING"
+            }
+          ]
+        },
+        "combineFilters": "OR",
+        "options": {
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        1072
+      ],
+      "id": "0cc0c191-958b-4c25-9c64-592d2ee03bb7",
+      "name": "Get my video",
+      "executeOnce": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/media",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('Get my video').item.json.URL_Video_Source }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        672,
+        1072
+      ],
+      "id": "f28ebeb8-76de-4838-865b-10494b12924e",
+      "name": "Upload Video to Blotato",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.instagram_id }}\",\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        528
+      ],
+      "id": "210f063f-0431-415e-b58f-59a4e060e704",
+      "name": "INSTAGRAM",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.youtube_id }}\",\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Get my video').item.json['Titre_Post (Optionnel)'] }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\": \"false\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        704
+      ],
+      "id": "62e49218-7f45-4a06-b672-72107381e672",
+      "name": "YOUTUBE",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.tiktok_id }}\",\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": \"false\", \n      \"disabledDuet\": \"false\",\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": \"true\",\n      \"disabledStitch\": \"false\",\n      \"disabledComments\": \"false\",\n      \"isBrandedContent\": \"false\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        880
+      ],
+      "id": "74c5b5c9-643f-493a-ac9e-25948103f000",
+      "name": "TIKTOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"5418\",\n    \"target\": {\n      \"targetType\": \"facebook\",\n      \"pageId\": \"372471022626315\"\n   \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"facebook\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1040
+      ],
+      "id": "7f965709-7f77-4e38-bf28-d9bb47d607e8",
+      "name": "FACEBOOK",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"1877\",\n    \"target\": {\n      \"targetType\": \"threads\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"threads\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1200
+      ],
+      "id": "f82a0a8a-64de-41fc-8bbb-7ce491b8a2e4",
+      "name": "THREADS",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.linkedin_id }}\",\n    \"target\": {\n      \"targetType\": \"linkedin\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"linkedin\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1584
+      ],
+      "id": "105106db-6f44-4a76-aa19-f8d1d176127f",
+      "name": "LINKEDIN",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "= {\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.bluesky_id }}\",\n    \"target\": {\n      \"targetType\": \"bluesky\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"bluesky\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1760
+      ],
+      "id": "344fdcf7-d323-4b18-a9a9-5e41a479955f",
+      "name": "BLUESKY",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_id }}\",\n    \"target\": {\n      \"targetType\": \"pinterest\",\n      \"boardId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_board_id }}\"      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"pinterest\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1984
+      ],
+      "id": "f9e3c765-33c4-4bd0-af13-e724e0fad58c",
+      "name": "PINTEREST",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $('Get my video').item.json.ID_Video }}",
+            "Statut_Publication": "GO"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1648,
+        352
+      ],
+      "id": "8a6bfea7-9e42-4e6e-9232-db0dd867a77c",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://backend.blotato.com/v2/posts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "blotato-api-key",
+              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.twitter_id }}\",\n    \"target\": {\n      \"targetType\": \"twitter\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"twitter\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1648,
+        1392
+      ],
+      "id": "1e2c475e-036c-4394-a39e-5cda7d22133c",
+      "name": "TWITTER",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $json.row_number }}",
+            "Statut_Publication": "ERROR"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2928,
+        1232
+      ],
+      "id": "2c02c7e2-3e7a-486e-8132-1996cf6e9103",
+      "name": "ERROR",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Vidéo",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Video": "={{ $json.row_number }}",
+            "Statut_Publication": "DONE"
+          },
+          "matchingColumns": [
+            "ID_Video"
+          ],
+          "schema": [
+            {
+              "id": "ID_Video",
+              "displayName": "ID_Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL_Video_Source",
+              "displayName": "URL_Video_Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description_Post",
+              "displayName": "Description_Post",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Titre_Post (Optionnel)",
+              "displayName": "Titre_Post (Optionnel)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Statut_Publication",
+              "displayName": "Statut_Publication",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2912,
+        912
+      ],
+      "id": "3bf3eb69-ba76-475e-a1d7-2eeef94090c1",
+      "name": "DONE",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aMYMtMuiDpps5kuW",
+          "name": "Google Sheets account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 7
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        2240,
+        992
+      ],
+      "id": "a9dd7ef0-d883-41bf-ba5e-b71109926e77",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n  const enabledPlatforms = ['INSTAGRAM','YOUTUBE','TIKTOK','FACEBOOK','THREADS','LINKEDIN','TWITTER']; // List of enabled platforms\nlet successfulPosts = 0;\n\n// Count successful posts\nfor (const item of items) {\n  if (item.json.postSubmissionId) {\n    successfulPosts++;\n  }\n}\n\n// Get row_number from Get my video node\nconst ID_Video = $('Get my video').first().json.ID_Video;\n\n// Return allPosted and row_number to preserve pairing\nreturn [{ json: { allPosted: successfulPosts === enabledPlatforms.length, row_number: ID_Video } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2480,
+        1072
+      ],
+      "id": "ef08bb01-4da6-4592-a316-50865e8d560e",
+      "name": "Code"
     },
     {
       "parameters": {
         "conditions": {
           "options": {
-            "version": 2,
+            "caseSensitive": true,
             "leftValue": "",
-            "caseSensitive": false,
-            "typeValidation": "loose"
+            "typeValidation": "loose",
+            "version": 2
           },
-          "combinator": "and",
           "conditions": [
             {
-              "id": "538fc29d-2693-4c62-9848-bdcaf8566909",
+              "id": "ab94129c-5418-4321-96a4-c4c77e961e88",
+              "leftValue": "={{ $json.allPosted }}",
+              "rightValue": "true",
               "operator": {
                 "type": "string",
-                "operation": "notEquals"
-              },
-              "leftValue": "={{ $json.id }}",
-              "rightValue": "={{ $('create new folder').item.json.id }}"
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             }
-          ]
+          ],
+          "combinator": "and"
         },
         "looseTypeValidation": true,
-        "options": {
-          "ignoreCase": true
-        }
-      },
-      "id": "e91ed01b-48e8-4c15-a4ec-67f7306fb36d",
-      "name": "Filter",
-      "type": "n8n-nodes-base.filter",
-      "position": [
-        624,
-        -16
-      ],
-      "typeVersion": 2.2
-    },
-    {
-      "parameters": {
-        "resource": "folder",
-        "operation": "deleteFolder",
-        "folderNoRootId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "={{ $json.id }}"
-        },
-        "options": {
-          "deletePermanently": true
-        }
-      },
-      "id": "c1245b0a-0665-49b7-ba04-c1e8f1da9cf2",
-      "name": "delete folder",
-      "type": "n8n-nodes-base.googleDrive",
-      "position": [
-        816,
-        -16
-      ],
-      "typeVersion": 3,
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "UqDPB5IG1vSb2j4D",
-          "name": "Google Drive Dorian"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "fileFolder",
-        "filter": {
-          "folderId": {
-            "__rl": true,
-            "mode": "list",
-            "value": "replaceme",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/replaceme",
-            "cachedResultName": "Workflow Backups"
-          }
-        },
         "options": {}
       },
-      "id": "f208c3cf-7909-4ac6-b125-37177e47d6d2",
-      "name": "Get folders",
-      "type": "n8n-nodes-base.googleDrive",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
       "position": [
-        448,
+        2688,
+        1072
+      ],
+      "id": "f1efc9a8-82dc-4550-af6a-f48745988b3c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "# Auto-Publish to 9 Social Platforms\n## Automates distribution using Blotato’s API.\n## The video is auto-published to Instagram, YouTube, TikTok, Facebook, \n## LinkedIn, Threads, Twitter (X), Bluesky, and Pinterest \n## — all in one go, with no manual work required.\n### ** Documentation : ** [Guide](https://automatisation.notion.site/Workflow-n8n-d-Auto-Post-sur-les-r-seaux-sociaux-1d33d6550fd980b7b43ac417e9a06a9b?pvs=4)",
+        "height": 300,
+        "width": 880,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -64,
         -16
       ],
-      "typeVersion": 3,
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "UqDPB5IG1vSb2j4D",
-          "name": "Google Drive Dorian"
-        }
-      }
+      "id": "d8e0c2c9-890a-4860-8384-7d8c3ab9b503",
+      "name": "Sticky Note3"
     }
   ],
   "pinData": {},
@@ -361,16 +997,39 @@
   },
   "shared": [
     {
-      "updatedAt": "2026-01-02T20:32:28.813Z",
-      "createdAt": "2026-01-02T20:32:28.813Z",
+      "updatedAt": "2025-11-23T23:35:27.206Z",
+      "createdAt": "2025-11-23T23:35:27.206Z",
       "role": "workflow:owner",
-      "workflowId": "q88BMNDoNz4LOXoA",
+      "workflowId": "qVN9uRRIYsCswWxD",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
-  "staticData": null,
-  "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2026-01-02T20:37:25.000Z",
-  "versionId": "172131b3-8023-40ee-8fdb-66609be2d287"
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:22:55.919Z",
+      "createdAt": "2025-12-28T18:22:55.919Z",
+      "id": "ALdqECfMLigFyG7Y",
+      "name": "avec blotato"
+    },
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T23:46:03.817Z",
+      "createdAt": "2025-12-28T18:02:49.797Z",
+      "id": "vNliFiYFZSU0TQDM",
+      "name": "Ok"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-28T23:39:02.000Z",
+  "versionId": "0a1e68e2-7525-46f6-a4ae-309d57fc5312"
 }
