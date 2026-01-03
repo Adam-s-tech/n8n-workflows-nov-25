@@ -2,161 +2,352 @@
   "": "",
   "active": false,
   "connections": {
-    "When chat message received": {
+    "n8n": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "DeepSeek Chat Model": {
-      "ai_languageModel": [
+    "Filter": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
+            "node": "delete folder",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Simple Memory": {
-      "ai_memory": [
+    "Get folders": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_memory",
+            "node": "Filter",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Calculator": {
-      "ai_tool": [
+    "Google Drive": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_tool",
+            "node": "Loop Over Items",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get many messages in Gmail": {
-      "ai_tool": [
+    "Convert to File": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_tool",
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Get folders",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "create new folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create new folder": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "create new folder",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-06-25T21:26:32.540Z",
-  "id": "q3t5oIfJ05yvhLCw",
+  "createdAt": "2026-01-02T20:32:28.810Z",
+  "id": "q88BMNDoNz4LOXoA",
   "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "DeepSeek Agent",
+  "name": "Sauvegardez tous les flux de travail n8n sur Google Drive toutes les 4 heures",
   "nodes": [
     {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.1,
+      "parameters": {},
+      "id": "0724626c-4bf5-4e9c-b53e-69c4a481670c",
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
       "position": [
-        0,
-        0
+        -336,
+        -32
       ],
-      "id": "0612e06c-6c82-4036-90df-75cec8aa2e94",
-      "name": "When chat message received",
-      "webhookId": "f7b1a909-986c-43dc-bb7d-2411bd4e1198"
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "options": {}
+        "filters": {},
+        "requestOptions": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 2,
-      "position": [
-        224,
-        0
-      ],
-      "id": "739bfcfa-b8aa-4d7d-8356-cb1c9bdba9c1",
-      "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
-      "typeVersion": 1,
+      "id": "22c08d75-8abf-4257-ac3c-94b214857d77",
+      "name": "n8n",
+      "type": "n8n-nodes-base.n8n",
       "position": [
         32,
-        320
+        96
       ],
-      "id": "77b09974-c7c2-4281-95ba-9c52c7f9da3c",
-      "name": "DeepSeek Chat Model",
+      "retryOnFail": true,
+      "typeVersion": 1,
+      "alwaysOutputData": true,
       "credentials": {
-        "deepSeekApi": {
-          "id": "KKXbY2xB3CfKS6pV",
-          "name": "DeepSeek account 2"
+        "n8nApi": {
+          "id": "KMOQv6yJi4nvCqcx",
+          "name": "n8n V2"
         }
       }
     },
     {
       "parameters": {
-        "contextWindowLength": 25
+        "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
+      "id": "64d6c384-1ff3-4ba9-9c3b-afd67b2ac90a",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        160,
-        320
+        224,
+        96
       ],
-      "id": "1b027006-e289-49ee-a5a2-0dfef0000766",
-      "name": "Simple Memory"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
-      "typeVersion": 1,
-      "position": [
-        304,
-        320
-      ],
-      "id": "fc651496-a287-4e79-a190-c1a10c93268b",
-      "name": "Calculator"
+      "typeVersion": 3
     },
     {
       "parameters": {
-        "operation": "getAll",
-        "returnAll": "={{ $fromAI('Return_All', ``, 'boolean') }}",
-        "filters": {
-          "labelIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Label_Names_or_IDs', ``, 'string') }}"
+        "authentication": "serviceAccount",
+        "resource": "folder",
+        "name": "=Workflow Backups {{ $now.format('cccc t dd-MM-yyyy') }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "replaceme",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/replaceme",
+          "cachedResultName": "Workflow Backups"
+        },
+        "options": {}
+      },
+      "id": "1c584b9e-957f-44d2-a43e-af3b8f11a368",
+      "name": "create new folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        -160,
+        96
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {
+          "format": true,
+          "fileName": "={{ $json.name + \".json\" }} "
         }
       },
-      "type": "n8n-nodes-base.gmailTool",
-      "typeVersion": 2.1,
+      "id": "0b512697-e967-4aab-9c3f-e77c81b5e754",
+      "name": "Convert to File",
+      "type": "n8n-nodes-base.convertToFile",
       "position": [
-        752,
-        352
+        448,
+        192
       ],
-      "id": "ed2e0c98-b537-40d9-be47-f401bec88ed9",
-      "name": "Get many messages in Gmail",
-      "webhookId": "355a910c-8c75-4245-872d-3d8af46dce25",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Loop Over Items').item.json.name + \".json\" }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('create new folder').item.json.id }}"
+        },
+        "options": {}
+      },
+      "id": "7888fb1b-2e54-48ca-9e66-451bf6817bb5",
+      "name": "Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        624,
+        192
+      ],
+      "typeVersion": 3,
       "credentials": {
-        "gmailOAuth2": {
-          "id": "oGi6eYlZ16NVBxZx",
-          "name": "Gmail account 2"
+        "googleDriveOAuth2Api": {
+          "id": "UqDPB5IG1vSb2j4D",
+          "name": "Google Drive Dorian"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "78d9a586-6e9a-4315-a691-10229fa03d7c",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        -336,
+        240
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": false,
+            "typeValidation": "loose"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "538fc29d-2693-4c62-9848-bdcaf8566909",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "={{ $('create new folder').item.json.id }}"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "id": "e91ed01b-48e8-4c15-a4ec-67f7306fb36d",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        624,
+        -16
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "deleteFolder",
+        "folderNoRootId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "options": {
+          "deletePermanently": true
+        }
+      },
+      "id": "c1245b0a-0665-49b7-ba04-c1e8f1da9cf2",
+      "name": "delete folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        816,
+        -16
+      ],
+      "typeVersion": 3,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "UqDPB5IG1vSb2j4D",
+          "name": "Google Drive Dorian"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "replaceme",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/replaceme",
+            "cachedResultName": "Workflow Backups"
+          }
+        },
+        "options": {}
+      },
+      "id": "f208c3cf-7909-4ac6-b125-37177e47d6d2",
+      "name": "Get folders",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        448,
+        -16
+      ],
+      "typeVersion": 3,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "UqDPB5IG1vSb2j4D",
+          "name": "Google Drive Dorian"
         }
       }
     }
@@ -170,35 +361,16 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-06-25T21:26:32.543Z",
-      "createdAt": "2025-06-25T21:26:32.543Z",
+      "updatedAt": "2026-01-02T20:32:28.813Z",
+      "createdAt": "2026-01-02T20:32:28.813Z",
       "role": "workflow:owner",
-      "workflowId": "q3t5oIfJ05yvhLCw",
+      "workflowId": "q88BMNDoNz4LOXoA",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [
-    {
-      "updatedAt": "2025-12-28T18:03:24.856Z",
-      "createdAt": "2025-12-28T18:03:24.856Z",
-      "id": "GTdKgw52KYtP73bB",
-      "name": "A voir"
-    },
-    {
-      "updatedAt": "2025-12-28T18:11:09.101Z",
-      "createdAt": "2025-12-28T18:11:09.101Z",
-      "id": "sVpkY0lvvpHVkXIe",
-      "name": "ok"
-    },
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
-    }
-  ],
+  "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:40:15.000Z",
-  "versionId": "f24de45f-5008-4110-a07e-7d57ce1acaf4"
+  "updatedAt": "2026-01-02T20:37:25.000Z",
+  "versionId": "172131b3-8023-40ee-8fdb-66609be2d287"
 }
