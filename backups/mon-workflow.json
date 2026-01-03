@@ -2,590 +2,262 @@
   "": "",
   "active": false,
   "connections": {
-    "When Executed by Another Workflow": {
+    "When chat message received": {
       "main": [
         [
           {
-            "node": "Création de Post LinkedIn",
+            "node": "AI Agent",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Recherche Web": {
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tool Lister Articles": {
       "ai_tool": [
         [
           {
-            "node": "Création de Post LinkedIn",
+            "node": "AI Agent",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Création de Description Visuelle": {
+    "Tool Creer Article": {
       "main": [
+        []
+      ],
+      "ai_tool": [
         [
           {
-            "node": "Génération d'Image avec Google Nano Banana",
-            "type": "main",
+            "node": "AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Création de Post LinkedIn": {
-      "main": [
+    "HTTP Request": {
+      "ai_tool": [
         [
           {
-            "node": "Création de Description Visuelle",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Analyseur de Sortie Structurée": {
-      "ai_outputParser": [
-        [
-          {
-            "node": "Création de Description Visuelle",
-            "type": "ai_outputParser",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Envoi de Photo sur Telegram": {
-      "main": [
-        [
-          {
-            "node": "Envoi de Texte sur Telegram",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Sauvegarde sur Google Drive": {
-      "main": [
-        [
-          {
-            "node": "Enregistrement dans Airtable",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Chat avec Modèle AI": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Création de Post LinkedIn",
-            "type": "ai_languageModel",
-            "index": 0
-          },
-          {
-            "node": "Création de Description Visuelle",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Génération d'Image avec Google Nano Banana": {
-      "main": [
-        [
-          {
-            "node": "DL Image",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "DL Image": {
-      "main": [
-        [
-          {
-            "node": "Envoi de Photo sur Telegram",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Sauvegarde sur Google Drive",
-            "type": "main",
+            "node": "AI Agent",
+            "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-09-17T17:43:37.962Z",
-  "id": "Uj0imciXBRhNseEQ",
+  "createdAt": "2025-11-25T22:47:51.380Z",
+  "id": "WPg80kIKdo3prjqw",
   "isArchived": false,
-  "meta": null,
-  "name": "Création de Post LinkedIn avec Nano Banana",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[AGENT] Chef Redac",
   "nodes": [
     {
       "parameters": {
-        "workflowInputs": {
-          "values": [
-            {
-              "name": "postTopic"
-            },
-            {
-              "name": "targetAudience"
-            },
-            {
-              "name": "chatID"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        912,
-        400
-      ],
-      "id": "c3c77bc3-b50d-417c-87c8-dca80af08518",
-      "name": "When Executed by Another Workflow"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Use this tool to search the web. ",
-        "method": "POST",
-        "url": "https://api.tavily.com/search",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"query\": \"{searchTerm}\",\n  \"topic\": \"general\",\n  \"search_depth\": \"advanced\",\n  \"chunks_per_source\": 3,\n  \"max_results\": 1,\n  \"time_range\": null,\n  \"days\": 7,\n  \"include_answer\": true,\n  \"include_raw_content\": false,\n  \"include_images\": false,\n  \"include_image_descriptions\": false,\n  \"include_domains\": [],\n  \"exclude_domains\": []\n}",
-        "placeholderDefinitions": {
-          "values": [
-            {
-              "name": "searchTerm",
-              "description": "What the user is searching for. "
-            }
-          ]
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        1424,
-        624
-      ],
-      "id": "2ab2a007-b36f-4098-8965-708b368870d2",
-      "name": "Recherche Web"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=POst linkedin :\n{{ $json.output }}",
-        "hasOutputParser": true,
-        "options": {
-          "systemMessage": "=# Contexte\nTu es un agent IA chargé de transformer des posts LinkedIn en descriptions de visuels destinés à générer des supports marketing graphiques. Ces visuels sont conçus pour accompagner les posts sur LinkedIn, en renforçant leur message de manière visuelle, engageante et alignée avec la marque.\n\n## Objectif\n* Lire et analyser le post LinkedIn fourni\n* Identifier le message clé, l’idée forte ou l’enseignement à retenir\n* Créer un prompt clair et percutant pouvant être utilisé avec un générateur d’image à partir de texte\n* Le visuel doit être de style marketing — pas une scène littérale ou une photo hyperréaliste — et doit :\n\n  1. Illustrer visuellement l’idée centrale du post\n  2. Être adapté à une publication LinkedIn professionnelle\n  3. Être soigné, moderne et engageant\n\n## Instructions de sortie\n* Génère uniquement le prompt final de l’image\n* N’utilise pas de guillemets\n* Ne répète pas le contenu du post LinkedIn\n* N’ajoute aucune explication ni contenu supplémentaire\n* Ne laisse jamais de champ vide comme « Zone de titre personnalisable ici »\n* Intègre les chiffres ou statistiques si présents dans le post original\n\n## Directives de style\n* Pense comme un designer de marque ou un créatif marketing\n* Les visuels peuvent inclure : du texte, des graphiques, des icônes, des formes abstraites, des superpositions, des illustrations modernes, des effets de mouvement, des éléments typographiques forts (décrits, pas rendus), ou des concepts métaphoriques\n* Tu peux suggérer une disposition (ex. : « design en écran partagé », « en-tête avec titre en gras et illustration discrète en arrière-plan »)\n* Supposons que le visuel sera généré par un outil d’IA — ton prompt doit guider cet outil efficacement\n\n## Exemple de format de prompt\nIllustration moderne en flat design montrant un cerveau humain connecté à des engrenages mécaniques, représentant la fusion entre l’intelligence artificielle et l’automatisation. Fond minimaliste, dégradés doux, espace de texte avec typographie sans serif épurée en haut."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.9,
-      "position": [
-        1520,
-        400
-      ],
-      "id": "fb4fe867-d790-4bf6-815a-a7e6f1000677",
-      "name": "Création de Description Visuelle"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=Sujet du post : {{ $json.postTopic }}\n\nPublic cible : {{ $json.targetAudience }}\n\n# LE POST DOIT ETRE EN FRANCAIS",
-        "options": {
-          "systemMessage": "=# Contexte\nTu es un agent IA spécialisé dans la création de posts LinkedIn professionnels, éducatifs et engageants à partir de n’importe quel sujet fourni par l’utilisateur.\n\n## Objectifs\nCommence toujours par effectuer une recherche en temps réel à l’aide de l’outil Tavily pour collecter les informations les plus précises et récentes sur le sujet. Le post doit être rédigé pour attirer l’attention du public cible fourni.\n\nEn te basant sur ta recherche, génère un post LinkedIn bien structuré qui :\n* Démarre par une accroche engageante\n* Adopte un ton professionnel\n* Est clair et facile à lire\n* Est éducatif et pertinent\n* Utilise peu d’emojis (uniquement s’ils sont très pertinents et avec parcimonie)\n* Inclut une attribution correcte des sources (ex. : « selon \\[source] »)\n* Contient des hashtags pertinents pour améliorer la visibilité\n* Se termine par un appel à l’action clair (ex. : demander des avis, des retours ou un partage)\n\n## Instructions de sortie\n* Ta seule sortie doit être le texte final du post LinkedIn\n* N’ajoute aucune explication, note ou contenu supplémentaire au post\n\n## Exemple de flux de travail\n1. Reçois un sujet (ex. : « Le ROI de l’automatisation des entrepôts »)\n2. Utilise Tavily pour rechercher des informations ou des cas récents\n3. Rédige un post LinkedIn à partir de ces données\n4. Structure-le avec des sources, un format clair, des hashtags pertinents et un appel à l’action\n\n# LE POST DOIT ETRE EN FRANCAIS"
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.9,
-      "position": [
-        1120,
-        400
-      ],
-      "id": "e4fb290a-9bca-4efa-94ce-121bb54b933e",
-      "name": "Création de Post LinkedIn"
-    },
-    {
-      "parameters": {
-        "jsonSchemaExample": "{\n  \"title\": \"<2-4 word creative title for the image>\",\n  \"prompt\": \"<full detailed image generation prompt>\"\n}\n"
-      },
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "typeVersion": 1.2,
-      "position": [
-        1648,
-        640
-      ],
-      "id": "c575fab5-85dd-4b96-ad2f-b0b858a15454",
-      "name": "Analyseur de Sortie Structurée"
-    },
-    {
-      "parameters": {
-        "chatId": "={{ $('When Executed by Another Workflow').item.json.chatID }}",
-        "text": "={{ $('Création de Post LinkedIn').item.json.output }}",
-        "additionalFields": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        1840,
-        880
-      ],
-      "id": "80c3ddf0-5ace-49af-b244-f2934561dac8",
-      "name": "Envoi de Texte sur Telegram",
-      "webhookId": "94fa70af-f2fc-4c05-8fa1-d9f55637485f"
-    },
-    {
-      "parameters": {
-        "operation": "sendPhoto",
-        "chatId": "={{ $('When Executed by Another Workflow').item.json.chatID }}",
-        "binaryData": true,
-        "additionalFields": {}
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        1632,
-        880
-      ],
-      "id": "6f6974dd-76f8-43b8-a34d-c0322cbc96be",
-      "name": "Envoi de Photo sur Telegram",
-      "webhookId": "8fcbda9c-8396-41f7-8f2d-39e4ae4337c7"
-    },
-    {
-      "parameters": {
-        "name": "={{ $('Création de Description Visuelle').item.json.output.title }}.png",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "value": "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW",
-          "mode": "list",
-          "cachedResultName": "Medias",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
-        },
         "options": {}
       },
-      "type": "n8n-nodes-base.googleDrive",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2a4bcd1a-3d9e-4fc2-9d80-76d4c4958a56",
+      "name": "When chat message received",
+      "webhookId": "9c8e49a6-fa1d-4647-9a59-d1c1f98ad093"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Tu es un Chef Rédacteur WordPress expert. Tu gères les articles du blog adamai.fr.\n\nTu as accès à 2 outils:\n1. \"Liste les articles WordPress existants\" - Pour voir les articles actuels\n2. \"Crée un nouvel article WordPress\" - Pour créer de nouveaux articles\n\nQuand tu crées un article:\n- Génère du contenu de qualité, structuré et engageant\n- Utilise du HTML simple pour la mise en forme (h2, p, strong, em, ul, li)\n- Fournis toujours un titre accrocheur\n- Le contenu doit être complet (minimum 300 mots)\n\nQuand on te demande de lister les articles, utilise limit=10 par défaut sauf si spécifié autrement.\n\nSois proactif et créatif dans tes suggestions d'articles."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        1632,
-        1088
+        208,
+        0
       ],
-      "id": "8cefe0ea-e654-4c58-b9a8-80fbce5586b7",
-      "name": "Sauvegarde sur Google Drive"
+      "id": "4446d9f4-f42f-40c3-bc86-37d638a3aa7b",
+      "name": "AI Agent"
     },
     {
       "parameters": {
         "model": {
           "__rl": true,
           "mode": "list",
-          "value": "gpt-4.1-mini"
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
         },
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
       "position": [
-        1184,
-        640
+        80,
+        208
       ],
-      "id": "ec1e95cb-22fd-45a3-bfad-e881d172fabe",
-      "name": "Chat avec Modèle AI"
+      "id": "76d3afce-6fcc-4079-940d-3bca2b0c183f",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "Claude_API_11_25"
+        }
+      }
     },
     {
       "parameters": {
-        "operation": "create",
-        "base": {
+        "contextWindowLength": 25
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        224,
+        208
+      ],
+      "id": "02b201ad-e318-4fac-9080-127aeda8e5a7",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "description": "Liste les articles WordPress existants. Paramètre: limit (nombre d'articles, défaut: 10).",
+        "workflowId": {
           "__rl": true,
-          "value": "apprrk8BzFraLVbsx",
+          "value": "z0Gd1LCRi0v8Imq9",
           "mode": "list",
-          "cachedResultName": "Marketing Team",
-          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
+          "cachedResultUrl": "/workflow/z0Gd1LCRi0v8Imq9",
+          "cachedResultName": "[TOOL] Lister Articles"
         },
-        "table": {
-          "__rl": true,
-          "value": "tbl4mN27ieDO845l2",
-          "mode": "list",
-          "cachedResultName": "DashBoard",
-          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
-        },
-        "columns": {
+        "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
-            "Status": "Terminé",
-            "Requette": "={{ $('When Executed by Another Workflow').item.json.postTopic }} for {{ $('When Executed by Another Workflow').item.json.targetAudience }}",
-            "ID Requette": "={{ $json.id }}",
-            "Titre": "={{ $('When Executed by Another Workflow').item.json.postTopic }}",
-            "Type": "Post",
-            "Lien": "={{ $json.webViewLink }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "ID",
-              "displayName": "ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": false
-            },
-            {
-              "id": "Titre",
-              "displayName": "Titre",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Type",
-              "displayName": "Type",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "raw_image",
-                  "value": "raw_image"
-                },
-                {
-                  "name": "raw_audio",
-                  "value": "raw_audio"
-                },
-                {
-                  "name": "raw_video",
-                  "value": "raw_video"
-                },
-                {
-                  "name": "Vidéo",
-                  "value": "Vidéo"
-                },
-                {
-                  "name": "Post",
-                  "value": "Post"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Status",
-              "displayName": "Status",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "Erreur",
-                  "value": "Erreur"
-                },
-                {
-                  "name": "En cours",
-                  "value": "En cours"
-                },
-                {
-                  "name": "Terminé",
-                  "value": "Terminé"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Requette",
-              "displayName": "Requette",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "ID Requette",
-              "displayName": "ID Requette",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Lien",
-              "displayName": "Lien",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
+            "limit": "={{ $fromAI('limit', 'Nombre d articles a retourner (defaut: 10)', 'number') }}"
+          }
+        }
       },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
       "position": [
-        1840,
-        1088
+        416,
+        256
       ],
-      "id": "8fabd52a-1691-4d5a-837c-7c02749e19df",
-      "name": "Enregistrement dans Airtable"
+      "id": "a28108d3-d1da-472c-b6e3-3477e76a8ae6",
+      "name": "Tool Lister Articles"
     },
     {
       "parameters": {
-        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé est conçu pour transformer des publications LinkedIn en descriptions visuelles et générer des images marketing. Il utilise des outils d'IA pour rechercher des informations, créer des contenus visuels et textuels, et les distribuer via Telegram et Google Drive.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe workflow commence par un déclencheur qui reçoit des informations sur le sujet de la publication LinkedIn et l'audience cible. Ces données sont essentielles pour personnaliser le contenu généré.\n\n### 🔍 Section Recherche et Analyse\nUne fois déclenché, le workflow utilise un outil de recherche web pour collecter des informations à jour sur le sujet. Ces données sont ensuite analysées par un agent d'IA pour créer un post LinkedIn structuré et professionnel.\n\n### 🖼️ Section Création Visuelle\nParallèlement à la création du texte, un autre agent d'IA génère une description visuelle basée sur le contenu du post LinkedIn. Cette description est utilisée pour générer une image via un service d'IA d'image.\n\n### ⚡ Section Actions et Sorties\nLes résultats, y compris le texte du post et l'image générée, sont envoyés à un chat Telegram pour distribution. L'image est également sauvegardée sur Google Drive pour un accès futur. Enfin, les détails de la requête sont enregistrés dans Airtable pour le suivi et la gestion.\n\n## 🔗 Liens Utiles\n- [Tavily](https://tavily.com)\n- [OpenAI](https://openai.com)\n- [Telegram](https://telegram.org)\n- [Google Drive](https://google.com/drive)\n- [Airtable](https://airtable.com)",
-        "height": 884,
-        "width": 800,
-        "color": 7
+        "description": "Crée un nouvel article WordPress en brouillon. Paramètres: title (titre de l'article), content (contenu HTML de l'article).",
+        "source": "parameter",
+        "workflowJson": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Workflow_JSON', ``, 'json') }}"
       },
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "tool-create-article",
+      "name": "Tool Creer Article",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
       "position": [
-        0,
-        512
-      ],
-      "typeVersion": 1,
-      "id": "0299d74d-673f-4089-be10-f1a9ac184a8e",
-      "name": "Workflow Overview"
-    },
-    {
-      "parameters": {
-        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
-        "height": 400,
-        "width": 800,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        0
-      ],
-      "typeVersion": 1,
-      "id": "e5a987fe-90c2-4819-9637-144b55c81f22",
-      "name": "Signature"
+        640,
+        112
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.wavespeed.ai/api/v3/google/nano-banana/text-to-image",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpBearerAuth",
-        "sendBody": true,
-        "bodyParameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wordpressApi",
+        "sendHeaders": true,
+        "headerParameters": {
           "parameters": [
             {
-              "name": "enable_sync_mode",
-              "value": "true"
-            },
-            {
-              "name": "output_format",
-              "value": "jpeg"
-            },
-            {
-              "name": "prompt",
-              "value": "={{ $json.output.prompt.replace(/\"/g, '') }}"
+              "name": "Content-Type",
+              "value": "=application/json"
             }
           ]
         },
-        "options": {
-          "redirect": {
-            "redirect": {}
-          }
-        }
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"response\": \"{\\\"title\\\":\\\"...\\\",\\\"content\\\":\\\"...\\\",\\\"status\\\":\\\"draft\\\"}\"\n}",
+        "options": {}
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
       "position": [
-        1120,
-        992
+        656,
+        288
       ],
-      "id": "b4ff2618-54d0-4d4d-b694-61deae576eb5",
-      "name": "Génération d'Image avec Google Nano Banana"
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.data.outputs[0] }}",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "file"
-            }
-          }
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1360,
-        992
-      ],
-      "id": "20b3bb1b-18cc-4b3c-b139-1b8fad6fab97",
-      "name": "DL Image"
-    }
-  ],
-  "pinData": {
-    "When Executed by Another Workflow": [
-      {
-        "json": {
-          "postTopic": "How artificial intelligence has completely changed my life in the past two and a half years",
-          "targetAudience": "LinkedIn professionals interested in AI and personal development",
-          "chatID": 7952797797
+      "id": "52946d8b-6764-404c-980d-ba14d8a35e8e",
+      "name": "HTTP Request",
+      "credentials": {
+        "wordpressApi": {
+          "id": "9yNYzR9ealX1BNU5",
+          "name": "Wordpress account 2"
         }
       }
-    ]
-  },
+    }
+  ],
+  "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
-      "updatedAt": "2025-09-17T17:43:37.964Z",
-      "createdAt": "2025-09-17T17:43:37.964Z",
+      "updatedAt": "2025-11-25T22:47:51.382Z",
+      "createdAt": "2025-11-25T22:47:51.382Z",
       "role": "workflow:owner",
-      "workflowId": "Uj0imciXBRhNseEQ",
-      "projectId": "TyqTPn3TpvdJIZ7p"
+      "workflowId": "WPg80kIKdo3prjqw",
+      "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-12-28T23:54:34.000Z",
-  "versionId": "910560d2-c2f6-440e-89e3-7aa7f049a6fc"
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T23:46:40.456Z",
+      "createdAt": "2025-12-28T23:46:40.456Z",
+      "id": "2qWf9AxxWeIKfH4C",
+      "name": "WordPress"
+    },
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-28T23:46:49.000Z",
+  "versionId": "af2927e4-45d8-4731-bc36-f762334a650b"
 }
