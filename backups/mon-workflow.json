@@ -2,872 +2,263 @@
   "": "",
   "active": false,
   "connections": {
-    "Créer une Image": {
-      "ai_tool": [
+    "When chat message received": {
+      "main": [
         [
           {
-            "node": "Agent Équipe Marketing",
-            "type": "ai_tool",
+            "node": "AI Agent",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Stockage Mémoire Simple": {
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
       "ai_memory": [
         [
           {
-            "node": "Agent Équipe Marketing",
+            "node": "AI Agent",
             "type": "ai_memory",
             "index": 0
           }
         ]
       ]
     },
-    "Modifier une Image": {
+    "List Workflows Tool": {
       "ai_tool": [
         [
           {
-            "node": "Agent Équipe Marketing",
+            "node": "AI Agent",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Rechercher des Images": {
+    "Get Workflow Tool": {
       "ai_tool": [
         [
           {
-            "node": "Agent Équipe Marketing",
+            "node": "AI Agent",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Créer un Article de Blog": {
+    "Activate Workflow Tool": {
       "ai_tool": [
         [
           {
-            "node": "Agent Équipe Marketing",
+            "node": "AI Agent",
             "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Créer un Post LinkedIn": {
-      "ai_tool": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Définir le Texte": {
-      "main": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Télécharger Fichier Audio": {
-      "main": [
-        [
-          {
-            "node": "Transcrire Audio",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Transcrire Audio": {
-      "main": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Basculer Entrée": {
-      "main": [
-        [
-          {
-            "node": "Télécharger Fichier Audio",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Définir le Texte",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Déclencheur Telegram": {
-      "main": [
-        [
-          {
-            "node": "Basculer Entrée",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Créer une Vidéo": {
-      "ai_tool": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Agent Équipe Marketing": {
-      "main": [
-        [
-          {
-            "node": "Envoyer Message Telegram",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Réfléchir": {
-      "ai_tool": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Modèle de Chat OpenAI": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Agent Équipe Marketing",
-            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-09-17T17:41:01.055Z",
-  "id": "d0MLRrVc2tX2un6a",
-  "isArchived": false,
-  "meta": null,
-  "name": "ÉQUIPE MARKETING  + nano banana",
+  "createdAt": "2025-11-22T22:49:16.097Z",
+  "id": "dRNScHKa7R3TgQLG",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "New Claude n8n",
   "nodes": [
     {
       "parameters": {
-        "name": "createImage",
-        "description": "Appelle cet outil pour créer une image.\n",
-        "workflowId": {
-          "__rl": true,
-          "value": "v2XyNOzGDZwl8hFh",
-          "mode": "list",
-          "cachedResultName": "2 - Image Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
-            "imagePrompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('imagePrompt', `L’image demandée par l’utilisateur`, 'string') }}",
-            "imageTitle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('imageTitle', `Le titre de l’image. Il ne doit pas dépasser 4 mots.`, 'string') }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "imageTitle",
-              "displayName": "imageTitle",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "imagePrompt",
-              "displayName": "imagePrompt",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2864,
-        928
-      ],
-      "id": "ba0d3e22-d974-4635-ac31-6f47127eb234",
-      "name": "Créer une Image"
-    },
-    {
-      "parameters": {
-        "chatId": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
-        "text": "={{ $json.output }}",
-        "additionalFields": {
-          "appendAttribution": false
-        }
-      },
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        2960,
-        544
-      ],
-      "id": "ae465289-8dc9-4ca4-b681-0ce596d675d4",
-      "name": "Envoyer Message Telegram",
-      "webhookId": "fbdb3bd7-490b-4d3e-961e-e2d398294649"
-    },
-    {
-      "parameters": {
-        "sessionIdType": "customKey",
-        "sessionKey": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
-      },
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        1984,
-        1168
-      ],
-      "id": "d0f46342-83ac-4e00-975b-0d5f6f0b205e",
-      "name": "Stockage Mémoire Simple"
-    },
-    {
-      "parameters": {
-        "name": "editImage",
-        "description": "Appelle cet outil pour modifier une image.\n",
-        "workflowId": {
-          "__rl": true,
-          "value": "cLOdRIOtHZfGuoBW",
-          "mode": "list",
-          "cachedResultName": "3 - Image Modif Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', `Le titre de l’image que l’utilisateur souhaite modifier.\n`, 'string') }}",
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
-            "request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request', `La modification que l’utilisateur souhaite apporter à l’image.\n`, 'string') }}",
-            "pictureID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('pictureID', `L’ID de l’image à modifier.\n`, 'string') }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "image",
-              "displayName": "image",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "request",
-              "displayName": "request",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "pictureID",
-              "displayName": "pictureID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2768,
-        1072
-      ],
-      "id": "8c41328a-f252-4a41-8483-3966d28b2d41",
-      "name": "Modifier une Image"
-    },
-    {
-      "parameters": {
-        "name": "searchImages",
-        "description": "Appelle cet outil pour rechercher dans la base d’images.",
-        "workflowId": {
-          "__rl": true,
-          "value": "5th7OFlpnRc0KKYB",
-          "mode": "list",
-          "cachedResultName": "6 - Image Recherche Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "intent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('intent', `L’intention de l’utilisateur. Cela peut être soit « Obtenir », soit « Modifier »`, 'string') }}",
-            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', `Le titre de l’image\n`, 'string') }}",
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "intent",
-              "displayName": "intent",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "image",
-              "displayName": "image",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2304,
-        1520
-      ],
-      "id": "729ac072-2945-404a-9e36-5348c14da58d",
-      "name": "Rechercher des Images"
-    },
-    {
-      "parameters": {
-        "name": "blogPost",
-        "description": "Appelle cet outil pour créer un article de blog en utilisant un sujet et un public cible.\n",
-        "workflowId": {
-          "__rl": true,
-          "value": "swNeu1AjANGVHOcL",
-          "mode": "list",
-          "cachedResultName": "1 - Blog Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "blogTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('blogTopic', `Le sujet du blog.`, 'string') }}",
-            "targetAudience": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('targetAudience', `Le public cible du blog.`, 'string') }}",
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "blogTopic",
-              "displayName": "blogTopic",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "targetAudience",
-              "displayName": "targetAudience",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2560,
-        1296
-      ],
-      "id": "13aeaad3-6fca-42b3-aa39-9611a5506581",
-      "name": "Créer un Article de Blog"
-    },
-    {
-      "parameters": {
-        "name": "linkedinPost",
-        "description": "Appelle cet outil pour créer un post LinkedIn en utilisant un sujet et un public cible.",
-        "workflowId": {
-          "__rl": true,
-          "value": "5jgCuubU68jnevd2",
-          "mode": "list",
-          "cachedResultName": "4 - LinkedIn Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "postTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('postTopic', `Le sujet du post LinkedIn\n`, 'string') }}",
-            "targetAudience": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('targetAudience', `Le public cible du post LinkedIn\n`, 'string') }}",
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "postTopic",
-              "displayName": "postTopic",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "targetAudience",
-              "displayName": "targetAudience",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2656,
-        1184
-      ],
-      "id": "52b0efd6-b5ba-4024-80c2-95e582cae223",
-      "name": "Créer un Post LinkedIn"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
-              "name": "text",
-              "value": "={{ $json.message.text }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "0dc157d9-4958-46fb-867d-14799957c7a4",
-      "name": "Définir le Texte",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1488,
-        848
-      ]
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "fileId": "={{ $json.message.voice.file_id }}",
-        "additionalFields": {}
-      },
-      "id": "d45388f3-1b79-4fad-a82c-4bbe1eb017e7",
-      "name": "Télécharger Fichier Audio",
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        1456,
-        544
-      ],
-      "webhookId": "c0b376b1-7b63-41b6-8063-0b3096b8333d"
-    },
-    {
-      "parameters": {
-        "resource": "audio",
-        "operation": "transcribe",
-        "options": {}
-      },
-      "id": "c60a3ee0-bfcf-49f0-9277-3533a3ba8a5b",
-      "name": "Transcrire Audio",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.6,
-      "position": [
-        1664,
-        544
-      ]
-    },
-    {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.message.voice.file_id }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "string",
-                      "operation": "exists",
-                      "singleValue": true
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Voice"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "",
-                    "operator": {
-                      "type": "string",
-                      "operation": "exists",
-                      "singleValue": true
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "Text"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "26dc6f56-b223-48b2-8089-3b5688ff9905",
-      "name": "Basculer Entrée",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
-      "position": [
-        1152,
-        560
-      ]
-    },
-    {
-      "parameters": {
-        "updates": [
-          "message"
-        ],
-        "additionalFields": {}
-      },
-      "id": "a0d05a39-d7e9-4b25-abca-378161b605d5",
-      "name": "Déclencheur Telegram",
-      "type": "n8n-nodes-base.telegramTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        944,
-        560
-      ],
-      "webhookId": "99eab1a0-569d-4f0f-a49e-578a02abfe63"
-    },
-    {
-      "parameters": {
-        "name": "video",
-        "description": "Appelle cet outil pour créer une vidéo.\n",
-        "workflowId": {
-          "__rl": true,
-          "value": "4QrZSpltuHE6cLuo",
-          "mode": "list",
-          "cachedResultName": "5 - Video Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "videoTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('videoTopic', `Le sujet de la vidéo`, 'string') }}",
-            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "videoTopic",
-              "displayName": "videoTopic",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            },
-            {
-              "id": "chatID",
-              "displayName": "chatID",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string"
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 2.1,
-      "position": [
-        2432,
-        1392
-      ],
-      "id": "5b33d07b-aca6-4209-bcea-46c43bcff080",
-      "name": "Créer une Vidéo"
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "={{ $json.text }}",
         "options": {
-          "systemMessage": "=# Contexte\nTu es une intelligence artificielle qui s'apelle BOB au service d’une équipe marketing. Ton rôle est d’aider l’utilisateur à créer et modifier des images selon sa demande, ou à produire du contenu.\n\n## Outils\ncreateImage – Utilise cet outil pour créer une image. Envoie le prompt de l’image demandée à cet outil.\neditImage – Utilise cet outil pour modifier une image. L’utilisateur pourrait aussi dire « make » au lieu de « edit ».\nImage Database – Utilise-le pour rechercher dans la base d’images.\nblogPost – Utilise-le pour créer un article de blog.\nlinkedinPost – Utilise-le pour créer un post LinkedIn avec image incluse.\nvideo – Utilise cet outil pour créer une vidéo.\nThink – Utilise-le si tu as besoin d’aide pour prendre une décision.\n\n## Instructions\n* Si l’utilisateur demande de « modifier cette image » ou « faire ça… », cela signifie qu’il souhaite modifier la dernière image dans la base, la plus récente.\n* Si l’utilisateur demande un article de blog ou un post LinkedIn, utilise l’outil blogPost ou linkedinPost et affiche :\n  « Voici le post que vous avez demandé. J’espère qu’il vous plaira. »\n\n## output\n* Assure-toi de retourner le lien de l’image sous forme de lien cliquable."
+          "responseMode": "streaming"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -432,
+        -64
+      ],
+      "id": "22f1b2cc-6e4a-4a7b-8e74-3fad5ee9c4bc",
+      "name": "When chat message received",
+      "webhookId": "48647b68-905e-4258-a02f-7a79fcf9adc1"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Tu es un assistant n8n expert qui aide à créer, gérer et automatiser des workflows n8n.\n\nTes capacités:\n- Lister et analyser les workflows existants\n- Récupérer les détails d'un workflow spécifique\n- Créer de nouveaux workflows\n- Valider la structure des workflows\n- Donner des conseils sur les bonnes pratiques n8n\n\nTu communiques en français avec Adama, ton créateur.\nTu es direct, précis et tu évites les explications inutiles.\nQuand tu utilises un outil, tu expliques ce que tu fais."
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.9,
+      "typeVersion": 3,
       "position": [
-        1888,
-        544
+        -128,
+        -64
       ],
-      "id": "21105a66-7c7d-4e61-92df-4b3a3725750b",
-      "name": "Agent Équipe Marketing"
-    },
-    {
-      "parameters": {
-        "description": "Utilise l’outil pour réfléchir à quelque chose. Il n’obtiendra pas de nouvelles informations et ne modifiera pas la base de données, mais ajoutera simplement la réflexion au journal. Utilise-le lorsque tu as besoin d’un raisonnement complexe ou d’une mémoire temporaire."
-      },
-      "type": "@n8n/n8n-nodes-langchain.toolThink",
-      "typeVersion": 1,
-      "position": [
-        2064,
-        1424
-      ],
-      "id": "6a006388-be5a-4acc-8794-4d29a74010f7",
-      "name": "Réfléchir"
+      "id": "ae62cfeb-dab6-43f0-8091-064e76213b35",
+      "name": "AI Agent"
     },
     {
       "parameters": {
         "model": {
           "__rl": true,
           "mode": "list",
-          "value": "gpt-4.1-mini"
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
         },
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
       "position": [
-        1504,
-        1200
+        -272,
+        144
       ],
-      "id": "cf2f91fd-308c-4b2e-b372-9db9e4fb2006",
-      "name": "Modèle de Chat OpenAI"
+      "id": "baf08c58-3fdd-4637-b7ba-16b1eb53ea5f",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "4UzJQx2xZa2gAcGT",
+          "name": "Claude_API_11_25"
+        }
+      }
     },
     {
       "parameters": {
-        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé est conçu pour assister une équipe marketing dans la création et la gestion de contenu numérique, incluant des images, des articles de blog, des posts LinkedIn, et des vidéos. Il intègre des interactions via Telegram pour recevoir des demandes et fournir des réponses, tout en utilisant des outils d'intelligence artificielle pour générer et modifier du contenu.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe workflow est initialement déclenché par un message reçu sur Telegram. Ce message peut être sous forme de texte ou de fichier audio. Un déclencheur Telegram capte ces messages et les dirige vers la section appropriée du workflow. Si un fichier audio est reçu, il est téléchargé et transcrit en texte pour une analyse ultérieure.\n\n### 🔍 Section Traitement et Analyse\nUne fois les données d'entrée capturées, elles sont analysées pour déterminer l'intention de l'utilisateur. Cela inclut la création d'images, la modification d'images existantes, ou la génération de contenu écrit comme des articles de blog ou des posts LinkedIn. Un agent d'intelligence artificielle est utilisé pour interpréter les demandes et choisir les outils appropriés pour répondre aux besoins de l'utilisateur.\n\n### 🔄 Section Décision et Routage\nCette section utilise un mécanisme de basculement pour diriger le flux de travail en fonction du type de message reçu (texte ou audio). Elle décide également si l'utilisateur souhaite créer, modifier ou rechercher des images, ou s'il souhaite générer du contenu écrit ou vidéo.\n\n### ⚡ Section Actions et Sorties\nLes actions finales incluent la création ou la modification d'images, la rédaction d'articles de blog ou de posts LinkedIn, et la génération de vidéos. Les résultats sont ensuite envoyés à l'utilisateur via Telegram, avec des liens cliquables pour accéder directement au contenu généré.\n\n## 🔗 Liens Utiles\n- [Telegram](https://telegram.org)\n- [Langchain](https://langchain.com)\n- [OpenAI](https://openai.com)\n- [n8n](https://n8n.io)",
-        "height": 932,
-        "width": 800
+        "contextWindowLength": 20
       },
-      "type": "n8n-nodes-base.stickyNote",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
       "position": [
-        32,
-        816
+        -128,
+        144
       ],
-      "typeVersion": 1,
-      "id": "abdcd27f-e4a9-453f-a9ce-3179b2f7d66f",
-      "name": "Workflow Overview"
+      "id": "16931701-8bbc-4c4c-b543-80acdf586841",
+      "name": "Simple Memory"
     },
     {
-      "parameters": {
-        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
-        "height": 400,
-        "width": 800,
-        "color": 6
-      },
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "tool-list-workflows",
+      "name": "List Workflows Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
       "position": [
-        32,
-        336
+        48,
+        144
       ],
-      "typeVersion": 1,
-      "id": "d6427f53-8fdf-4ce6-b695-b25b2b974baa",
-      "name": "Signature"
-    }
-  ],
-  "pinData": {
-    "Déclencheur Telegram": [
-      {
-        "json": {
-          "update_id": 539648026,
-          "message": {
-            "message_id": 104,
-            "from": {
-              "id": 7952797797,
-              "is_bot": false,
-              "first_name": "Thomas",
-              "last_name": "Berton",
-              "language_code": "fr"
-            },
-            "chat": {
-              "id": 7952797797,
-              "first_name": "Thomas",
-              "last_name": "Berton",
-              "type": "private"
-            },
-            "date": 1756805476,
-            "voice": {
-              "duration": 5,
-              "mime_type": "audio/ogg",
-              "file_id": "AwACAgQAAxkBAANoaLa5ZH4-ySx18C5YXdnB20bhotkAAkAdAALiSrFRJ9QlsKoN-cM2BA",
-              "file_unique_id": "AgADQB0AAuJKsVE",
-              "file_size": 21637
+      "parameters": {
+        "toolDescription": "Liste tous les workflows n8n avec leurs IDs, noms, statut actif, et nombre de nodes. Utile pour voir tous les workflows disponibles.",
+        "method": "GET",
+        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "n8nApi",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "autodetect"
             }
           }
         }
       }
-    ]
-  },
+    },
+    {
+      "id": "tool-get-workflow",
+      "name": "Get Workflow Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        48,
+        272
+      ],
+      "parameters": {
+        "toolDescription": "Récupère les détails complets d'un workflow spécifique par son ID (structure, nodes, connections, paramètres).",
+        "method": "GET",
+        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows/{{ $json.workflowId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "n8nApi",
+        "placeholderDefinitions": {
+          "workflowId": {
+            "type": "string",
+            "description": "L'ID du workflow à récupérer"
+          }
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "autodetect"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tool-activate-workflow",
+      "name": "Activate Workflow Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        48,
+        400
+      ],
+      "parameters": {
+        "toolDescription": "Active ou désactive un workflow n8n.",
+        "method": "PATCH",
+        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows/{{ $json.workflowId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "n8nApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\"active\": $json.active} }}",
+        "placeholderDefinitions": {
+          "workflowId": {
+            "type": "string",
+            "description": "L'ID du workflow à activer/désactiver"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "true pour activer, false pour désactiver"
+          }
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "autodetect"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
   "shared": [
     {
-      "updatedAt": "2025-12-28T18:59:04.338Z",
-      "createdAt": "2025-12-28T18:59:04.338Z",
+      "updatedAt": "2025-11-22T22:49:16.099Z",
+      "createdAt": "2025-11-22T22:49:16.099Z",
       "role": "workflow:owner",
-      "workflowId": "d0MLRrVc2tX2un6a",
+      "workflowId": "dRNScHKa7R3TgQLG",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [
-    {
-      "updatedAt": "2025-12-28T18:03:24.856Z",
-      "createdAt": "2025-12-28T18:03:24.856Z",
-      "id": "GTdKgw52KYtP73bB",
-      "name": "A voir"
-    },
-    {
-      "updatedAt": "2025-12-28T18:11:09.101Z",
-      "createdAt": "2025-12-28T18:11:09.101Z",
-      "id": "sVpkY0lvvpHVkXIe",
-      "name": "ok"
-    },
-    {
-      "updatedAt": "2025-12-28T23:46:03.817Z",
-      "createdAt": "2025-12-28T18:02:49.797Z",
-      "id": "vNliFiYFZSU0TQDM",
-      "name": "Ok"
-    }
-  ],
+  "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:59:04.000Z",
-  "versionId": "c4d5e7de-1693-4bda-86f1-68a065a9bf9f"
+  "updatedAt": "2025-12-29T00:26:01.000Z",
+  "versionId": "ee3b4e8d-b558-440f-ac01-9a05b05ceca1"
 }
