@@ -912,7 +912,7 @@
   "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
-  "repo_path": "backups/mon-workflow.json",
+  "repo_path": "backups/",
   "settings": {
     "executionOrder": "v1"
   },
