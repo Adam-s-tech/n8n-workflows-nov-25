@@ -2,981 +2,835 @@
   "": "",
   "active": false,
   "connections": {
-    "Schedule Trigger": {
+    "Créer une Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stockage Mémoire Simple": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Modifier une Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rechercher des Images": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Créer un Article de Blog": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Créer un Post LinkedIn": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Définir le Texte": {
       "main": [
         [
           {
-            "node": "Get my video",
+            "node": "Agent Équipe Marketing",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get my video": {
+    "Télécharger Fichier Audio": {
       "main": [
         [
           {
-            "node": "Assign Social Media IDs",
+            "node": "Transcrire Audio",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Assign Social Media IDs": {
+    "Transcrire Audio": {
       "main": [
         [
           {
-            "node": "Upload Video to Blotato",
+            "node": "Agent Équipe Marketing",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Upload Video to Blotato": {
+    "Basculer Entrée": {
       "main": [
         [
           {
-            "node": "INSTAGRAM",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "TIKTOK",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "FACEBOOK",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "THREADS",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "TWITTER",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "LINKEDIN",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "BLUESKY",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "PINTEREST",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "YOUTUBE",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Google Sheets",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "INSTAGRAM": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "YOUTUBE": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "TIKTOK": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "FACEBOOK": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 3
-          }
-        ]
-      ]
-    },
-    "THREADS": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 4
-          }
-        ]
-      ]
-    },
-    "LINKEDIN": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 6
-          }
-        ]
-      ]
-    },
-    "TWITTER": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 5
-          }
-        ]
-      ]
-    },
-    "Merge": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "DONE",
+            "node": "Télécharger Fichier Audio",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "ERROR",
+            "node": "Définir le Texte",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Déclencheur Telegram": {
+      "main": [
+        [
+          {
+            "node": "Basculer Entrée",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Créer une Vidéo": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent Équipe Marketing": {
+      "main": [
+        [
+          {
+            "node": "Envoyer Message Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Réfléchir": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Modèle de Chat OpenAI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent Équipe Marketing",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-12-29T22:18:35.119Z",
-  "id": "baxqgkwkuacFBJAh",
+  "createdAt": "2025-09-17T17:41:01.055Z",
+  "id": "d0MLRrVc2tX2un6a",
   "isArchived": false,
   "meta": null,
-  "name": "02-Auto-Post sur les Réseaux Sociaux copy",
+  "name": "ÉQUIPE MARKETING  + nano banana",
   "nodes": [
     {
       "parameters": {
-        "rule": {
-          "interval": [
+        "name": "createImage",
+        "description": "Appelle cet outil pour créer une image.\n",
+        "workflowId": {
+          "__rl": true,
+          "value": "v2XyNOzGDZwl8hFh",
+          "mode": "list",
+          "cachedResultName": "2 - Image Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
+            "imagePrompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('imagePrompt', `L’image demandée par l’utilisateur`, 'string') }}",
+            "imageTitle": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('imageTitle', `Le titre de l’image. Il ne doit pas dépasser 4 mots.`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
             {
-              "triggerAtHour": 11
+              "id": "imageTitle",
+              "displayName": "imageTitle",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
             },
             {
-              "triggerAtHour": 16
+              "id": "imagePrompt",
+              "displayName": "imagePrompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         }
       },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
       "position": [
-        -448,
-        1248
+        2864,
+        928
       ],
-      "id": "03b2f03b-18df-4076-b1cd-cc133d2d914a",
-      "name": "Schedule Trigger"
+      "id": "ba0d3e22-d974-4635-ac31-6f47127eb234",
+      "name": "Créer une Image"
     },
     {
       "parameters": {
-        "mode": "raw",
-        "jsonOutput": "={\n  \"instagram_id\": \"5947\",\n  \"youtube_id\": \"4669\",\n  \"tiktok_id\": \"7605\",\n  \"facebook_id\": \"5418\",\n  \"facebook_page_id\": \"372471022626315\",\n  \"threads_id\": \"1552\",\n  \"twitter_id\": \"3175\",\n  \"linkedin_id\": \"3046\",\n  \"pinterest_id\": \"1077\",\n  \"pinterest_board_id\": \"101010\",\n  \"bluesky_id\": \"111111\"\n}",
+        "chatId": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2960,
+        544
+      ],
+      "id": "ae465289-8dc9-4ca4-b681-0ce596d675d4",
+      "name": "Envoyer Message Telegram",
+      "webhookId": "fbdb3bd7-490b-4d3e-961e-e2d398294649"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1984,
+        1168
+      ],
+      "id": "d0f46342-83ac-4e00-975b-0d5f6f0b205e",
+      "name": "Stockage Mémoire Simple"
+    },
+    {
+      "parameters": {
+        "name": "editImage",
+        "description": "Appelle cet outil pour modifier une image.\n",
+        "workflowId": {
+          "__rl": true,
+          "value": "cLOdRIOtHZfGuoBW",
+          "mode": "list",
+          "cachedResultName": "3 - Image Modif Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', `Le titre de l’image que l’utilisateur souhaite modifier.\n`, 'string') }}",
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}",
+            "request": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('request', `La modification que l’utilisateur souhaite apporter à l’image.\n`, 'string') }}",
+            "pictureID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('pictureID', `L’ID de l’image à modifier.\n`, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "request",
+              "displayName": "request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "pictureID",
+              "displayName": "pictureID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2768,
+        1072
+      ],
+      "id": "8c41328a-f252-4a41-8483-3966d28b2d41",
+      "name": "Modifier une Image"
+    },
+    {
+      "parameters": {
+        "name": "searchImages",
+        "description": "Appelle cet outil pour rechercher dans la base d’images.",
+        "workflowId": {
+          "__rl": true,
+          "value": "5th7OFlpnRc0KKYB",
+          "mode": "list",
+          "cachedResultName": "6 - Image Recherche Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "intent": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('intent', `L’intention de l’utilisateur. Cela peut être soit « Obtenir », soit « Modifier »`, 'string') }}",
+            "image": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('image', `Le titre de l’image\n`, 'string') }}",
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "intent",
+              "displayName": "intent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2304,
+        1520
+      ],
+      "id": "729ac072-2945-404a-9e36-5348c14da58d",
+      "name": "Rechercher des Images"
+    },
+    {
+      "parameters": {
+        "name": "blogPost",
+        "description": "Appelle cet outil pour créer un article de blog en utilisant un sujet et un public cible.\n",
+        "workflowId": {
+          "__rl": true,
+          "value": "swNeu1AjANGVHOcL",
+          "mode": "list",
+          "cachedResultName": "1 - Blog Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "blogTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('blogTopic', `Le sujet du blog.`, 'string') }}",
+            "targetAudience": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('targetAudience', `Le public cible du blog.`, 'string') }}",
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "blogTopic",
+              "displayName": "blogTopic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "targetAudience",
+              "displayName": "targetAudience",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2560,
+        1296
+      ],
+      "id": "13aeaad3-6fca-42b3-aa39-9611a5506581",
+      "name": "Créer un Article de Blog"
+    },
+    {
+      "parameters": {
+        "name": "linkedinPost",
+        "description": "Appelle cet outil pour créer un post LinkedIn en utilisant un sujet et un public cible.",
+        "workflowId": {
+          "__rl": true,
+          "value": "5jgCuubU68jnevd2",
+          "mode": "list",
+          "cachedResultName": "4 - LinkedIn Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "postTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('postTopic', `Le sujet du post LinkedIn\n`, 'string') }}",
+            "targetAudience": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('targetAudience', `Le public cible du post LinkedIn\n`, 'string') }}",
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "postTopic",
+              "displayName": "postTopic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "targetAudience",
+              "displayName": "targetAudience",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2656,
+        1184
+      ],
+      "id": "52b0efd6-b5ba-4024-80c2-95e582cae223",
+      "name": "Créer un Post LinkedIn"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe7ecc99-e1e8-4a5e-bdd6-6fce9757b234",
+              "name": "text",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
+      "id": "0dc157d9-4958-46fb-867d-14799957c7a4",
+      "name": "Définir le Texte",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        0,
-        1248
-      ],
-      "id": "c6515bda-ed24-494c-9023-49e8cfdb7cfc",
-      "name": "Assign Social Media IDs",
-      "executeOnce": false
+        1488,
+        848
+      ]
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Vidéo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
-        },
-        "filtersUI": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "id": "d45388f3-1b79-4fad-a82c-4bbe1eb017e7",
+      "name": "Télécharger Fichier Audio",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1456,
+        544
+      ],
+      "webhookId": "c0b376b1-7b63-41b6-8063-0b3096b8333d"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "c60a3ee0-bfcf-49f0-9277-3533a3ba8a5b",
+      "name": "Transcrire Audio",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        1664,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
           "values": [
             {
-              "lookupColumn": "Statut_Publication",
-              "lookupValue": "PENDING"
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8c844924-b2ed-48b0-935c-c66a8fd0c778",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
             }
           ]
         },
-        "combineFilters": "OR",
+        "options": {}
+      },
+      "id": "26dc6f56-b223-48b2-8089-3b5688ff9905",
+      "name": "Basculer Entrée",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1152,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "a0d05a39-d7e9-4b25-abca-378161b605d5",
+      "name": "Déclencheur Telegram",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        944,
+        560
+      ],
+      "webhookId": "99eab1a0-569d-4f0f-a49e-578a02abfe63"
+    },
+    {
+      "parameters": {
+        "name": "video",
+        "description": "Appelle cet outil pour créer une vidéo.\n",
+        "workflowId": {
+          "__rl": true,
+          "value": "4QrZSpltuHE6cLuo",
+          "mode": "list",
+          "cachedResultName": "5 - Video Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "videoTopic": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('videoTopic', `Le sujet de la vidéo`, 'string') }}",
+            "chatID": "={{ $('Déclencheur Telegram').item.json.message.chat.id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "videoTopic",
+              "displayName": "videoTopic",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "chatID",
+              "displayName": "chatID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        2432,
+        1392
+      ],
+      "id": "5b33d07b-aca6-4209-bcea-46c43bcff080",
+      "name": "Créer une Vidéo"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
         "options": {
-          "returnFirstMatch": true
+          "systemMessage": "=# Contexte\nTu es une intelligence artificielle qui s'apelle BOB au service d’une équipe marketing. Ton rôle est d’aider l’utilisateur à créer et modifier des images selon sa demande, ou à produire du contenu.\n\n## Outils\ncreateImage – Utilise cet outil pour créer une image. Envoie le prompt de l’image demandée à cet outil.\neditImage – Utilise cet outil pour modifier une image. L’utilisateur pourrait aussi dire « make » au lieu de « edit ».\nImage Database – Utilise-le pour rechercher dans la base d’images.\nblogPost – Utilise-le pour créer un article de blog.\nlinkedinPost – Utilise-le pour créer un post LinkedIn avec image incluse.\nvideo – Utilise cet outil pour créer une vidéo.\nThink – Utilise-le si tu as besoin d’aide pour prendre une décision.\n\n## Instructions\n* Si l’utilisateur demande de « modifier cette image » ou « faire ça… », cela signifie qu’il souhaite modifier la dernière image dans la base, la plus récente.\n* Si l’utilisateur demande un article de blog ou un post LinkedIn, utilise l’outil blogPost ou linkedinPost et affiche :\n  « Voici le post que vous avez demandé. J’espère qu’il vous plaira. »\n\n## output\n* Assure-toi de retourner le lien de l’image sous forme de lien cliquable."
         }
       },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
       "position": [
-        -224,
-        1248
+        1888,
+        544
       ],
-      "id": "1ad14bde-109a-451d-9e73-b1ed3621577d",
-      "name": "Get my video",
-      "executeOnce": false,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "aMYMtMuiDpps5kuW",
-          "name": "Google Sheets account 4"
-        }
-      }
+      "id": "21105a66-7c7d-4e61-92df-4b3a3725750b",
+      "name": "Agent Équipe Marketing"
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/media",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "url",
-              "value": "={{ $('Get my video').item.json.URL_Video_Source }}"
-            }
-          ]
-        },
-        "options": {}
+        "description": "Utilise l’outil pour réfléchir à quelque chose. Il n’obtiendra pas de nouvelles informations et ne modifiera pas la base de données, mais ajoutera simplement la réflexion au journal. Utilise-le lorsque tu as besoin d’un raisonnement complexe ou d’une mémoire temporaire."
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
       "position": [
-        224,
-        1248
+        2064,
+        1424
       ],
-      "id": "e3c5bcf1-bd0f-4039-bc33-7c4ccd858069",
-      "name": "Upload Video to Blotato",
-      "executeOnce": false
+      "id": "6a006388-be5a-4acc-8794-4d29a74010f7",
+      "name": "Réfléchir"
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.instagram_id }}\",\n    \"target\": {\n      \"targetType\": \"instagram\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"instagram\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        704
-      ],
-      "id": "f3073479-8cde-49e4-b15e-14cf67974cee",
-      "name": "INSTAGRAM",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.youtube_id }}\",\n    \"target\": {\n      \"targetType\": \"youtube\",\n      \"title\": \"{{ $('Get my video').item.json['Titre_Post (Optionnel)'] }}\",\n      \"privacyStatus\": \"unlisted\",\n      \"shouldNotifySubscribers\": \"false\"\n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"youtube\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        880
-      ],
-      "id": "ebedbd68-3e15-4313-a663-bd038073f105",
-      "name": "YOUTUBE",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.tiktok_id }}\",\n    \"target\": {\n      \"targetType\": \"tiktok\",\n      \"isYourBrand\": \"false\", \n      \"disabledDuet\": \"false\",\n      \"privacyLevel\": \"PUBLIC_TO_EVERYONE\",\n      \"isAiGenerated\": \"true\",\n      \"disabledStitch\": \"false\",\n      \"disabledComments\": \"false\",\n      \"isBrandedContent\": \"false\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"tiktok\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        1056
-      ],
-      "id": "9ea94e0b-37ee-4f24-937f-94d10cb71b58",
-      "name": "TIKTOK",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"5418\",\n    \"target\": {\n      \"targetType\": \"facebook\",\n      \"pageId\": \"372471022626315\"\n   \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"facebook\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        1216
-      ],
-      "id": "4b26c95d-82e8-4383-8df3-3eb9556deac0",
-      "name": "FACEBOOK",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"1877\",\n    \"target\": {\n      \"targetType\": \"threads\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"threads\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        1376
-      ],
-      "id": "6dfde5cf-bde2-4a47-9c46-4edd711cf719",
-      "name": "THREADS",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.linkedin_id }}\",\n    \"target\": {\n      \"targetType\": \"linkedin\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"linkedin\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        1760
-      ],
-      "id": "ca7ce39e-5161-4a42-ac2b-85cadc969524",
-      "name": "LINKEDIN",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "= {\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.bluesky_id }}\",\n    \"target\": {\n      \"targetType\": \"bluesky\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"bluesky\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        1936
-      ],
-      "id": "f7ad7a58-04aa-4709-aa58-c0564d4ef48d",
-      "name": "BLUESKY",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_id }}\",\n    \"target\": {\n      \"targetType\": \"pinterest\",\n      \"boardId\": \"{{ $('Assign Social Media IDs').item.json.pinterest_board_id }}\"      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.DESCRIPTION }}\",\n      \"platform\": \"pinterest\",\n      \"mediaUrls\": [\n        \"https://pbs.twimg.com/media/GE8MgIiWEAAfsK3.jpg\"\n      ]\n    }\n  }\n}\n\n",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1200,
-        2160
-      ],
-      "id": "30dff13d-5e87-465f-81d0-b98bcfc563a2",
-      "name": "PINTEREST",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
+        "model": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "Vidéo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "ID_Video": "={{ $('Get my video').item.json.ID_Video }}",
-            "Statut_Publication": "GO"
-          },
-          "matchingColumns": [
-            "ID_Video"
-          ],
-          "schema": [
-            {
-              "id": "ID_Video",
-              "displayName": "ID_Video",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "URL_Video_Source",
-              "displayName": "URL_Video_Source",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Description_Post",
-              "displayName": "Description_Post",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Titre_Post (Optionnel)",
-              "displayName": "Titre_Post (Optionnel)",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Statut_Publication",
-              "displayName": "Statut_Publication",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "row_number",
-              "displayName": "row_number",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
+          "value": "gpt-4.1-mini"
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
       "position": [
-        1200,
-        528
+        1504,
+        1200
       ],
-      "id": "db9f8dc5-31d1-47fd-9cb1-4fd076c08cfc",
-      "name": "Google Sheets",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "aMYMtMuiDpps5kuW",
-          "name": "Google Sheets account 4"
-        }
-      }
+      "id": "cf2f91fd-308c-4b2e-b372-9db9e4fb2006",
+      "name": "Modèle de Chat OpenAI"
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://backend.blotato.com/v2/posts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "blotato-api-key",
-              "value": "blt_Ovi/at0DyRU+IGPCNhaVpTvKTwXZ7Xebliwy47B8rjE="
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"post\": {\n    \"accountId\": \"{{ $('Assign Social Media IDs').item.json.twitter_id }}\",\n    \"target\": {\n      \"targetType\": \"twitter\"\n      \n    },\n    \"content\": {\n      \"text\": \"{{ $('Get my video').item.json.Description_Post }}\",\n      \"platform\": \"twitter\",\n      \"mediaUrls\": [\n        \"{{ $json.url }}\"\n      ]\n    }\n  }\n}\n",
-        "options": {}
+        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé est conçu pour assister une équipe marketing dans la création et la gestion de contenu numérique, incluant des images, des articles de blog, des posts LinkedIn, et des vidéos. Il intègre des interactions via Telegram pour recevoir des demandes et fournir des réponses, tout en utilisant des outils d'intelligence artificielle pour générer et modifier du contenu.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe workflow est initialement déclenché par un message reçu sur Telegram. Ce message peut être sous forme de texte ou de fichier audio. Un déclencheur Telegram capte ces messages et les dirige vers la section appropriée du workflow. Si un fichier audio est reçu, il est téléchargé et transcrit en texte pour une analyse ultérieure.\n\n### 🔍 Section Traitement et Analyse\nUne fois les données d'entrée capturées, elles sont analysées pour déterminer l'intention de l'utilisateur. Cela inclut la création d'images, la modification d'images existantes, ou la génération de contenu écrit comme des articles de blog ou des posts LinkedIn. Un agent d'intelligence artificielle est utilisé pour interpréter les demandes et choisir les outils appropriés pour répondre aux besoins de l'utilisateur.\n\n### 🔄 Section Décision et Routage\nCette section utilise un mécanisme de basculement pour diriger le flux de travail en fonction du type de message reçu (texte ou audio). Elle décide également si l'utilisateur souhaite créer, modifier ou rechercher des images, ou s'il souhaite générer du contenu écrit ou vidéo.\n\n### ⚡ Section Actions et Sorties\nLes actions finales incluent la création ou la modification d'images, la rédaction d'articles de blog ou de posts LinkedIn, et la génération de vidéos. Les résultats sont ensuite envoyés à l'utilisateur via Telegram, avec des liens cliquables pour accéder directement au contenu généré.\n\n## 🔗 Liens Utiles\n- [Telegram](https://telegram.org)\n- [Langchain](https://langchain.com)\n- [OpenAI](https://openai.com)\n- [n8n](https://n8n.io)",
+        "height": 932,
+        "width": 800
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1200,
-        1568
+        32,
+        816
       ],
-      "id": "90b89fc2-3972-4a18-b7e0-5aee5b21f0e4",
-      "name": "TWITTER",
-      "onError": "continueRegularOutput"
+      "typeVersion": 1,
+      "id": "abdcd27f-e4a9-453f-a9ce-3179b2f7d66f",
+      "name": "Workflow Overview"
     },
     {
       "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Vidéo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "ID_Video": "={{ $json.row_number }}",
-            "Statut_Publication": "ERROR"
-          },
-          "matchingColumns": [
-            "ID_Video"
-          ],
-          "schema": [
-            {
-              "id": "ID_Video",
-              "displayName": "ID_Video",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "URL_Video_Source",
-              "displayName": "URL_Video_Source",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Description_Post",
-              "displayName": "Description_Post",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Titre_Post (Optionnel)",
-              "displayName": "Titre_Post (Optionnel)",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Statut_Publication",
-              "displayName": "Statut_Publication",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "row_number",
-              "displayName": "row_number",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        2480,
-        1408
-      ],
-      "id": "885f900d-5304-40f5-823e-955c65f63a6a",
-      "name": "ERROR",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "aMYMtMuiDpps5kuW",
-          "name": "Google Sheets account 4"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit?usp=sharing",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Vidéo",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1e1atD_xYpZuKR_a-_kSC8gstPwIOzK0eHZ9ZeFlWtKg/edit#gid=0"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "ID_Video": "={{ $json.row_number }}",
-            "Statut_Publication": "DONE"
-          },
-          "matchingColumns": [
-            "ID_Video"
-          ],
-          "schema": [
-            {
-              "id": "ID_Video",
-              "displayName": "ID_Video",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "URL_Video_Source",
-              "displayName": "URL_Video_Source",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Description_Post",
-              "displayName": "Description_Post",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Titre_Post (Optionnel)",
-              "displayName": "Titre_Post (Optionnel)",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Statut_Publication",
-              "displayName": "Statut_Publication",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "row_number",
-              "displayName": "row_number",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        2464,
-        1088
-      ],
-      "id": "54fbc954-9cb3-4d86-b653-faf9da24d1d0",
-      "name": "DONE",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "aMYMtMuiDpps5kuW",
-          "name": "Google Sheets account 4"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "numberInputs": 7
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.1,
-      "position": [
-        1792,
-        1168
-      ],
-      "id": "2534f5aa-e44c-4e33-a0b6-7f55f78492ac",
-      "name": "Merge"
-    },
-    {
-      "parameters": {
-        "jsCode": "const items = $input.all();\n  const enabledPlatforms = ['INSTAGRAM','YOUTUBE','TIKTOK','FACEBOOK','THREADS','LINKEDIN','TWITTER']; // List of enabled platforms\nlet successfulPosts = 0;\n\n// Count successful posts\nfor (const item of items) {\n  if (item.json.postSubmissionId) {\n    successfulPosts++;\n  }\n}\n\n// Get row_number from Get my video node\nconst ID_Video = $('Get my video').first().json.ID_Video;\n\n// Return allPosted and row_number to preserve pairing\nreturn [{ json: { allPosted: successfulPosts === enabledPlatforms.length, row_number: ID_Video } }];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2032,
-        1248
-      ],
-      "id": "1ed8cd97-dc63-439c-867a-37a008da11e8",
-      "name": "Code"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "loose",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "ab94129c-5418-4321-96a4-c4c77e961e88",
-              "leftValue": "={{ $json.allPosted }}",
-              "rightValue": "true",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "looseTypeValidation": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        2240,
-        1248
-      ],
-      "id": "ed50fabf-496a-4fa5-9349-d7bb67745cbc",
-      "name": "If"
-    },
-    {
-      "parameters": {
-        "content": "# Auto-Publish to 9 Social Platforms\n## Automates distribution using Blotato’s API.\n## The video is auto-published to Instagram, YouTube, TikTok, Facebook, \n## LinkedIn, Threads, Twitter (X), Bluesky, and Pinterest \n## — all in one go, with no manual work required.\n### ** Documentation : ** [Guide](https://automatisation.notion.site/Workflow-n8n-d-Auto-Post-sur-les-r-seaux-sociaux-1d33d6550fd980b7b43ac417e9a06a9b?pvs=4)",
-        "height": 300,
-        "width": 880,
+        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
+        "height": 400,
+        "width": 800,
         "color": 6
       },
       "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
       "position": [
-        -512,
-        160
+        32,
+        336
       ],
-      "id": "97668b4e-6aae-4336-8c56-24e5c031626d",
-      "name": "Sticky Note3"
+      "typeVersion": 1,
+      "id": "d6427f53-8fdf-4ce6-b695-b25b2b974baa",
+      "name": "Signature"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Déclencheur Telegram": [
+      {
+        "json": {
+          "update_id": 539648026,
+          "message": {
+            "message_id": 104,
+            "from": {
+              "id": 7952797797,
+              "is_bot": false,
+              "first_name": "Thomas",
+              "last_name": "Berton",
+              "language_code": "fr"
+            },
+            "chat": {
+              "id": 7952797797,
+              "first_name": "Thomas",
+              "last_name": "Berton",
+              "type": "private"
+            },
+            "date": 1756805476,
+            "voice": {
+              "duration": 5,
+              "mime_type": "audio/ogg",
+              "file_id": "AwACAgQAAxkBAANoaLa5ZH4-ySx18C5YXdnB20bhotkAAkAdAALiSrFRJ9QlsKoN-cM2BA",
+              "file_unique_id": "AgADQB0AAuJKsVE",
+              "file_size": 21637
+            }
+          }
+        }
+      }
+    ]
+  },
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
@@ -985,16 +839,35 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-29T22:18:35.121Z",
-      "createdAt": "2025-12-29T22:18:35.121Z",
+      "updatedAt": "2025-12-28T18:59:04.338Z",
+      "createdAt": "2025-12-28T18:59:04.338Z",
       "role": "workflow:owner",
-      "workflowId": "baxqgkwkuacFBJAh",
+      "workflowId": "d0MLRrVc2tX2un6a",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    },
+    {
+      "updatedAt": "2025-12-28T23:46:03.817Z",
+      "createdAt": "2025-12-28T18:02:49.797Z",
+      "id": "vNliFiYFZSU0TQDM",
+      "name": "Ok"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T22:18:35.119Z",
-  "versionId": "7f309a71-8ca5-43df-b92a-ed5db3a4d9af"
+  "updatedAt": "2025-12-28T18:59:04.000Z",
+  "versionId": "c4d5e7de-1693-4bda-86f1-68a065a9bf9f"
 }
