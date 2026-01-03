@@ -2,1785 +2,2531 @@
   "": "",
   "active": false,
   "connections": {
-    "n8n": {
+    "When Executed by Another Workflow": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Création de Scénario Vidéo",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Config": {
+    "Générateur de Prompts Sonores": {
       "main": [
         [
           {
-            "node": "Get file data",
+            "node": "Envoi de Texte pour Génération Sonore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Envoi de Texte pour Génération Sonore": {
+      "main": [
+        [
+          {
+            "node": "Sauvegarde sur Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sauvegarde sur Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Partage de Fichier Google Drive",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Merge Items",
+            "node": "Fusion des Données",
             "type": "main",
             "index": 1
           }
         ]
       ]
     },
-    "Get File": {
+    "Fusion des Données": {
       "main": [
         [
           {
-            "node": "Merge Items",
+            "node": "Exécution de Code Personnalisé",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "File is new": {
+    "Demande de Rendu Vidéo": {
       "main": [
         [
           {
-            "node": "Create new file",
+            "node": "Attente de 60 Secondes",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Merge Items": {
+    "Attente de 60 Secondes": {
       "main": [
         [
           {
-            "node": "isDiffOrNew",
+            "node": "Téléchargement de Vidéo",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "isDiffOrNew": {
+    "Téléchargement de Vidéo": {
       "main": [
         [
           {
-            "node": "Create sub path",
+            "node": "Envoi de Vidéo sur Telegram",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check Status": {
+    "Exécution de Code Personnalisé": {
       "main": [
         [
           {
-            "node": "Same file - Do nothing",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "File is different",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "File is new",
+            "node": "Demande de Rendu Vidéo",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Failed Flows": {
+    "Partage de Fichier Google Drive": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Fusion des Données",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Analyseur de Sortie Structurée": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Création de Scénario Vidéo",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Création de Scénario Vidéo": {
+      "main": [
+        [
+          {
+            "node": "Séparation des Sorties",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get file data": {
+    "Séparation des Sorties": {
       "main": [
         [
           {
-            "node": "If file too large",
+            "node": "Génération d'Image avec Flux",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Create new file": {
+    "Envoi de Vidéo sur Telegram": {
       "main": [
         [
           {
-            "node": "Return",
+            "node": "Génération de Titre Vidéo",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Create sub path": {
+    "Génération de Titre Vidéo": {
       "main": [
         [
           {
-            "node": "Check Status",
+            "node": "Enregistrement dans Airtable",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop Over Items": {
+    "Interaction avec Modèle OpenAI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Générateur de Prompts Sonores",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Génération d'Image avec Flux": {
       "main": [
         [
           {
-            "node": "Completed Notification",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Execute Workflow",
+            "node": "Exécution de Flux de Travail Secondaire",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Execute Workflow": {
+    "Exécution de Flux de Travail Secondaire": {
       "main": [
         [
           {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Failed Flows",
+            "node": "Génération de Vidéo avec Kling",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Schedule Trigger": {
+    "Génération de Vidéo avec Kling": {
       "main": [
         [
           {
-            "node": "Starting Message",
+            "node": "Exécution de Flux de Travail pour Vidéo",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Starting Message": {
+    "Exécution de Flux de Travail pour Vidéo": {
       "main": [
         [
           {
-            "node": "n8n",
+            "node": "Générateur de Prompts Sonores",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fusion des Données",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "File is different": {
-      "main": [
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
         [
           {
-            "node": "Edit existing file",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If file too large": {
-      "main": [
-        [
-          {
-            "node": "Get File",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Merge Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit existing file": {
-      "main": [
-        [
-          {
-            "node": "Return",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On clicking 'execute'": {
-      "main": [
-        [
-          {
-            "node": "Starting Message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Same file - Do nothing": {
-      "main": [
-        [
-          {
-            "node": "Return",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Execute Workflow Trigger": {
-      "main": [
-        [
-          {
-            "node": "Config",
-            "type": "main",
+            "node": "Création de Scénario Vidéo",
+            "type": "ai_languageModel",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2026-01-02T20:37:54.245Z",
-  "id": "A8GlQnVSyFlYvTXR",
+  "createdAt": "2025-09-17T17:44:11.063Z",
+  "id": "DJSjWGEtbeIMLKJj",
   "isArchived": false,
   "meta": null,
-  "name": "Sauvegardez vos flux de travail n8n sur Github",
+  "name": "Video Content Generator - Audio/Visual AI Pipeline",
   "nodes": [
     {
-      "parameters": {},
-      "id": "abace5f2-db54-4f8a-b192-3dba8934bad8",
-      "name": "On clicking 'execute'",
-      "type": "n8n-nodes-base.manualTrigger",
-      "position": [
-        304,
-        16
-      ],
-      "typeVersion": 1
-    },
-    {
       "parameters": {
-        "content": "## Subworkflow",
-        "height": 731.7039821513649,
-        "width": 1910.7813046051347,
-        "color": 6
-      },
-      "id": "4e8e7401-4f08-4fa8-b543-1c4bfe4f9ee8",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -176,
-        400
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "47a4aa03-214d-4155-9162-d0411634d225",
-      "name": "Execute Workflow Trigger",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "position": [
-        -112,
-        784
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "filters": {},
-        "requestOptions": {}
-      },
-      "id": "8e1b6747-c517-4dd6-acf6-887a0a76e753",
-      "name": "n8n",
-      "type": "n8n-nodes-base.n8n",
-      "position": [
-        704,
-        128
-      ],
-      "typeVersion": 1,
-      "credentials": {
-        "n8nApi": {
-          "id": "KMOQv6yJi4nvCqcx",
-          "name": "n8n V2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
+        "workflowInputs": {
+          "values": [
             {
-              "id": "8d513345-6484-431f-afb7-7cf045c90f4f",
-              "name": "Done",
-              "type": "boolean",
-              "value": true
+              "name": "videoTopic"
+            },
+            {
+              "name": "chatID"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        992,
+        48
+      ],
+      "id": "0d4fbf0c-30e1-4a15-b0b4-815ed4363898",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Scène : {{ $('Séparation des Sorties').item.json.output }}",
+        "options": {
+          "systemMessage": "=# Contexte\nTu es un Maître Générateur de Prompts Sonores.\nTa mission est de créer des prompts sonores immersifs et évocateurs à partir d’une scène donnée. Ces prompts seront utilisés pour générer un fond sonore correspondant à l’ambiance et au décor de la scène.\n\n## Instructions\n* Génère un prompt d’une à deux phrases capturant l’ambiance, le ton et les éléments sonores clés\n* Utilise un langage riche et sensoriel pour décrire l’atmosphère de fond, en mettant l’accent sur des sons spécifiques (ex. : pas sur des pavés, conversations lointaines, vent dans les feuilles, musique en sourdine, bourdonnement industriel)\n* Concentre-toi uniquement sur l’audio de fond — pas de dialogue, de narration ni d’effets sonores au premier plan\n* Adapte-toi à l’émotion et au cadre de la scène : calme, chaotique, inquiétant, festif, serein, etc.\n* Évite les descriptions vagues ; sois précis et immersif\n* N’inclus jamais de guillemets (\"\") ni de sauts de ligne (\\n)\n\n## Sortie\nAffiche uniquement le prompt sonore final, prêt à être utilisé par un modèle de génération audio.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        992,
+        1104
+      ],
+      "id": "4b4cf841-c609-49ee-b383-6bd40e8ec2e7",
+      "name": "Générateur de Prompts Sonores"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/sound-generation",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $json.output.replace(/\"/g, '') }}"
+            },
+            {
+              "name": "duration_seconds",
+              "value": "5"
             }
           ]
         },
         "options": {}
       },
-      "id": "732ab83b-7f31-46fc-9de9-c46a831e7fe8",
-      "name": "Return",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1392,
+        1104
+      ],
+      "id": "9db5f135-3ff3-4298-8a5f-fe88ed008a01",
+      "name": "Envoi de Texte pour Génération Sonore"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Exécution de Flux de Travail pour Vidéo').item.json.fields['ID Requette'] }}.mp3",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW",
+          "mode": "list",
+          "cachedResultName": "Medias",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        1104
+      ],
+      "id": "60d5259b-edf8-46d9-97ff-ce0512ff560a",
+      "name": "Sauvegarde sur Google Drive"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        2112,
+        1088
+      ],
+      "id": "ce1a7fa5-ec13-44be-a863-373df996f49b",
+      "name": "Fusion des Données"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"b671d213-c388-4390-8180-a4dd31b7aa9b\",\n  \"modifications\": {\n    \"Video-1.source\": \"{{ $json.groupedLinks[0].link }}\",\n    \"Video-2.source\": \"{{ $json.groupedLinks[1].link }}\",\n    \"Video-3.source\": \"{{ $json.groupedLinks[2].link }}\",\n    \"Video-4.source\": \"{{ $json.groupedLinks[3].link }}\",\n    \"Audio-1.source\": \"{{ $json.groupedLinks[0].weblink }}\",\n    \"Audio-2.source\": \"{{ $json.groupedLinks[1].weblink }}\",\n    \"Audio-3.source\": \"{{ $json.groupedLinks[2].weblink }}\",\n    \"Audio-4.source\": \"{{ $json.groupedLinks[3].weblink }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2560,
+        1104
+      ],
+      "id": "478aafd5-b404-49f3-b44d-149245225662",
+      "name": "Demande de Rendu Vidéo"
+    },
+    {
+      "parameters": {
+        "amount": 90
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2784,
+        1104
+      ],
+      "id": "6f38bf9d-ac85-451a-a278-482699e17b99",
+      "name": "Attente de 60 Secondes",
+      "webhookId": "d5cd29e8-d3f7-491c-a6b6-2d705aa47931"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3008,
+        1104
+      ],
+      "id": "23a4ca40-1d32-4676-a4a5-8d565b8f83ac",
+      "name": "Téléchargement de Vidéo"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items\nconst inputItems = $input.all();\n\n// Build the array of objects\nconst groupedArray = inputItems.map(item => {\n  return {\n    link: item.json.fields?.Lien || null,\n    weblink: item.json.webViewLink || null,\n  };\n});\n\n// Return a single item with the array\nreturn [{\n  json: {\n    groupedLinks: groupedArray\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2320,
+        1104
+      ],
+      "id": "1bd5759a-16ce-49d4-a22b-119aeef0e519",
+      "name": "Exécution de Code Personnalisé"
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone",
+            "allowFileDiscovery": true
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
       "position": [
         1552,
-        608
+        1664
       ],
-      "typeVersion": 3.3
+      "id": "32d17379-26c8-4d90-9f3d-f882f62c9b30",
+      "name": "Partage de Fichier Google Drive"
     },
     {
       "parameters": {
-        "url": "={{ $json.download_url }}",
+        "jsonSchemaExample": "{\n  \"Part 1\": \"Prompt for part 1\",\n  \"Part 2\": \"Prompt for part 2\",\n  \"Part 3\": \"Prompt for part 3\",\n  \"Part 4\": \"Prompt for part 4\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1408,
+        288
+      ],
+      "id": "16dcc851-d32b-4e7a-9e9b-94f87397118a",
+      "name": "Analyseur de Sortie Structurée"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Sujet de la vidéo : {{ $json.videoTopic }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=# Contexte\nTu es un Maître Agent de Structuration Visuelle Narrative.\nTa mission est de prendre un sujet de courte vidéo et de le diviser en quatre parties formant ensemble une histoire visuelle cohérente et vivante, optimisée pour la génération d’images à partir de texte.\n\n## Instructions\n* Crée exactement quatre parties : Partie 1, Partie 2, Partie 3, et Partie 4\n* Décris le sujet principal de l’histoire de manière strictement identique dans chaque partie (même apparence, style, nom si donné, etc.)\n* Chaque partie doit s’appuyer sur la précédente pour construire un récit visuel complet\n* Chaque partie doit être rédigée comme un prompt d’image détaillé, de qualité professionnelle, compatible avec des modèles comme Flux\n* Sois très précis : décris les personnages, décors, vêtements, objets, expressions, actions, arrière-plans, etc.\n* Utilise un langage riche et imaginatif, visuellement dense\n* Évite les termes génériques — sois toujours spécifique et coloré\n* Aucune guillemet (\"\") ni saut de ligne (\\n)\n* L’ensemble doit être fluide et directement exploitable par un modèle de génération d’images\n\n## Éléments clés à inclure dans chaque partie\n* Description claire des sujets principaux (apparence, tenues, expressions, postures)\n* Accessoires ou objets qui enrichissent la scène\n* Un décor détaillé cohérent avec le thème\n* Progression logique et visuelle d’une partie à l’autre\n\n## Format de sortie\n* Partie 1 : [Prompt d’image détaillé pour la Partie 1]\n* Partie 2 : [Prompt d’image détaillé pour la Partie 2]\n* Partie 3 : [Prompt d’image détaillé pour la Partie 3]\n* Partie 4 : [Prompt d’image détaillé pour la Partie 4]\n\nAffiche uniquement ces quatre champs.\nL’histoire visuelle complète doit paraître cinématographique, immersive et cohérente visuellement."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1200,
+        48
+      ],
+      "id": "3c5453e4-5147-49b8-9204-7c0a5e88cf5e",
+      "name": "Création de Scénario Vidéo"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
         "options": {}
       },
-      "id": "02a0f0dc-a0ee-4997-bf8f-b239b1f089b3",
-      "name": "Get File",
-      "type": "n8n-nodes-base.httpRequest",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
       "position": [
-        512,
+        1568,
+        48
+      ],
+      "id": "eae97f5c-eca5-493f-a6f5-a3ce54a87afb",
+      "name": "Séparation des Sorties"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "={{ $('When Executed by Another Workflow').first().json.chatID }}",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3232,
+        1104
+      ],
+      "id": "7d31e5cf-e4c3-4b11-94d3-2a817f32cab9",
+      "name": "Envoi de Vidéo sur Telegram",
+      "webhookId": "cdeb2987-d275-480b-8532-f69bbed64999"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Video: {{ $('When Executed by Another Workflow').first().json.videoTopic }}"
+            },
+            {
+              "content": "Crée un titre de 3 à 4 mots pour la vidéo donnée.",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        3440,
+        1104
+      ],
+      "id": "06423bd4-1795-47b9-92b7-31e2fa0608b9",
+      "name": "Génération de Titre Vidéo"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1088,
+        1328
+      ],
+      "id": "8c2d60cb-6851-4e67-a3a5-5bf91efaee82",
+      "name": "Interaction avec Modèle OpenAI"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/wavespeed-ai/flux-dev",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "enable_base64_output",
+              "value": "false"
+            },
+            {
+              "name": "enable_safety_checker",
+              "value": "true"
+            },
+            {
+              "name": "enable_sync_mode",
+              "value": "false"
+            },
+            {
+              "name": "guidance_scale",
+              "value": "3.5"
+            },
+            {
+              "name": "num_images",
+              "value": "1"
+            },
+            {
+              "name": "num_inference_steps",
+              "value": "28"
+            },
+            {
+              "name": "output_format",
+              "value": "jpeg"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "seed",
+              "value": "-1"
+            },
+            {
+              "name": "size",
+              "value": "864*1536"
+            },
+            {
+              "name": "strength",
+              "value": "0.8"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        992,
         480
       ],
-      "typeVersion": 4.2
+      "id": "6ec8acf8-649a-4232-94fe-aa699f4191f2",
+      "name": "Génération d'Image avec Flux"
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "leftValue": "",
-            "caseSensitive": true,
-            "typeValidation": "strict"
+        "workflowId": {
+          "__rl": true,
+          "value": "usYkBA2Qc6ZOBkCj",
+          "mode": "list",
+          "cachedResultName": "0.1 - Attente Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_request": "={{ $json.data.id }}",
+            "request": "={{ $json.data.urls.get }}",
+            "type": "raw_image"
           },
-          "combinator": "and",
-          "conditions": [
+          "matchingColumns": [],
+          "schema": [
             {
-              "id": "45ce825e-9fa6-430c-8931-9aaf22c42585",
-              "operator": {
-                "type": "string",
-                "operation": "empty",
-                "singleValue": true
-              },
-              "leftValue": "={{ $json.content }}",
-              "rightValue": ""
+              "id": "id_request",
+              "displayName": "id_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
             },
             {
-              "id": "9619a55f-7fb1-4f24-b1a7-7aeb82365806",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              },
-              "leftValue": "={{ $json.error }}",
-              "rightValue": ""
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "4d502357-0b8b-4b86-ac1a-0b00d5bc1d00",
-      "name": "If file too large",
-      "type": "n8n-nodes-base.if",
-      "position": [
-        272,
-        496
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {},
-      "id": "3cb1da49-6ae8-4d02-89e1-71f28ae1ca57",
-      "name": "Merge Items",
-      "type": "n8n-nodes-base.merge",
-      "position": [
-        272,
-        768
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {
-        "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();\n"
-      },
-      "id": "7618e97a-7d06-40d2-8e19-8e24ab957ea3",
-      "name": "isDiffOrNew",
-      "type": "n8n-nodes-base.code",
-      "position": [
-        464,
-        768
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "dataType": "string",
-        "value1": "={{$json.github_status}}",
-        "rules": {
-          "rules": [
-            {
-              "value2": "same"
+              "id": "request",
+              "displayName": "request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
             },
             {
-              "value2": "different",
-              "output": 1
-            },
-            {
-              "value2": "new",
-              "output": 2
-            }
-          ]
-        }
-      },
-      "id": "9851d8bc-49d1-4041-9926-63f9c8eac668",
-      "name": "Check Status",
-      "type": "n8n-nodes-base.switch",
-      "position": [
-        864,
-        768
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "34ab70dc-c8c4-44c9-aec9-28b66d5302e8",
-      "name": "Same file - Do nothing",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        608
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "78d7bf11-1e9f-4f36-a413-548600b0b565",
-      "name": "File is different",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        768
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "8aa1c5fb-8951-4dc6-ae32-d9424d1dab6d",
-      "name": "File is new",
-      "type": "n8n-nodes-base.noOp",
-      "position": [
-        1088,
-        960
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "owner": {
-          "__rl": true,
-          "value": "=Adam-s-tech",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/mon-workflow.json",
-        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
-      },
-      "id": "26328b1b-35f1-4e74-b783-dad4be6aa96d",
-      "name": "Create new file",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        1312,
-        960
-      ],
-      "typeVersion": 1,
-      "webhookId": "9e8b4b33-c353-4804-85a6-9c2cd168795a",
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "edit",
-        "owner": {
-          "__rl": true,
-          "value": "=Adam-s-tech",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/mon-workflow.json",
-        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
-        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
-      },
-      "id": "30b4a26e-5a4b-4b82-8e2e-0b802ccb86e4",
-      "name": "Edit existing file",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        1312,
-        768
-      ],
-      "typeVersion": 1,
-      "webhookId": "71477528-4f4c-4fb0-87f4-5f2aaa733afa",
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "af7c8915-c2e4-4a57-ae67-7b6fe403bc2b",
-      "name": "Loop Over Items",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        912,
-        128
-      ],
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 1,
-              "triggerAtMinute": 33
-            }
-          ]
-        }
-      },
-      "id": "23333a1d-4f13-4a3a-b385-510abdde74d5",
-      "name": "Schedule Trigger",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "position": [
-        304,
-        224
-      ],
-      "typeVersion": 1.2
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "dae43d3b-56e5-4098-b602-862ebf5cd073",
-              "name": "subPath",
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
               "type": "string",
-              "value": "={{ $('Execute Workflow Trigger').first().json.createdAt.split('-')[0] }}/{{ $('Execute Workflow Trigger').first().json.createdAt.split('-')[1] }}/"
+              "removed": false
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
         },
-        "includeOtherFields": true,
-        "options": {}
-      },
-      "id": "29a6ea7e-fe95-4d1b-8638-c40e209b5f90",
-      "name": "Create sub path",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        672,
-        768
-      ],
-      "typeVersion": 3.3
-    },
-    {
-      "parameters": {
-        "content": "## Backup to GitHub \nThis workflow will backup all instance workflows to GitHub every 24 hours.\n\nThe files are saved into folders using `YYYY/MM/` for the directory path and `ID.json` for the filename.\n\nThe Repo Owner, Repo Name and Main folder are set using the **Variables** feature but can be replaced with the `Config` node in the subworkflow. \n\nThe workflow runs calls itself to help reduce memory usage, Once the workflow has completed it will send an optional notification to Slack.\n\n### Time to Run\nTested with 1423 workflows on `1.44.1` it took under 30 minutes for the first run and under 12 minutes once the initial run is complete.",
-        "height": 417,
-        "width": 385,
-        "color": 4
-      },
-      "id": "995a2b2e-8aca-4a87-9ed4-7bf1061d39aa",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -176,
-        -64
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Main workflow loop",
-        "height": 416.1856906618075,
-        "width": 1272.6408145680155,
-        "color": 7
-      },
-      "id": "b7055438-88b7-439a-a322-db688ca5bc50",
-      "name": "Sticky Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        272,
-        -64
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=:information_source:  Starting Workflow Backup [{{ $execution.id }}]",
-        "otherOptions": {
-          "includeLinkToWorkflow": false
-        }
-      },
-      "id": "29b7c28f-60eb-4619-a8da-9da67c5c8192",
-      "name": "Starting Message",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        544,
-        128
-      ],
-      "webhookId": "c02eb407-5547-4aa0-9ebf-46dab67b63b6",
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "workflowId": "={{ $workflow.id }}",
         "mode": "each",
         "options": {}
       },
-      "id": "343c507d-33c5-47ab-97db-ced4fef474fc",
-      "name": "Execute Workflow",
       "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
       "position": [
-        1136,
-        144
+        1200,
+        480
       ],
-      "typeVersion": 1,
-      "onError": "continueErrorOutput"
+      "id": "1b0d7522-e626-4fc4-ae74-892fcc196451",
+      "name": "Exécution de Flux de Travail Secondaire",
+      "executeOnce": false
     },
     {
       "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=✅ Backup has completed - {{ $('n8n').all().length }} workflows have been processed.",
-        "otherOptions": {}
-      },
-      "id": "179bd070-89de-4080-83b7-d3951dc04dea",
-      "name": "Completed Notification",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        1136,
-        -48
-      ],
-      "webhookId": "a0c6e8c8-5d71-40fa-b02b-63a7ed5726c4",
-      "executeOnce": true,
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "mode": "name",
-          "value": "#notifications"
-        },
-        "text": "=:x: Failed to backup {{ $('Loop Over Items').item.json.id }}",
-        "otherOptions": {
-          "includeLinkToWorkflow": false
-        }
-      },
-      "id": "ce874b23-fbec-406a-a7a0-e5b2568092f3",
-      "name": "Failed Flows",
-      "type": "n8n-nodes-base.slack",
-      "position": [
-        1328,
-        160
-      ],
-      "webhookId": "2a092edb-de12-490f-931b-34d70e7d7696",
-      "typeVersion": 2.2,
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "=Adam-s-tech"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "=n8n-workflows-nov-25",
-          "mode": "name"
-        },
-        "filePath": "=backups/mon-workflow.json",
-        "asBinaryProperty": false,
-        "additionalParameters": {}
-      },
-      "id": "958c834c-c3a7-4f03-9ec3-ce1b3ef6e4bb",
-      "name": "Get file data",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        64,
-        496
-      ],
-      "typeVersion": 1,
-      "alwaysOutputData": true,
-      "webhookId": "c72574cc-5959-4b85-a183-96111e5aee01",
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "JkgRo0W2lAFdyIf4",
-          "name": "GitHub account 2"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/kwaivgi/kling-v1.6-i2v-standard",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
             {
-              "id": "8f6d1741-772f-462a-811f-4c334185e4f0",
-              "name": "repo_owner",
-              "type": "string",
-              "value": "=Adam-s-tech"
+              "name": "duration",
+              "value": "5"
             },
             {
-              "id": "8cac215c-4fd7-422f-9fd2-6b2d1e5e0383",
-              "name": "repo_name",
-              "type": "string",
-              "value": "=n8n-workflows-nov-25"
+              "name": "guidance_scale",
+              "value": "0.5"
             },
             {
-              "id": "eee305e9-4164-462a-86bd-80f0d58a31ae",
-              "name": "repo_path",
-              "type": "string",
-              "value": "=backups/"
+              "name": "prompt",
+              "value": "={{ $('Séparation des Sorties').item.json.output }}"
             },
             {
-              "id": "c3e1c78f-7278-4a81-a761-4e202ce7cffe",
-              "name": "",
-              "value": "",
-              "type": "string"
+              "name": "image",
+              "value": "={{ $json.fields.Lien }}"
             }
           ]
         },
-        "includeOtherFields": true,
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        992,
+        800
+      ],
+      "id": "caf6bde0-49f5-4221-9f60-ac7a8dc50873",
+      "name": "Génération de Vidéo avec Kling"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "usYkBA2Qc6ZOBkCj",
+          "mode": "list",
+          "cachedResultName": "0.1 - Attente Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_request": "={{ $json.data.id }}",
+            "request": "={{ $json.data.urls.get }}",
+            "type": "raw_video"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "id_request",
+              "displayName": "id_request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "request",
+              "displayName": "request",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
         "options": {}
       },
-      "id": "97eb40b8-4c7c-4d9b-b75f-54f86a7645dc",
-      "name": "Config",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
       "position": [
-        64,
-        784
+        1200,
+        800
       ],
-      "typeVersion": 3.4
+      "id": "c6369368-9e54-4cb2-9034-39c41bac9fc1",
+      "name": "Exécution de Flux de Travail pour Vidéo",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "apprrk8BzFraLVbsx",
+          "mode": "list",
+          "cachedResultName": "Marketing Team",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl4mN27ieDO845l2",
+          "mode": "list",
+          "cachedResultName": "DashBoard",
+          "cachedResultUrl": "https://airtable.com/apprrk8BzFraLVbsx/tbl4mN27ieDO845l2"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Titre": "={{ $json.message.content }}",
+            "Type": "Vidéo",
+            "Requette": "={{ $('When Executed by Another Workflow').first().json.videoTopic }}",
+            "Status": "Terminé",
+            "Lien": "={{ $('Téléchargement de Vidéo').item.json.url }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "raw_image",
+                  "value": "raw_image"
+                },
+                {
+                  "name": "raw_audio",
+                  "value": "raw_audio"
+                },
+                {
+                  "name": "raw_video",
+                  "value": "raw_video"
+                },
+                {
+                  "name": "Vidéo",
+                  "value": "Vidéo"
+                },
+                {
+                  "name": "Post",
+                  "value": "Post"
+                },
+                {
+                  "name": "Image",
+                  "value": "Image"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Erreur",
+                  "value": "Erreur"
+                },
+                {
+                  "name": "En cours",
+                  "value": "En cours"
+                },
+                {
+                  "name": "Terminé",
+                  "value": "Terminé"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requette",
+              "displayName": "Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ID Requette",
+              "displayName": "ID Requette",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lien",
+              "displayName": "Lien",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        3840,
+        1104
+      ],
+      "id": "78cf1ecb-23f6-4209-b3fa-dafa7eddf385",
+      "name": "Enregistrement dans Airtable"
+    },
+    {
+      "parameters": {
+        "content": "# 🧭 Vue d'ensemble du Workflow\n\n## 📋 Objectif\nCe workflow automatisé a pour objectif de créer des prompts sonores et visuels à partir de sujets vidéo, de générer des contenus multimédias correspondants, puis de les stocker et partager efficacement. Il utilise plusieurs services externes pour le traitement de texte, la génération d'images et de sons, et le stockage de fichiers.\n\n## 🔄 Sections du Processus\n\n### 🎯 Section Déclenchement et Entrée\nLe processus commence par un déclencheur qui active le workflow lorsqu'un sujet vidéo est reçu. Ce sujet est ensuite structuré en plusieurs parties pour créer un scénario visuel cohérent.\n\n### 🔍 Section Traitement et Analyse\nDans cette section, le sujet vidéo est analysé et transformé en prompts détaillés pour la génération d'images et de sons. Les prompts sonores sont générés pour capturer l'ambiance et les éléments sonores clés de la scène. Simultanément, des prompts visuels sont créés pour décrire chaque partie du scénario vidéo.\n\n### 🎨 Section Génération de Contenus\nLes prompts générés sont utilisés pour créer des contenus multimédias. Les prompts sonores sont envoyés à un service de génération sonore pour produire des fichiers audio. Les prompts visuels sont traités pour générer des images et des vidéos qui illustrent le scénario.\n\n### ⚡ Section Actions et Sorties\nLes fichiers multimédias générés sont ensuite sauvegardés sur Google Drive et partagés via des liens accessibles. Les vidéos sont également envoyées sur Telegram pour une distribution rapide. Enfin, les détails des contenus générés sont enregistrés dans Airtable pour un suivi et une gestion efficaces.\n\n## 🔗 Liens Utiles\n- [Airtable](https://airtable.com)\n- [Wavespeed](https://wavespeed.ai/?utm_source=Thomas_Berton)\n- [Google Drive](https://drive.google.com)\n- [Telegram](https://telegram.org)\n- [Eleven Labs](https://elevenlabs.io)\n- [Creatomate](https://creatomate.com)",
+        "height": 916,
+        "width": 800,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "a9fea560-65cb-498e-9f2f-bee343a3a748",
+      "name": "Workflow Overview"
+    },
+    {
+      "parameters": {
+        "content": "---\n\n## 👨‍💻 Workflow créé par Thomas Berton\n\n**Envie de faire développer vos solutions IA par des pros ?**  \nContactez mon agence Azuro 👉 [azuro-ai.com](https://azuro-ai.com/contact)\n\n📢 **Rejoignez notre communauté IA sur Skool** 👉 [Le Club IA](https://www.skool.com/le-club-ia)\n\n### 🔗 Suivez-moi sur les réseaux\n\n🎥 **YouTube** : [Thomas BSSH](https://www.youtube.com/@thomasbssh?sub_confirmation=1)  \n💼 **LinkedIn** : [Thomas Berton](https://linkedin.com/in/thomas-berton-563894196)  \n📱 **Instagram** : [@thomasbssh](https://instagram.com/thomasbssh)\n\n---",
+        "height": 400,
+        "width": 800,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "3b76bd9a-30a3-4a94-a16f-2250c41d4079",
+      "name": "Signature"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1200,
+        288
+      ],
+      "id": "f508a47e-fd40-46c1-8cb5-b8900a80752b",
+      "name": "Anthropic Chat Model"
     }
   ],
   "pinData": {
-    "Execute Workflow Trigger": [
+    "When Executed by Another Workflow": [
       {
         "json": {
-          "updatedAt": "2025-12-28T23:44:26.000Z",
-          "createdAt": "2025-12-17T13:56:49.992Z",
-          "id": "4AcsRDfcgQJYeonW",
-          "name": "Générer automatiquement des noms de nœuds descriptifs avec l’IA pour la lisibilité des flux de travail",
-          "active": false,
-          "isArchived": false,
-          "nodes": [
+          "videoTopic": "point-of-view de moi-même en train de travailler sur mon ordinateur dans un café à Paris, travaillant sur des lignes de code en tant que développeur informatique",
+          "chatID": 7952797797
+        }
+      }
+    ],
+    "Générateur de Prompts Sonores": [
+      {
+        "json": {
+          "output": "Ambiance matinale chaleureuse d’un café parisien, avec le cliquetis rythmé des touches rétroéclairées, le murmure lointain des conversations feutrées, le léger soufflé du café chaud bientôt siroté, le grésillement discret d’une machine à espresso en fond, et la douce lumière dorée filtrant à travers les grandes fenêtres, caressant les surfaces boisées et l’écran brillant du MacBook."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance sonore d’un café parisien calme avec un léger murmure feutré de conversations en arrière-plan, le cliquetis rythmé et doux des touches d’un clavier MacBook Pro se mêlant aux tintements distants de tasses et aux pas discrets d’un serveur en tablier noir, le tout baigné par la clarté et la fraîcheur d’une matinée lumineuse."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance feutrée d’un café parisien avec sons doux de conversations distantes, cliquetis subtil des touches de clavier, tintement léger de tasse vide déplacée sur la table, le bourdonnement intermittent des machines à café et des pas sur le parquet se mêlant au léger froissement des pages du carnet feuilleté."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance feutrée d’un café parisien baigné de lumière dorée d’après-midi, avec le doux murmure des claviers d’ordinateurs, le murmure discret des conversations techniques et créatives, le léger cliquetis de tasses à café fraîchement servies et le bruissement lointain de pages tournées dans un carnet posé sur une table voisine."
+        }
+      }
+    ],
+    "Envoi de Texte pour Génération Sonore": [
+      {
+        "json": {
+          "output": "Ambiance matinale chaleureuse d’un café parisien, avec le cliquetis rythmé des touches rétroéclairées, le murmure lointain des conversations feutrées, le léger soufflé du café chaud bientôt siroté, le grésillement discret d’une machine à espresso en fond, et la douce lumière dorée filtrant à travers les grandes fenêtres, caressant les surfaces boisées et l’écran brillant du MacBook."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance sonore d’un café parisien calme avec un léger murmure feutré de conversations en arrière-plan, le cliquetis rythmé et doux des touches d’un clavier MacBook Pro se mêlant aux tintements distants de tasses et aux pas discrets d’un serveur en tablier noir, le tout baigné par la clarté et la fraîcheur d’une matinée lumineuse."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance feutrée d’un café parisien avec sons doux de conversations distantes, cliquetis subtil des touches de clavier, tintement léger de tasse vide déplacée sur la table, le bourdonnement intermittent des machines à café et des pas sur le parquet se mêlant au léger froissement des pages du carnet feuilleté."
+        }
+      },
+      {
+        "json": {
+          "output": "Ambiance feutrée d’un café parisien baigné de lumière dorée d’après-midi, avec le doux murmure des claviers d’ordinateurs, le murmure discret des conversations techniques et créatives, le léger cliquetis de tasses à café fraîchement servies et le bruissement lointain de pages tournées dans un carnet posé sur une table voisine."
+        }
+      }
+    ],
+    "Sauvegarde sur Google Drive": [
+      {
+        "json": {
+          "kind": "drive#file",
+          "id": "1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0",
+          "name": "83f2e6f50fe046feaca9d5aeb9ea3c45.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "createdTime": "2025-09-02T09:07:02.896Z",
+          "modifiedTime": "2025-09-02T09:07:03.719Z",
+          "modifiedByMeTime": "2025-09-02T09:07:03.719Z",
+          "modifiedByMe": true,
+          "owners": [
             {
-              "parameters": {
-                "operation": "update",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "id",
-                  "value": "={{ $('Set Target Workflow Id').item.json.workflow_id }}"
-                },
-                "workflowObject": "={{ $json.new_workflow.toJsonString() }}",
-                "requestOptions": {}
-              },
-              "id": "7bc0fc3b-ad07-488a-9851-1726d239ffb2",
-              "name": "Save Renamed Workflow Version",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                2032,
-                560
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "ba5c59f1-4de6-460d-9685-037d791962cc",
-                      "name": "old_workflow",
-                      "type": "object",
-                      "value": "={{ $(\"Extract Workflow Nodes Connections\").item.json.old_workflow }}"
-                    },
-                    {
-                      "id": "7a6c8968-70db-4c1b-8592-1a98cfcef4fc",
-                      "name": "nodes_name",
-                      "type": "array",
-                      "value": "={{ $('Extract Workflow Nodes Connections').item.json.nodes.map(node => node.name) }}"
-                    },
-                    {
-                      "id": "9ee4702e-533f-4999-b9ea-fb6bdaf4e1f7",
-                      "name": "connections_nodes_name_reference",
-                      "type": "array",
-                      "value": "={{\n  (() => {\n    const names = [];\n    \n    // Get source nodes (keys)\n    names.push(...Object.keys($('Extract Workflow Nodes Connections').item.json.connections));\n    \n    // Get target nodes\n    for (const conn of Object.values($('Extract Workflow Nodes Connections').item.json.connections)) {\n      for (const type of Object.values(conn)) {          // main, error, etc.\n        for (const outputArray of type) {                // [[...]]\n          for (const target of outputArray) {            // [{node: \"...\"}]\n            if (target.node) names.push(target.node);\n          }\n        }\n      }\n    }\n    \n    return names;\n  })()\n}}"
-                    },
-                    {
-                      "id": "caf69cb1-6d78-4aec-8180-d3bad85529bf",
-                      "name": "parameters_names",
-                      "type": "array",
-                      "value": "={{\n  (() => {\n    const allNodeNames = $('Extract Workflow Nodes Connections').item.json.nodes.map(node => node.name);\n    const nodesString = JSON.stringify($('Extract Workflow Nodes Connections').item.json.nodes);\n    const foundPatterns = [];\n    \n    allNodeNames.forEach(nodeName => {\n      const patterns = [\n        `$('${nodeName}')`,\n        `$(\"${nodeName}\")`\n      ];\n      \n      patterns.forEach(pattern => {\n        if (nodesString.includes(pattern)) {\n          foundPatterns.push(pattern);\n        }\n      });\n    });\n    \n    return foundPatterns;\n  })()\n}}"
-                    },
-                    {
-                      "id": "b2ab8b7a-ffd0-413e-9a68-27d5466fe181",
-                      "name": "AI_output",
-                      "type": "array",
-                      "value": "={{ $json.output }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "23a00411-c1e2-4cf8-baae-d10269d7dc7e",
-              "name": "Prepare LLM Validation Data",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1152,
-                576
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "promptType": "define",
-                "text": "=<system>\nYou are renaming nodes in an n8n workflow to make their purpose immediately clear.\n</system>\n\n<instructions>\n1. Extract ALL node names from the workflow's `nodes` array\n2. For each node, create a descriptive name based on:\n   - Its `type` (what kind of node it is)\n   - Its `parameters` (what it's configured to do)\n   - Its connections/position in the workflow flow (input from where, output to where)\n3. Return a mapping for EVERY SINGLE NODE\n\nRules:\n- Maximum 5 words per name\n- Use Title Case\n- Each name must be unique\n- Keep technical accuracy while being human-readable\n- If a name is already good, you can keep it (but still include it in output)\n</instructions>\n\n<critical>\nYour output array MUST have exactly the same number of items as the input workflow has nodes.\n\nBefore responding:\n- Count nodes in input: ___\n- Count items in your output: ___\n- If these don't match, you've made an error\n\nThe `old_name` must match the exact node name character-for-character (including spaces, capitals, etc.)\n</critical>\n\n<workflow>\n```json\n{{ JSON.stringify($json.old_workflow) }}\n```\n</workflow>",
-                "hasOutputParser": true,
-                "batching": {}
-              },
-              "id": "9fa410fd-5ef3-40d7-98da-53ca74f25f9a",
-              "name": "Generate Node Rename Mapping",
-              "type": "@n8n/n8n-nodes-langchain.chainLlm",
-              "position": [
-                848,
-                576
-              ],
-              "typeVersion": 1.7
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "de87c369-7ca7-4242-8278-effec174c191",
-                      "name": "new_nodes",
-                      "type": "array",
-                      "value": "={{ $json.old_workflow.nodes.map(node => {\n  // Find mapping for the node name\n  const mapping = $json.AI_output.find(item => item.old_name === node.name);\n  \n  // Update parameters by replacing all node name references\n  let updatedParameters = JSON.stringify(node.parameters);\n  $json.AI_output.forEach(aiMapping => {\n    const pattern = new RegExp(aiMapping.old_name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'), 'g');\n    updatedParameters = updatedParameters.replace(pattern, aiMapping.new_name);\n  });\n  \n  return {\n    ...node,\n    name: mapping ? mapping.new_name : node.name,\n    parameters: JSON.parse(updatedParameters)\n  };\n}) }}"
-                    },
-                    {
-                      "id": "90f8a9c1-e9a1-46ae-8af9-2130993a51f3",
-                      "name": "new_connections",
-                      "type": "object",
-                      "value": "={{\n  (() => {\n    const newConnections = {};\n    \n    for (const [sourceNode, connections] of Object.entries($json.old_workflow.connections)) {\n      // Find mapping for the source node (key)\n      const sourceMapping = $json.AI_output.find(item => item.old_name === sourceNode);\n      const newSourceNode = sourceMapping ? sourceMapping.new_name : sourceNode;\n      \n      // Deep copy and update target nodes\n      const updatedConnections = {};\n      for (const [connectionType, connectionArrays] of Object.entries(connections)) {\n        updatedConnections[connectionType] = connectionArrays.map(connArray => \n          connArray.map(conn => {\n            const targetMapping = $json.AI_output.find(item => item.old_name === conn.node);\n            return {\n              ...conn,\n              node: targetMapping ? targetMapping.new_name : conn.node\n            };\n          })\n        );\n      }\n      \n      newConnections[newSourceNode] = updatedConnections;\n    }\n    \n    return newConnections;\n  })()\n}}"
-                    },
-                    {
-                      "id": "3bf1958f-17e9-4719-824c-2282f807e4a6",
-                      "name": "new_workflow_without",
-                      "type": "object",
-                      "value": "={{\n  $json.old_workflow\n    .removeField('nodes')\n    .removeField('connections')\n}}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "9efc7a05-1b8c-42f5-9489-9d719ce4f408",
-              "name": "Apply Renamed Nodes Connections",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1584,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "schemaType": "manual",
-                "inputSchema": "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"old_name\": {\n        \"type\": \"string\",\n        \"description\": \"The exact match original node name\"\n      },\n      \"new_name\": {\n        \"type\": \"string\",\n        \"description\": \"The new node name\"\n      }\n    },\n    \"required\": [\n      \"old_name\",\n      \"new_name\"\n    ]\n  }\n}"
-              },
-              "id": "32807688-c857-43be-84b7-3b7c48a6d292",
-              "name": "Parse LLM Mapping ToJson",
-              "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-              "position": [
-                1008,
-                752
-              ],
-              "typeVersion": 1.3
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "77460441-6e86-4940-ac7c-76dd99cb0de4",
-                      "name": "old_workflow",
-                      "type": "object",
-                      "value": "={{\n  $json\n    .removeField('pinData')\n    .removeField('shared')\n}}"
-                    },
-                    {
-                      "id": "88723b17-bb0e-437d-8ed3-8d412c4491b1",
-                      "name": "nodes",
-                      "type": "array",
-                      "value": "={{ $json.nodes }}"
-                    },
-                    {
-                      "id": "7464b93e-e357-4ed3-a933-6aab1f1d606a",
-                      "name": "connections",
-                      "type": "object",
-                      "value": "={{ $json.connections }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "adf4c302-5da9-46aa-99de-57af49094002",
-              "name": "Extract Workflow Nodes Connections",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2432,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "bb6e8c56-60dd-42ad-9e13-695478a6891a",
-                      "name": "new_workflow",
-                      "type": "object",
-                      "value": "={{\n  Object.assign($json.new_workflow_without, {\n    nodes: $json.new_nodes,\n    connections: $json.new_connections,\n  })\n}}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "fb238e8d-5a92-4b82-85c0-852657a6609b",
-              "name": "Assemble New Workflow Object",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1808,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "conditions": {
-                  "options": {
-                    "version": 2,
-                    "leftValue": "",
-                    "caseSensitive": true,
-                    "typeValidation": "strict"
-                  },
-                  "combinator": "and",
-                  "conditions": [
-                    {
-                      "id": "79e8a51f-63f7-4624-bf8b-6c529f0363db",
-                      "operator": {
-                        "type": "string",
-                        "operation": "equals"
-                      },
-                      "leftValue": "={{ [...$json.nodes_name].sort().toJsonString() }}",
-                      "rightValue": "={{ [...$json.AI_output.map(item => item.old_name)].sort().toJsonString() }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "a05e355a-7296-4ce6-81c3-ea823ec0016c",
-              "name": "Validate All Nodes Renamed",
-              "type": "n8n-nodes-base.if",
-              "position": [
-                1376,
-                576
-              ],
-              "typeVersion": 2.2
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "b9ddd66c-a4b6-4738-8cd1-4f1bb398e955",
-                      "name": "Link_to_new_version",
-                      "type": "string",
-                      "value": "={{ $execution.resumeUrl.split('/').slice(0, 3).join('/') + \"/workflow\" + \"/\" + $('Set Target Workflow Id').item.json.workflow_id + \"/history/\" + $json.versionId }}"
-                    },
-                    {
-                      "id": "969e8ea8-7dbd-4ddc-9ddf-d0c44284463f",
-                      "name": "Link_to_previous_version",
-                      "type": "string",
-                      "value": "={{ $execution.resumeUrl.split('/').slice(0, 3).join('/') + \"/workflow\" + \"/\" + $('Set Target Workflow Id').item.json.workflow_id + \"/history/\" + $('Assemble New Workflow Object').item.json.new_workflow.versionId }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "4f1af0bf-0cc6-46ed-8dc2-e614570ea5c6",
-              "name": "Build Workflow Version Links",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2240,
-                560
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "2e17c48e-c158-42b7-a8ff-6fce97ff1003",
-                      "name": "id",
-                      "type": "string",
-                      "value": "={{ $json[\"Select a Workflow:\"].match(/\\(#([^)]+)\\)/)[1] }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "a878f7e5-12de-4747-9a3d-5d8bc1737689",
-              "name": "Parse Selected Workflow Id",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1760,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "conditions": {
-                  "options": {
-                    "version": 2,
-                    "leftValue": "",
-                    "caseSensitive": true,
-                    "typeValidation": "strict"
-                  },
-                  "combinator": "and",
-                  "conditions": [
-                    {
-                      "id": "3ad65d54-64d5-4f62-a435-09b931e8d066",
-                      "operator": {
-                        "type": "boolean",
-                        "operation": "true",
-                        "singleValue": true
-                      },
-                      "leftValue": "={{ $('Form Trigger').isExecuted }}",
-                      "rightValue": ""
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "0f5d90f5-86fe-4ff1-91ec-b041619c8b9c",
-              "name": "Check Trigger Source Type",
-              "type": "n8n-nodes-base.if",
-              "position": [
-                2432,
-                560
-              ],
-              "typeVersion": 2.2
-            },
-            {
-              "parameters": {
-                "operation": "completion",
-                "completionTitle": "Terminate Workflow Execution!",
-                "completionMessage": "=<a href='{{ $json.Link_to_new_version }}'>Go to new version</a>\n<br>\n<a href='{{ $json.Link_to_previous_version }}'>Go to previous version</a>",
-                "options": {}
-              },
-              "id": "0d9640ef-f4e3-4d82-ab30-717a62073ce1",
-              "name": "Display Workflow Version Links",
-              "type": "n8n-nodes-base.form",
-              "position": [
-                2656,
-                464
-              ],
-              "webhookId": "06daa9d2-2ab2-4f9a-9f8d-eda32f42b2bb",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {
-                "assignments": {
-                  "assignments": [
-                    {
-                      "id": "c6058f80-386c-4f10-aa27-a71c43124a64",
-                      "name": "workflow_id",
-                      "type": "string",
-                      "value": "={{ $json.id }}"
-                    }
-                  ]
-                },
-                "options": {}
-              },
-              "id": "b8017744-5382-47d4-bb52-7c99c909f06f",
-              "name": "Set Target Workflow Id",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                1984,
-                224
-              ],
-              "typeVersion": 3.4
-            },
-            {
-              "parameters": {
-                "content": "## Get & Prepare Workflow\nGet target workflow JSON, extract nodes and connections, prepare clean structure for processing.",
-                "height": 304,
-                "width": 944,
-                "color": 7
-              },
-              "id": "1f18c49c-3728-43fc-b829-b116731db1aa",
-              "name": "LLM Flow Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1904,
-                96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## AI Rename Generation\nSend workflow to the AI, generate rename mapping for every node, parse structured JSON output.",
-                "height": 480,
-                "width": 528,
-                "color": 7
-              },
-              "id": "b5cab425-08e7-456a-b0e8-8579d0d78e53",
-              "name": "Post Processing Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "operation": "get",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "list",
-                  "value": "MImEVkDXF7TQkggJ",
-                  "cachedResultName": "Auto Rename n8n Workflow Nodes with AI (#MImEVkDXF7TQkggJ)"
-                },
-                "requestOptions": {}
-              },
-              "id": "ab7174e7-36cd-4e6f-928e-aa76a3d34b7d",
-              "name": "Select a Workflow",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                1728,
-                -96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Form Trigger\nLaunch a form where you can select from a dropdown of all available workflows.",
-                "height": 304,
-                "width": 1088,
-                "color": 7
-              },
-              "id": "f3b76921-07f5-4c9d-bb04-533f8b0afc6a",
-              "name": "Triggers Section Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Validate & Apply Renames\nVerify all nodes are covered, update node names in nodes array, connections object, and parameter references.",
-                "height": 480,
-                "width": 624,
-                "color": 7
-              },
-              "id": "95a550a6-0781-48b6-8f83-6fd165233551",
-              "name": "Post Processing Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1344,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Save & Display Results\nPublish updated workflow version, generate history links, show completion form or end execution.",
-                "height": 480,
-                "width": 864,
-                "color": 7
-              },
-              "id": "48e57602-c155-45ed-922a-47626c338b69",
-              "name": "Post Processing Sticky Note2",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1984,
-                416
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Mohamed Anan\n![Anan](https://1.gravatar.com/avatar/2c212891367a29a481ce306de2a3c936abab9dd120e11aae24782b47f5d856bd?size=64)\nA curious EnGiNeEr who enjoys `SoLviNg` PrObLeMs..\n___\n- [x] [Top Supporter](https://community.n8n.io/u/mohamed3nan/badges) in the [n8n community](https://community.n8n.io/u/mohamed3nan/summary) with **200+ hours** of contribution and **+200 solutions** provided, ranked **12th** on the [all-time leaderboard](https://community.n8n.io/leaderboard/1#:~:text=12-,mohamed3nan,-4%2C078).\n\n___\n⚡[n8n Workflows](https://n8n.io/creators/mohamed3nan/)\n💼[LinkedIn](https://link.anan.dev/Linkedin)",
-                "height": 288,
-                "width": 656,
-                "color": 4
-              },
-              "id": "051fb161-2f59-41ed-baed-3c60a09bc047",
-              "name": "Triggers Section Sticky Note2",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                2192,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## Manual Trigger\nSelect workflow directly from the n8n node, then execute manually for quick testing.",
-                "height": 288,
-                "width": 1376,
-                "color": 7
-              },
-              "id": "42612ccd-5a86-4fd3-a36d-399180530b08",
-              "name": "Triggers Section Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                800,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "### Select a workflow",
-                "height": 208,
-                "width": 192,
-                "color": 3
-              },
-              "id": "2946ff1f-3a42-42c5-a309-d01aad471387",
-              "name": "Sticky Note",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1680,
-                -144
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "### Stop workflow\nYou can modify the error handling to retry or loop back to the AI node.",
-                "height": 112,
-                "width": 192,
-                "color": 3
-              },
-              "id": "e159f160-8f11-47de-bc48-ff2d52103939",
-              "name": "Sticky Note1",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                1696,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "content": "## ⚡Auto Rename n8n Workflow Nodes with AI✨\nThis workflow uses AI to automatically generate clear and descriptive names for every node in your n8n workflows.\nIt analyzes each node's type, parameters, and connections to create meaningful names, making your workflows instantly readable.\n\n### Who is it for?\nThis workflow is for n8n users who manage complex workflows with dozens of nodes. If you've ever:\n- Built workflows full of generic names like `HTTP Request 2` or `Edit Fields 1`\n- Struggled to understand your own work after a few weeks\n- Copied workflows from others with unclear node names\n- Spent hours manually renaming nodes one by one\n\n...then this workflow will save you significant time and effort.\n\n### Requirements\n- **n8n API Credentials**: Must be configured to allow listing and updating workflows\n- **AI Provider Credentials**: An API key for your preferred AI provider (OpenRouter is used currently)\n\n### How it works\n1. **Trigger**: Launch via form (select from dropdown) or manual trigger (quick testing with pre-selected workflow)\n2. **Fetch**: Retrieve the target workflow's JSON and extract nodes and connections\n3. **Generate**: Send the workflow JSON to the AI, which creates a unique, descriptive name for every node\n4. **Validate**: Verify the AI mapping covers all original node names\n5. **Apply**: If valid, update all node names, parameter references, and connections throughout the workflow\n6. **Save**: Save/Update the workflow with renamed nodes and provide links to both new and previous versions\n\n\nIf validation fails (e.g., AI missed nodes), the workflow stops with an error. You can modify the error handling to retry or loop back to the AI node.\n\n###  Setup\n1. **Connect n8n API credentials**\n   - Open any n8n node in the workflow and make sure your n8n API credentials is connected\n\n2. **Configure AI provider credentials**\n   - Open the \"OpenRouter\" node (or replace with your preferred AI)\n   - Add your API credentials\n   - Adjust the model if needed (current: `openai/gpt-5.1-codex-mini`)\n\n3. **Test the workflow**\n   - Use Manual Trigger for quick testing with a pre-selected workflow\n   - Use Form Trigger for a user-friendly interface with workflow selection\n\n###  Important notice\n**If you're renaming a currently opened workflow**, you must **reload the page** after execution to see the latest version, n8n doesn't automatically refresh the canvas when workflow versions are updated via API.",
-                "height": 1104,
-                "width": 832
-              },
-              "id": "9bfa845b-9482-401d-9aee-92b0df18d101",
-              "name": "Post Processing Sticky Note4",
-              "type": "n8n-nodes-base.stickyNote",
-              "position": [
-                -48,
-                -208
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "errorMessage": "Validation Error"
-              },
-              "id": "a515f45c-42ef-4abd-b09a-1ac74993d52c",
-              "name": "Stop",
-              "type": "n8n-nodes-base.stopAndError",
-              "position": [
-                1584,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "operation": "get",
-                "workflowId": {
-                  "__rl": true,
-                  "mode": "id",
-                  "value": "={{ $json.workflow_id }}"
-                },
-                "requestOptions": {}
-              },
-              "id": "e169fa0f-3aae-4d2a-a1de-2f6762a72b07",
-              "name": "Fetch Target Workflow JSON",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                2208,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "aggregate": "aggregateAllItemData",
-                "destinationFieldName": "workflows",
-                "include": "specifiedFields",
-                "fieldsToInclude": "id,name",
-                "options": {}
-              },
-              "id": "67e8e9c8-5811-416e-92f6-c6b89e668300",
-              "name": "Aggregate Workflow List",
-              "type": "n8n-nodes-base.aggregate",
-              "position": [
-                1312,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "defineForm": "json",
-                "jsonOutput": "={{\n  [\n    {\n      \"fieldLabel\": \"Select a Workflow:\",\n      \"fieldType\": \"dropdown\",\n      \"fieldOptions\": {\n        \"values\": $json.workflows.map(option => ({ option: `${option.name} (#${option.id})` })),\n      },\n      \"requiredField\": true\n    }\n  ]\n}}",
-                "limitWaitTime": true,
-                "options": {}
-              },
-              "id": "19fa4b7a-d9a1-4a60-9ce5-4102c32caad2",
-              "name": "Form Dynamic Workflow List",
-              "type": "n8n-nodes-base.form",
-              "position": [
-                1536,
-                224
-              ],
-              "webhookId": "25a9189a-15a0-4b51-b0cf-af2565b923c3",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {
-                "model": "openai/gpt-5.1-codex-mini",
-                "options": {}
-              },
-              "id": "6645bf04-cd5e-462b-a078-b17521f0841c",
-              "name": "OpenRouter Chat Model",
-              "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
-              "position": [
-                832,
-                752
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "filters": {},
-                "requestOptions": {}
-              },
-              "id": "a1d88b34-9c96-4843-8f7e-9eaf85f830d2",
-              "name": "Fetch All Workflows",
-              "type": "n8n-nodes-base.n8n",
-              "position": [
-                1088,
-                224
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "formTitle": "⚡Auto Rename n8n Workflow Nodes with AI✨",
-                "formDescription": "This workflow uses AI to automatically generate clear and descriptive names for every node in your n8n workflows.\nIt analyzes each node's type, parameters, and connections to create meaningful names, making your workflows instantly readable.",
-                "options": {
-                  "buttonLabel": "Select a Workflow"
-                }
-              },
-              "id": "b68793c9-a6e7-4f5b-93b5-2089a747b563",
-              "name": "Form Trigger",
-              "type": "n8n-nodes-base.formTrigger",
-              "position": [
-                864,
-                224
-              ],
-              "webhookId": "6ca8e522-1245-442c-b744-f155c135fbf8",
-              "typeVersion": 2.3
-            },
-            {
-              "parameters": {},
-              "id": "c026db94-7e30-46f3-833e-805def320d58",
-              "name": "Manual Trigger",
-              "type": "n8n-nodes-base.manualTrigger",
-              "position": [
-                864,
-                -96
-              ],
-              "typeVersion": 1
-            },
-            {
-              "parameters": {
-                "includeOtherFields": true,
-                "options": {}
-              },
-              "id": "75b7af6d-a801-4dae-b574-39ab7c116e7d",
-              "name": "Done",
-              "type": "n8n-nodes-base.set",
-              "position": [
-                2656,
-                688
-              ],
-              "typeVersion": 3.4
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
             }
           ],
-          "connections": {
-            "Form Trigger": {
-              "main": [
-                [
-                  {
-                    "node": "Fetch All Workflows",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
             },
-            "Manual Trigger": {
-              "main": [
-                [
-                  {
-                    "node": "Select a Workflow",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Select a Workflow": {
-              "main": [
-                [
-                  {
-                    "node": "Set Target Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Fetch All Workflows": {
-              "main": [
-                [
-                  {
-                    "node": "Aggregate Workflow List",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "OpenRouter Chat Model": {
-              "ai_languageModel": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "ai_languageModel",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Set Target Workflow Id": {
-              "main": [
-                [
-                  {
-                    "node": "Fetch Target Workflow JSON",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Aggregate Workflow List": {
-              "main": [
-                [
-                  {
-                    "node": "Form Dynamic Workflow List",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Parse LLM Mapping ToJson": {
-              "ai_outputParser": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "ai_outputParser",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Check Trigger Source Type": {
-              "main": [
-                [
-                  {
-                    "node": "Display Workflow Version Links",
-                    "type": "main",
-                    "index": 0
-                  }
-                ],
-                [
-                  {
-                    "node": "Done",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Fetch Target Workflow JSON": {
-              "main": [
-                [
-                  {
-                    "node": "Extract Workflow Nodes Connections",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Form Dynamic Workflow List": {
-              "main": [
-                [
-                  {
-                    "node": "Parse Selected Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Parse Selected Workflow Id": {
-              "main": [
-                [
-                  {
-                    "node": "Set Target Workflow Id",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Validate All Nodes Renamed": {
-              "main": [
-                [
-                  {
-                    "node": "Apply Renamed Nodes Connections",
-                    "type": "main",
-                    "index": 0
-                  }
-                ],
-                [
-                  {
-                    "node": "Stop",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Prepare LLM Validation Data": {
-              "main": [
-                [
-                  {
-                    "node": "Validate All Nodes Renamed",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Assemble New Workflow Object": {
-              "main": [
-                [
-                  {
-                    "node": "Save Renamed Workflow Version",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Build Workflow Version Links": {
-              "main": [
-                [
-                  {
-                    "node": "Check Trigger Source Type",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Generate Node Rename Mapping": {
-              "main": [
-                [
-                  {
-                    "node": "Prepare LLM Validation Data",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Save Renamed Workflow Version": {
-              "main": [
-                [
-                  {
-                    "node": "Build Workflow Version Links",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Apply Renamed Nodes Connections": {
-              "main": [
-                [
-                  {
-                    "node": "Assemble New Workflow Object",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
-            },
-            "Extract Workflow Nodes Connections": {
-              "main": [
-                [
-                  {
-                    "node": "Generate Node Rename Mapping",
-                    "type": "main",
-                    "index": 0
-                  }
-                ]
-              ]
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
             }
           },
-          "settings": {
-            "executionOrder": "v1"
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
           },
-          "staticData": null,
-          "meta": null,
-          "pinData": {},
-          "versionId": "2ce08e48-4402-47dd-b86d-2164ac14d7c5",
-          "triggerCount": 1,
-          "shared": [
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
             {
-              "updatedAt": "2025-12-17T13:56:50.003Z",
-              "createdAt": "2025-12-17T13:56:50.003Z",
-              "role": "workflow:owner",
-              "workflowId": "4AcsRDfcgQJYeonW",
-              "projectId": "oXQkWGdjmWkcvoUC"
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
             }
           ],
-          "tags": [
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "28b79d8dc628932600bbe11b94c893ef",
+          "sha1Checksum": "09369affbfaa6add8552d5ffdb5dcfbc156a0f73",
+          "sha256Checksum": "ae7370ef45e8cff1ada1445cc0ccb8fd840649029a1d899b84be53c1f8f4417d",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqQU5kaWJDYWFaNXduY1lCaVo5SllZQ2p1RFQ4PQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false
+        }
+      },
+      {
+        "json": {
+          "kind": "drive#file",
+          "id": "1O8kdga7qQqVRTTwRLTaicQJIjOP_curT",
+          "name": "22307ef71eb04525a7ee3b5b352bfe72.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1O8kdga7qQqVRTTwRLTaicQJIjOP_curT&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "createdTime": "2025-09-02T09:07:04.996Z",
+          "modifiedTime": "2025-09-02T09:07:05.506Z",
+          "modifiedByMeTime": "2025-09-02T09:07:05.506Z",
+          "modifiedByMe": true,
+          "owners": [
             {
-              "updatedAt": "2025-12-28T18:03:24.856Z",
-              "createdAt": "2025-12-28T18:03:24.856Z",
-              "id": "GTdKgw52KYtP73bB",
-              "name": "A voir"
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "866c6117d2b4ad6c1549f41fbc14a815",
+          "sha1Checksum": "4abfe99e4f232994c12efc3970a3b43c85847db0",
+          "sha256Checksum": "8e5d9a1d0a57849741e905f35a74bcb67e903c5598534764d7586fefe83eeef8",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqMjk3RityQmhDTks4TjBnc0FiRjNHZzFwRzVBPQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false
+        }
+      },
+      {
+        "json": {
+          "kind": "drive#file",
+          "id": "12cINjQLX8QodjAjeYvL536-8W0HBw2u1",
+          "name": "7dc382158c77491c9017796a484dd3ce.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=12cINjQLX8QodjAjeYvL536-8W0HBw2u1&export=download",
+          "webViewLink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "createdTime": "2025-09-02T09:07:06.752Z",
+          "modifiedTime": "2025-09-02T09:07:07.417Z",
+          "modifiedByMeTime": "2025-09-02T09:07:07.417Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "6b5d7268cdddff88b3131f09d9538490",
+          "sha1Checksum": "e42b2a517e6377bbb81d790433a41751a6082b64",
+          "sha256Checksum": "4ab12e32ac0a96bec86478538b667aa18d6542e780758f64b20379415b3198da",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqUjdOa2ZUdkw4N3h4ZlR1dTdxWjhUbkRwSzdJPQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false
+        }
+      },
+      {
+        "json": {
+          "kind": "drive#file",
+          "id": "1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf",
+          "name": "3753db19d532413dad2c6249c43276f6.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "createdTime": "2025-09-02T09:07:08.772Z",
+          "modifiedTime": "2025-09-02T09:07:09.317Z",
+          "modifiedByMeTime": "2025-09-02T09:07:09.317Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "70495bbecedbcc145fe93acb85103929",
+          "sha1Checksum": "d679ebc3c50f93aa08596936a510fe73449719e7",
+          "sha256Checksum": "ecb297fb46da1dab8e23875caa5be432d927a8d8428db708192b3d39e2364cdd",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqZ255T0IzUldCU2RlWEowcUZuWkljUEJmZHM0PQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false
+        }
+      }
+    ],
+    "Fusion des Données": [
+      {
+        "json": {
+          "id": "anyone",
+          "createdTime": "2025-09-02T09:07:02.896Z",
+          "fields": {
+            "ID": 75,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
+            "ID Requette": "83f2e6f50fe046feaca9d5aeb9ea3c45"
+          },
+          "kind": "drive#permission",
+          "name": "83f2e6f50fe046feaca9d5aeb9ea3c45.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "modifiedTime": "2025-09-02T09:07:03.719Z",
+          "modifiedByMeTime": "2025-09-02T09:07:03.719Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWpHPI6g-HFHyGO3Ret-xQLiZ2ujWLOrbGzDWlWYkyBM-2m7-M3A3HIzyR-TaRNmU_HUG-IAIywxaQhJPs4AbxAvOitrVuzJpttlEpbtw-xoFOIJPAg88Q8yRAqcqN1N5bLr7ntfyQvr6MLIG-9xS36CHkngQASjQaLLUcfnHYdk67Gq48Nn2dXNm2Gw4dRHVqc6kw7LxMlq9uZ0Dy4ccJO30SteFHJA718GFNVkIKMHXEYOMi8pogsBMFqp_J0Ni_5TF6SD8deTnquvRTEEn13mAMb0O7NtJ4TGR2kNxwk9xvOccSJgV0421S0P43u_bxgRN7znv-UD0I8vesCzmUtSBlh3hQurW2ExvyA5agV8qnUcV6uwgelXmnjucVKxdi2i-_8EgdHVOKY-10-5sMT0o4xqUtxPHLMZ_SOnmFkEh2rhklEizn0l0hMY9vLEuwLtbjNzWeqjH-_ZIkKYm8XF9Nci6DSdXYGWdxwLg-2JeO1sL_fhVVNxwxOx584Dpt2sxlL7NcCLyG-98b6N7MNJPtsd4EBytpmwE_yuMFLy2QAkPjxfkoRz8wr1rkgoDdAaWjze5uzjBX6-ULn4TTCw5mkrTi_w0Tjk77b2uSNEqDqCz72CaBqUOT6WsqHhO_W264RD8Wsx6LV_pytBjocYNgnaec5GLvevQGRpazIWySTdYI7NA1QWPBiqfse9h-f9NQ1ow30yJ7xNMXzuDp_8ZL6bV5G59TC4gWkrN53mwASis4v4aevcNjYMaWuUQgS7Ymn5SPceYTllfX5ycbaLa39E6hmefTB9X7_0snbA1Wkr71IF7mDOF-tjTDIPS3AUItSUWtfuetfejTNlIgQu3J1OWg689Xu3rZrYoeGjw7MVn2URG1HdjroHTGlOfXwk6icfmQoLdPOsrXIuGIo233CRLF8fyR6o5_eFQ1jT_zXNvzrGHELdyzUfnq1pDvTJWRcBencX7OQPai-piK1Iw=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "28b79d8dc628932600bbe11b94c893ef",
+          "sha1Checksum": "09369affbfaa6add8552d5ffdb5dcfbc156a0f73",
+          "sha256Checksum": "ae7370ef45e8cff1ada1445cc0ccb8fd840649029a1d899b84be53c1f8f4417d",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqQU5kaWJDYWFaNXduY1lCaVo5SllZQ2p1RFQ4PQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false,
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      },
+      {
+        "json": {
+          "id": "anyone",
+          "createdTime": "2025-09-02T09:07:04.996Z",
+          "fields": {
+            "ID": 76,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
+            "ID Requette": "22307ef71eb04525a7ee3b5b352bfe72"
+          },
+          "kind": "drive#permission",
+          "name": "22307ef71eb04525a7ee3b5b352bfe72.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1O8kdga7qQqVRTTwRLTaicQJIjOP_curT&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "modifiedTime": "2025-09-02T09:07:05.506Z",
+          "modifiedByMeTime": "2025-09-02T09:07:05.506Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjWLsFZhcFo7qK_j-hg4Q62rj9HJxoDVKBRfWQTLyABRTfv9TLsqTjuJ-a0tKfWKBLhuhu4eSwrWskU-9xSI0xUM7_dR6RAgIPUY8XjD0IODqAOMOykj3LwmwO-48tatI03FGjIsOhtbj0KRNVJg5t5--DlYOA5nocjDhoTcnOXynF5HxjC9CfhDhLyAwzz73HzMKJFTv7t07VAk6Yrcx52ehT-kFwPOJzbZqndRzFa2GXZEqN-j-IiE7GM3Q-WVPTJycVWSH6qjIBMeTSt9FL2Hh0FLEdHjHd5yoYApK7Agqy1TFl02RZyBU6APj-xujUBg2r6gHvsElEj1qSTJr5VQxvZW9wlv7orTE2qnawRkflgH_tccLamDWwApAdX77BLkeSEuyxAvESbG2aKuHysTjl212driIkQzTmkMBDY4KBSYBM-HrbLrGR9-QtLI8PzQYmYIak295WK5UxmhGsAZv0CiKbW2i88hBfJ2HF-jugtyiMPV7IeeMC4eAOP3LxAOhsa71L-8Jhk7I52cmk98-yPLxDr14eE_U1twIkRWvEwp7hZoyHk3olrO_HYV13wdmNBaGWSpBIPrlU-o9IZ2Q5LoeNATH-yR93YKuS5vypd6AkQ2pSr8VPBCjpjWrum55vEy1YoY-RCl9E2DA1VhZiwXrXd-1egayE-8ZuKb49IjbcHfOsgpvGXwYGzyKvAB8-lSa8avfHq5-iqQZk344UDtwI5C65-orCzqUKzYRuYPxtISOcx7QBQJGTrE_i0Vt5UHnxUqiDoogPfaWCgbClJFUsIcjHzoVP0xqRY0rNGp0rxCJeJpeC-tAy7XtuJkJVIMnV8bWrOPac4lfEwvWU-uAvB7vIMFiQPIIUL89KONyXpRri0kfiqNQtEJjJ5XNkTj78ZgznBzcHhAGTkiFJ0oWPNQMl88yqdtUOoVZ-wFjzgZE90VTX8gPy6L-ubmTO1i_D8Uuw7tJh75p9x7aoNv=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "866c6117d2b4ad6c1549f41fbc14a815",
+          "sha1Checksum": "4abfe99e4f232994c12efc3970a3b43c85847db0",
+          "sha256Checksum": "8e5d9a1d0a57849741e905f35a74bcb67e903c5598534764d7586fefe83eeef8",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqMjk3RityQmhDTks4TjBnc0FiRjNHZzFwRzVBPQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false,
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      },
+      {
+        "json": {
+          "id": "anyone",
+          "createdTime": "2025-09-02T09:07:06.752Z",
+          "fields": {
+            "ID": 77,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
+            "ID Requette": "7dc382158c77491c9017796a484dd3ce"
+          },
+          "kind": "drive#permission",
+          "name": "7dc382158c77491c9017796a484dd3ce.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=12cINjQLX8QodjAjeYvL536-8W0HBw2u1&export=download",
+          "webViewLink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "modifiedTime": "2025-09-02T09:07:07.417Z",
+          "modifiedByMeTime": "2025-09-02T09:07:07.417Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjXVudVbV5e61Qf-T1NP5OIEku-nNaoAYaxtShj2r2eQEiyqwsrTSCXA18Y1-C6SKQw2Qv_2eZJCT9IaPZSdYSSb7rqJ28hBhIuPOolkR8q1rHXV8VI3d1lUhIniBvjvqMLfUTmp-MMvVzebBw7kv9Kj4QESIP34R_gJfiWYe9o3Kipz89wvIAerGKd1Wgj4DgBq9wEyFKu8qzFt6hCFIHbZWwfBlkv-wVELJBluBJ48TD_EUzp1lpYqlWmxJI7Osmn-1s0exA8bjmwenPrhvMAbA9ISZXe8WMTQz3ygFNWAbEMmf2Pfi67eVUc6hwF9TdO4Ys_EHIYUtHPb1b2E-SyYNpRDHaY5BsTzm97jJpAO7Y5d20XjbPbg7DrRQbkG5UpC3jiP_ddSeQ0QsWE1TFz3YD4SZTnJE61vGK95b9V0Olp4M-hgJycFvtHeXrRUoGF8rbSU7G4AM8pMtCaakby3Mr0_3ilyfj-WdwsUaQdbFbZem2kjna4FCrLtunym-tIaUs9fr_PraXDsxu7VB9TPtQycMx-5rFWEuT43v5fkPr7PAgneTYKKAg9v0PClMGk-hb_b8n5h1CMaCfY8h9ehTFZlu7f7JehzRq8TECR-A1wgr_tcN53vCbdAB2IBXrTVW0kMUrxx06AmXq-ptFuy84x6BKQQyMVcsybC8-h0e6qO_zoUFdWe_vQc60Z0ZZnN0ve-OmDimQpMYzSTtUNqXfrLZ3hxmyEhvS8Ysc4wZkwV9VAWWM25EiWVFc-b1Ztcr-5-wxEEj15X0-2tTZeIK1alw83IPqgyzQF7TVO-RF_cvzeQC0wcZ1558vrU70Azxhe0asAuO7nMy3GEJ9qdUVSig6pOdD2BGwfmoYThrJ0dzG_qAoO4J2QFXHPwE6D65QwUz7S6iCqzXvFgWsi3ZS7RW6zgy1EkNOtrVJYnOiDwQ7bfdZsNWesSMVyCSI8WKDWinhMgdWA66WNNdOj1l2qA=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "6b5d7268cdddff88b3131f09d9538490",
+          "sha1Checksum": "e42b2a517e6377bbb81d790433a41751a6082b64",
+          "sha256Checksum": "4ab12e32ac0a96bec86478538b667aa18d6542e780758f64b20379415b3198da",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqUjdOa2ZUdkw4N3h4ZlR1dTdxWjhUbkRwSzdJPQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false,
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      },
+      {
+        "json": {
+          "id": "anyone",
+          "createdTime": "2025-09-02T09:07:08.772Z",
+          "fields": {
+            "ID": 78,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
+            "ID Requette": "3753db19d532413dad2c6249c43276f6"
+          },
+          "kind": "drive#permission",
+          "name": "3753db19d532413dad2c6249c43276f6.mp3",
+          "mimeType": "audio/mpeg",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "parents": [
+            "1no0bOmycf9FTv_BgnQAozr3B9C4ew0mW"
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "version": "2",
+          "webContentLink": "https://drive.google.com/uc?id=1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf&export=download",
+          "webViewLink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/audio/mpeg",
+          "hasThumbnail": false,
+          "thumbnailVersion": "0",
+          "viewedByMe": false,
+          "modifiedTime": "2025-09-02T09:07:09.317Z",
+          "modifiedByMeTime": "2025-09-02T09:07:09.317Z",
+          "modifiedByMe": true,
+          "owners": [
+            {
+              "kind": "drive#user",
+              "displayName": "Azuro Admin",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
+              "me": true,
+              "permissionId": "16339092664818976978",
+              "emailAddress": "admin@azuro-ai.com"
+            }
+          ],
+          "lastModifyingUser": {
+            "kind": "drive#user",
+            "displayName": "Azuro Admin",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjUyr77tuoU1KWoZLBkNnDn-1rCK_ksB_iITYefJI-91xg1MZHJCKYWW3DaY6n_VjqrcTKLzGFlDWWw1bXuGRhcm6nnnujIGzXryyNiRGTFUIAficRuMPUcE8OCjEJBjmXSwixn1Dm2ZpqZcW7l76xifXsRq8VTZOeMd8yN8Xq5FAFjYIhmP7z3_OE72NAvOyYXWiPJhuAw85-lPo-fzA_cVuzoXI0mHHghIHbJx84otxsWBzVtRgs4VSf95lSP9iBxQw-NdftZrrZmBlnIOaUK5vfH2xaxR9m-w_A4t1v38r-PVhNBbY-EPXwgyMCgO4ZYGpU9Qod0OTgwQCNsPTIOQmeiBAXTAeQwhqURqq5mKY385wp9S5TrBfcgPZ6ICaCjVfBd-CbRxEp6zfNszhCgpkQJlvuq7KYIq-OQKTxHPFx2RUgfpAS5uzH-kIscxxquTbfuY-1QWjq66uj5TbjReMi-TrqI8mTYXs3MIvxQbXJtaLMLtRcXgmTEgUpEawObrhUsMEgJEVwi06xJven-0U30ORyczUaoByGS4VQl9Xj_07HKolH09UDJk9EQ8OMpV7KUsBKUhW_7ZMp4ugMpO12UtTFp0xkrH3eDKKOvrZgq50EtK8Ycqdj3Ck0svEtsxYCvqXVcdW2AtDFYBKvt32I6vZmQKzBWm_braHeTPFBwhRzn1MKfT_rwaKLDd-G5I_QxGwwROFNlyb1yRTPgA_BdXu3hPy7tBCrUaorxBTOInA5spW0k2vblESUeCeHjygg_NaXlhHZH4IPfLeL_S7JufPIzGfmohWBndBEnT3X9gsKDY1kKmq_4i4kIkCFWojtuLthZ1UEqps7kPCM8PjKzIbu8Tp_ydgyX3UFEiyGZIls2SlE1ngT9QHbUSurHgB8y0qW77qMHT0E-tr7hL71Vqp8DM1f9Opv80Av6WxiiQUMD-Aw4XrJdRYKC-2PeH5QPC0AgC9eyJCv7XSF9J1EFi=s64",
+            "me": true,
+            "permissionId": "16339092664818976978",
+            "emailAddress": "admin@azuro-ai.com"
+          },
+          "shared": false,
+          "ownedByMe": true,
+          "downloadRestrictions": {
+            "itemDownloadRestriction": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            },
+            "effectiveDownloadRestrictionWithContext": {
+              "restrictedForReaders": false,
+              "restrictedForWriters": false
+            }
+          },
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": true,
+            "canChangeItemDownloadRestriction": true,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": true,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": true,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": true,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": true,
+            "canMoveItemOutOfDrive": true,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": true,
+            "canUntrash": true
+          },
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "16339092664818976978",
+              "type": "user",
+              "emailAddress": "admin@azuro-ai.com",
+              "role": "owner",
+              "displayName": "admin",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "permissionIds": [
+            "16339092664818976978"
+          ],
+          "originalFilename": "Untitled",
+          "fullFileExtension": "mp3",
+          "fileExtension": "mp3",
+          "md5Checksum": "70495bbecedbcc145fe93acb85103929",
+          "sha1Checksum": "d679ebc3c50f93aa08596936a510fe73449719e7",
+          "sha256Checksum": "ecb297fb46da1dab8e23875caa5be432d927a8d8428db708192b3d39e2364cdd",
+          "size": "80711",
+          "quotaBytesUsed": "80711",
+          "headRevisionId": "0B7BrHJKXmkVqZ255T0IzUldCU2RlWEowcUZuWkljUEJmZHM0PQ",
+          "isAppAuthorized": true,
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "inheritedPermissionsDisabled": false,
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      }
+    ],
+    "Demande de Rendu Vidéo": [
+      {
+        "json": {
+          "id": "e5b51b4f-5592-4276-bc59-fe3a2f5cb6fe",
+          "status": "planned",
+          "url": "https://f002.backblazeb2.com/file/creatomate-c8xg3hsxdu/e5b51b4f-5592-4276-bc59-fe3a2f5cb6fe.mp4",
+          "template_id": "b671d213-c388-4390-8180-a4dd31b7aa9b",
+          "template_name": "AGENT IA MARKETING ",
+          "template_tags": [],
+          "output_format": "mp4",
+          "modifications": {
+            "Video-1.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
+            "Video-2.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
+            "Video-3.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
+            "Video-4.source": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
+            "Audio-1.source": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk",
+            "Audio-2.source": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk",
+            "Audio-3.source": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk",
+            "Audio-4.source": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk"
+          }
+        }
+      }
+    ],
+    "Exécution de Code Personnalisé": [
+      {
+        "json": {
+          "groupedLinks": [
+            {
+              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
+              "weblink": "https://drive.google.com/file/d/1fOZiHMK1c_22zVvAmFU-ML9bYSFmAXw0/view?usp=drivesdk"
+            },
+            {
+              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
+              "weblink": "https://drive.google.com/file/d/1O8kdga7qQqVRTTwRLTaicQJIjOP_curT/view?usp=drivesdk"
+            },
+            {
+              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
+              "weblink": "https://drive.google.com/file/d/12cINjQLX8QodjAjeYvL536-8W0HBw2u1/view?usp=drivesdk"
+            },
+            {
+              "link": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
+              "weblink": "https://drive.google.com/file/d/1-eTY7bqEjwRIHVrSXgVNqWhiXA2V0iAf/view?usp=drivesdk"
             }
           ]
         }
       }
     ],
-    "Create new file": [
+    "Partage de Fichier Google Drive": [
       {
         "json": {
-          "name": "First item",
-          "code": 1
+          "kind": "drive#permission",
+          "id": "anyone",
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
         }
       },
       {
         "json": {
-          "name": "Second item",
-          "code": 2
+          "kind": "drive#permission",
+          "id": "anyone",
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      },
+      {
+        "json": {
+          "kind": "drive#permission",
+          "id": "anyone",
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      },
+      {
+        "json": {
+          "kind": "drive#permission",
+          "id": "anyone",
+          "type": "anyone",
+          "role": "reader",
+          "allowFileDiscovery": true
+        }
+      }
+    ],
+    "Création de Scénario Vidéo": [
+      {
+        "json": {
+          "output": {
+            "Part 1": "Vue subjective depuis vos yeux, regardant vers un MacBook Pro argenté ouvert sur une table en bois patiné d'un café parisien authentique, vos mains aux ongles soignés tapant sur le clavier rétroéclairé, écran affichant un éditeur de code sombre avec des lignes de JavaScript colorées en syntaxe verte et bleue, une tasse de café au lait fumante à côté avec motif en forme de cœur dans la mousse, lumière dorée du matin filtrant à travers de grandes fenêtres françaises, reflets subtils sur l'écran, atmosphère chaleureuse et concentrée",
+            "Part 2": "Même perspective subjective, vos mains continuent de coder sur le MacBook Pro argenté, l'écran montre maintenant plusieurs onglets ouverts avec du code complexe, fonctions et variables défilant, votre tasse de café maintenant à moitié vide, quelques miettes de croissant sur une petite assiette blanche à côté, serveur parisien en tablier noir passant flou en arrière-plan, sons feutrés du café, concentration intense visible par la proximité de vos mains du clavier, lumière naturelle plus vive indiquant la progression matinale",
+            "Part 3": "Point de vue inchangé, vos mains expertes naviguent entre le trackpad et le clavier du MacBook Pro, écran divisé entre terminal noir avec lignes de commande vertes défilantes et navigateur web testant une application, votre café terminé, tasse vide repoussée légèrement, carnet de notes ouvert à côté avec gribouillis et schémas techniques au stylo bleu, autres clients parisiens travaillant en arrière-plan flou, bruit ambiant du café, moment de debugging intense et méticuleux",
+            "Part 4": "Vue subjective finale, vos mains se détendent légèrement au-dessus du MacBook Pro argenté, écran affichant une application web fonctionnelle avec interface utilisateur colorée et réactive, sensation de satisfaction du travail accompli, nouvelle tasse de café fraîchement servie fumant à côté, carnet fermé, stylo rangé, lumière d'après-midi dorée créant une ambiance apaisée dans le café parisien typique, autres développeurs et créatifs autour, atmosphère productive et inspirante de la scène tech parisienne"
+          }
+        }
+      }
+    ],
+    "Séparation des Sorties": [
+      {
+        "json": {
+          "output": "Vue subjective depuis vos yeux, regardant vers un MacBook Pro argenté ouvert sur une table en bois patiné d'un café parisien authentique, vos mains aux ongles soignés tapant sur le clavier rétroéclairé, écran affichant un éditeur de code sombre avec des lignes de JavaScript colorées en syntaxe verte et bleue, une tasse de café au lait fumante à côté avec motif en forme de cœur dans la mousse, lumière dorée du matin filtrant à travers de grandes fenêtres françaises, reflets subtils sur l'écran, atmosphère chaleureuse et concentrée"
+        }
+      },
+      {
+        "json": {
+          "output": "Même perspective subjective, vos mains continuent de coder sur le MacBook Pro argenté, l'écran montre maintenant plusieurs onglets ouverts avec du code complexe, fonctions et variables défilant, votre tasse de café maintenant à moitié vide, quelques miettes de croissant sur une petite assiette blanche à côté, serveur parisien en tablier noir passant flou en arrière-plan, sons feutrés du café, concentration intense visible par la proximité de vos mains du clavier, lumière naturelle plus vive indiquant la progression matinale"
+        }
+      },
+      {
+        "json": {
+          "output": "Point de vue inchangé, vos mains expertes naviguent entre le trackpad et le clavier du MacBook Pro, écran divisé entre terminal noir avec lignes de commande vertes défilantes et navigateur web testant une application, votre café terminé, tasse vide repoussée légèrement, carnet de notes ouvert à côté avec gribouillis et schémas techniques au stylo bleu, autres clients parisiens travaillant en arrière-plan flou, bruit ambiant du café, moment de debugging intense et méticuleux"
+        }
+      },
+      {
+        "json": {
+          "output": "Vue subjective finale, vos mains se détendent légèrement au-dessus du MacBook Pro argenté, écran affichant une application web fonctionnelle avec interface utilisateur colorée et réactive, sensation de satisfaction du travail accompli, nouvelle tasse de café fraîchement servie fumant à côté, carnet fermé, stylo rangé, lumière d'après-midi dorée créant une ambiance apaisée dans le café parisien typique, autres développeurs et créatifs autour, atmosphère productive et inspirante de la scène tech parisienne"
+        }
+      }
+    ],
+    "Génération d'Image avec Flux": [
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "16602d3ff00e45349faaf635599232f4",
+            "model": "wavespeed-ai/flux-dev",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/16602d3ff00e45349faaf635599232f4/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:01:47.48Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "d1ec63c18b2340e49072c9509bab3856",
+            "model": "wavespeed-ai/flux-dev",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/d1ec63c18b2340e49072c9509bab3856/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:01:47.481Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "f4dac447a49e41a0aca4a40629fc2b1c",
+            "model": "wavespeed-ai/flux-dev",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/f4dac447a49e41a0aca4a40629fc2b1c/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:01:47.485Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "7cbf03a1dc154138b25b1bec3e426611",
+            "model": "wavespeed-ai/flux-dev",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/7cbf03a1dc154138b25b1bec3e426611/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:01:47.494Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      }
+    ],
+    "Exécution de Flux de Travail Secondaire": [
+      {
+        "json": {
+          "id": "rechLGiVo7kDljFMR",
+          "createdTime": "2025-09-02T09:01:48.000Z",
+          "fields": {
+            "ID": 71,
+            "Type": "raw_image",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/16602d3ff00e45349faaf635599232f4/result",
+            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/52a3f46e-16cf-4e43-b7af-0f1d35e58dff-u1_9dff1920-a22b-481d-b996-0aaf40567936.jpeg",
+            "ID Requette": "16602d3ff00e45349faaf635599232f4"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "recRsVD5l9AtiACSX",
+          "createdTime": "2025-09-02T09:02:12.000Z",
+          "fields": {
+            "ID": 72,
+            "Type": "raw_image",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/d1ec63c18b2340e49072c9509bab3856/result",
+            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/39e6c52d-3a9b-4f01-bb2f-dc3cee0b3bef-u2_b4f052f9-e6f2-4840-ac70-c789d46a2828.jpeg",
+            "ID Requette": "d1ec63c18b2340e49072c9509bab3856"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "recoJ4CbWXGhun7PM",
+          "createdTime": "2025-09-02T09:02:33.000Z",
+          "fields": {
+            "ID": 73,
+            "Type": "raw_image",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/f4dac447a49e41a0aca4a40629fc2b1c/result",
+            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/67c6335b-c35b-4ac6-bd16-a56d645a8376-u2_590e1bd0-d2a7-4b30-8324-dbcd831ed72f.jpeg",
+            "ID Requette": "f4dac447a49e41a0aca4a40629fc2b1c"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "recE9jJIfScIBMfhx",
+          "createdTime": "2025-09-02T09:03:16.000Z",
+          "fields": {
+            "ID": 74,
+            "Type": "raw_image",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7cbf03a1dc154138b25b1bec3e426611/result",
+            "Lien": "https://d2p7pge43lyniu.cloudfront.net/output/f2e8c59e-f4fa-4cf4-8324-a3e24c57c6ab-u2_0e71880d-cced-4bfc-9e63-72a4edea072e.jpeg",
+            "ID Requette": "7cbf03a1dc154138b25b1bec3e426611"
+          }
+        }
+      }
+    ],
+    "Génération de Vidéo avec Kling": [
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "83f2e6f50fe046feaca9d5aeb9ea3c45",
+            "model": "kwaivgi/kling-v1.6-i2v-standard",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:03:37.761Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "22307ef71eb04525a7ee3b5b352bfe72",
+            "model": "kwaivgi/kling-v1.6-i2v-standard",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:03:37.764Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "7dc382158c77491c9017796a484dd3ce",
+            "model": "kwaivgi/kling-v1.6-i2v-standard",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:03:37.777Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      },
+      {
+        "json": {
+          "code": 200,
+          "message": "success",
+          "data": {
+            "id": "3753db19d532413dad2c6249c43276f6",
+            "model": "kwaivgi/kling-v1.6-i2v-standard",
+            "outputs": [],
+            "urls": {
+              "get": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result"
+            },
+            "has_nsfw_contents": [],
+            "status": "created",
+            "created_at": "2025-09-02T09:03:37.776Z",
+            "error": "",
+            "executionTime": 0,
+            "timings": {
+              "inference": 0
+            }
+          }
+        }
+      }
+    ],
+    "Exécution de Flux de Travail pour Vidéo": [
+      {
+        "json": {
+          "id": "recpEOvTgX3PBVZKF",
+          "createdTime": "2025-09-02T09:03:38.000Z",
+          "fields": {
+            "ID": 75,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/83f2e6f50fe046feaca9d5aeb9ea3c45/1.mp4",
+            "ID Requette": "83f2e6f50fe046feaca9d5aeb9ea3c45"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "recLTKsDq6R16yhk4",
+          "createdTime": "2025-09-02T09:05:44.000Z",
+          "fields": {
+            "ID": 76,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/22307ef71eb04525a7ee3b5b352bfe72/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/22307ef71eb04525a7ee3b5b352bfe72/1.mp4",
+            "ID Requette": "22307ef71eb04525a7ee3b5b352bfe72"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "reckImobZpxxHjUiZ",
+          "createdTime": "2025-09-02T09:06:05.000Z",
+          "fields": {
+            "ID": 77,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/7dc382158c77491c9017796a484dd3ce/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/7dc382158c77491c9017796a484dd3ce/1.mp4",
+            "ID Requette": "7dc382158c77491c9017796a484dd3ce"
+          }
+        }
+      },
+      {
+        "json": {
+          "id": "recmzZD36ZmHSOBK6",
+          "createdTime": "2025-09-02T09:06:27.000Z",
+          "fields": {
+            "ID": 78,
+            "Type": "raw_video",
+            "Status": "Terminé",
+            "Requette": "https://api.wavespeed.ai/api/v3/predictions/3753db19d532413dad2c6249c43276f6/result",
+            "Lien": "https://d1q70pf5vjeyhc.cloudfront.net/predictions/3753db19d532413dad2c6249c43276f6/1.mp4",
+            "ID Requette": "3753db19d532413dad2c6249c43276f6"
+          }
         }
       }
     ]
@@ -1793,16 +2539,16 @@
   },
   "shared": [
     {
-      "updatedAt": "2026-01-02T20:37:54.246Z",
-      "createdAt": "2026-01-02T20:37:54.246Z",
+      "updatedAt": "2025-09-17T17:44:11.065Z",
+      "createdAt": "2025-09-17T17:44:11.065Z",
       "role": "workflow:owner",
-      "workflowId": "A8GlQnVSyFlYvTXR",
-      "projectId": "oXQkWGdjmWkcvoUC"
+      "workflowId": "DJSjWGEtbeIMLKJj",
+      "projectId": "TyqTPn3TpvdJIZ7p"
     }
   ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-01-03T14:59:53.000Z",
-  "versionId": "dc3e5cd4-e6cd-4ec4-bf32-68cad7b06192"
+  "updatedAt": "2025-12-29T00:09:57.000Z",
+  "versionId": "bc385961-adec-42ae-bc8d-875f1c7fdbc7"
 }
