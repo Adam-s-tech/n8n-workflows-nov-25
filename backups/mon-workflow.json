@@ -1,264 +1,32 @@
 {
   "": "",
   "active": false,
-  "connections": {
-    "When chat message received": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Anthropic Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Simple Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "List Workflows Tool": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Workflow Tool": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Activate Workflow Tool": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  },
-  "createdAt": "2025-11-22T22:49:16.097Z",
-  "id": "dRNScHKa7R3TgQLG",
+  "connections": {},
+  "createdAt": "2025-12-29T00:35:07.279Z",
+  "id": "i0JUssflkJmla6d5",
   "isArchived": true,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "New Claude n8n",
-  "nodes": [
-    {
-      "parameters": {
-        "options": {
-          "responseMode": "streaming"
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
-      "typeVersion": 1.4,
-      "position": [
-        -432,
-        -64
-      ],
-      "id": "22f1b2cc-6e4a-4a7b-8e74-3fad5ee9c4bc",
-      "name": "When chat message received",
-      "webhookId": "48647b68-905e-4258-a02f-7a79fcf9adc1"
-    },
-    {
-      "parameters": {
-        "options": {
-          "systemMessage": "Tu es un assistant n8n expert qui aide à créer, gérer et automatiser des workflows n8n.\n\nTes capacités:\n- Lister et analyser les workflows existants\n- Récupérer les détails d'un workflow spécifique\n- Créer de nouveaux workflows\n- Valider la structure des workflows\n- Donner des conseils sur les bonnes pratiques n8n\n\nTu communiques en français avec Adama, ton créateur.\nTu es direct, précis et tu évites les explications inutiles.\nQuand tu utilises un outil, tu expliques ce que tu fais."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 3,
-      "position": [
-        -128,
-        -64
-      ],
-      "id": "ae62cfeb-dab6-43f0-8091-064e76213b35",
-      "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "claude-sonnet-4-5-20250929",
-          "cachedResultName": "Claude Sonnet 4.5"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
-      "position": [
-        -272,
-        144
-      ],
-      "id": "baf08c58-3fdd-4637-b7ba-16b1eb53ea5f",
-      "name": "Anthropic Chat Model",
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "contextWindowLength": 20
-      },
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.3,
-      "position": [
-        -128,
-        144
-      ],
-      "id": "16931701-8bbc-4c4c-b543-80acdf586841",
-      "name": "Simple Memory"
-    },
-    {
-      "id": "tool-list-workflows",
-      "name": "List Workflows Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        48,
-        144
-      ],
-      "parameters": {
-        "toolDescription": "Liste tous les workflows n8n avec leurs IDs, noms, statut actif, et nombre de nodes. Utile pour voir tous les workflows disponibles.",
-        "method": "GET",
-        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "n8nApi",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "autodetect"
-            }
-          }
-        }
-      }
-    },
-    {
-      "id": "tool-get-workflow",
-      "name": "Get Workflow Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        48,
-        272
-      ],
-      "parameters": {
-        "toolDescription": "Récupère les détails complets d'un workflow spécifique par son ID (structure, nodes, connections, paramètres).",
-        "method": "GET",
-        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows/{{ $json.workflowId }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "n8nApi",
-        "placeholderDefinitions": {
-          "workflowId": {
-            "type": "string",
-            "description": "L'ID du workflow à récupérer"
-          }
-        },
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "autodetect"
-            }
-          }
-        }
-      }
-    },
-    {
-      "id": "tool-activate-workflow",
-      "name": "Activate Workflow Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "typeVersion": 1.1,
-      "position": [
-        48,
-        400
-      ],
-      "parameters": {
-        "toolDescription": "Active ou désactive un workflow n8n.",
-        "method": "PATCH",
-        "url": "={{ $env.WEBHOOK_URL.replace('/webhook/', '/api/') }}/workflows/{{ $json.workflowId }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "n8nApi",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ {\"active\": $json.active} }}",
-        "placeholderDefinitions": {
-          "workflowId": {
-            "type": "string",
-            "description": "L'ID du workflow à activer/désactiver"
-          },
-          "active": {
-            "type": "boolean",
-            "description": "true pour activer, false pour désactiver"
-          }
-        },
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "autodetect"
-            }
-          }
-        }
-      }
-    }
-  ],
+  "meta": null,
+  "name": "My workflow",
+  "nodes": [],
   "pinData": {},
   "repo_name": "n8n-workflows-nov-25",
   "repo_owner": "Adam-s-tech",
   "repo_path": "backups/",
   "settings": {
-    "executionOrder": "v1",
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   },
   "shared": [
     {
-      "updatedAt": "2025-11-22T22:49:16.099Z",
-      "createdAt": "2025-11-22T22:49:16.099Z",
+      "updatedAt": "2025-12-29T00:35:07.281Z",
+      "createdAt": "2025-12-29T00:35:07.281Z",
       "role": "workflow:owner",
-      "workflowId": "dRNScHKa7R3TgQLG",
+      "workflowId": "i0JUssflkJmla6d5",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-29T00:26:01.000Z",
-  "versionId": "ee3b4e8d-b558-440f-ac01-9a05b05ceca1"
+  "updatedAt": "2025-12-29T00:35:09.000Z",
+  "versionId": "c993c807-8ae7-4ff5-b501-24768cf7241a"
 }
