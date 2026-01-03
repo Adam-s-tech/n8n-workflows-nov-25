@@ -2,165 +2,7 @@
   "": "",
   "active": false,
   "connections": {
-    "Wordpress1": {
-      "main": [
-        [
-          {
-            "node": "Message a model1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model1": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Create Title, Slug, Meta1",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Structured Output Parser1": {
-      "ai_outputParser": [
-        [
-          {
-            "node": "Create Title, Slug, Meta1",
-            "type": "ai_outputParser",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Title, Slug, Meta1": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "Create HTML1": {
-      "main": [
-        [
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge1": {
-      "main": [
-        [
-          {
-            "node": "Combine Blog Details1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Upload Image to Wordpress1": {
-      "main": [
-        [
-          {
-            "node": "Set Image on Wordpress Post1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Copywriter AI Agent1": {
-      "main": [
-        [
-          {
-            "node": "Create Title, Slug, Meta1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge1",
-            "type": "main",
-            "index": 1
-          },
-          {
-            "node": "Create HTML1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Cleanup HTML 1": {
-      "main": [
-        [
-          {
-            "node": "Wordpress1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "gpt-4o-mini1": {
-      "ai_languageModel": [
-        []
-      ]
-    },
-    "Combine Blog Details1": {
-      "main": [
-        [
-          {
-            "node": "Cleanup HTML 1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download Pexels Image1": {
-      "main": [
-        [
-          {
-            "node": "Upload Image to Wordpress1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Message a model1": {
-      "main": [
-        [
-          {
-            "node": "Search Pexels Image1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Sort by Date (Newest First)": {
-      "main": [
-        [
-          {
-            "node": "Limit to Top 10 Articles",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Limit to Top 10 Articles": {
+    "Code": {
       "main": [
         [
           {
@@ -171,131 +13,78 @@
         ]
       ]
     },
-    "Merge2": {
-      "main": [
-        [
-          {
-            "node": "Sort by Date (Newest First)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "TechCrunch AI1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "The Verge AI1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Hacker News1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 2
-          }
-        ]
-      ]
-    },
-    "Reddit AI1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 3
-          }
-        ]
-      ]
-    },
-    "Google News AI Tools & CRMs1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 4
-          }
-        ]
-      ]
-    },
-    "Format Articles List": {
-      "main": [
-        [
-          {
-            "node": "Copywriter AI Agent1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Search Pexels Image1": {
-      "main": [
-        [
-          {
-            "node": "Download Pexels Image1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Schedule Trigger - Mon & Thu 9AM": {
-      "main": [
-        [
-          {
-            "node": "TechCrunch AI1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "The Verge AI1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Hacker News1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Reddit AI1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Google News AI Tools & CRMs1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Image on Wordpress Post1": {
+    "Wait": {
       "main": [
         [
           {
             "node": "Loop Over Items",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get PDF": {
+      "main": [
+        [
+          {
+            "node": "Mistral Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set page": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search PDFs": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Upload": {
+      "main": [
+        [
+          {
+            "node": "Mistral Signed URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Token Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
             "index": 0
           }
         ]
@@ -306,290 +95,691 @@
         [],
         [
           {
-            "node": "Format Articles List",
+            "node": "Set page",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Anthropic Chat Model": {
+    "Mistral DOC OCR": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mistral Signed URL": {
+      "main": [
+        [
+          {
+            "node": "Mistral DOC OCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Refresh collection": {
+      "main": [
+        [
+          {
+            "node": "Search PDFs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarization Chain": {
+      "main": [
+        [
+          {
+            "node": "Set summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever": {
+      "ai_retriever": [
+        [
+          {
+            "node": "Question and Answer Chain",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
       "ai_languageModel": [
         [
           {
-            "node": "Copywriter AI Agent1",
+            "node": "Question and Answer Chain",
             "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarization Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Question and Answer Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Refresh collection",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-12-07T12:59:42.435Z",
-  "id": "ZJ2RJUsyqdVINDLP",
+  "createdAt": "2025-08-15T22:52:26.389Z",
+  "id": "atrFcJ83yHWq4qWJ",
   "isArchived": false,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
-  "name": "Automation RSS to WordPress",
+  "meta": null,
+  "name": "06-RAG System with Mistral OCR, Qdrant and Gemini AI",
   "nodes": [
     {
       "parameters": {
-        "content": "## Write SEO Optimized Blog Post\n\n\n",
-        "height": 440,
-        "width": 420,
-        "color": 3
-      },
-      "id": "3033047e-fe87-469b-a120-fed65c978d09",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -560,
-        192
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "title": "={{ $('Combine Blog Details1').item.json.data[2].output.title }}",
-        "additionalFields": {
-          "authorId": 1,
-          "content": "={{ $json.content }}",
-          "slug": "={{ $('Combine Blog Details1').item.json.data[2].output.slug }}",
-          "status": "publish",
-          "commentStatus": "closed",
-          "sticky": false,
-          "postTemplate": {
-            "values": {
-              "elementor": false
-            }
-          }
-        }
-      },
-      "id": "8d528a2d-9414-44b9-a692-3881137a9a6f",
-      "name": "Wordpress1",
-      "type": "n8n-nodes-base.wordpress",
-      "position": [
-        -128,
-        912
-      ],
-      "typeVersion": 1,
-      "credentials": {
-        "wordpressApi": {
-          "id": "cHTKTOdZunGgG2DG",
-          "name": "Wordpress 2"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "## Post on Wordpress\n\n\n",
-        "height": 280,
-        "width": 300,
-        "color": 4
-      },
-      "id": "ae7d5cdc-740d-4e0d-b933-3aeebbb6e1df",
-      "name": "Sticky Note10",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -288,
-        800
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "gpt-4o-mini"
-        },
-        "options": {}
-      },
-      "id": "a16573ef-747f-47ad-aa3f-c03458412974",
-      "name": "OpenAI Chat Model1",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "position": [
-        48,
-        624
-      ],
-      "typeVersion": 1.2,
-      "credentials": {
-        "openAiApi": {
-          "id": "iXEt0rSYOIKMFzlT",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsonSchemaExample": "{\n\"slug\": \"rpo-benefits-recruitment\",\n\"title\": \"7 Key Advantages of RPO for Modern Recruitment\",\n\"meta\": \"Explore how Recruitment Process Outsourcing (RPO) enhances hiring efficiency, reduces costs, and expands talent pools for businesses seeking top candidates.\"\n}"
-      },
-      "id": "e002500f-ab7a-4802-9612-71bdd6f18b2e",
-      "name": "Structured Output Parser1",
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "position": [
-        288,
-        624
-      ],
-      "typeVersion": 1.2
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=**Create a slug, blog post title, and meta description for the following blog post:**\n\n{{ $json.output }}\n\n**Slug Guidelines:**\n- Keep it concise (4-5 words maximum).\n- Include the primary keyword related to recruitment or HR.\n- Use hyphens to separate words.\n- Avoid unnecessary words, articles, or prepositions.\n- Ensure it reflects the main topic of the blog post.\n- Make it readable and relevant for both users and search engines.\n\n**Title Guidelines:**\n- Avoid AI words like \"Transform\" or \"Revolutionize\" and similar overused terms.\n- Avoid using a colon (:) in the title.\n- Never structure it as a primary/secondary title separated by a colon.\n- Include the primary keyword related to recruitment or HR (e.g., 'AI in recruitment' or 'talent acquisition trends').\n- Clearly inform users what they can expect from reading the blog post.\n- Be concise and engaging, ideally 50-60 characters long.\n- Incorporate power words that appeal to HR professionals and recruiters.\n\n**Meta Description Guidelines:**\n- Avoid AI words like \"Transform\" or \"Revolutionize\" and similar overused terms.\n- Be concise: Limit to 150-160 characters to ensure full visibility in search results.\n- Include keywords: Naturally incorporate primary recruitment-related keywords to enhance relevance and visibility.\n- Provide value: Clearly convey the benefits or insights readers will gain from the article.\n- Be engaging: Use action-oriented language or a thought-provoking question to encourage clicks.\n- Align with content: Accurately reflect the blog post's content to meet user expectations and reduce bounce rates.\n- Highlight expertise: Subtly emphasize SocialFind's authority in the recruitment field.\n\nYour output must be a single valid JSON object with these 3 fields:\n-slug: The slug\n-title: The blog post title\n-meta: The meta description  \n\nEach should be presented without any additional text, explanation, quotation marks, or formatting.\n",
-        "hasOutputParser": true,
-        "options": {}
-      },
-      "id": "6e527e6d-9329-49f2-b65f-4a99deebdf6e",
-      "name": "Create Title, Slug, Meta1",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "position": [
-        96,
-        448
-      ],
-      "typeVersion": 1.8
-    },
-    {
-      "parameters": {
-        "modelId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "gpt-4o-mini",
-          "cachedResultName": "GPT-4O-MINI"
-        },
-        "messages": {
-          "values": [
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
             {
-              "content": "=Only output the HTML content without preamble or further explanation. Generate WordPress-compatible HTML for a blog post based on the provided content.\n\n### CONTENT PROCESSING:\n- Process all content from {{ $json.output }}\n- Preserve all original facts, information, and URLs\n- Format according to the specifications below\n\n### REQUIRED STRUCTURE (IN THIS ORDER):\n1. Title (H2)\n2. Estimated reading time\n3. Key takeaways (3-5 bullet points)\n4. Table of contents (linked to all headings)\n5. Main content (with proper heading hierarchy)\n6. FAQ section\n\n### STYLING REQUIREMENTS:\n- Style Override: Include a style section with !important declarations\n- Links: All hyperlinks, TOC items, and FAQ questions must be #00c2ff (blue)\n- Headings: All headings need a bottom border in #00c2ff with padding\n- Spacing: Add <br><br> between each major section\n\n### ENGAGEMENT FORMATTING:\n- Use bold, italics, bullet points, quotes, and highlighting for emphasis\n- Create proper paragraph structure with appropriate line breaks\n- NO emojis allowed\n- Use whitespace strategically for readability\n\n### HYPERLINK HANDLING (CRITICAL):\n- When URLs appear next to keyphrases (e.g., \"AI tools (https://example.com)\")\n- Convert to: <a href=\"https://example.com\" style=\"color: #00c2ff !important;\">AI tools</a>\n- The KEYPHRASE must be linked, never the URL itself\n\n### WORDPRESS COMPATIBILITY:\n- Use WordPress block classes (wp-block-heading, wp-block-paragraph, etc.)\n- Add heading IDs starting with \"h-\" for better TOC linking\n- Ensure all styles use !important to override theme styles\n\nDO NOT include any explanations, code tags, or comments. Output ONLY the raw HTML.\n"
+              "name": "purpose",
+              "value": "ocr"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
             }
           ]
         },
         "options": {}
       },
-      "id": "8a8caa25-aebd-47fe-99c3-36f82cfbc59d",
-      "name": "Create HTML1",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "id": "b1b4b501-861c-4ec7-9ca7-98826cf2eedd",
+      "name": "Mistral Upload",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        128,
-        32
+        672,
+        1648
       ],
-      "typeVersion": 1.8,
-      "credentials": {
-        "openAiApi": {
-          "id": "iXEt0rSYOIKMFzlT",
-          "name": "OpenAi account"
-        }
-      }
+      "typeVersion": 4.2
     },
     {
       "parameters": {
-        "numberInputs": 3
+        "url": "=https://api.mistral.ai/v1/files/{{ $json.id }}/url",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expiry",
+              "value": "24"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
       },
-      "id": "9ed1b583-9b83-4ef7-9d04-ad79d6567069",
-      "name": "Merge1",
-      "type": "n8n-nodes-base.merge",
+      "id": "70c49bec-080d-44e9-9ec2-328d7c22b1e9",
+      "name": "Mistral Signed URL",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        720,
-        320
+        992,
+        1648
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mistral.ai/v1/ocr",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mistralCloudApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"mistral-ocr-latest\",\n  \"document\": {\n    \"type\": \"document_url\",\n    \"document_url\": \"{{ $json.url }}\"\n  },\n  \"include_image_base64\": true\n}",
+        "options": {}
+      },
+      "id": "252ee86d-dcc1-4d84-9707-5cd332d21fe9",
+      "name": "Mistral DOC OCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1312,
+        1648
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {},
+      "id": "6fa119a1-8beb-4702-8657-171a868cb04f",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        832
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "80e242d6-8438-43c0-bfd0-9cc297b63b50",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        2032,
+        1648
       ],
       "typeVersion": 3
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://southpost.free.nf//wp-json/wp/v2/media",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "wordpressApi",
+        "url": "http://QDRANTURL/collections/COLLECTION/points/delete",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
-              "name": "Content-Disposition",
-              "value": "=attachment; filename=\"cover-image-{{ $('Wordpress1').item.json.id }}.jpeg\""
+              "name": "Content-Type",
+              "value": "application/json"
             }
           ]
         },
         "sendBody": true,
-        "contentType": "binaryData",
-        "inputDataFieldName": "data",
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"filter\": {}\n}",
         "options": {}
       },
-      "id": "f4c5c795-fe23-4ed2-a2ae-bec9db49fa85",
-      "name": "Upload Image to Wordpress1",
+      "id": "ecc4a151-bd55-4aa7-a9cd-34711aea82aa",
+      "name": "Refresh collection",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        880,
-        896
+        352,
+        832
       ],
-      "typeVersion": 4.2,
-      "credentials": {
-        "wordpressApi": {
-          "id": "9yNYzR9ealX1BNU5",
-          "name": "Wordpress account 2"
-        }
-      }
+      "typeVersion": 4.2
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "=https://southpost.free.nf//wp-json/wp/v2/posts/{{ $('Wordpress1').item.json.id }}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "wordpressApi",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
+        "options": {
+          "stripNewLines": false
+        }
+      },
+      "id": "0d23329b-c5fa-4181-8d2a-a4a545edd46c",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        2800,
+        1920
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5e93754e-5d05-4db2-a808-77dd19c8339f",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [
+        2944,
+        1888
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chunkSize": 400,
+        "chunkOverlap": 40
+      },
+      "id": "3640634c-daea-4f0e-9324-119ada206180",
+      "name": "Token Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "position": [
+        3040,
+        2064
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "55e7c57d-1e84-4d13-a57c-e7f2c56f6c63",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        0,
+        2080
+      ],
+      "webhookId": "97d60090-1717-4195-bf27-2e3c3105b7f8",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "cd7b8eea-ac8d-4c99-a0ef-3da842b069fd",
+      "name": "Question and Answer Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "position": [
+        320,
+        2080
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-1.5-flash",
+        "options": {}
+      },
+      "id": "e1da4947-4a45-434b-bb2a-11d86013b72f",
+      "name": "Google Gemini Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        272,
+        2288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "3a010ad9-611a-458c-a8aa-c88b3f5ffda8",
+      "name": "Vector Store Retriever",
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "position": [
+        480,
+        2304
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "mode": "list",
+          "value": "ocr_mistral_test",
+          "cachedResultName": "ocr_mistral_test"
+        },
+        "options": {}
+      },
+      "id": "d44abb41-ab10-4605-89a5-5fe84bb46e3e",
+      "name": "Qdrant Vector Store1",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "position": [
+        512,
+        2512
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "2448dfe0-9576-46d6-bcfb-e42818dadfbf",
+      "name": "Embeddings OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        384,
+        2640
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $json.pages;\n\nreturn data.map(entry => ({\n  json: {\n    markdown: entry.markdown\n  }\n}));"
+      },
+      "id": "1723fd38-5646-404e-97f0-35f78d5103f9",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1632,
+        1648
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {},
+      "id": "1b763273-22b5-480a-ac5e-d06a27d2985d",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        3344,
+        1664
+      ],
+      "webhookId": "1000b40d-5dc5-4795-9dd2-8a23653c2b49",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "mode": "list",
+          "value": "ocr_mistral_test",
+          "cachedResultName": "ocr_mistral_test"
+        },
+        "options": {
+          "collectionConfig": ""
+        }
+      },
+      "id": "c5092de8-7fe0-4504-931b-694840274be4",
+      "name": "Qdrant Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "position": [
+        2864,
+        1664
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0f7d48dc-dc8c-4541-9293-9e85805d3f26",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        1024,
+        832
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "AdVUaHTE9Jk1KO72",
+          "cachedResultName": "Mistral OCR_subworkflow"
+        },
+        "workflowInputs": {
+          "value": {},
+          "schema": [],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "f581b2a1-0c02-44c5-8820-d16b7c37fad6",
+      "name": "Execute Workflow",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        1648,
+        848
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "d2c6691a-5858-422d-b645-ad1811698329",
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        32,
+        1648
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
             {
-              "name": "featured_media",
+              "id": "ca7c30f2-444d-4551-988d-0f513e5ee4b1",
+              "name": "file_id",
+              "type": "string",
               "value": "={{ $json.id }}"
             }
           ]
         },
         "options": {}
       },
-      "id": "29ed5342-59c7-4c0c-98d4-49ccfdee5d6a",
-      "name": "Set Image on Wordpress Post1",
-      "type": "n8n-nodes-base.httpRequest",
+      "id": "be14ce48-5f1a-437c-8174-6e408e49308f",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
       "position": [
-        1072,
-        896
+        1344,
+        848
       ],
-      "typeVersion": 4.2,
-      "credentials": {
-        "wordpressApi": {
-          "id": "9yNYzR9ealX1BNU5",
-          "name": "Wordpress account 2"
-        }
-      }
+      "typeVersion": 3.4
     },
     {
       "parameters": {
-        "promptType": "define",
-        "text": "=You are an expert AI newsletter writer specializing in creating engaging, informative content about artificial intelligence trends, tools, and industry news. Your goal is to produce compelling newsletters that educate readers about the latest AI developments, practical applications, and emerging technologies while maintaining a professional yet accessible tone.\n\nYou publish newsletters covering the most significant AI developments, breakthrough technologies, tool releases, and industry insights. You are provided with curated articles from top tech publications.\n\n**Your Goal:** Produce engaging, well-researched newsletter content that educates readers about AI developments, showcases practical applications, and positions  as a trusted authority in AI automation and virtual assistant services.\n\nGiven the research findings **Research Article:**\n{{ $json.articlesList }}, write a comprehensive newsletter/blog post that:\n\n- Includes the focus keyword in the blog title, H2 header, and early in the introduction\n- Synthesizes insights from multiple articles into a cohesive narrative\n- Is detailed and informative, explaining AI concepts in accessible language\n- Uses an engaging, professional tone that makes technical content approachable\n- Flows naturally and logically with clear structure\n- Is between 1500 to 2000 words long\n- Is written for business professionals, entrepreneurs, and tech-forward leaders\n- Mentions the focus keyword naturally in the first paragraph\n\n**Additional requirements:**\n- Include practical takeaways that readers can apply to their businesses\n- Highlight how AI automation and consulting services (AI TechScope's specialty) relate to these trends\n- Connect AI developments to business efficiency, digital transformation, and workflow optimization\n- Showcase how AI TechScope's expertise in n8n automation, AI consulting, and website development can help businesses leverage these technologies\n- Include a call-to-action (CTA) encouraging readers to explore AI TechScope's AI automation and consulting services\n\nCreate the entire blog post draft in your first output. Don't stop or cut it short.\n\nYour output must be the blog post and nothing else.\n\n\n**Company Information:** {{ $json.Description }}\n\n**Research Article:**\n{{ $json.articlesList }}",
+        "method": "PUT",
+        "url": "http://QDRANTURL/collections/COLLECTION",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"vectors\": {\n    \"size\": 1536,\n    \"distance\": \"Cosine\"  \n  },\n  \"shard_number\": 1,  \n  \"replication_factor\": 1,  \n  \"write_consistency_factor\": 1 \n}",
         "options": {}
       },
-      "id": "ba4381b1-cc86-4739-a9b0-6fe1f11dc1a2",
-      "name": "Copywriter AI Agent1",
-      "type": "@n8n/n8n-nodes-langchain.agent",
+      "id": "512c84eb-bbe7-4bc1-9274-86be4d4ad995",
+      "name": "Create collection",
+      "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -416,
-        320
+        0,
+        368
       ],
-      "typeVersion": 1.8
+      "typeVersion": 4.2
     },
     {
       "parameters": {
-        "content": "## Create Title, Slug & Meta\n\n\n",
-        "height": 440,
-        "width": 440,
-        "color": 7
+        "content": "# STEP 1\n\n## Create Qdrant Collection\nChange:\n- QDRANTURL\n- COLLECTION",
+        "height": 220,
+        "width": 880,
+        "color": 6
       },
-      "id": "3514d912-a9e3-43e6-9cda-b1d10d74f303",
-      "name": "Sticky Note11",
+      "id": "108ae4c4-9d7c-45f9-95b3-9978ce9f0d72",
+      "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -32,
-        288
+        208,
+        304
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# STEP 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n## Documents vectorization with Qdrant and Google Drive\nChange:\n- QDRANTURL\n- COLLECTION",
+        "height": 520,
+        "width": 620,
+        "color": 4
+      },
+      "id": "7ce2b58a-1f1e-4e7d-b87f-3aa1139ae6bb",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {
+          "summarizationMethodAndPrompts": {
+            "values": {
+              "combineMapPrompt": "Write a concise summary of the following (in italiano):\n\n\n\"{text}\"\n\n\nCONCISE SUMMARY:",
+              "prompt": "Write a concise summary of the following (in italiano):\n\n\n\"{text}\"\n\n\nCONCISE SUMMARY:"
+            }
+          }
+        }
+      },
+      "id": "b2a0dcc3-0cb5-4bdd-8bb2-f7da47624a6c",
+      "name": "Summarization Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "position": [
+        2304,
+        1264
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-exp",
+        "options": {}
+      },
+      "id": "eaba4a39-75f9-4e8a-bfdf-625e878b704a",
+      "name": "Google Gemini Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        2320,
+        1440
       ],
       "typeVersion": 1
     },
@@ -598,370 +788,134 @@
         "assignments": {
           "assignments": [
             {
-              "id": "0afb2988-1481-4b04-b16d-fb33c50a16d0",
-              "name": "content",
+              "id": "189f4944-a692-423c-bc6d-76747e1d04df",
+              "name": "text",
               "type": "string",
-              "value": "={{ $json.data[0].message.content.replaceAll('```html', '').replaceAll('```','') }}"
+              "value": "={{ $json.markdown }}"
             }
           ]
         },
         "options": {}
       },
-      "id": "5d6b70a6-f203-4b83-8ed0-82bdbf8a05c6",
-      "name": "Cleanup HTML 1",
+      "id": "eb77410e-726c-47e9-9ed7-582b496eb6d8",
+      "name": "Set page",
       "type": "n8n-nodes-base.set",
       "position": [
-        928,
-        576
+        2480,
+        1664
       ],
       "typeVersion": 3.4
     },
     {
       "parameters": {
-        "content": "## Set Image for Wordpress Post",
-        "height": 280,
-        "width": 1220
+        "assignments": {
+          "assignments": [
+            {
+              "id": "189f4944-a692-423c-bc6d-76747e1d04df",
+              "name": "text",
+              "type": "string",
+              "value": "={{ $json.response.text }}"
+            }
+          ]
+        },
+        "options": {}
       },
-      "id": "44225034-93bc-407a-b6f8-113c8ecfa022",
+      "id": "e7573d46-972b-497a-ae58-f2c1f1fd063f",
+      "name": "Set summary",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2672,
+        1264
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "## STEP 3\nIf you want a \"light\" and faster rag with the main contents replace the \"Set page\" node with \"Summarization Chain\"",
+        "height": 680,
+        "width": 600
+      },
+      "id": "a299daf4-9b96-46b0-87cd-d9eec6faf7f4",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2240,
+        1152
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## STEP 4\nTest the RAG",
+        "height": 120,
+        "width": 500,
+        "color": 2
+      },
+      "id": "903b7459-386e-4746-ba7d-adcd697af96f",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        800,
+        2080
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "1LWVo3yn_1bWQJsLskBIbWTGwlfObvtUK",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1LWVo3yn_1bWQJsLskBIbWTGwlfObvtUK",
+            "cachedResultName": "PDFs"
+          }
+        },
+        "options": {}
+      },
+      "id": "d526c0c0-2d36-4e12-a52a-148e44fc98d5",
+      "name": "Search PDFs",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        688,
+        832
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.file_id }}"
+        },
+        "options": {}
+      },
+      "id": "817124ba-e5a3-4bb2-bc8a-3e2a2e78226b",
+      "name": "Get PDF",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        352,
+        1648
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "content": "## Complete RAG system from PDF Documents with Mistral OCR, Qdrant and Gemini AI\n\nThis workflow is designed to process PDF documents using Mistral's OCR capabilities, store the extracted text in a Qdrant vector database, and enable Retrieval-Augmented Generation (RAG) for answering questions. ",
+        "height": 140,
+        "width": 1140
+      },
+      "id": "b32f8ad6-abc0-4fdd-a88c-a3739027bf22",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        48,
-        784
+        -64,
+        48
       ],
       "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "value": "gpt-3.5-turbo",
-          "mode": "list",
-          "cachedResultName": "gpt-3.5-turbo"
-        },
-        "options": {}
-      },
-      "id": "d1dba4fa-2ee5-455e-8914-bbf5f15befdf",
-      "name": "gpt-4o-mini1",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "position": [
-        -288,
-        624
-      ],
-      "typeVersion": 1.2,
-      "credentials": {
-        "openAiApi": {
-          "id": "iXEt0rSYOIKMFzlT",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "aggregate": "aggregateAllItemData",
-        "options": {}
-      },
-      "id": "9e095ee1-3957-42a4-bba7-f8cd3f9f0607",
-      "name": "Combine Blog Details1",
-      "type": "n8n-nodes-base.aggregate",
-      "position": [
-        928,
-        320
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "url": "={{ $('Search Pexels Image1').item.json.photos[0].src.large2x }}",
-        "options": {
-          "response": {
-            "response": {
-              "responseFormat": "file"
-            }
-          }
-        }
-      },
-      "id": "09e9b592-6171-471f-b0f4-1ba05153422d",
-      "name": "Download Pexels Image1",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        688,
-        896
-      ],
-      "typeVersion": 4.2,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "modelId": {
-          "__rl": true,
-          "value": "gpt-4o",
-          "mode": "list",
-          "cachedResultName": "GPT-4O"
-        },
-        "messages": {
-          "values": [
-            {
-              "content": "=\n\n\"Generate 1-3 relevant search keywords for finding a professional stock photo related to: {{ $json.title.raw }}. Focus on tangible, visual concepts (e.g., 'technology workspace' instead of abstract terms). Return only the keywords, no explanation.\""
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 1.8,
-      "position": [
-        96,
-        896
-      ],
-      "id": "0d86b1b3-872b-4b76-8b7d-a884b7747725",
-      "name": "Message a model1",
-      "credentials": {
-        "openAiApi": {
-          "id": "iXEt0rSYOIKMFzlT",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "sortFieldsUi": {
-          "sortField": [
-            {
-              "fieldName": "pubDate",
-              "order": "descending"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Sort by Date (Newest First)",
-      "type": "n8n-nodes-base.sort",
-      "typeVersion": 1,
-      "position": [
-        -1104,
-        656
-      ],
-      "id": "05ed6663-5635-4212-b57e-bf97cde7e092"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Take only the first 10 items from the sorted array\nconst items = $input.all();\nconst top10 = items.slice(0, 10);\n\nreturn top10;\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -912,
-        656
-      ],
-      "id": "d94dbb87-715e-4b27-80d2-04464a16d487",
-      "name": "Limit to Top 10 Articles"
-    },
-    {
-      "parameters": {
-        "url": "https://techcrunch.com/tag/artificial-intelligence/feed/",
-        "options": {}
-      },
-      "name": "TechCrunch AI1",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [
-        -1536,
-        704
-      ],
-      "id": "cb2b5559-d22c-4e1a-9514-cb1a8e541b9f"
-    },
-    {
-      "parameters": {
-        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-        "options": {}
-      },
-      "name": "The Verge AI1",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [
-        -1520,
-        240
-      ],
-      "id": "5a3e509d-4a6e-4b70-9ad8-7057064bf891"
-    },
-    {
-      "parameters": {
-        "url": "https://news.ycombinator.com/rss",
-        "options": {}
-      },
-      "name": "Hacker News1",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [
-        -1536,
-        400
-      ],
-      "id": "3afcab58-7167-416c-bb9d-a77f8467f86d"
-    },
-    {
-      "parameters": {
-        "url": "https://www.reddit.com/r/artificial/.rss",
-        "options": {
-          "customFields": ""
-        }
-      },
-      "name": "Reddit AI1",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [
-        -1536,
-        560
-      ],
-      "id": "2a30c548-8c34-4a77-a8bc-1dab80e6536a"
-    },
-    {
-      "parameters": {
-        "url": "https://news.google.com/rss/search?q=AI+tools+OR+ChatGPT+OR+automation+OR+%22HighLevel%22+OR+%22GoHighLevel%22+OR+%22AI+CRM%22&hl=en-US&gl=US&ceid=US:en",
-        "options": {}
-      },
-      "name": "Google News AI Tools & CRMs1",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [
-        -1552,
-        880
-      ],
-      "id": "8b28fecd-9be5-40d6-9103-194c403fc98b"
-    },
-    {
-      "parameters": {
-        "numberInputs": 5
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        -1248,
-        608
-      ],
-      "id": "8f37baf5-77e1-4761-b8b3-1518f9e4bcce",
-      "name": "Merge2"
-    },
-    {
-      "parameters": {
-        "jsCode": "const items = $input.all();\n\nlet articlesList = \"\";\n\nitems.forEach((item, index) => {\n  const title = item.json.title || 'No title';\n  const link = item.json.link || item.json.url || 'No link';\n  const pubDate = item.json.pubDate || item.json.isoDate || 'Unknown date';\n  const description = item.json.contentSnippet || item.json.description || 'No description';\n  const source = item.json.creator || item.json.author || 'Unknown source';\n  \n  articlesList += `${index + 1}. **${title}**\\n`;\n  articlesList += `   Source: ${source}\\n`;\n  articlesList += `   Published: ${pubDate}\\n`;\n  articlesList += `   Link: ${link}\\n`;\n  articlesList += `   Summary: ${description}\\n\\n`;\n});\n\nreturn [{\n  json: {\n    articlesList: articlesList,\n    Keyword: \"AI trends and tools\", // Default keyword - can be customized\n    Description: \"AITechScope is a leading provider of virtual assistant services, specializing in AI-powered automation, n8n workflow development, and business process optimization. We help businesses leverage cutting-edge AI tools and technologies to scale operations, reduce costs, and improve efficiency through intelligent delegation and automation solutions.\"\n  }\n}];\n"
-      },
-      "name": "Format Articles List",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -576,
-        320
-      ],
-      "id": "cb93df50-daed-41de-ae16-99b381fae312"
-    },
-    {
-      "parameters": {
-        "url": "=https://api.pexels.com/v1/search?query={{ $json.message.content }}&per_page=1",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "WzF3sDRopBR4XSuMn4gDqwdt1kEjkoKPQ35gmEVgqIEKjEAHHVzmoe5T"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "241ac691-7fa6-4fd5-b3b3-0d47deb3c2f5",
-      "name": "Search Pexels Image1",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        480,
-        896
-      ],
-      "typeVersion": 4.2
-    },
-    {
-      "parameters": {
-        "content": "## Create HTML\n",
-        "width": 512
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        0
-      ],
-      "typeVersion": 1,
-      "id": "646484bd-a114-40b0-8cca-2b2af74123d6",
-      "name": "Sticky Note5"
-    },
-    {
-      "parameters": {
-        "content": "## Rss ",
-        "height": 992
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -1600,
-        144
-      ],
-      "typeVersion": 1,
-      "id": "bb3b1dc3-2544-4dbb-a0ea-ccd1db5ff3dc",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "seconds"
-            }
-          ]
-        }
-      },
-      "name": "Schedule Trigger - Mon & Thu 9AM",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        -1776,
-        560
-      ],
-      "id": "49d6fbc0-ac1a-41c8-a0fb-dd8dc67058d5"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        -704,
-        656
-      ],
-      "id": "1843968f-c853-4473-b349-36fb52e8d987",
-      "name": "Loop Over Items"
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "mode": "list",
-          "value": "claude-sonnet-4-5-20250929",
-          "cachedResultName": "Claude Sonnet 4.5"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
-      "typeVersion": 1.3,
-      "position": [
-        -464,
-        624
-      ],
-      "id": "0d3401d5-4e35-4dfd-8985-cb55824f99eb",
-      "name": "Anthropic Chat Model",
-      "credentials": {
-        "anthropicApi": {
-          "id": "4UzJQx2xZa2gAcGT",
-          "name": "Claude_API_11_25"
-        }
-      }
     }
   ],
   "pinData": {},
@@ -973,23 +927,35 @@
   },
   "shared": [
     {
-      "updatedAt": "2025-12-07T12:59:42.437Z",
-      "createdAt": "2025-12-07T12:59:42.437Z",
+      "updatedAt": "2025-08-15T22:52:26.398Z",
+      "createdAt": "2025-08-15T22:52:26.398Z",
       "role": "workflow:owner",
-      "workflowId": "ZJ2RJUsyqdVINDLP",
+      "workflowId": "atrFcJ83yHWq4qWJ",
       "projectId": "oXQkWGdjmWkcvoUC"
     }
   ],
   "staticData": null,
   "tags": [
     {
-      "updatedAt": "2025-12-28T18:07:46.360Z",
-      "createdAt": "2025-12-28T18:07:46.360Z",
-      "id": "i5clJW8hbOceL017",
-      "name": "Pb   nœud - Create HTML1"
+      "updatedAt": "2025-12-28T18:03:24.856Z",
+      "createdAt": "2025-12-28T18:03:24.856Z",
+      "id": "GTdKgw52KYtP73bB",
+      "name": "A voir"
+    },
+    {
+      "updatedAt": "2025-12-28T18:11:09.101Z",
+      "createdAt": "2025-12-28T18:11:09.101Z",
+      "id": "sVpkY0lvvpHVkXIe",
+      "name": "ok"
+    },
+    {
+      "updatedAt": "2025-12-28T23:46:03.817Z",
+      "createdAt": "2025-12-28T18:02:49.797Z",
+      "id": "vNliFiYFZSU0TQDM",
+      "name": "Ok"
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-12-28T18:08:35.000Z",
-  "versionId": "40ff59be-f8a2-4126-b343-8bcee54d2db2"
+  "updatedAt": "2025-12-28T18:59:33.000Z",
+  "versionId": "20ed8fda-9636-4c8e-817e-0c68f9a376fd"
 }
